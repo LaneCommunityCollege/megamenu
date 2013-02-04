@@ -1,0 +1,210 @@
+$background-color: #03396a;
+$gold: #f6bd16;
+$text-color: white;
+
+$resources: "//drupalprojects.dev/mm/images/";
+
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
+
+#lmm_underlay{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:0px;
+    z-index:8999;
+}
+//world's largest reset:
+#lmm{
+    line-height: 1;
+    div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center, dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, video {
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    font-size: 100%;
+	    font: inherit;
+	    vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+	    display: block;
+    }
+    ol, ul {
+	    list-style: none;
+    }
+    blockquote, q {
+	    quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+	    content: '';
+	    content: none;
+    }
+    table {
+	    border-collapse: collapse;
+	    border-spacing: 0;
+    }
+}
+
+#lmm{
+    form{
+        margin-bottom:0px;
+        margin-top:0px;
+        padding:2px;
+        input{
+            margin:0px;
+            vertical-align:bottom;
+            &[type=text]{
+                border-radius:15px;
+                width:200px;
+                padding:0px 6px;
+                &:focus{
+                    outline:none;
+                }
+            }
+        }
+        #lmm_search_submit{
+            background-image: url($resources + "btn-search.gif");
+            border: solid 0px #000000;
+            width:23px;
+            height:23px;
+            border-radius:2px;
+        }
+    }
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9000;
+    background-color: $background-color;
+    color:$text-color;
+    height:28px;
+    ul{
+        text-align:center;
+        padding:0px;
+        margin:0px;
+        li{
+            text-align:left;
+            cursor:pointer;
+            display:inline-block;
+            list-style-type:none;
+            text-align:center;
+            padding:0px 5px;
+            font-family:"Century Gothic", Helvetica, Arial, sans-serif;
+            font-size:16px;
+            height:26px;
+            line-height:26px;
+            vertical-align:top;
+            .lmm_pane_container{
+                border-top:white solid 1px;
+                display:none;
+                position:absolute;
+                top:28px;
+                left:0;
+                width:100%;
+                cursor:auto;
+                height:0px;
+                text-align:left;
+                color:white;
+                background-color:transparent;
+                .lmm_pane{
+                    @include transparent($background-color, 1);
+                    width:830px;
+                    margin-left:auto;
+                    margin-right:auto;
+                    padding:10px;
+                    height:230px;
+                }
+            }
+            &.lmm_toplevel{
+                min-width:120px;
+            }
+            &.lmm_active{
+                color:$gold;
+            }
+            &#lmm_logo{
+                float:left;
+                width:34px;
+                text-align:center;
+                min-width:0px;
+                border-right: white solid 1px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-image: url($resources + 'tinylogo.png');
+            }
+            #lmm_homes_page{
+                float:left;
+                margin-top:32px;
+                width:130px;
+                ul li{
+                    display:block;
+                    width:95%;
+                    a{
+                        width:100%;
+                    }
+                }
+            }
+            &#lmm_search{
+                width:247px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+                float:right;
+                line-height:normal;
+            }
+            #lmm_searchops{
+                label{
+                    display:block;
+                    padding-bottom:5px;
+                    input{
+                        margin-right:10px;
+                        margin-bottom:2px;//This is to "center" the inputs with the text
+                    }
+                }
+            }
+        }
+    }
+    .lmm_other_pane{
+        cursor:default;
+        text-align:left;
+        display:none;
+        background-color: $background-color;
+        margin-top:5px;
+        border: $text-color solid 1px;
+        border-radius:15px;
+        padding:9px;
+        a, a:visited, a:active{
+            cursor:pointer;
+            color:white;
+            text-decoration:none;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+    }
+}
+
+#lmm_pane_underlay{
+    @include transparent($background-color, 0.8);
+    width:100%;
+    height:0px;
+    position:absolute;
+    top:29px;
+    left:0px;
+}
