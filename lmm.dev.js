@@ -83,7 +83,7 @@ function loaded(){
     jQuery('#lmm ul').append(menu);
     jQuery('#lmm').after('<div id="lmm_pane_underlay"></div>');
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
-
+    var lastaction = "";
     // Handle opening and closing panes
     jQuery('#lmm li.lmm_toplevel').each(function(){
         jQuery(this).on('click', function(e){
@@ -92,13 +92,15 @@ function loaded(){
             var clickedPane = jQuery('.lmm_pane_container', this);
             //if its a differnet panel that's open, fade out that panel and fade this one in
             if(clickedPane.is(":visible") && jQuery('.lmm_pane_container:visible').length == 1){
+                lastaction = "close";
                 clickedPane.add(jQuery('#lmm_pane_underlay')).stop().animate({
                     height: 0
                 }, function(){ jQuery(this).hide(); });
                 clickedPane.parent('.lmm_toplevel').removeClass('lmm_active');
             }
             //swap us with someone else
-            else if(jQuery('.lmm_pane_container:visible').length > 0){
+            else if(jQuery('.lmm_pane_container:visible').length > 0 && lastaction != 'close'){
+                lastaction = 'swap'
                 var oldPane = jQuery('.lmm_pane_container:visible').not(clickedPane);
                 clickedPane.height(250);
                 oldPane.stop().fadeOut(200)
@@ -108,6 +110,7 @@ function loaded(){
             }
             //must just want to open us
             else{
+                lastaction = 'open'
                 jQuery('#lmm_underlay').height(window.innerHeight);
                 clickedPane.add(jQuery('#lmm_pane_underlay')).show().stop().animate({
                     height: 250
