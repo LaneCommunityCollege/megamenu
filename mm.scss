@@ -82,6 +82,15 @@ $resources: "//drupalprojects.dev/mm/images/";
         }
     }
 }
+#lmm_searchops{
+    label{
+        display:block;
+        input{
+            margin-right:10px;
+            margin-bottom:2px;//This is to "center" the inputs with the text
+        }
+    }
+}
 
 #lmm{
     position:absolute;
@@ -92,6 +101,14 @@ $resources: "//drupalprojects.dev/mm/images/";
     background-color: $background-color;
     color:$text-color;
     height:28px;
+    a, a:visited, a:active{
+        cursor:pointer;
+        color:white;
+        text-decoration:none;
+        &:hover{
+            text-decoration:underline;
+        }
+    }
     ul{
         text-align:center;
         li{
@@ -154,16 +171,6 @@ $resources: "//drupalprojects.dev/mm/images/";
                     }
                 }
             }
-            #lmm_searchops{
-                label{
-                    display:block;
-                    padding-bottom:5px;
-                    input{
-                        margin-right:10px;
-                        margin-bottom:2px;//This is to "center" the inputs with the text
-                    }
-                }
-            }
         }
     }
     .lmm_other_pane{
@@ -175,14 +182,6 @@ $resources: "//drupalprojects.dev/mm/images/";
         border: $text-color solid 1px;
         border-radius:15px;
         padding:9px;
-        a, a:visited, a:active{
-            cursor:pointer;
-            color:white;
-            text-decoration:none;
-            &:hover{
-                text-decoration:underline;
-            }
-        }
     }
 }
 
