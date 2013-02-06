@@ -138,6 +138,8 @@ $resources: "//drupalprojects.dev/mm/images/";
                     margin-right:auto;
                     padding:10px;
                     height:230px;
+                    border-left:rgba(255,255,255,0.35) solid 1px;
+                    border-right:rgba(255,255,255,0.35) solid 1px;
                 }
             }
             &.lmm_toplevel{
@@ -193,4 +195,5 @@ $resources: "//drupalprojects.dev/mm/images/";
     top:29px;
     left:0px;
     z-index:8999;
+    border-bottom: white solid 1px;
 }
