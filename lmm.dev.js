@@ -43,8 +43,6 @@ pages['destination'] = new Page("Destinations");
 /* These are variables that might need to change at some point */
 var server = "//drupalprojects.dev/";
 var resources = server+"/mm/images/";
-var termid = "201330";
-var termstring = "Winter"
 
 // This is kinda like Document.ready()
 function loaded(){
@@ -79,8 +77,6 @@ function loaded(){
                 '<div id="lmm_searchops" class="lmm_min lmm_other_pane">'+
                     '<label for="lmm_search_web"><input name="dest" class="lmm_so" type="radio" id="lmm_search_web" checked="checked">Lane Website</label>'+
                     '<label for="lmm_search_people"><input name="dest" type="radio" class="lmm_so" id="lmm_search_people">People</label>'+
-                    '<label for="lmm_search_cred_courses"><input name="dest" type="radio" class="lmm_so" id="lmm_search_cred_courses">'+termstring+' Credit Courses</label>'+ 
-                    '<label for="lmm_search_non_cred_courses"><input name="dest" type="radio" class="lmm_so" id="lmm_search_non_cred_courses">'+termstring+' Non-Credit Courses</label>'+ 
                     '<label for="lmm_search_asklane"><input name="dest" class="lmm_so" type="radio" id="lmm_search_asklane">AskLane</label>'+
                 '</div>'+
             '</li>';
@@ -178,20 +174,6 @@ function loaded(){
             jQuery('#lmm_search_form').get(0).setAttribute('action', 'http://lanecc.intelliresponse.com/');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'post');
             jQuery('#lmm_q').attr('name','question');
-        }
-        else if (dest == "lmm_search_cred_courses"){
-            jQuery('#lmm_search_form').append('<input type="hidden" name="term_in" value="'+termid+'" class="lmm_temp">');
-            jQuery('#lmm_search_form').append('<input type="hidden" name="grp_in" value="keywd" class="lmm_temp">');
-            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://exp.lanecc.edu/pls/lane/zwsktsc2.P_DispGroupSchd');
-            jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
-            jQuery('#lmm_q').attr('name','chunk_in');
-        }
-        else if (dest == "lmm_search_non_cred_courses"){
-            jQuery('#lmm_search_form').append('<input type="hidden" name="term_in" value="'+termid+'" class="lmm_temp">');
-            jQuery('#lmm_search_form').append('<input type="hidden" name="grp_in" value="keywd" class="lmm_temp">');
-            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://exp.lanecc.edu/pls/lane/zwsktsel.P_DispGroupSchd');
-            jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
-            jQuery('#lmm_q').attr('name','chunk_in');
         }
         jQuery('#lmm_q').focus();
         e.stopPropagation();
