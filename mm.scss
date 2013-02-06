@@ -25,14 +25,14 @@ $resources: "//drupalprojects.dev/mm/images/";
 #lmm{
     line-height: 1;
     div, span, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    h1, h2, h3, h4, h5, h6, p, pre,
     a, abbr, acronym, address, big, code,
-    dfn, em, img, q, s,
-    small, strike, strong, sub, sup, tt, var,
+    dfn, em, img, s,
+    small, strike, strong, sub, sup, var,
     b, u, i, center, dl, dt, dd, ol, ul, li,
     fieldset, form, label, legend,
     table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, 
+    canvas, details, 
     figure, figcaption, footer, header, hgroup, 
     menu, nav, output, section, summary, video {
 	    margin: 0;
@@ -43,20 +43,12 @@ $resources: "//drupalprojects.dev/mm/images/";
 	    vertical-align: baseline;
     }
     /* HTML5 display-role reset for older browsers */
-    article, aside, details, figcaption, figure, 
+    details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section {
 	    display: block;
     }
     ol, ul {
 	    list-style: none;
-    }
-    blockquote, q {
-	    quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-	    content: '';
-	    content: none;
     }
     table {
 	    border-collapse: collapse;
