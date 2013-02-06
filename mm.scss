@@ -79,6 +79,7 @@ $resources: "//drupalprojects.dev/mm/images/";
             height:23px;
             border-radius:2px;
             margin-left:4px;
+            cursor:pointer;
         }
     }
 }
@@ -86,6 +87,7 @@ $resources: "//drupalprojects.dev/mm/images/";
     label{
         display:block;
         input{
+            cursor:pointer;
             margin-right:10px;
             margin-bottom:2px;//This is to "center" the inputs with the text
         }
@@ -113,7 +115,6 @@ $resources: "//drupalprojects.dev/mm/images/";
         text-align:center;
         li{
             text-align:left;
-            cursor:pointer;
             display:inline-block;
             text-align:center;
             padding:0px 5px;
@@ -145,11 +146,13 @@ $resources: "//drupalprojects.dev/mm/images/";
             }
             &.lmm_toplevel{
                 min-width:120px;
+                cursor:pointer;
             }
             &.lmm_active{
                 color:$gold;
             }
             &#lmm_logo{
+                cursor:pointer;
                 float:left;
                 width:34px;
                 text-align:center;
@@ -167,6 +170,7 @@ $resources: "//drupalprojects.dev/mm/images/";
                     display:block;
                     width:95%;
                     a{
+                        display:block;
                         width:100%;
                     }
                 }
