@@ -71,7 +71,7 @@ function loaded(){
             '<li id="lmm_search" class="lmm_other">' +
                 '<form id="lmm_search_form" name="search_lane_new_home_page" method="get" action="http://search.lanecc.edu/search">'+
                     '<label for="q" style="position:absolute;display:block;top:-9000px;left:-9000px;">Search Lane\'s Website</label>'+
-                    '<input type="text" name="q" id="lmm_q" placeholder="Search or AskLane">&nbsp'+
+                    '<input type="text" name="q" id="lmm_q" placeholder="Search or AskLane">'+
                     '<input type="submit" value="" id="lmm_search_submit">'+
                 '</form>'+
                 '<div id="lmm_searchops" class="lmm_min lmm_other_pane">'+

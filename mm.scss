@@ -56,13 +56,12 @@ $resources: "//drupalprojects.dev/mm/images/";
     }
 }
 
-#lmm{
+#lmm_search{
+    width:247px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+    float:right;
+    line-height:normal;
     form{
-        margin-bottom:0px;
-        margin-top:0px;
-        padding:2px;
         input{
-            margin:0px;
             vertical-align:bottom;
             &[type=text]{
                 border-radius:15px;
@@ -79,8 +78,12 @@ $resources: "//drupalprojects.dev/mm/images/";
             width:23px;
             height:23px;
             border-radius:2px;
+            margin-left:4px;
         }
     }
+}
+
+#lmm{
     position:absolute;
     top:0;
     left:0;
@@ -91,13 +94,10 @@ $resources: "//drupalprojects.dev/mm/images/";
     height:28px;
     ul{
         text-align:center;
-        padding:0px;
-        margin:0px;
         li{
             text-align:left;
             cursor:pointer;
             display:inline-block;
-            list-style-type:none;
             text-align:center;
             padding:0px 5px;
             font-family:"Century Gothic", Helvetica, Arial, sans-serif;
@@ -153,11 +153,6 @@ $resources: "//drupalprojects.dev/mm/images/";
                         width:100%;
                     }
                 }
-            }
-            &#lmm_search{
-                width:247px; //needs to be here, otherwise the box seems to grow by 1px when clicked
-                float:right;
-                line-height:normal;
             }
             #lmm_searchops{
                 label{
