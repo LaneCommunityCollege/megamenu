@@ -26,12 +26,11 @@ $resources: "//drupalprojects.dev/mm/images/";
     line-height: 1;
     div, span, iframe,
     h1, h2, h3, h4, h5, h6, p, pre,
-    a, address, big, code, em, img, s,
+    a, address, code, em, img, s,
     small, strong, sub, sup, canvas, details,
     b, u, i, center, ol, ul, li,
     fieldset, form, label, legend,
     table, caption, tbody, tfoot, thead, tr, th, td, 
-    figure, figcaption, footer, header, hgroup, 
     menu, nav, output, section, summary, video {
 	    margin: 0;
 	    padding: 0;
@@ -41,8 +40,7 @@ $resources: "//drupalprojects.dev/mm/images/";
 	    vertical-align: baseline;
     }
     /* HTML5 display-role reset for older browsers */
-    details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
+    details, menu, nav, section {
 	    display: block;
     }
     ol, ul {
