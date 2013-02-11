@@ -1,4 +1,5 @@
 $background-color: #03396a;
+$underlay-color: rgb(3,3,10);
 $gold: #f6bd16;
 $text-color: white;
 
@@ -189,7 +190,7 @@ $resources: "//drupalprojects.dev/mm/images/";
 }
 
 #lmm_pane_underlay{
-    @include transparent($background-color, 0.8);
+    @include transparent($underlay-color, 0.90);
     width:100%;
     height:0px;
     position:absolute;
