@@ -59,7 +59,7 @@ function loaded(){
                     '<li>Current Students</li>'+
                     '<li>Future Students</li>'+
                     '<li>Community</li>'+
-                    '<li>Staff</li>'+
+                    '<li>Employees</li>'+
                 '</ul>'+
             '</div>'+
         '</li>';
