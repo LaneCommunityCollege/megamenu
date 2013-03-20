@@ -4,6 +4,7 @@ $background-color: #03396a;
 $underlay-color: rgb(3,3,10);
 $gold: #f6bd16;
 $text-color: white;
+$border_blue:#85a3c0;
 
 $resources: "//drupalprojects.dev/mm/images/";
 
@@ -39,7 +40,7 @@ $resources: "//drupalprojects.dev/mm/images/";
     background-color: $background-color;
     color:$text-color;
     height:28px;
-    border-bottom:white solid 1px;
+    border-bottom:$border_blue solid 1px;
     a, a:visited, a:active{
         cursor:pointer;
         color:white;
@@ -106,9 +107,9 @@ $resources: "//drupalprojects.dev/mm/images/";
                 background-color: $background-color;
                 padding-bottom:1px;
                 margin-top:2px;
-                border-top: white solid 1px;
-                border-left: white solid 1px;
-                border-right: white solid 1px;
+                border-top: $border_blue solid 1px;
+                border-left: $border_blue solid 1px;
+                border-right: $border_blue solid 1px;
                 border-top-left-radius:5px;
                 border-top-right-radius:5px;
             }
@@ -185,7 +186,7 @@ $resources: "//drupalprojects.dev/mm/images/";
         height:28px;
         text-align:center;
         min-width:0px;
-        border-right: white solid 1px;
+        border-right: $border_blue solid 1px;
         background-position: center center;
         background-repeat: no-repeat;
         background-image: url($resources + 'tinylogo.png');
@@ -203,7 +204,7 @@ $resources: "//drupalprojects.dev/mm/images/";
     top:28px;
     left:0px;
     z-index:8999;
-    border-bottom: white solid 1px;
+    border-bottom: $border_blue solid 1px;
 }
 
 /* These mean that the global stylesheet (this one) applies to IE8
