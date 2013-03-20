@@ -115,6 +115,7 @@ $resources: "//drupalprojects.dev/mm/images/";
         border: $text-color solid 1px;
         border-radius:15px;
         padding:9px;
+        line-height:1.5em;
     }
     #lmm_search{
         width:232px; //needs to be here, otherwise the box seems to grow by 1px when clicked
