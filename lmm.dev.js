@@ -88,7 +88,7 @@ function loaded(){
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
     var lastaction = "";
     // Handle opening and closing panes
-    jQuery('#lmm').delegate('#lmm li.lmm_toplevel', 'click', function(e){
+    jQuery('body').delegate('#lmm li.lmm_toplevel', 'click', function(e){
         jQuery(this).addClass('lmm_active');
         jQuery('.lmm_other_pane').hide();
         var clickedPane = jQuery('.lmm_pane_container', this);
