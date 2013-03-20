@@ -58,7 +58,7 @@ $resources: "//drupalprojects.dev/mm/images/";
             padding:0px 5px;
             font-family:"Roboto", Futura, Helvetica, sans-serif;
             text-transform:uppercase;
-            font-size:16px;
+            font-size:14px;
             height:26px;
             line-height:26px;
             vertical-align:top;
@@ -100,13 +100,14 @@ $resources: "//drupalprojects.dev/mm/images/";
             }
             &.lmm_toplevel{
                 cursor:pointer;
-                padding-right:10px;
+                margin-right:5px;
             }
             &.lmm_active{
                 color:$gold;
                 background-color: $background-color;
                 padding-bottom:1px;
                 margin-top:2px;
+                margin-right:3px;
                 border-top: $border_blue solid 1px;
                 border-left: $border_blue solid 1px;
                 border-right: $border_blue solid 1px;
