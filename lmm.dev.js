@@ -60,10 +60,10 @@ function loaded(){
             '<div id="lmm_homes_page" class="lmm_other_pane">'+
                 '<ul>'+
                     '<li><a href="http://www.lanecc.edu">Home</a></li>'+
-                    '<li>Current Students</li>'+
-                    '<li>Future Students</li>'+
-                    '<li>Community</li>'+
-                    '<li>Employees</li>'+
+                    '<li><a href="http://www.lanecc.edu/students">Current Students</a></li>'+
+                    '<li><a href="http://www.lanecc.edu/future">Future Students</a></li>'+
+                    '<li><a href="http://www.lanecc.edu/community">Community</a></li>'+
+                    '<li><a href="http://www.lanecc.edu/employees">Employees</a></li>'+
                 '</ul>'+
             '</div>'+
         '</div><ul id="lmm_cats">';
