@@ -54,9 +54,9 @@ function loaded(){
     var current_url = window.location.pathname;
     var cHeight = 0;
     jQuery('body').css('margin-top','28px');
-    jQuery('body').prepend('<div id="lmm"><ul></ul></div>');
+    jQuery('body').prepend('<div id="lmm"></div>');
     var menu = 
-        '<li id="lmm_logo" class="lmm_other">'+
+        '<div id="lmm_logo" class="lmm_other">'+
             '<div id="lmm_homes_page" class="lmm_other_pane">'+
                 '<ul>'+
                     '<li><a href="http://www.lanecc.edu">Home</a></li>'+
@@ -66,13 +66,13 @@ function loaded(){
                     '<li>Employees</li>'+
                 '</ul>'+
             '</div>'+
-        '</li>';
+        '</div><ul id="lmm_cats">';
     for(var key in pages){
         menu += "<li id='lmm_" + key + "' class='lmm_toplevel'>"+ pages[key].__str__() + "</li>";
     }
-    menu += '</li>';
+    menu += '</ul>';
     menu +=
-            '<li id="lmm_search" class="lmm_other">' +
+            '<div id="lmm_search" class="lmm_other">' +
                 '<form id="lmm_search_form" name="search_lane_new_home_page" method="get" action="http://search.lanecc.edu/search">'+
                     '<label for="q" style="position:absolute;display:block;top:-9000px;left:-9000px;">Search Lane\'s Website</label>'+
                     '<input type="text" name="q" id="lmm_q" placeholder="Search or AskLane">'+
@@ -82,10 +82,29 @@ function loaded(){
                     '<label for="lmm_search_web"><input name="dest" class="lmm_so" type="radio" id="lmm_search_web" checked="checked">Lane Website</label>'+
                     '<label for="lmm_search_asklane"><input name="dest" class="lmm_so" type="radio" id="lmm_search_asklane">AskLane</label>'+
                 '</div>'+
-            '</li>';
-    jQuery('#lmm ul').append(menu);
+            '</div>';
+    jQuery('#lmm').append(menu);
     jQuery('#lmm').after('<div id="lmm_pane_underlay"></div>');
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
+
+    // Figure out the left margin for lmm_cats. unfortunatley, this needs to be hardcoded, as it isn't possible to get an auto margin from Jquery
+    //TODO mobile
+    function updateCats(){
+        var wwidth = jQuery(window).width();
+        if(wwidth > 740){
+            var width = 740;
+        }
+        if(wwidth > 980){
+            var width = 980;
+        }
+        if(wwidth > 1220){
+            var width = 1220;
+        }
+        leftmargin = (wwidth - width)/2 - 24;
+        jQuery('#lmm_cats').css('margin-left', leftmargin);
+    }
+    updateCats();
+    jQuery(window).resize(function(){updateCats();});
     var lastaction = "";
     // Handle opening and closing panes
     jQuery('body').delegate('#lmm li.lmm_toplevel', 'click', function(e){
