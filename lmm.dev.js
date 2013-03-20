@@ -1,4 +1,5 @@
-/* Could we offer themeing for this? Just a simple "set these variables to customize stuff" kind of idea? 
+/* TODO Theme colors, by requesting from a php file that kicks back different css
+ * TODO optional non-responsive menu, working same way as above
  */
 
 /* Takes care of making sure JQuery is only loaded once per page */
