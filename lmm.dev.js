@@ -101,6 +101,10 @@ function loaded(){
             var width = 1220;
         }
         leftmargin = (wwidth - width)/2 - 24;
+        //keeps us from sliding under the logo
+        if(leftmargin < 0){
+            leftmargin = 0;
+        }
         jQuery('#lmm_cats').css('margin-left', leftmargin);
     }
     updateCats();
