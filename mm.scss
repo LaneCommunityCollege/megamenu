@@ -81,8 +81,8 @@ $resources: "//drupalprojects.dev/mm/images/";
                 }
             }
             &.lmm_toplevel{
-                min-width:120px;
                 cursor:pointer;
+                padding-right:10px;
             }
             &.lmm_active{
                 color:$gold;
