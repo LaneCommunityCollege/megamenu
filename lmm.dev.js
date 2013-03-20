@@ -36,7 +36,7 @@ pages['app'] = new Page('Apply & Enroll');
 pages['app'].contents = "\
 <div class='lmm_col'>\
     <ul>\
-        <li class='lmm_space'><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll<a/></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll</a></li>\
 \
         <li><a href='http://www.lanecc.edu/esfs/admissions'>Admissions</a></li>\
         <li><a href='http://www.lanecc.edu/counseling'>Counseling & Advising</a></li>\
@@ -68,7 +68,41 @@ pages['app'].contents = "\
 ";
 
 pages['about'] = new Page("Programs");
-pages['about'].contents = "About Page";
+pages['about'].contents = "\
+<div class='lmm_col'>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/advtech'>Advanced Technology</a></li>\
+        <li><a href='http://www.lanecc.edu/finarts'>Arts</a></li>\
+        <li><a href='http://www.lanecc.edu/business'>Business</a></li>\
+        <li><a href='http://www.lanecc.edu/cfe'>Child & Family Education</a></li>\
+        <li><a href='http://www.lanecc.edu/cit'>Computer Information Technology</a></li>\
+        <li><a href='http://www.lanecc.edu/culinary'>Culinary Arts & Hospitality</a></li>\
+        <li><a href='http://www.lanecc.edu/hp'>Health Professions</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/healthpe'>Health, Physical Education & Athletics</a></li>\
+        <li><a href='http://www.lanecc.edu/llc'>Language, Literature & Communication</a></li>\
+        <li><a href='http://www.lanecc.edu/math'>Math</a></li>\
+        <li><a href='http://www.lanecc.edu/mediaarts'>Media Arts</a></li>\
+        <li><a href='http://www.lanecc.edu/perarts'>Music, Dance & Theatre</a></li>\
+        <li><a href='http://www.lanecc.edu/science'>Science</a></li>\
+        <li><a href='http://www.lanecc.edu/socialscience'>Social Science</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/cooped'>Cooperative Education</a></li>\
+        <li><a href='http://www.lanecc.edu/hsconnections'>High School Connections</a></li>\
+        <li><a href='http://www.lanecc.edu/abse'>GED & ABSE</a></li>\
+        <li><a href='http://www.lanecc.edu/esl'>ESL</a></li>\
+        <li><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
+        <li><a href='http://www.lanecc.edu/international'>International Students</a></li>\
+        <li><a href='http://www.lanecc.edu/laneonline'>Online/Hybrid Courses</a></li>\
+    </ul>\
+</div>\
+";
 
 pages['courses'] = new Page("Student Services");
 

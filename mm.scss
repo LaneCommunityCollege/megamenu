@@ -84,8 +84,12 @@ $resources: "//drupalprojects.dev/mm/images/";
                     .lmm_col{
                         float:left;
                         li{
+                            text-transform:capitalize;
+                            height:auto;
                             text-align:left;
                             display:list-item;
+                            line-height:1.2em;
+                            margin-bottom:6px;
                             &.lmm_space{
                                 margin-bottom:1em;
                             }
