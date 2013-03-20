@@ -67,8 +67,8 @@ pages['app'].contents = "\
 </div>\
 ";
 
-pages['about'] = new Page("Programs");
-pages['about'].contents = "\
+pages['programs'] = new Page("Programs");
+pages['programs'].contents = "\
 <div class='lmm_col'>\
     <ul>\
         <li><a href='http://www.lanecc.edu/advtech'>Advanced Technology</a></li>\
@@ -104,12 +104,11 @@ pages['about'].contents = "\
 </div>\
 ";
 
-pages['courses'] = new Page("Student Services");
-pages['courses'].contents = "\
+pages['services'] = new Page("Student Services");
+pages['services'].contents = "\
 <div class='lmm_col'>\
     <ul>\
-        <li><a href='http://classes.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a></li>\
-        <li><a href='http://mylane.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
+        <li style='margin-bottom:0'><a href='http://classes.lanecc.edu'><img src='http://www2dev.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a> <a href='http://mylane.lanecc.edu'><img src='http://www2dev.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/it/helpdesk'>HelpDesk</a></li>\
         <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
         <li><a href='http://www.lanecc.edu/it/computerlabs'>Computer Labs</a></li>\
@@ -141,9 +140,75 @@ pages['courses'].contents = "\
 ";
 
 
-pages['campus'] = new Page("Connections");
+pages['connections'] = new Page("Connections");
+pages['connections'].contents = "\
+<div class='lmm_col'>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/calendars/academic-calendar'>Academic Calendar</a></li>\
+        <li><a href='http://www.lanecc.edu/laneevents'>Events Calendar</a></li>\
+        <li class='lmm_space'>News Room</li>\
+        <li>Arts & Cultural Events</li>\
+        <li><a href='http://www.lanetitans.net'>Athletics</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <h3>Community</h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/foundation'>Foundation & Alumni Relations</a></li>\
+        <li><a href='http://www.lanecc.edu/hsconnections'>High School Connections</a></li>\
+        <li><a href='http://www.lanecc.edu/center'>Center for Meeting & Learning</a></li>\
+        <li><a href='http://www.lanecc.edu/ce'>Community Education</a></li>\
+        <li><a href='http://www.lanecc.edu/sustainability'>Institute for Sustainable PRactices</a></li>\
+        <li><a href='http://www.lanecc.edu/longhouse'>Longhouse</a></li>\
+        <li><a href='http://www.lanecc.edu/peacecenter'>Peace Center</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <h3>Student Life</h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/aslcc'>Student Government</a></li>\
+        <li><a href='http://www.lanecc.edu/mediaarts/torch'>The Torch</a></li>\
+        <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs/a></li>\
+        <li><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
+    </ul>\
+</div>\
+";
 
-pages['destination'] = new Page("About");
+pages['about'] = new Page("About");
+pages['about'].contents = "\
+<div class='lmm_col'>\
+    <ul>\
+        <li>Overview</li>\
+        <li><a href='http://www.lanecc.edu/research/planning/strategic-plan'>Vision, Values & Mission</a></li>\
+        <li><a href='http://www.lanecc.edu/accreditation'>Accreditation & Planning</a></li>\
+        <li class='lmm_space'><a href='https://apps.lanecc.edu/scorecard'>Institutional Scorecard</a></li>\
+        <li><a href='http://www.lanecc.edu/copps'>Policy & Procedure</a></li>\
+        <li><a href='http://www.lanecc.edu/board'>Board of Education</a></li>\
+        <li><a href='http://www.lanecc.edu/president'>Office of the President</a></li>\
+        <li><a href='http://www.lanecc.edu/governance'>College Governance</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <ul>\
+        <li>College Operations</li>\
+        <li><a href='http://www.lanecc.edu/accreditation'>Accreditation & Planning</a></li>\
+        <li><a href='http://www.lanecc.edu/research/ir/lcc-organizational-charts'>Organizational Chart</a></li>\
+        <li><a href='http://jobs.lanecc.edu'>Employment</a></li>\
+        <li><a href='http://www.lanecc.edu/mpr'>Public Relations</a></li>\
+        <li><a href='http://www.lanecc.edu/contact'>Contact Us</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <h3><a href='http://www.lanecc.edu/locations'>Maps & Locations</a></h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/locations/main-campus'>Main Campus</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/downtown-campus'>Downtown Campus</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/lane-aviation-academy'>Aviation Academy</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/lcc-cottage-grove'>Cottage Grove</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/lcc-florence'>Contact Us</a></li>\
+    </ul>\
+</div>\
+";
 
 /* These are variables that might need to change at some point */
 var server = "//drupalprojects.dev/";
