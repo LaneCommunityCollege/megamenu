@@ -174,3 +174,16 @@ $resources: "//drupalprojects.dev/mm/images/";
     z-index:8999;
     border-bottom: white solid 1px;
 }
+
+/* These styles build on each other. So rules applied to narrow will 
+ * still apply in normal.
+ */
+@media all and (min-width: 740px){
+    @import "narrow";
+}
+@media all and (min-width: 980px){
+    @import "normal";
+}
+@media all and (min-width: 1220px){
+    @import "wide";
+}
