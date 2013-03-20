@@ -148,8 +148,9 @@ pages['connections'].contents = "\
         <li><a href='http://www.lanecc.edu/laneevents'>Events Calendar</a></li>\
         <li class='lmm_space'>News Room</li>\
         <li>Arts & Cultural Events</li>\
-        <li class='lmm_space'><a href='http://www.lanetitans.net'>Athletics</a></li>\
-        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a></li>\
+        <li><a href='http://lanesbdc.com/'>Lane SBDC</a></li>\
+        <li><a href='http://klcc.org/'>KLCC</a></li>\
+        <li><a href='http://www.lanetitans.net'>Athletics</a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
@@ -159,7 +160,7 @@ pages['connections'].contents = "\
         <li><a href='http://www.lanecc.edu/hsconnections'>High School Connections</a></li>\
         <li><a href='http://www.lanecc.edu/center'>Center for Meeting & Learning</a></li>\
         <li><a href='http://www.lanecc.edu/ce'>Community Education</a></li>\
-        <li><a href='http://www.lanecc.edu/sustainability'>Institute for Sustainable PRactices</a></li>\
+        <li><a href='http://www.lanecc.edu/sustainability'>Institute for Sustainable Practices</a></li>\
         <li><a href='http://www.lanecc.edu/longhouse'>Longhouse</a></li>\
         <li><a href='http://www.lanecc.edu/peacecenter'>Peace Center</a></li>\
     </ul>\
@@ -170,7 +171,8 @@ pages['connections'].contents = "\
         <li><a href='http://www.lanecc.edu/aslcc'>Student Government</a></li>\
         <li><a href='http://www.lanecc.edu/mediaarts/torch'>The Torch</a></li>\
         <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs</a></li>\
-        <li><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
+        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a></li>\
     </ul>\
 </div>\
 ";
@@ -240,7 +242,7 @@ function loaded(){
     menu +=
             '<div id="lmm_search" class="lmm_other">' +
                 '<form id="lmm_search_form" name="search_lane_new_home_page" method="get" action="http://search.lanecc.edu/search">'+
-                    '<label for="q" style="position:absolute;display:block;top:-9000px;left:-9000px;">Search Lane\'s Website</label>'+
+                    '<label for="q" style="position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;">Search Lane\'s Website</label>'+
                     '<input type="text" name="q" id="lmm_q" placeholder="Search or AskLane">'+
                     '<input type="submit" value="" id="lmm_search_submit">'+
                 '</form>'+

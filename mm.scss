@@ -128,7 +128,7 @@ $resources: "//drupalprojects.dev/mm/images/";
         line-height:1.5em;
     }
     #lmm_search{
-        width:232px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+        width:210px; //needs to be here, otherwise the box seems to grow by 1px when clicked
         float:right;
         line-height:normal;
         margin-top:2px;
@@ -137,7 +137,7 @@ $resources: "//drupalprojects.dev/mm/images/";
                 vertical-align:bottom;
                 &[type=text]{
                     border-radius:15px;
-                    width:200px;
+                    width:181px;
                     padding:0px 6px;
                     &:focus{
                         outline:none;
@@ -150,7 +150,7 @@ $resources: "//drupalprojects.dev/mm/images/";
                 width:23px;
                 height:23px;
                 border-radius:2px;
-                margin-left:4px;
+                margin-left:2px;
                 cursor:pointer;
             }
         }
