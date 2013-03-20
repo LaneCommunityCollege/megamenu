@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
 $background-color: #03396a;
 $underlay-color: rgb(3,3,10);
 $gold: #f6bd16;
@@ -115,7 +117,8 @@ $resources: "//drupalprojects.dev/mm/images/";
             display:inline-block;
             text-align:center;
             padding:0px 5px;
-            font-family:"Futura", Helvetica, Arial, sans-serif;
+            font-family:"Roboto", Futura, Helvetica, sans-serif;
+            text-transform:uppercase;
             font-size:16px;
             height:26px;
             line-height:26px;
@@ -165,10 +168,10 @@ $resources: "//drupalprojects.dev/mm/images/";
             #lmm_homes_page{
                 float:left;
                 margin-top:32px;
-                width:135px;
+                width:170px;
                 ul li{
                     display:block;
-                    width:95%;
+                    width:96%;
                     a{
                         display:block;
                         width:100%;
