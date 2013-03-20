@@ -80,7 +80,6 @@ function loaded(){
                 '</form>'+
                 '<div id="lmm_searchops" class="lmm_min lmm_other_pane">'+
                     '<label for="lmm_search_web"><input name="dest" class="lmm_so" type="radio" id="lmm_search_web" checked="checked">Lane Website</label>'+
-                    '<label for="lmm_search_people"><input name="dest" type="radio" class="lmm_so" id="lmm_search_people">People</label>'+
                     '<label for="lmm_search_asklane"><input name="dest" class="lmm_so" type="radio" id="lmm_search_asklane">AskLane</label>'+
                 '</div>'+
             '</li>';
