@@ -23,7 +23,7 @@ initJQuery();
 /* Class for writing each of our pages */
 function Page(title){
     this.title=title;
-    this.contents = "";
+    this.contents = '';
 
     this.__str__ = function (){
         return this.title + "<div class='lmm_pane_container'><div class='lmm_pane'>"+this.contents+"</div></div>";
@@ -33,12 +33,16 @@ function Page(title){
 /* The actual tabs */
 pages = {}
 pages['app'] = new Page('Apply & Enroll');
-pages['app'].contents = 'Apply Page';
-pages['about'] = new Page("About Lane");
+pages['app'].contents = 'Apply & Enroll Page';
+
+pages['about'] = new Page("Programs");
 pages['about'].contents = "About Page";
-pages['courses'] = new Page("Departments");
-pages['campus'] = new Page("Campus Life");
-pages['destination'] = new Page("Destinations");
+
+pages['courses'] = new Page("Student Services");
+
+pages['campus'] = new Page("Connections");
+
+pages['destination'] = new Page("About");
 
 /* These are variables that might need to change at some point */
 var server = "//drupalprojects.dev/";
@@ -189,5 +193,8 @@ function loaded(){
     if(current_url.indexOf('pln') > 0){//TODO adjust to full URL out of dev
         cHeight = parseInt(jQuery('#wpadminbar').css('height'));
         jQuery('#lmm').css('top',cHeight);
+    }
+    if(jQuery('body').hasClass('admin-menu')){
+        jQuery('#lmm').css('display','none')
     }
 }
