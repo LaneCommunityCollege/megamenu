@@ -89,44 +89,43 @@ function loaded(){
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
     var lastaction = "";
     // Handle opening and closing panes
-    jQuery('#lmm li.lmm_toplevel').each(function(){
-        jQuery(this).on('click', function(e){
-            jQuery(this).addClass('lmm_active');
-            jQuery('.lmm_other_pane').hide();
-            var clickedPane = jQuery('.lmm_pane_container', this);
-            //if its a differnet panel that's open, fade out that panel and fade this one in
-            if(clickedPane.is(":visible") && jQuery('.lmm_pane_container:visible').length == 1){
-                lastaction = "close";
-                clickedPane.add(jQuery('#lmm_pane_underlay')).stop().animate({
-                    height: 0
-                }, function(){ jQuery(this).hide(); });
-                clickedPane.parent('.lmm_toplevel').removeClass('lmm_active');
-            }
-            //swap us with someone else
-            else if(jQuery('.lmm_pane_container:visible').length > 0 && lastaction != 'close'){
-                lastaction = 'swap'
-                var oldPane = jQuery('.lmm_pane_container:visible').not(clickedPane);
-                clickedPane.height(250);
-                oldPane.stop().fadeOut(200)
-                clickedPane.fadeIn(200);
-                oldPane.height(0);
-                oldPane.parent('.lmm_toplevel').removeClass('lmm_active');
-            }
-            //must just want to open us
-            else{
-                lastaction = 'open'
-                jQuery('#lmm_underlay').height(window.innerHeight);
-                clickedPane.add(jQuery('#lmm_pane_underlay')).show().stop().animate({
-                    height: 250
-                });
-            }
-            e.stopPropagation();
-            return false;
-        });
-    }).children().click(function(e){ e.stopPropagation();});
+    jQuery('#lmm').delegate('#lmm li.lmm_toplevel', 'click', function(e){
+        jQuery(this).addClass('lmm_active');
+        jQuery('.lmm_other_pane').hide();
+        var clickedPane = jQuery('.lmm_pane_container', this);
+        //if its a differnet panel that's open, fade out that panel and fade this one in
+        if(clickedPane.is(":visible") && jQuery('.lmm_pane_container:visible').length == 1){
+            lastaction = "close";
+            clickedPane.add(jQuery('#lmm_pane_underlay')).stop().animate({
+                height: 0
+            }, function(){ jQuery(this).hide(); });
+            clickedPane.parent('.lmm_toplevel').removeClass('lmm_active');
+        }
+        //swap us with someone else
+        else if(jQuery('.lmm_pane_container:visible').length > 0 && lastaction != 'close'){
+            lastaction = 'swap'
+            var oldPane = jQuery('.lmm_pane_container:visible').not(clickedPane);
+            clickedPane.height(250);
+            oldPane.stop().fadeOut(200)
+            clickedPane.fadeIn(200);
+            oldPane.height(0);
+            oldPane.parent('.lmm_toplevel').removeClass('lmm_active');
+        }
+        //must just want to open us
+        else{
+            lastaction = 'open'
+            jQuery('#lmm_underlay').height(window.innerHeight);
+            clickedPane.add(jQuery('#lmm_pane_underlay')).show().stop().animate({
+                height: 250
+            });
+        }
+        e.stopPropagation();
+        return false;
+    });
+    jQuery('#lmm li.lmm_toplevel').children().click(function(e){ e.stopPropagation();});
 
     //allow us to click the background to close whatever's open
-    jQuery('#lmm_underlay').on('click', function(){
+    jQuery('body').delegate('#lmm_underlay', 'click', function(){
         jQuery('#lmm .lmm_other .lmm_other_pane').each(function(){
             jQuery(this).hide();
         })
@@ -138,7 +137,7 @@ function loaded(){
     });
 
     /* Pop open a search options box */
-    jQuery('#lmm_q').on('click', function(e){
+    jQuery('body').delegate('#lmm_q', 'click', function(e){
         //shrink any existing panes
         jQuery('#lmm_pane_underlay').height(0);
         jQuery('#lmm_homes_page').stop().fadeOut(200);
@@ -148,7 +147,7 @@ function loaded(){
         jQuery('#lmm_searchops').fadeIn(200);
     });
     /* Similarly, pop open the homes button box */
-    jQuery('#lmm_logo').on('click', function(e){
+    jQuery('body').delegate('#lmm_logo', 'click', function(e){
         jQuery('#lmm_pane_underlay').height(0);
         jQuery('.lmm_active').removeClass('lmm_active');
         jQuery('.lmm_pane_container:visible').stop().fadeOut(200).height(0);
@@ -161,13 +160,14 @@ function loaded(){
             jQuery('#lmm_searchops').stop().fadeOut(200);
             jQuery('#lmm_homes_page').fadeIn(200);
         }
-    }).children().click(function(e){ e.stopPropagation();});
+    })
+    jQuery('#lmm_logo').children().click(function(e){ e.stopPropagation();});
     
     /* Handle the radio buttons for the search box 
      * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isnt' able to correctly set
      * form actions
      */
-    jQuery('.lmm_so').on('click',function(e){
+    jQuery('body').delegate('.lmm_so', 'click',function(e){
         var dest = jQuery('.lmm_so:checked').attr('id');
         if(dest == "lmm_search_web"){
         //remove existing temp form fields that may or may not be needed
