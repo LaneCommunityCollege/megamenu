@@ -283,7 +283,7 @@ function loaded(){
             leftmargin = 0;
         }
         jQuery('#lmm_cats').css('margin-left', leftmargin);
-        jQuery('.lmm_col').css('width', (width / 3) - 25);
+        jQuery('.lmm_col').css('width', (width / 3) - 15);
     }
     updateCats();
     jQuery(window).resize(function(){updateCats();});
