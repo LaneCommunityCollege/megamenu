@@ -108,7 +108,7 @@ pages['services'] = new Page("Student Services");
 pages['services'].contents = "\
 <div class='lmm_col'>\
     <ul>\
-        <li style='margin-bottom:0'><a href='http://classes.lanecc.edu'><img src='http://www2dev.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a> <a href='http://mylane.lanecc.edu'><img src='http://www2dev.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
+        <li style='margin-bottom:0'><a href='http://classes.lanecc.edu'><img src='http://www2lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a> <a href='http://mylane.lanecc.edu'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/it/helpdesk'>HelpDesk</a></li>\
         <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
         <li><a href='http://www.lanecc.edu/it/computerlabs'>Computer Labs</a></li>\
@@ -148,7 +148,8 @@ pages['connections'].contents = "\
         <li><a href='http://www.lanecc.edu/laneevents'>Events Calendar</a></li>\
         <li class='lmm_space'>News Room</li>\
         <li>Arts & Cultural Events</li>\
-        <li><a href='http://www.lanetitans.net'>Athletics</a></li>\
+        <li class='lmm_space'><a href='http://www.lanetitans.net'>Athletics</a></li>\
+        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
@@ -168,7 +169,7 @@ pages['connections'].contents = "\
     <ul>\
         <li><a href='http://www.lanecc.edu/aslcc'>Student Government</a></li>\
         <li><a href='http://www.lanecc.edu/mediaarts/torch'>The Torch</a></li>\
-        <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs/a></li>\
+        <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs</a></li>\
         <li><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
     </ul>\
 </div>\
@@ -182,7 +183,7 @@ pages['about'].contents = "\
         <li><a href='http://www.lanecc.edu/research/planning/strategic-plan'>Vision, Values & Mission</a></li>\
         <li><a href='http://www.lanecc.edu/accreditation'>Accreditation & Planning</a></li>\
         <li class='lmm_space'><a href='https://apps.lanecc.edu/scorecard'>Institutional Scorecard</a></li>\
-        <li><a href='http://www.lanecc.edu/copps'>Policy & Procedure</a></li>\
+        <li><a href='http://www.lanecc.edu/copps'>Policies & Procedures</a></li>\
         <li><a href='http://www.lanecc.edu/board'>Board of Education</a></li>\
         <li><a href='http://www.lanecc.edu/president'>Office of the President</a></li>\
         <li><a href='http://www.lanecc.edu/governance'>College Governance</a></li>\
