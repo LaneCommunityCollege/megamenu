@@ -47,9 +47,12 @@ pages['app'].contents = "\
 \
 <div class='lmm_col'>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/esfs/tuition-fees-and-payments'>Costs and Payments</a></li>\
+        <li><a href='http://www.lanecc.edu/esfs/tuition-fees-and-payments'>Costs & Payments</a></li>\
         <li><a href='http://www.lanecc.edu/finaid'>Financial Aid</a></li>\
-        <li><a href='http://www.lanecc.edu/ces/scholarships'>Scholarships</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/ces/scholarships'>Scholarships</a></li>\
+\
+        <li>Non-Credit Courses</li>\
+        <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
     </ul>\
 </div>\
 \
@@ -59,10 +62,7 @@ pages['app'].contents = "\
         <li><a href='http://www.lanecc.edu/collegecatalog/degrees-and-certificates'>Degrees & Certificates</a></li>\
         <li><a href='http://www.lanecc.edu/pathways'>Career Pathways</a></li>\
         <li><a href='http://www.lanecc.edu/schedule'>Schedule</a></li>\
-        <li class='lmm_space'>Grades & Transcripts</li>\
-\
-        <li>Non-Credit Courses</li>\
-        <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
+        <li>Grades & Transcripts</li>\
     </ul>\
 </div>\
 ";
@@ -167,7 +167,7 @@ function loaded(){
         else if(jQuery('.lmm_pane_container:visible').length > 0 && lastaction != 'close'){
             lastaction = 'swap'
             var oldPane = jQuery('.lmm_pane_container:visible').not(clickedPane);
-            clickedPane.height(250);
+            clickedPane.height(209);
             oldPane.stop().fadeOut(200)
             clickedPane.fadeIn(200);
             oldPane.height(0);
@@ -178,7 +178,7 @@ function loaded(){
             lastaction = 'open'
             jQuery('#lmm_underlay').height(window.innerHeight);
             clickedPane.add(jQuery('#lmm_pane_underlay')).show().stop().animate({
-                height: 250
+                height: 210
             });
         }
         e.stopPropagation();
