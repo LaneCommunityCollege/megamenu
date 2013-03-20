@@ -1,0 +1,29 @@
+#lmm{
+    line-height: 1;
+    div, span, iframe,
+    h1, h2, h3, h4, h5, h6, p, pre,
+    a, address, code, em, img, s,
+    small, strong, sub, sup, details,
+    b, u, i, center, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td, 
+    menu, nav, output, section, summary, video {
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    font-size: 100%;
+	    font: inherit;
+	    vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    details, menu, nav, section {
+	    display: block;
+    }
+    ol, ul {
+	    list-style: none;
+    }
+    table {
+	    border-collapse: collapse;
+	    border-spacing: 0;
+    }
+}
