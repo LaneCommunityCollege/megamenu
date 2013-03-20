@@ -30,7 +30,7 @@ $resources: "//drupalprojects.dev/mm/images/";
 
 #lmm{
     &.hideMobile{
-        display:none;
+        display:none !important;
     }
     position:absolute;
     top:0;
@@ -204,7 +204,7 @@ $resources: "//drupalprojects.dev/mm/images/";
 
 #lmm_pane_underlay{
     &.hideMobile{
-        display:none;
+        display:none !important;
     }
     @include transparent($underlay-color, 0.90);
     width:100%;
