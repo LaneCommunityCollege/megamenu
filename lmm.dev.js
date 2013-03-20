@@ -187,11 +187,11 @@ function loaded(){
 
     /* Site specific adjustments
      */
-    if(current_url.indexOf('pln') > 0){//TODO adjust to full URL out of dev
+    if(jQuery('body').hasClass('admin-bar')){ //Wordpress
         cHeight = parseInt(jQuery('#wpadminbar').css('height'));
         jQuery('#lmm').css('top',cHeight);
     }
-    else if(jQuery('body').hasClass('admin-menu')){
+    else if(jQuery('body').hasClass('admin-menu')){ //Authenticated Drupal
         jQuery('#lmm').css('display','none')
     }
 }
