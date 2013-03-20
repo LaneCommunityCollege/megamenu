@@ -78,6 +78,16 @@ $resources: "//drupalprojects.dev/mm/images/";
                     height:229px;
                     border-left:rgba(255,255,255,0.35) solid 1px;
                     border-right:rgba(255,255,255,0.35) solid 1px;
+                    .lmm_col{
+                        float:left;
+                        li{
+                            text-align:left;
+                            display:list-item;
+                            &.lmm_space{
+                                margin-bottom:1em;
+                            }
+                        }
+                    }
                 }
             }
             &.lmm_toplevel{

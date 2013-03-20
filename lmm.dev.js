@@ -33,7 +33,39 @@ function Page(title){
 /* The actual tabs */
 pages = {}
 pages['app'] = new Page('Apply & Enroll');
-pages['app'].contents = 'Apply & Enroll Page';
+pages['app'].contents = "\
+<div class='lmm_col'>\
+    <ul>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll<a/></li>\
+\
+        <li><a href='http://www.lanecc.edu/esfs/admissions'>Admissions</a></li>\
+        <li><a href='http://www.lanecc.edu/counseling'>Counseling & Advising</a></li>\
+        <li><a href='http://www.lanecc.edu/testing'>Testing & Placement</a></li>\
+        <li><a href='http://www.lanecc.edu/esfs/registration'>Registration</a></li>\
+    </ul>\
+</div>\
+\
+<div class='lmm_col'>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/esfs/tuition-fees-and-payments'>Costs and Payments</a></li>\
+        <li><a href='http://www.lanecc.edu/finaid'>Financial Aid</a></li>\
+        <li><a href='http://www.lanecc.edu/ces/scholarships'>Scholarships</a></li>\
+    </ul>\
+</div>\
+\
+<div class='lmm_col'>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/catalog'>Catalog</a></li>\
+        <li><a href='http://www.lanecc.edu/collegecatalog/degrees-and-certificates'>Degrees & Certificates</a></li>\
+        <li><a href='http://www.lanecc.edu/pathways'>Career Pathways</a></li>\
+        <li><a href='http://www.lanecc.edu/schedule'>Schedule</a></li>\
+        <li class='lmm_space'>Grades & Transcripts</li>\
+\
+        <li>Non-Credit Courses</li>\
+        <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
+    </ul>\
+</div>\
+";
 
 pages['about'] = new Page("Programs");
 pages['about'].contents = "About Page";
@@ -53,7 +85,6 @@ function loaded(){
     jQuery('head').append('<link rel="stylesheet" type="text/css" href="'+server+'/mm/mm.css">');
     var current_url = window.location.pathname;
     var cHeight = 0;
-    jQuery('body').css('margin-top','28px');
     jQuery('body').prepend('<div id="lmm"></div>');
     var menu = 
         '<div id="lmm_logo" class="lmm_other">'+
@@ -91,6 +122,14 @@ function loaded(){
     //TODO mobile
     function updateCats(){
         var wwidth = jQuery(window).width();
+        if(wwidth <=740){
+            jQuery('#lmm').add(jQuery('#lmm_pane_underlay')).addClass('hideMobile');
+            jQuery('body').css('margin-top','0px');
+        }
+        else{
+            jQuery('#lmm').add(jQuery('#lmm_pane_underlay')).removeClass('hideMobile');
+            jQuery('body').css('margin-top','28px');
+        }
         if(wwidth > 740){
             var width = 740;
         }
@@ -100,12 +139,13 @@ function loaded(){
         if(wwidth > 1220){
             var width = 1220;
         }
-        leftmargin = (wwidth - width)/2 - 24;
+        leftmargin = (wwidth - width)/2 - 14;
         //keeps us from sliding under the logo
         if(leftmargin < 0){
             leftmargin = 0;
         }
         jQuery('#lmm_cats').css('margin-left', leftmargin);
+        jQuery('.lmm_col').css('width', (width / 3) - 20);
     }
     updateCats();
     jQuery(window).resize(function(){updateCats();});
