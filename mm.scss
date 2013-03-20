@@ -36,6 +36,7 @@ $resources: "//drupalprojects.dev/mm/images/";
     background-color: $background-color;
     color:$text-color;
     height:28px;
+    border-bottom:white solid 1px;
     a, a:visited, a:active{
         cursor:pointer;
         color:white;
@@ -58,10 +59,9 @@ $resources: "//drupalprojects.dev/mm/images/";
             line-height:26px;
             vertical-align:top;
             .lmm_pane_container{
-                border-top:white solid 1px;
                 display:none;
                 position:absolute;
-                top:28px;
+                top:29px;
                 left:0;
                 width:100%;
                 cursor:auto;
@@ -96,6 +96,14 @@ $resources: "//drupalprojects.dev/mm/images/";
             }
             &.lmm_active{
                 color:$gold;
+                background-color: $background-color;
+                padding-bottom:1px;
+                margin-top:2px;
+                border-top: white solid 1px;
+                border-left: white solid 1px;
+                border-right: white solid 1px;
+                border-top-left-radius:5px;
+                border-top-right-radius:5px;
             }
         }
     }
