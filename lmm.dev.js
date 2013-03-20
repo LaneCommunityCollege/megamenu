@@ -186,15 +186,13 @@ function loaded(){
         e.stopPropagation();
     });
 
-    /* Slide us under the WPAdminbar - they're position fixed, whereas we're position absolute;
-     * so it's best if we're the lower one (besides, that way we don't need to think about moving
-     * them when we slide out) 
+    /* Site specific adjustments
      */
     if(current_url.indexOf('pln') > 0){//TODO adjust to full URL out of dev
         cHeight = parseInt(jQuery('#wpadminbar').css('height'));
         jQuery('#lmm').css('top',cHeight);
     }
-    if(jQuery('body').hasClass('admin-menu')){
+    else if(jQuery('body').hasClass('admin-menu')){
         jQuery('#lmm').css('display','none')
     }
 }
