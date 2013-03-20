@@ -133,7 +133,7 @@ function loaded(){
         if(wwidth > 740){
             var width = 740;
         }
-        if(wwidth > 980){
+        if(wwidth > 990){
             var width = 980;
         }
         if(wwidth > 1220){
@@ -145,7 +145,7 @@ function loaded(){
             leftmargin = 0;
         }
         jQuery('#lmm_cats').css('margin-left', leftmargin);
-        jQuery('.lmm_col').css('width', (width / 3) - 20);
+        jQuery('.lmm_col').css('width', (width / 3) - 25);
     }
     updateCats();
     jQuery(window).resize(function(){updateCats();});
