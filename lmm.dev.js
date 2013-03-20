@@ -24,7 +24,6 @@ initJQuery();
 /* Class for writing each of our pages */
 function Page(title){
     this.title=title;
-    this.contents = '';
 
     this.__str__ = function (){
         return this.title + "<div class='lmm_pane_container'><div class='lmm_pane'>"+this.contents+"</div></div>";
