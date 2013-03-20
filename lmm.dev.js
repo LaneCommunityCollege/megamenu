@@ -108,7 +108,7 @@ pages['services'] = new Page("Student Services");
 pages['services'].contents = "\
 <div class='lmm_col'>\
     <ul>\
-        <li style='margin-bottom:0'><a href='http://classes.lanecc.edu'><img src='http://www2lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a> <a href='http://mylane.lanecc.edu'><img src='http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
+        <li><a href='http://classes.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a> <a href='http://mylane.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/it/helpdesk'>HelpDesk</a></li>\
         <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
         <li><a href='http://www.lanecc.edu/it/computerlabs'>Computer Labs</a></li>\
@@ -133,6 +133,7 @@ pages['services'].contents = "\
     <h3>Student Support Centers</h3>\
     <ul>\
         <li><a href='http://www.lanecc.edu/atc'>Academic Technology Center</a></li>\
+        <li><a href='http://www.lanecc.edu/math/math-resource-center'>Math Resource Center</a></li>\
         <li><a href='http://www.lanecc.edu/mcc'>Multi-Cultural Center</a></li>\
         <li><a href='http://www.lanecc.edu/trio'>TRiO</a></li>\
     </ul>\

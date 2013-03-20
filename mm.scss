@@ -80,10 +80,17 @@ $resources: "//drupalprojects.dev/mm/images/";
                     margin-right:auto;
                     padding:10px;
                     height:189px;
-                    border-left:rgba(255,255,255,0.35) solid 1px;
-                    border-right:rgba(255,255,255,0.35) solid 1px;
+                    border-left:$border_blue solid 1px;
+                    border-right:$border_blue solid 1px;
                     .lmm_col{
                         float:left;
+                        h3{
+                            border-bottom: $border_blue solid 1px;
+                            margin-bottom:5px;
+                            line-height:17px;
+                            display:inline-block;
+                            width:90%;
+                        }
                         li{
                             text-transform:capitalize;
                             height:auto;
