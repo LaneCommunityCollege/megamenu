@@ -209,14 +209,15 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
         position: absolute;
         bottom: 0;
         left: 0;
-        border-top: #85a3c0 solid 1px;
+        border-top: $background-color solid 1px;
         line-height: 19px;
         cursor: pointer;
+        background-color:$background-color;
     }
     .lmm_close_arrow{
         height: 10px;
         width: 1px;
-        border-bottom: #85a3c0 solid 8px;
+        border-bottom: $background-color solid 8px;
         border-left: transparent solid 10px;
         border-right: transparent solid 10px;
         margin-left: auto;

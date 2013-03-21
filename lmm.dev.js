@@ -210,10 +210,10 @@ pages['about'].contents = "\
 ";
 
 /* These are variables that might need to change at some point */
-var server = "//www2dev.lanecc.edu/custom";
+//var server = "//www2dev.lanecc.edu/custom";
+var server = "//drupalprojects.dev";
 var resources = server+"/mm/images/";
-//var server = "//drupalprojects.dev";
-//var resources = server+"/mm/images/";
+
 
 // This is kinda like Document.ready()
 function loaded(){
