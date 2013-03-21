@@ -173,7 +173,7 @@ pages['connections'].contents = "\
         <li><a href='http://www.lanecc.edu/mediaarts/torch'>The Torch</a></li>\
         <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs</a></li>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
-        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a> <a href='http://www.youtube.com/lanetuberscafe'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/youtube.png' alt='Follow to our Twitter Page'></a></li>\
+        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a> <a href='http://www.youtube.com/lanetuberscafe'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/youtube.png' alt='Follow to our Youtube Page'></a></li>\
     </ul>\
 </div>\
 ";
@@ -215,7 +215,7 @@ pages['about'].contents = "\
 ";
 
 /* These are variables that might need to change at some point */
-var server = "//drupalprojects.dev/";
+var server = "//www2dev.lanecc.edu/custom";
 var resources = server+"/mm/images/";
 
 // This is kinda like Document.ready()

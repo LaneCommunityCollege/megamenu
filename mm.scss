@@ -6,14 +6,14 @@ $gold: #f6bd16;
 $text-color: white;
 $border_blue:#85a3c0;
 
-$resources: "//drupalprojects.dev/mm/images/";
+$resources: "//www2dev.lanecc.edu/custom/mm/images/";
 
 @mixin transparent($color, $alpha) {
   $rgba: rgba($color, $alpha);
-  $ie-hex-str: ie-hex-str($rgba);
+//  $ie-hex-str: ie-hex-str($rgba);
   background-color: transparent;
   background-color: $rgba;
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+//  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
   zoom: 1;
 }
 
