@@ -204,7 +204,7 @@ pages['about'].contents = "\
         <li><a href='http://www.lanecc.edu/locations/downtown-campus'>Downtown Campus</a></li>\
         <li><a href='http://www.lanecc.edu/locations/lane-aviation-academy'>Aviation Academy</a></li>\
         <li><a href='http://www.lanecc.edu/locations/lcc-cottage-grove'>Cottage Grove</a></li>\
-        <li><a href='http://www.lanecc.edu/locations/lcc-florence'>Contact Us</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/lcc-florence'>Florence</a></li>\
     </ul>\
 </div>\
 ";
