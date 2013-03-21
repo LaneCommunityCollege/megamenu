@@ -277,13 +277,13 @@ function loaded(){
         if(wwidth > 1220){
             var width = 1220;
         }
-        leftmargin = (wwidth - width)/2 - 14;
+        leftmargin = Math.floor(wwidth - width) / 2 - 14;
         //keeps us from sliding under the logo
         if(leftmargin < 0){
             leftmargin = 0;
         }
         jQuery('#lmm_cats').css('margin-left', leftmargin);
-        jQuery('.lmm_col').css('width', (width / 3) - 15);
+        jQuery('.lmm_col').css('width', Math.floor(width / 3) - 15);
     }
     updateCats();
     jQuery(window).resize(function(){updateCats();});
