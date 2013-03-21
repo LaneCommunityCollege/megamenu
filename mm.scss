@@ -108,6 +108,16 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
                     }
                 }
             }
+            .lmm_pointer{
+                border-left: transparent solid 5px;
+                border-right: transparent solid 5px;
+                border-bottom: $border_blue solid 8px;
+                width: 1px;
+                left: 42%;
+                top: -6px;
+                position: relative;
+                display:none;
+            }
             &.lmm_toplevel{
                 cursor:pointer;
                 margin-right:5px;
@@ -115,14 +125,9 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
             &.lmm_active{
                 color:$gold;
                 background-color: $background-color;
-                padding-bottom:1px;
-                margin-top:2px;
-                margin-right:3px;
-                border-top: $border_blue solid 1px;
-                border-left: $border_blue solid 1px;
-                border-right: $border_blue solid 1px;
-                border-top-left-radius:5px;
-                border-top-right-radius:5px;
+                .lmm_pointer{
+                    display:block;
+                }
             }
         }
     }
