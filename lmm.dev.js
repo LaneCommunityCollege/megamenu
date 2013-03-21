@@ -26,7 +26,7 @@ function Page(title){
     this.title=title;
 
     this.__str__ = function (){
-        return this.title + "<div class='lmm_pane_container'><div class='lmm_pane'>"+this.contents+"</div></div>";
+        return this.title + "<div class='lmm_pane_container'><div class='lmm_pane'>"+this.contents+"<div class='lmm_closer'>Click to Close</div></div></div>";
     }
 }
 
@@ -112,6 +112,7 @@ pages['services'].contents = "\
         <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
         <li><a href='http://www.lanecc.edu/it/computerlabs'>Computer Labs</a></li>\
         <li><a href='http://www.lanecc.edu/library'>Library</a></li>\
+        <li><a href='http://www.lanecc.edu/psd'>Public Safety</a></li>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/tutor'>Tutoring</a></li>\
         <li><a href='http://classes.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a> <a href='http://mylane.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
     </ul>\
@@ -121,12 +122,11 @@ pages['services'].contents = "\
         <li><a href='http://www.lanecc.edu/healthclinic'>Health Clinic</a></li>\
         <li><a href='http://www.lanecc.edu/studentlife/housing-information'>Housing</a></li>\
         <li><a href='http://www.lanecc.edu/ces/employment-services'>Student Employment</a></li>\
-        <li class='lmm_space'><a href='http://www.lanecc.edu/facilities/transportation'>Transportation</a></li>\
+        <li><a href='http://www.lanecc.edu/facilities/transportation'>Transportation</a></li>\
         <li><a href='http://www.lanecc.edu/cfe/lcfc'>Childcare</a></li>\
         <li><a href='http://www.lanecc.edu/counseling'>Counseling</a></li>\
         <li><a href='http://www.lanecc.edu/disability'>Disability Resources</a></li>\
         <li><a href='http://www.lanecc.edu/veteranservices'>Veterans Services</a></li>\
-        <li><a href='http://www.lanecc.edu/psd'>Public Safety</a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
@@ -215,7 +215,9 @@ pages['about'].contents = "\
 ";
 
 /* These are variables that might need to change at some point */
-var server = "//www2dev.lanecc.edu/custom";
+//var server = "//www2dev.lanecc.edu/custom";
+//var resources = server+"/mm/images/";
+var server = "//drupalprojects.dev";
 var resources = server+"/mm/images/";
 
 // This is kinda like Document.ready()
@@ -322,10 +324,14 @@ function loaded(){
         e.stopPropagation();
         return false;
     });
-    jQuery('#lmm li.lmm_toplevel').children().click(function(e){ e.stopPropagation();});
+    //Stop random pane clicks from closing us, except on the closer
+    jQuery('#lmm li.lmm_toplevel').children().click(function(e){
+        if(!jQuery(e.target).is('div.lmm_closer')){
+            e.stopPropagation();
+        }
+    });
 
-    //allow us to click the background to close whatever's open
-    jQuery('body').delegate('#lmm_underlay', 'click', function(){
+    function commonClose(){
         jQuery('#lmm .lmm_other .lmm_other_pane').each(function(){
             jQuery(this).hide();
         })
@@ -334,6 +340,16 @@ function loaded(){
             height:0
         }, function(){jQuery(this).hide();});        
         jQuery('#lmm_underlay').height(0);
+    }
+
+    //allow us to click the background to close whatever's open
+    jQuery('body').delegate('#lmm_underlay', 'click', function(){
+        commonClose();
+    });
+    //allow us to use the closer to close things
+    jQuery('body').delegate('#lmm .lmm_pane .lmm_closer', 'click', function(){
+        console.log("hi");
+        commonClose();
     });
 
     /* Pop open a search options box */

@@ -75,6 +75,7 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
                 background-color:transparent;
                 .lmm_pane{
                     @include transparent($background-color, 1);
+                    position:relative;
                     width:940px;
                     margin-left:auto;
                     margin-right:auto;
@@ -199,6 +200,17 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
         background-position: center center;
         background-repeat: no-repeat;
         background-image: url($resources + 'tinylogo.png');
+    }
+    .lmm_closer{
+        clear: both;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-top: #85a3c0 solid 1px;
+        line-height: 19px;
+        cursor: pointer;
     }
 }
 
