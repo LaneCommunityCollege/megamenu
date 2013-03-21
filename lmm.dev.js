@@ -35,30 +35,53 @@ pages = {}
 pages['app'] = new Page('Apply & Enroll');
 pages['app'].contents = "\
 <div class='lmm_col'>\
+    <h3><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll</a></h3>\
     <ul>\
-        <li class='lmm_space'><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll</a></li>\
         <li><a href='http://www.lanecc.edu/esfs/admissions'>Admissions</a></li>\
+        <li><a href='http://www.lanecc.edu/testing'>Placement Testing</a></li>\
         <li><a href='http://www.lanecc.edu/counseling'>Counseling & Advising</a></li>\
-        <li><a href='http://www.lanecc.edu/testing'>Testing & Placement</a></li>\
         <li><a href='http://www.lanecc.edu/esfs/registration'>Registration</a></li>\
+        <li><a href='http://mylane.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
     </ul>\
-</div>\
-<div class='lmm_col'>\
+    <h3>Money Matters</h3>\
     <ul>\
         <li><a href='http://www.lanecc.edu/esfs/tuition-fees-and-payments'>Costs & Payments</a></li>\
         <li><a href='http://www.lanecc.edu/finaid'>Financial Aid</a></li>\
-        <li class='lmm_space'><a href='http://www.lanecc.edu/ces/scholarships'>Scholarships</a></li>\
-        <li>Non-Credit Courses</li>\
-        <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
+        <li><a href='http://www.lanecc.edu/ces/scholarships'>Scholarships</a></li>\
+        <li><a href='http://www.lanecc.edu/esfs/refunds'>Refunds</a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
+    <h3>Planning</h3>\
     <ul>\
+        <li><a href='http://www.lanecc.edu/schedule'>Class Schedule</a></li>\
         <li><a href='http://www.lanecc.edu/catalog'>Catalog</a></li>\
         <li><a href='http://www.lanecc.edu/collegecatalog/degrees-and-certificates'>Degrees & Certificates</a></li>\
         <li><a href='http://www.lanecc.edu/pathways'>Career Pathways</a></li>\
-        <li><a href='http://www.lanecc.edu/schedule'>Schedule</a></li>\
-        <li>Grades & Transcripts</li>\
+        <li><a href='http://www.lanecc.edu/pathways'>Learning Communities</a></li>\
+    </ul>\
+    <h3>Work College</h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/cooped'>Cooperative Education</a></li>\
+        <li><a href='http://www.lanecc.edu/ces'>Career & Employment Services</a></li>\
+        <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
+        <li><a href='http://www.lanecc.edu/sl'>Service Learning</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <h3>Resources</h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/calendars/academic-calendar'>Academic Calendar</a></li>\
+        <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
+        <li><a href='http://www.lanecc.edu/it/computerlabs'>Campus Computing</a></li>\
+        <li><a href='http://www.lanecc.edu/cfe/lcfc'>Childcare</a></li>\
+        <li><a href='http://www.lanecc.edu/disability'>Disability Resources</a></li>\
+        <li><a href='http://www.lanecc.edu/studentlife/housing-information'>Housing</a></li>\
+        <li><a href='http://www.lanecc.edu/healthclinic'>Health Clinic</a></li>\
+        <li><a href='http://www.lanecc.edu/library'>Library</a></li>\
+        <li><a href='http://www.lanecc.edu/tutor'>Tutoring</a></li>\
+        <li><a href='http://www.lanecc.edu/facilities/transportation'>Transportation</a></li>\
+        <li><a href='http://www.lanecc.edu/veteranservices'>Veterans Services</a></li>\
     </ul>\
 </div>\
 ";
@@ -66,6 +89,7 @@ pages['app'].contents = "\
 pages['programs'] = new Page("Programs");
 pages['programs'].contents = "\
 <div class='lmm_col'>\
+    <h3>Programs of Study</h3>\
     <ul>\
         <li><a href='http://www.lanecc.edu/advtech'>Advanced Technology</a></li>\
         <li><a href='http://www.lanecc.edu/finarts'>Arts</a></li>\
@@ -74,34 +98,43 @@ pages['programs'].contents = "\
         <li><a href='http://www.lanecc.edu/cit'>Computer Information Technology</a></li>\
         <li><a href='http://www.lanecc.edu/culinary'>Culinary Arts & Hospitality</a></li>\
         <li><a href='http://www.lanecc.edu/hp'>Health Professions</a></li>\
+        <li><a href='http://www.lanecc.edu/healthpe'>Health, Physical Education & Athletics</a></li>\
+        <li><a href='http://www.lanecc.edu/llc'>Language, Literature & Communication</a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/healthpe'>Health, Physical Education & Athletics</a></li>\
-        <li><a href='http://www.lanecc.edu/llc'>Language, Literature & Communication</a></li>\
         <li><a href='http://www.lanecc.edu/math'>Math</a></li>\
         <li><a href='http://www.lanecc.edu/mediaarts'>Media Arts</a></li>\
         <li><a href='http://www.lanecc.edu/perarts'>Music, Dance & Theatre</a></li>\
         <li><a href='http://www.lanecc.edu/science'>Science</a></li>\
         <li><a href='http://www.lanecc.edu/socialscience'>Social Science</a></li>\
     </ul>\
+    <h3>Community Education</h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/ce'>Continuing Education</a></li>\
+        <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
+        <li><a href='http://lanesbdc.com'>Small Business Development Center</a></li>\
+    </ul>\
 </div>\
 <div class='lmm_col'>\
+    <h3>Learning Communities</h3>\
     <ul>\
+        <li><a href=''>Career & Technical Education</a></1i>\
         <li><a href='http://www.lanecc.edu/cooped'>Cooperative Education</a></li>\
+        <li><a href='http://www.lanecc.edu/abse'>GED & Adult Education (ABSE)</a></li>\
+        <li><a href='http://www.lanecc.edu/esl'>English as a Second Language (ESL)</a></li>\
         <li><a href='http://www.lanecc.edu/hsconnections'>High School Connections</a></li>\
-        <li><a href='http://www.lanecc.edu/abse'>GED & ABSE</a></li>\
-        <li><a href='http://www.lanecc.edu/esl'>ESL</a></li>\
         <li><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
         <li><a href='http://www.lanecc.edu/international'>International Students</a></li>\
+        <li><a href='http://www.lanecc.edu/pathways'>Learning Communities</a></li>\
         <li><a href='http://www.lanecc.edu/laneonline'>Online/Hybrid Courses</a></li>\
     </ul>\
 </div>\
 ";
 
-pages['services'] = new Page("Student Services");
-pages['services'].contents = "\
+pages['life'] = new Page("Student Life");
+pages['life'].contents = "\
 <div class='lmm_col'>\
     <ul>\
         <li><a href='http://www.lanecc.edu/it/helpdesk'>HelpDesk</a></li>\
@@ -210,10 +243,9 @@ pages['about'].contents = "\
 ";
 
 /* These are variables that might need to change at some point */
-var server = "//www2dev.lanecc.edu/custom";
+//var server = "//www2dev.lanecc.edu/custom";
+var server = "//drupalprojects.dev";
 var resources = server+"/mm/images/";
-//var server = "//drupalprojects.dev";
-//var resources = server+"/mm/images/";
 
 // This is kinda like Document.ready()
 function loaded(){
