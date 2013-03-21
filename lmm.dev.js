@@ -26,7 +26,7 @@ function Page(title){
     this.title=title;
 
     this.__str__ = function (){
-        return this.title + "<div class='lmm_pane_container'><div class='lmm_pane'>"+this.contents+"<div class='lmm_closer'>Click to Close</div></div></div>";
+        return this.title + "<div class='lmm_pane_container'><div class='lmm_pane'>"+this.contents+"<div class='lmm_closer'><div class='lmm_close_arrow'></div>Click to Close</div></div></div>";
     }
 }
 
