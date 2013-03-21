@@ -91,6 +91,7 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
                             line-height:17px;
                             display:inline-block;
                             width:90%;
+                            font-weight:bold;
                         }
                         li{
                             text-transform:capitalize;
@@ -99,7 +100,7 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
                             display:list-item;
                             line-height:1.2em;
                             margin-bottom:2px;
-                            font-size:1.1em;
+                            font-size:1.05em;
                             &.lmm_space{
                                 margin-bottom:1em;
                             }

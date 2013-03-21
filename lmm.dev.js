@@ -37,25 +37,21 @@ pages['app'].contents = "\
 <div class='lmm_col'>\
     <ul>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll</a></li>\
-\
         <li><a href='http://www.lanecc.edu/esfs/admissions'>Admissions</a></li>\
         <li><a href='http://www.lanecc.edu/counseling'>Counseling & Advising</a></li>\
         <li><a href='http://www.lanecc.edu/testing'>Testing & Placement</a></li>\
         <li><a href='http://www.lanecc.edu/esfs/registration'>Registration</a></li>\
     </ul>\
 </div>\
-\
 <div class='lmm_col'>\
     <ul>\
         <li><a href='http://www.lanecc.edu/esfs/tuition-fees-and-payments'>Costs & Payments</a></li>\
         <li><a href='http://www.lanecc.edu/finaid'>Financial Aid</a></li>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/ces/scholarships'>Scholarships</a></li>\
-\
         <li>Non-Credit Courses</li>\
         <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
     </ul>\
 </div>\
-\
 <div class='lmm_col'>\
     <ul>\
         <li><a href='http://www.lanecc.edu/catalog'>Catalog</a></li>\
@@ -140,7 +136,6 @@ pages['services'].contents = "\
 </div>\
 ";
 
-
 pages['connections'] = new Page("Connections");
 pages['connections'].contents = "\
 <div class='lmm_col'>\
@@ -215,10 +210,10 @@ pages['about'].contents = "\
 ";
 
 /* These are variables that might need to change at some point */
-//var server = "//www2dev.lanecc.edu/custom";
-//var resources = server+"/mm/images/";
-var server = "//drupalprojects.dev";
+var server = "//www2dev.lanecc.edu/custom";
 var resources = server+"/mm/images/";
+//var server = "//drupalprojects.dev";
+//var resources = server+"/mm/images/";
 
 // This is kinda like Document.ready()
 function loaded(){
@@ -227,33 +222,33 @@ function loaded(){
     var cHeight = 0;
     jQuery('body').prepend('<div id="lmm"></div>');
     var menu = 
-        '<div id="lmm_logo" class="lmm_other">'+
-            '<div id="lmm_homes_page" class="lmm_other_pane">'+
-                '<ul>'+
-                    '<li><a href="http://www.lanecc.edu">Home</a></li>'+
-                    '<li><a href="http://www.lanecc.edu/students">Current Students</a></li>'+
-                    '<li><a href="http://www.lanecc.edu/future">Future Students</a></li>'+
-                    '<li><a href="http://www.lanecc.edu/community">Community</a></li>'+
-                    '<li><a href="http://www.lanecc.edu/employees">Employees</a></li>'+
-                '</ul>'+
-            '</div>'+
-        '</div><ul id="lmm_cats">';
+        '<div id="lmm_logo" class="lmm_other">\
+            <div id="lmm_homes_page" class="lmm_other_pane">\
+                <ul>\
+                    <li><a href="http://www.lanecc.edu">Home</a></li>\
+                    <li><a href="http://www.lanecc.edu/students">Current Students</a></li>\
+                    <li><a href="http://www.lanecc.edu/future">Future Students</a></li>\
+                    <li><a href="http://www.lanecc.edu/community">Community</a></li>\
+                    <li><a href="http://www.lanecc.edu/employees">Employees</a></li>\
+                </ul>\
+            </div>\
+        </div><ul id="lmm_cats">';
     for(var key in pages){
         menu += "<li id='lmm_" + key + "' class='lmm_toplevel'>"+ pages[key].__str__() + "</li>";
     }
-    menu += '</ul>';
-    menu +=
-            '<div id="lmm_search" class="lmm_other">' +
-                '<form id="lmm_search_form" name="search_lane_new_home_page" method="get" action="http://search.lanecc.edu/search">'+
-                    '<label for="q" style="position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;">Search Lane\'s Website</label>'+
-                    '<input type="text" name="q" id="lmm_q" placeholder="Search or AskLane">'+
-                    '<input type="submit" value="" id="lmm_search_submit">'+
-                '</form>'+
-                '<div id="lmm_searchops" class="lmm_min lmm_other_pane">'+
-                    '<label for="lmm_search_web"><input name="dest" class="lmm_so" type="radio" id="lmm_search_web" checked="checked">Lane Website</label>'+
-                    '<label for="lmm_search_asklane"><input name="dest" class="lmm_so" type="radio" id="lmm_search_asklane">AskLane</label>'+
-                '</div>'+
-            '</div>';
+    menu += 
+        '</ul>\
+        <div id="lmm_search" class="lmm_other">\
+            <form id="lmm_search_form" name="search_lane_new_home_page" method="get" action="http://search.lanecc.edu/search">\
+                <label for="q" style="position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;">Search Lane\'s Website</label>\
+                <input type="text" name="q" id="lmm_q" placeholder="Search or AskLane">\
+                <input type="submit" value="" id="lmm_search_submit">\
+            </form>\
+            <div id="lmm_searchops" class="lmm_min lmm_other_pane">\
+                <label for="lmm_search_web"><input name="dest" class="lmm_so" type="radio" id="lmm_search_web" checked="checked">Lane Website</label>\
+                <label for="lmm_search_asklane"><input name="dest" class="lmm_so" type="radio" id="lmm_search_asklane">AskLane</label>\
+            </div>\
+        </div>';
     jQuery('#lmm').append(menu);
     jQuery('#lmm').after('<div id="lmm_pane_underlay"></div>');
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
@@ -285,7 +280,7 @@ function loaded(){
             leftmargin = 0;
         }
         jQuery('#lmm_cats').css('margin-left', leftmargin);
-        jQuery('.lmm_col').css('width', Math.floor(width / 3) - 15);
+        jQuery('.lmm_col').css('width', Math.floor(width / 3) - 18);
     }
     updateCats();
     jQuery(window).resize(function(){updateCats();});
