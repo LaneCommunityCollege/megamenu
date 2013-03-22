@@ -74,13 +74,14 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
                 color:white;
                 background-color:transparent;
                 .lmm_pane{
-                    @include transparent($background-color, 1);
+//                    @include transparent($background-color, 1);
+                    background-image:url($resources + 'tarp.png');
                     position:relative;
                     width:940px;
                     margin-left:auto;
                     margin-right:auto;
                     padding:10px;
-                    height:189px;
+                    height:254px;
                     border-left:$border_blue solid 1px;
                     border-right:$border_blue solid 1px;
                     .lmm_col{
@@ -100,7 +101,7 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
                             display:list-item;
                             line-height:1.2em;
                             margin-bottom:2px;
-                            font-size:1.05em;
+                            font-size:1em;
                             &.lmm_space{
                                 margin-bottom:1em;
                             }

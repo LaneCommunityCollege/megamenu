@@ -58,7 +58,7 @@ pages['app'].contents = "\
         <li><a href='http://www.lanecc.edu/catalog'>Catalog</a></li>\
         <li><a href='http://www.lanecc.edu/collegecatalog/degrees-and-certificates'>Degrees & Certificates</a></li>\
         <li><a href='http://www.lanecc.edu/pathways'>Career Pathways</a></li>\
-        <li><a href='http://www.lanecc.edu/pathways'>Learning Communities</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/lc'>Learning Communities</a></li>\
     </ul>\
     <h3>Work College</h3>\
     <ul>\
@@ -72,15 +72,15 @@ pages['app'].contents = "\
     <h3>Resources</h3>\
     <ul>\
         <li><a href='http://www.lanecc.edu/calendars/academic-calendar'>Academic Calendar</a></li>\
-        <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
         <li><a href='http://www.lanecc.edu/it/computerlabs'>Campus Computing</a></li>\
         <li><a href='http://www.lanecc.edu/cfe/lcfc'>Childcare</a></li>\
         <li><a href='http://www.lanecc.edu/disability'>Disability Resources</a></li>\
         <li><a href='http://www.lanecc.edu/studentlife/housing-information'>Housing</a></li>\
         <li><a href='http://www.lanecc.edu/healthclinic'>Health Clinic</a></li>\
         <li><a href='http://www.lanecc.edu/library'>Library</a></li>\
-        <li><a href='http://www.lanecc.edu/tutor'>Tutoring</a></li>\
+        <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
         <li><a href='http://www.lanecc.edu/facilities/transportation'>Transportation</a></li>\
+        <li><a href='http://www.lanecc.edu/tutor'>Tutoring</a></li>\
         <li><a href='http://www.lanecc.edu/veteranservices'>Veterans Services</a></li>\
     </ul>\
 </div>\
@@ -104,11 +104,11 @@ pages['programs'].contents = "\
 </div>\
 <div class='lmm_col'>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/math'>Math</a></li>\
+        <li style='margin-top:1em'><a href='http://www.lanecc.edu/math'>Math</a></li>\
         <li><a href='http://www.lanecc.edu/mediaarts'>Media Arts</a></li>\
         <li><a href='http://www.lanecc.edu/perarts'>Music, Dance & Theatre</a></li>\
         <li><a href='http://www.lanecc.edu/science'>Science</a></li>\
-        <li><a href='http://www.lanecc.edu/socialscience'>Social Science</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/socialscience'>Social Science</a></li>\
     </ul>\
     <h3>Community Education</h3>\
     <ul>\
@@ -136,35 +136,47 @@ pages['programs'].contents = "\
 pages['life'] = new Page("Student Life");
 pages['life'].contents = "\
 <div class='lmm_col'>\
+    <h3>Life & Family</h3>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/it/helpdesk'>HelpDesk</a></li>\
-        <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
-        <li><a href='http://www.lanecc.edu/it/computerlabs'>Computer Labs</a></li>\
-        <li><a href='http://www.lanecc.edu/library'>Library</a></li>\
-        <li><a href='http://www.lanecc.edu/psd'>Public Safety</a></li>\
-        <li class='lmm_space'><a href='http://www.lanecc.edu/tutor'>Tutoring</a></li>\
-        <li><a href='http://classes.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a> <a href='http://mylane.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
-    </ul>\
-</div>\
-<div class='lmm_col'>\
-    <ul>\
-        <li><a href='http://www.lanecc.edu/healthclinic'>Health Clinic</a></li>\
-        <li><a href='http://www.lanecc.edu/studentlife/housing-information'>Housing</a></li>\
-        <li><a href='http://www.lanecc.edu/ces/employment-services'>Student Employment</a></li>\
-        <li><a href='http://www.lanecc.edu/facilities/transportation'>Transportation</a></li>\
         <li><a href='http://www.lanecc.edu/cfe/lcfc'>Childcare</a></li>\
         <li><a href='http://www.lanecc.edu/counseling'>Counseling</a></li>\
         <li><a href='http://www.lanecc.edu/disability'>Disability Resources</a></li>\
+        <li><a href='http://www.lanecc.edu/healthclinic'>Health Clinic</a></li>\
+        <li><a href='http://www.lanecc.edu/mcc'>Multi-Cultural Center</a></li>\
+        <li><a href='http://www.lanecc.edu/psd'>Public Safety</a></li>\
+        <li><a href='http://www.lanecc.edu/ces/employment-services'>Student Employment</a></li>\
+        <li><a href='http://www.lanecc.edu/facilities/transportation'>Transportation</a></li>\
         <li><a href='http://www.lanecc.edu/veteranservices'>Veterans Services</a></li>\
+        <li><a href='http://www.lanecc.edu/wp/womens-centers'>Women's Center</a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
-    <h3>Student Support Centers</h3>\
+    <h3>Campus Life</h3>\
+    <ul>\
+        <li><a href='http://www.lanetitans.net'>Athletics</a></li>\
+        <li><a href='http://www.lanecc.edu/fec'>Fitness Center</a></li>\
+        <li><a href='http://www.lanecc.edu/ptk'>Phi Theta Kappa</a></li>\
+        <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs</a></li>\
+        <li><a href='http://www.lanecc.edu/aslcc'>Student Government</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/mediaarts/torch'>The Torch</a></li>\
+        <li class='lmm_space'><a href='http://mylane.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a> <a href='http://classes.lanecc.edu'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a></li>\
+        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a> <a href='http://www.youtube.com/lanetuberscafe'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/youtube.png' alt='Follow to our Twitter Page'></a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <h3>Resource Centers</h3>\
     <ul>\
         <li><a href='http://www.lanecc.edu/atc'>Academic Technology Center</a></li>\
+        <li><a href='http://www.lanecc.edu/business'>Business & CIT</a></li>\
+        <li><a href='http://www.lanecc.edu/it/computerlabs'>Computer Labs</a></li>\
+        <li><a href='http://www.lanecc.edu/library'>Library</a></li>\
         <li><a href='http://www.lanecc.edu/math/math-resource-center'>Math Resource Center</a></li>\
-        <li><a href='http://www.lanecc.edu/mcc'>Multi-Cultural Center</a></li>\
+        <li><a href='http://www.lanecc.edu/math/src'>Science Resource Center</a></li>\
+        <li><a href='http://www.lanecc.edu/socialscience/testing'>Social Science Testing</a></li>\
+        <li>Student Help Desk</li>\
+        <li><a href='http://titanstore.lanecc.edu'>Titan Store</a></li>\
         <li><a href='http://www.lanecc.edu/trio'>TRiO</a></li>\
+        <li><a href='http://www.lanecc.edu/tutor'>Tutoring</a></li>\
     </ul>\
 </div>\
 ";
@@ -172,36 +184,49 @@ pages['life'].contents = "\
 pages['connections'] = new Page("Connections");
 pages['connections'].contents = "\
 <div class='lmm_col'>\
+    <h3>Current Events</h3>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/calendars/academic-calendar'>Academic Calendar</a></li>\
-        <li><a href='http://www.lanecc.edu/laneevents'>Events Calendar</a></li>\
-        <li class='lmm_space'>News Room</li>\
         <li>Arts & Cultural Events</li>\
-        <li><a href='http://lanesbdc.com/'>Lane SBDC</a></li>\
-        <li><a href='http://klcc.org/'>KLCC</a></li>\
         <li><a href='http://www.lanetitans.net'>Athletics</a></li>\
+        <li><a href='http://www.lanecc.edu/laneevents'>Events Calendar</a></li>\
+        <li>News Room</li>\
+    </ul>\
+    <h3>Job & Career</h3>\
+    <ul>\
+        <li><a href='http://jobs.lanecc.edu'>Employment at Lane</a></li>\
+        <li>Career & Technical Programs</li>\
+        <li><a href='http://www.lanecc.edu/ce/careertraining'>Career Training</a></li>\
+        <li><a href='http://www.lanecc.edu/ces'>Career & Employment Services</a></li>\
+        <li><a href='http://www.lanecc.edu/pathways'>Career Pathways</a></li>\
+        <li><a href='http://www.lanecc.edu/wdd'>Workforce Development</a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
     <h3>Community</h3>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/foundation'>Foundation & Alumni Relations</a></li>\
+        <li><a href='http://www.lanecc.edu/foundation'>Foundation & Alumni</a></li>\
         <li><a href='http://www.lanecc.edu/hsconnections'>High School Connections</a></li>\
         <li><a href='http://www.lanecc.edu/center'>Center for Meeting & Learning</a></li>\
         <li><a href='http://www.lanecc.edu/ce'>Community Education</a></li>\
-        <li><a href='http://www.lanecc.edu/sustainability'>Institute for Sustainable Practices</a></li>\
         <li><a href='http://www.lanecc.edu/longhouse'>Longhouse</a></li>\
-        <li><a href='http://www.lanecc.edu/peacecenter'>Peace Center</a></li>\
+        <li><a href='http://klcc.org/'>KLCC</a></li>\
+        <li class='lmm_space'><a href='http://lanesbdc.com'>Small Business Development Center</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/lcc-cottage-grove'>Cottage Grove</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/downtown-campus'>Downtown Campus</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/lcc-florence'>Florence</a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
-    <h3>Student Life</h3>\
+    <h3>Institutes & Initiatives</h3>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/aslcc'>Student Government</a></li>\
-        <li><a href='http://www.lanecc.edu/mediaarts/torch'>The Torch</a></li>\
-        <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs</a></li>\
-        <li class='lmm_space'><a href='http://www.lanecc.edu/honors'>Honors Program</a></li>\
-        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a> <a href='http://www.youtube.com/lanetuberscafe'><img src='http://www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/youtube.png' alt='Follow to our Youtube Page'></a></li>\
+        <li><a href='http://www.lanecc.edu/sustainability'>Institute for Sustainable Practices</a></li>\
+        <li><a href='http://www.nweei.org/'>Northwest Energy Education Institute</a></li>\
+        <li><a href='http://www.lanecc.edu/diversity/odi'>Oregon Diversity Institute</a></li>\
+        <li><a href='http://www.lanecc.edu/peacecenter'>Peace Center</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/sai'>Successful Aging Institute</a></li>\
+        <li>Achieving the Dream (ATD)</li>\
+        <li><a href='http://oregondqp.org'>Oregon Degree Qualifications Profile</a></li>\
+        <li><a href='http://pln.lanecc.net/studentsuccess'>Student Success</a></li>\
     </ul>\
 </div>\
 ";
@@ -213,38 +238,50 @@ pages['about'].contents = "\
         <li>Overview</li>\
         <li><a href='http://www.lanecc.edu/research/planning/strategic-plan'>Vision, Values & Mission</a></li>\
         <li><a href='http://www.lanecc.edu/accreditation'>Accreditation & Planning</a></li>\
-        <li class='lmm_space'><a href='https://apps.lanecc.edu/scorecard'>Institutional Scorecard</a></li>\
-        <li><a href='http://www.lanecc.edu/copps'>Policies & Procedures</a></li>\
-        <li><a href='http://www.lanecc.edu/board'>Board of Education</a></li>\
-        <li><a href='http://www.lanecc.edu/president'>Office of the President</a></li>\
-        <li><a href='http://www.lanecc.edu/governance'>College Governance</a></li>\
+        <li><a href='https://apps.lanecc.edu/scorecard'>Institutional Scorecard</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/research/planning/strategic-plan'>Strategic Planning</a></li>\
     </ul>\
-</div>\
-<div class='lmm_col'>\
-    <ul>\
-        <li>College Operations</li>\
-        <li><a href='http://www.lanecc.edu/accreditation'>Accreditation & Planning</a></li>\
-        <li><a href='http://www.lanecc.edu/research/ir/lcc-organizational-charts'>Organizational Chart</a></li>\
-        <li><a href='http://jobs.lanecc.edu'>Employment</a></li>\
-        <li><a href='http://www.lanecc.edu/mpr'>Public Relations</a></li>\
-        <li><a href='http://www.lanecc.edu/contact'>Contact Us</a></li>\
-    </ul>\
-</div>\
-<div class='lmm_col'>\
     <h3><a href='http://www.lanecc.edu/locations'>Maps & Locations</a></h3>\
     <ul>\
         <li><a href='http://www.lanecc.edu/locations/main-campus'>Main Campus</a></li>\
-        <li><a href='http://www.lanecc.edu/locations/downtown-campus'>Downtown Campus</a></li>\
-        <li><a href='http://www.lanecc.edu/locations/lane-aviation-academy'>Aviation Academy</a></li>\
         <li><a href='http://www.lanecc.edu/locations/lcc-cottage-grove'>Cottage Grove</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/downtown-campus'>Downtown Campus</a></li>\
         <li><a href='http://www.lanecc.edu/locations/lcc-florence'>Florence</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <h3>Leadership</h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/board'>Board of Education</a></li>\
+        <li><a href='http://www.lanecc.edu/president'>Office of the President</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/asa'>Academic & Student Affairs</a></li>\
+        <li><a href='http://www.lanecc.edu/governance'>College Governance</a></li>\
+        <li>Classified Union</li>\
+        <li><a href='http://lccea.lanecc.edu/'>Faculty Union</a></li>\
+        <li><a href='http://www.lanecc.edu/aslcc'>Student Government</a></li>\
+        <li><a href='http://www.lanecc.edu/hr/employee-and-labor-relations'>Employee and Labor Relations</a></li>\
+    </ul>\
+</div>\
+<div class='lmm_col'>\
+    <h3>College Operations</h3>\
+    <ul>\
+        <li><a href='http://www.lanecc.edu/copps'>Policies & Procedures</a></li>\
+        <li class='lmm_space'><a href='http://www.lanecc.edu/research/ir/lcc-organizational-charts'>Organizational Chart</a></li>\
+        <li><a href='http://www.lanecc.edu/budget'>Budget Office</a></li>\
+        <li><a href='http://www.lanecc.edu/collfin'>College Finance</a></li>\
+        <li><a href='http://www.lanecc.edu/hr'>Human Resources</a></li>\
+        <li><a href='http://www.lanecc.edu/it'>Information and Academic Technology</a></li>\
+        <li><a href='http://www.lanecc.edu/mpr'>Marketing & Public Relations</a></li>\
+        <li><a href='http://www.lanecc.edu/facilities'>Facilities Management & Planning</a></li>\
+        <li><a href='http://www.lanecc.edu/pg'>Printing & Graphics</a></li>\
+        <li><a href='http://www.lanecc.edu/psd'>Public Safety</a></li>\
     </ul>\
 </div>\
 ";
 
 /* These are variables that might need to change at some point */
-//var server = "//www2dev.lanecc.edu/custom";
-var server = "//drupalprojects.dev";
+var server = "//www2dev.lanecc.edu/custom";
+//var server = "//drupalprojects.dev";
 var resources = server+"/mm/images/";
 
 // This is kinda like Document.ready()
@@ -334,7 +371,7 @@ function loaded(){
         else if(jQuery('.lmm_pane_container:visible').length > 0 && lastaction != 'close'){
             lastaction = 'swap'
             var oldPane = jQuery('.lmm_pane_container:visible').not(clickedPane);
-            clickedPane.height(209);
+            clickedPane.height(254);
             oldPane.stop().fadeOut(200)
             clickedPane.fadeIn(200);
             oldPane.height(0);
@@ -345,7 +382,7 @@ function loaded(){
             lastaction = 'open'
             jQuery('#lmm_underlay').height(window.innerHeight);
             clickedPane.add(jQuery('#lmm_pane_underlay')).show().stop().animate({
-                height: 210
+                height: 275
             });
         }
         e.stopPropagation();
