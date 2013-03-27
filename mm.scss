@@ -6,7 +6,7 @@ $gold: #f6bd16;
 $text-color: white;
 $border_blue:#85a3c0;
 
-$resources: "//www2dev.lanecc.edu/custom/mm/images/";
+$resources: "//www2.lanecc.edu/custom/mm/images/";
 
 @mixin transparent($color, $alpha) {
   $rgba: rgba($color, $alpha);
@@ -95,7 +95,7 @@ $resources: "//www2dev.lanecc.edu/custom/mm/images/";
                             font-weight:bold;
                         }
                         li{
-                            text-transform:capitalize;
+                            text-transform:none;
                             height:auto;
                             text-align:left;
                             display:list-item;
