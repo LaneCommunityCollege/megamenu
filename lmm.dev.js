@@ -11,7 +11,7 @@ function initJQuery() {
             jQueryScriptOutputted = true;
             document.write("<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>");
         }
-        setTimeout("initJQuery()", 50);
+        setTimeout(initJQuery, 50);
     } 
     else {            
         jQuery(function() {  
@@ -35,13 +35,13 @@ pages = {}
 pages['app'] = new Page('Apply & Enroll');
 pages['app'].contents = "\
 <div class='lmm_col'>\
-    <h3><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll</a></h3>\
+    <h3><a href='http://www.lanecc.edu/esfs/admissions'></a>Admissions</h3>\
     <ul>\
-        <li><a href='http://www.lanecc.edu/esfs/admissions'>Admissions</a></li>\
+        <li><a href='http://www.lanecc.edu/counseling/steps-enroll'>Steps to Enroll</a></li>\
         <li><a href='http://www.lanecc.edu/testing/placement-testing-information'>Placement Testing</a></li>\
         <li><a href='http://www.lanecc.edu/counseling'>Counseling & Advising</a></li>\
         <li><a href='http://www.lanecc.edu/esfs/registration'>Registration</a></li>\
-        <li><a href='http://mylane.lanecc.edu'><img src='//www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a></li>\
+        <li><a href='http://mylane.lanecc.edu' title='myLane'><div class='lmm_mylane lmm_sprite'></div></a></li>\
     </ul>\
     <h3>Money Matters</h3>\
     <ul>\
@@ -161,8 +161,8 @@ pages['life'].contents = "\
         <li><a href='http://www.lanecc.edu/aslcc/student-clubs'>Student Clubs</a></li>\
         <li><a href='http://www.lanecc.edu/aslcc'>Student Government</a></li>\
         <li class='lmm_space'><a href='http://www.lanecc.edu/mediaarts/torch'>The Torch</a></li>\
-        <li class='lmm_space'><a href='http://mylane.lanecc.edu'><img src='//www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/mylane_icon.png' alt='follow to visit myLane'></a> <a href='http://classes.lanecc.edu'><img src='//www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/moodle_icon.png' alt='follow to visit Moodle'></a></li>\
-        <li><a href='https://www.facebook.com/LaneCommunityCollege'><img src='//www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/facebook.png' alt='Follow to our Facebook Page'></a> <a href='http://twitter.com/#!/LaneTitans'><img src='//www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/twitter.png' alt='Follow to our Twitter Page'></a> <a href='http://www.youtube.com/lanetuberscafe'><img src='//www.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/icons/youtube.png' alt='Follow to our Twitter Page'></a></li>\
+        <li class='lmm_space'><a href='http://mylane.lanecc.edu' title='myLane'><div class='lmm_mylane lmm_sprite'></div></a> <a href='http://classes.lanecc.edu' title='Moodle'><div class='lmm_moodle lmm_sprite'></div></a></li>\
+        <li><a href='https://www.facebook.com/LaneCommunityCollege' title='Visit us on Facebook'><div class='lmm_facebook lmm_sprite'></div></a> <a href='http://twitter.com/#!/LaneTitans' title='Visit us on Twitter'><div class='lmm_twitter lmm_sprite'></div></a> <a href='http://www.youtube.com/lanetuberscafe' title='Visit us on YouTube'><div class='lmm_youtube lmm_sprite'></div></a></li>\
     </ul>\
 </div>\
 <div class='lmm_col'>\
@@ -245,6 +245,7 @@ pages['about'].contents = "\
     <h3><a href='http://www.lanecc.edu/locations'>Maps & Locations</a></h3>\
     <ul>\
         <li><a href='http://www.lanecc.edu/locations/main-campus'>Main Campus</a></li>\
+        <li><a href='http://www.lanecc.edu/locations/lane-aviation-academy'>Aviation Academy</a></li>\
         <li><a href='http://www.lanecc.edu/locations/lcc-cottage-grove'>Cottage Grove</a></li>\
         <li><a href='http://www.lanecc.edu/locations/downtown-campus'>Downtown Campus</a></li>\
         <li><a href='http://www.lanecc.edu/locations/lcc-florence'>Florence</a></li>\
@@ -287,10 +288,10 @@ var resources = server+"/mm/images/";
 
 // This is kinda like Document.ready()
 function loaded(){
-    jQuery('head').append('<link rel="stylesheet" type="text/css" href="'+server+'/mm/mm.min.css">');
+    jQuery('head').append('<style type="text/css" media="all">{$cssmin}</style>');
     var current_url = window.location.pathname;
     var cHeight = 0;
-    jQuery('body').prepend('<div id="lmm"></div>');
+    jQuery('body').append('<div id="lmm"></div>');
     var menu = 
         '<div id="lmm_logo" class="lmm_other">\
             <div id="lmm_homes_page" class="lmm_other_pane">\

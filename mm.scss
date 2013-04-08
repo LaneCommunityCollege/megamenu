@@ -1,3 +1,5 @@
+$resources2: "http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/";
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 $background-color: #03396a;
@@ -29,6 +31,9 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
 @import "reset";
 
 #lmm{
+    div{
+        color:$text-color;
+    }
     &.hideMobile{
         display:none !important;
     }
@@ -40,7 +45,6 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
     background-color: $background-color;
     color:$text-color;
     height:28px;
-    border-bottom:$border_blue solid 1px;
     a, a:visited, a:active{
         cursor:pointer;
         color:white;
@@ -49,7 +53,40 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
             text-decoration:underline;
         }
     }
-   #lmm_cats{
+    .lmm_other_pane{
+        cursor:default;
+        text-align:left;
+        display:none;
+        background-color: $background-color;
+        border: $text-color solid 1px;
+        border-radius:15px;
+        padding:9px;
+        line-height:1.5em;
+    }
+    .lmm_closer{
+        clear: both;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-top: $background-color solid 1px;
+        line-height: 19px;
+        cursor: pointer;
+        background-color:$background-color;
+    }
+    .lmm_close_arrow{
+        height: 10px;
+        width: 1px;
+        border-bottom: $background-color solid 8px;
+        border-left: transparent solid 10px;
+        border-right: transparent solid 10px;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 0;
+        margin-top: -19px;
+    }
+    #lmm_cats{
         float:left;
         li{
             text-align:left;
@@ -60,22 +97,21 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
             text-transform:uppercase;
             font-size:14px;
             height:26px;
-            line-height:26px;
+            line-height:27px;
             vertical-align:top;
             .lmm_pane_container{
                 display:none;
                 position:absolute;
-                top:29px;
+                top:28px;
                 left:0;
                 width:100%;
                 cursor:auto;
                 height:0px;
                 text-align:left;
-                color:white;
                 background-color:transparent;
                 .lmm_pane{
-//                    @include transparent($background-color, 1);
-                    background-image:url($resources + 'tarp.png');
+                    border-top:$border_blue solid 1px;
+                    background-image:url($resources + "tarp.png");
                     position:relative;
                     width:940px;
                     margin-left:auto;
@@ -115,7 +151,7 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
                 border-bottom: $border_blue solid 8px;
                 width: 1px;
                 left: 42%;
-                top: -6px;
+                top: -7px;
                 position: relative;
                 display:none;
             }
@@ -132,18 +168,9 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
             }
         }
     }
-    .lmm_other_pane{
-        cursor:default;
-        text-align:left;
-        display:none;
-        background-color: $background-color;
-        border: $text-color solid 1px;
-        border-radius:15px;
-        padding:9px;
-        line-height:1.5em;
-    }
+
     #lmm_search{
-        width:210px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+        width:212px; //needs to be here, otherwise the box seems to grow by 1px when clicked
         float:right;
         line-height:normal;
         margin-top:2px;
@@ -160,7 +187,8 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
                 }
             }
             #lmm_search_submit{
-                background-image: url($resources + "btn-search.gif");
+                background-image: url($resources + "sprite.png");
+                background-position: 52px 0px;
                 border: solid 0px #000000;
                 width:23px;
                 height:23px;
@@ -170,6 +198,7 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
             }
         }
     }
+
     #lmm_searchops{
         margin-top:7px;
         margin-right:2px;
@@ -204,33 +233,45 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
         text-align:center;
         min-width:0px;
         border-right: $border_blue solid 1px;
-        background-position: center center;
         background-repeat: no-repeat;
-        background-image: url($resources + 'tinylogo.png');
+        background-image: url($resources + "sprite.png");
+        background-position: -119px 3px;
     }
-    .lmm_closer{
-        clear: both;
-        width: 100%;
-        text-align: center;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-top: $background-color solid 1px;
-        line-height: 19px;
-        cursor: pointer;
-        background-color:$background-color;
-    }
-    .lmm_close_arrow{
-        height: 10px;
-        width: 1px;
-        border-bottom: $background-color solid 8px;
-        border-left: transparent solid 10px;
-        border-right: transparent solid 10px;
-        margin-left: auto;
-        margin-right: auto;
-        bottom: 0;
-        margin-top: -19px;
-    }
+}
+
+.lmm_moodle{
+    width:72px;
+    height:31px;
+    background-position: 0px 31px;
+}
+
+.lmm_mylane{
+    width:72px;
+    height:31px;
+    background-position:76px 31px;
+}
+
+.lmm_facebook{
+    width:32px;
+    height:32px;
+    background-position:0px 0px;
+}
+
+.lmm_twitter{
+    width:32px;
+    height:32px;
+    background-position:-32px 0px;
+}
+
+.lmm_youtube{
+    width:32px;
+    height:32px;
+    background-position:-64px 0px;
+}
+
+.lmm_sprite{
+    background-image: url($resources + "sprite.png");
+    display:inline-block;
 }
 
 #lmm_pane_underlay{
@@ -244,11 +285,12 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
     top:28px;
     left:0px;
     z-index:8999;
+    display:none;
     border-bottom: $border_blue solid 1px;
 }
 
 /* These mean that the global stylesheet (this one) applies to IE8
- * if your phone is fancy, it'll get the 'mobile' sheet. Then there's two
+ * if your phone is fancy, it"ll get the "mobile" sheet. Then there"s two
  * other sheets for big screens.
  */
 @media all and (max-width: 740px){
