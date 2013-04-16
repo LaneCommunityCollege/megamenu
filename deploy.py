@@ -12,6 +12,21 @@ except OSError as e:
     else:
         raise
 
+#grab panehtml
+htmlvars = {}
+with open('html.html') as phtml:
+    lines = [x.strip() for x in phtml.readlines()]
+    for line in lines:
+        if line.startswith("<!--"):
+            curvar = line[line.find('<!--')+5:line.rfind(' -->')]
+        elif curvar not in htmlvars:
+            htmlvars[curvar] = line
+        else:
+            try:
+                htmlvars[curvar] += line
+            except KeyError:
+                exit("html file format error, found %s" % line)
+
 #open the cssfile. We're won't write a prod css file,
 #because we already have it - the dev file is sass
 cssf = open('mm.css').read()
@@ -24,6 +39,9 @@ devf = open('lmm.dev.js').read()
 
 #Find and replace variables in the JavaScript, of the form {$[A-Za-z]}
 devf = devf.replace('{$cssmin}', cm)
+#Find and replace our html variables
+for k,v in htmlvars.iteritems():
+    devf = devf.replace('{$' + k + '}', v)
 
 #just write it to the full prod file
 #(so we can let other people use it to debug on their site)
