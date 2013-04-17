@@ -252,9 +252,13 @@
 <form id='lmm_search_form' name='search_lane_new_home_page' method='get' action='http://search.lanecc.edu/search'>
     <label for='q' style='position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;'>Search Lane's Website</label>
     <input type='text' name='q' id='lmm_q' placeholder='Search or AskLane'>
-    <input type='submit' value='' id='lmm_search_submit'>
+    <input type='submit' value='' id='lmm_search_submit' name='sa'>
+    <input type='hidden' name='site' value='default_collection'>
+    <input type='hidden' name='client' value='default_frontend'>
+    <input type='hidden' name='proxystylesheet' value='default_frontend'>
+    <input type='hidden' name='output' value='xml_no_dtd'>
 </form>
 <div id='lmm_searchops' class='lmm_min lmm_other_pane'>
-    <label for='lmm_search_web'><input name='dest' class='lmm_so' type='radio' id='lmm_search_web' checked='checked'>Lane Website</label>
-    <label for='lmm_search_asklane'><input name='dest' class='lmm_so' type='radio' id='lmm_search_asklane'>AskLane</label>
+    <label for='lmm_search_web'><input name='dest' type='radio' id='lmm_search_web' checked='checked'>Lane Website</label>
+    <label for='lmm_search_asklane'><input name='dest' type='radio' id='lmm_search_asklane'>AskLane</label>
 </div>

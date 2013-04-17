@@ -192,8 +192,8 @@ function loaded(){
      * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isnt' able to correctly set
      * form actions
      */
-    jQuery('body').delegate('.lmm_so', 'click',function(e){
-        var dest = jQuery('.lmm_so:checked').attr('id');
+    jQuery('body').delegate('#lmm_searchops input', 'click',function(e){
+        var dest = jQuery('#lmm_searchops input:checked').attr('id');
         if(dest == "lmm_search_web"){
         //remove existing temp form fields that may or may not be needed
         jQuery('.lmm_temp').remove();
