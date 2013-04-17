@@ -85,8 +85,8 @@ function loaded(){
         if(wwidth > 990){
             var width = 980;
         }
-        if(wwidth > 1220){
-            var width = 1220;
+        if(wwidth > 1440){
+            var width = 1440;
         }
         leftmargin = Math.floor(wwidth - width) / 2 - 14;
         //keeps us from sliding under the logo
