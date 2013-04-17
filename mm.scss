@@ -178,7 +178,12 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
             input{
                 vertical-align:bottom;
                 &[type=text]{
+                    font-family: Arial, sans-serif;
+                    box-sizing:border-box;
+                    height:1.8em;
                     border-radius:15px;
+                    border:1px solid;
+                    border-color:#848484 #c1c1c1 #e1e1e1;
                     width:181px;
                     padding:0px 6px;
                     &:focus{
