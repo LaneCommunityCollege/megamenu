@@ -1,5 +1,3 @@
-$resources2: "http://www2.lanecc.edu/sites/all/themes/custom/lane_default/custom_includes/";
-
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 $background-color: #03396a;
@@ -8,7 +6,7 @@ $gold: #f6bd16;
 $text-color: white;
 $border_blue:#85a3c0;
 
-$resources: "//www2.lanecc.edu/custom/mm/images/";
+$resources: "//www.lanecc.edu/custom/mm/images/";
 
 @mixin transparent($color, $alpha) {
   $rgba: rgba($color, $alpha);
@@ -180,12 +178,14 @@ $resources: "//www2.lanecc.edu/custom/mm/images/";
                 &[type=text]{
                     font-family: Arial, sans-serif;
                     box-sizing:border-box;
-                    height:1.8em;
+                    height:24px;
                     border-radius:15px;
                     border:1px solid;
                     border-color:#848484 #c1c1c1 #e1e1e1;
                     width:181px;
                     padding:0px 6px;
+                    font-size:13px;
+                    -moz-box-sizing:border-box;
                     &:focus{
                         outline:none;
                     }

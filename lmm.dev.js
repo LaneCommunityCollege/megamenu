@@ -48,7 +48,7 @@ pages['about'] = new Page("About");
 pages['about'].contents = "{$About}";
 
 /* These are variables that might need to change at some point */
-var server = "//www2.lanecc.edu/custom";
+var server = "//www.lanecc.edu/custom";
 //var server = "//drupalprojects.dev";
 var resources = server+"/mm/images/";
 
