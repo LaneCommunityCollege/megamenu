@@ -82,7 +82,7 @@ function loaded(){
         if(wwidth > 740){
             var width = 740;
         }
-        if(wwidth > 990){
+        if(wwidth > 980){
             var width = 980;
         }
         if(wwidth > 1440){
