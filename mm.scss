@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url("//fonts.googleapis.com/css?family=Roboto:400,700");
 
 $background-color: #03396a;
 $underlay-color: rgb(3,3,10);
@@ -43,6 +43,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
     background-color: $background-color;
     color:$text-color;
     height:28px;
+    border-bottom:$border_blue solid 1px;
     a, a:visited, a:active{
         cursor:pointer;
         color:white;
