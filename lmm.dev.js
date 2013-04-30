@@ -201,12 +201,14 @@ function loaded(){
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
             jQuery('#lmm_search_form input[name="requestType"]').remove();
             jQuery('#lmm_q').attr('name','q');
+            jQuery('#lmm_search_label').attr('for','q');
         }
         else if(dest == "lmm_search_asklane"){
             jQuery('#lmm_search_form').append('<input type="hidden" name="requestType">');            
             jQuery('#lmm_search_form').get(0).setAttribute('action', 'http://lanecc.intelliresponse.com/');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'post');
             jQuery('#lmm_q').attr('name','question');
+            jQuery('#lmm_search_label').attr('for','question');
         }
         jQuery('#lmm_q').focus();
         e.stopPropagation();
