@@ -199,6 +199,7 @@ function loaded(){
         jQuery('.lmm_temp').remove();
         jQuery('#lmm_search_form').get(0).setAttribute('action', 'http://search.lanecc.edu/search');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
+            jQuery('#lmm_search_form input[name="requestType"]').remove();
             jQuery('#lmm_q').attr('name','q');
         }
         else if(dest == "lmm_search_asklane"){
