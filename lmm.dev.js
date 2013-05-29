@@ -223,4 +223,7 @@ function loaded(){
     else if(jQuery('body').hasClass('admin-menu')){ //Authenticated Drupal
         jQuery('#lmm').css('display','none')
     }
+    if(jQuery('body').hasClass('jsenabled')){ //Moodle, when JavaScript is on
+        jQuery('#lmm_logo').css('margin-left', '30px');
+    }
 }
