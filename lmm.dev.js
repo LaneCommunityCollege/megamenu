@@ -221,7 +221,10 @@ function loaded(){
         jQuery('#lmm').css('top',cHeight);
     }
     else if(jQuery('body').hasClass('admin-menu')){ //Authenticated Drupal
-        jQuery('#lmm').css('display','none')
+        jQuery('#lmm').css('display','none');
+    }
+    else if(window.location.pathname.indexOf('/imce') == 0){ //Authenticated Drupal's file browser
+        jQuery('#lmm').css('display','none');
     }
     if(jQuery('body').hasClass('jsenabled')){ //Moodle, when JavaScript is on
         jQuery('#lmm_logo').css('margin-left', '30px');
