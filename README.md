@@ -11,4 +11,4 @@ When you're ready to deploy your MegaMenu, run `python ./deploy.py`. This will g
 
 Then add it to your HTML:
 
-    <script src='http://example.com/lmm.dev.js'></script>
+    <script src='http://example.com/lmm.min.js'></script>
