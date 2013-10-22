@@ -85,6 +85,8 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
         line-height: 19px;
         cursor: pointer;
         background-color:$background-color;
+        -moz-box-sizing:content-box;
+        box-sizing:content-box;
     }
     .lmm_close_arrow{
         height: 10px;
