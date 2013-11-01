@@ -41,8 +41,13 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
 @import "reset";
 
 #lmm{
+    /* These box sizings fix a fight between bootstrap and us */
+    box-sizing:content-box;
+    -moz-box-sizing:content-box;
     div{
         color:$text-color;
+        box-sizing:content-box;
+        -moz-box-sizing:content-box;
     }
     &.hideMobile{
         display:none !important;
@@ -85,8 +90,6 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
         line-height: 19px;
         cursor: pointer;
         background-color:$background-color;
-        -moz-box-sizing:content-box;
-        box-sizing:content-box;
     }
     .lmm_close_arrow{
         height: 10px;
