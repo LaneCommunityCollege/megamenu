@@ -99,20 +99,18 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
         border-right: transparent solid 10px;
         bottom: 0;
         height: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: -19px;
+        margin: -19px auto 0;
         width: 1px;
     }
     #lmm_cats{
         float: left;
         li{
             display: inline-block;
-            font-family: "Roboto", Futura, Helvetica, sans-serif;
+            font-family: "Roboto", Futura, sans-serif;
             font-size: 14px;
             height: 26px;
             line-height: 27px;
-            padding: 0px 5px;
+            padding: 0 5px;
             text-align: center;
             text-transform: uppercase;
             vertical-align: top;
@@ -128,12 +126,9 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
                 width: 100%;
                 .lmm_pane{
                     background-image: url($resources + "tarp.jpg");
-                    border-left: $border-blue solid 1px;
-                    border-right: $border-blue solid 1px;
-                    border-top: $border-blue solid 1px;
-                    height: 254px;
-                    margin-left: auto;
-                    margin-right: auto;
+                    border: $border-blue solid 1px;
+                    height: 253px;
+                    margin: 0 auto;
                     padding: 10px;
                     position: relative;
                     width: 940px;
@@ -201,7 +196,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
                     border-color: #848484 #c1c1c1 #e1e1e1;
                     border-radius: 15px;
                     box-sizing: border-box;
-                    font-family: Arial, sans-serif;
+                    font-family: sans-serif;
                     font-size: 13px;
                     height: 24px;
                     padding: 0px 6px;
@@ -214,8 +209,8 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
             #lmm_search_submit{
                 background-image: url($resources + "sprite.png");
                 background-position: -136px 0px;
-                border: solid 0px #000;
                 border-radius: 2px;
+                border-style: none;
                 cursor: pointer;
                 height: 23px;
                 margin-left: 2px;
@@ -256,7 +251,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
     background-image: url($resources + "sprite.png");
     background-position: -136px -23px;
     background-repeat: no-repeat;
-    border-right: $border-blue solid 1px;
+//    border-right: $border-blue solid 1px; //doesn't show, try w/o it
     cursor: pointer;
     float: left;
     height: 28px;
