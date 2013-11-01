@@ -102,156 +102,163 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
         margin: -19px auto 0;
         width: 1px;
     }
-    #lmm_cats{
-        float: left;
-        li{
-            display: inline-block;
-            font-family: "Roboto", Futura, sans-serif;
-            font-size: 14px;
-            height: 26px;
-            line-height: 27px;
-            padding: 0 5px;
-            text-align: center;
-            text-transform: uppercase;
-            vertical-align: top;
-            .lmm_pane_container{
-                background-color: transparent;
-                cursor: auto;
-                display: none;
-                height: 0;
-                left: 0;
-                position: absolute;
-                text-align: left;
-                top: 28px;
-                width: 100%;
-                .lmm_pane{
-                    background-image: url($resources + "tarp.jpg");
-                    border: $border-blue solid 1px;
-                    height: 253px;
-                    margin: 0 auto;
-                    padding: 10px;
-                    position: relative;
-                    width: 940px;
-                    .lmm_col{
-                        float: left;
-                        h3{
-                            border-bottom: $border-blue solid 1px;
-                            color: white;
-                            display: inline-block;
-                            font-weight: bold;
-                            line-height: 17px;
-                            margin-bottom: 5px;
-                            width: 90%;
-                        }
-                        li{
-                            display: list-item;
-                            font-size: 1em;
-                            height: auto;
-                            line-height: 1.2em;
-                            margin-bottom: 2px;
-                            text-align: left;
-                            text-transform: none;
-                            &.lmm_space{
-                                margin-bottom: 1em;
-                            }
-                        }
-                    }
-                }
-            }
-            .lmm_pointer{
-                border-bottom: $border-blue solid 8px;
-                border-left: transparent solid 5px;
-                border-right: transparent solid 5px;
-                display: none;
-                left: 42%;
+}
+#lmm_cats{
+    float: left;
+    li{
+        display: inline-block;
+        font-family: "Roboto", Futura, sans-serif;
+        font-size: 14px;
+        height: 26px;
+        line-height: 27px;
+        padding: 0 5px;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: top;
+        .lmm_pane_container{
+            background-color: transparent;
+            cursor: auto;
+            display: none;
+            height: 0;
+            left: 0;
+            position: absolute;
+            text-align: left;
+            top: 28px;
+            width: 100%;
+            .lmm_pane{
+                background-image: url($resources + "tarp.jpg");
+                border: $border-blue solid 1px;
+                border-bottom-style: none;
+                height: 254px;
+                margin: 0 auto;
+                padding: 10px;
                 position: relative;
-                top: -7px;
-                width: 1px;
-            }
-            &.lmm_toplevel{
-                cursor: pointer;
-                margin-right: 5px;
-            }
-            &.lmm_active{
-                background-color: $background-color;
-                color: $gold;
-                .lmm_pointer{
-                    display: block;
-                }
-            }
-        }
-    }
-
-    #lmm_search{
-        float: right;
-        line-height: normal;
-        margin-top: 2px;
-        width: 212px; //needs to be here, otherwise the box seems to grow by 1px when clicked
-        form{
-            input{
-                vertical-align: bottom;
-                &[type=text]{
-                    -moz-box-sizing: border-box;
-                    border: 1px solid;
-                    border-color: #848484 #c1c1c1 #e1e1e1;
-                    border-radius: 15px;
-                    box-sizing: border-box;
-                    font-family: sans-serif;
-                    font-size: 13px;
-                    height: 24px;
-                    padding: 0px 6px;
-                    width: 181px;
-                    &:focus{
-                        outline: none;
+                width: 940px;
+                .lmm_col{
+                    float: left;
+                    h3{
+                        border-bottom: $border-blue solid 1px;
+                        color: white;
+                        display: inline-block;
+                        font-weight: bold;
+                        line-height: 17px;
+                        margin-bottom: 5px;
+                        margin-top: 0;
+                        width: 90%;
+                    }
+                    li{
+                        display: list-item;
+                        font-size: 1em;
+                        height: auto;
+                        line-height: 1.2em;
+                        margin-bottom: 2px;
+                        text-align: left;
+                        text-transform: none;
+                        &.lmm_space{
+                            margin-bottom: 1em;
+                        }
                     }
                 }
             }
-            #lmm_search_submit{
-                background-image: url($resources + "sprite.png");
-                background-position: -136px 0px;
-                border-radius: 2px;
-                border-style: none;
-                cursor: pointer;
-                height: 23px;
-                margin-left: 2px;
-                width: 23px;
-            }
         }
-    }
-
-    #lmm_searchops{
-        margin-right: 2px;
-        margin-top: 7px;
-        label{
-            display: block;
-            input{
-                cursor: pointer;
-                margin-bottom: 2px;//This is to "center" the inputs with the text
-                margin-right: 10px;
-            }
+        .lmm_pointer{
+            border-bottom: $border-blue solid 8px;
+            border-left: transparent solid 5px;
+            border-right: transparent solid 5px;
+            display: none;
+            left: 42%;
+            position: relative;
+            top: -7px;
+            width: 1px;
         }
-    }
-    #lmm_homes_page{
-        float: left;
-        margin-left: 3px;
-        margin-top: 32px;
-        width: 170px;
-        ul li{
-            display: block;
-            width: 96%;
-            a{
+        &.lmm_toplevel{
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        &.lmm_active{
+            background-color: $background-color;
+            color: $gold;
+            .lmm_pointer{
                 display: block;
-                width: 100%;
             }
         }
     }
+}
+
+#lmm_search{
+    float: right;
+    line-height: normal;
+    margin-top: 2px;
+    width: 212px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+    label{
+        margin: 0;
+    }
+    form{
+        input{
+            vertical-align: bottom;
+            &[type=text]{
+                -moz-box-sizing: border-box;
+                border: 1px solid;
+                border-color: #848484 #c1c1c1 #e1e1e1;
+                border-radius: 15px;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                font-size: 13px;
+                height: 24px;
+                padding: 0px 6px;
+                width: 181px;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+#lmm_searchops{
+    margin-right: 2px;
+    margin-top: 7px;
+    label{
+        display: block;
+        input{
+            cursor: pointer;
+            margin-bottom: 2px;//This is to "center" the inputs with the text
+            margin-right: 10px;
+        }
+    }
+}
+
+#lmm_homes_page{
+    float: left;
+    margin-left: 3px;
+    margin-top: 32px;
+    width: 170px;
+    ul li{
+        display: block;
+        width: 96%;
+        a{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+#lmm_search_submit{
+    background-image: url($resources + "sprite.png");
+    background-position: -136px 0px;
+    border-radius: 2px;
+    border-style: none;
+    cursor: pointer;
+    height: 23px;
+    margin-left: 2px;
+    width: 23px;
 }
 
 #lmm_logo{
     background-image: url($resources + "sprite.png");
     background-position: -136px -23px;
     background-repeat: no-repeat;
-//    border-right: $border-blue solid 1px; //doesn't show, try w/o it
+    border-right: $border-blue solid 1px;
     cursor: pointer;
     float: left;
     height: 28px;

@@ -3,14 +3,14 @@
     div, span, strong,
     h3, p, a, em, img,
     form, label, ol, ul, li {
-	    margin: 0;
-	    padding: 0;
-	    border: 0;
-	    font-size: 100%;
 	    font: inherit;
+	    font-size: 100%;
+	    //margin: 0;
+	    padding: 0;
 	    vertical-align: baseline;
     }
-    ol, ul {
+    ol,
+    ul {
 	    list-style: none;
     }
 }

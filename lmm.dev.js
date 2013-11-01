@@ -157,7 +157,6 @@ function loaded(){
     });
     //allow us to use the closer to close things
     jQuery('body').delegate('#lmm .lmm_pane .lmm_closer', 'click', function(){
-        console.log("hi");
         commonClose();
     });
 
