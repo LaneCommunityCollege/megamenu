@@ -105,6 +105,8 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
 }
 #lmm_cats{
     float: left;
+    margin-bottom: 0;
+    margin-top: 0;
     li{
         display: inline-block;
         font-family: "Roboto", Futura, sans-serif;
@@ -220,6 +222,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
     margin-top: 7px;
     label{
         display: block;
+        font-size: 14px;
         input{
             cursor: pointer;
             margin-bottom: 2px;//This is to "center" the inputs with the text
@@ -233,12 +236,16 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
     margin-left: 3px;
     margin-top: 32px;
     width: 170px;
-    ul li{
-        display: block;
-        width: 96%;
-        a{
+    ul{
+        margin-bottom: 0;
+        li{
             display: block;
-            width: 100%;
+            font-size: 14px;
+            width: 96%;
+            a{
+                display: block;
+                width: 100%;
+            }
         }
     }
 }
