@@ -252,7 +252,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
 }
 
 #lmm_search_submit{
-    background-image: url($resources + "sprite.png");
+    background-image: url($resources + "sprite.png?v=2");
     background-position: -136px 0px;
     border-radius: 2px;
     border-style: none;
@@ -263,7 +263,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
 }
 
 #lmm_logo{
-    background-image: url($resources + "sprite.png");
+    background-image: url($resources + "sprite.png?v=2");
     background-position: -136px -23px;
     background-repeat: no-repeat;
     border-right: $border-blue solid 1px;
@@ -312,7 +312,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
 }
 
 #lmm_gift{
-    background-image: url($resources + "sprite.png");
+    background-image: url($resources + "sprite.png?v=2");
     background-position: -159px 0px;
     float: left;
     height: 23px;
@@ -321,7 +321,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
 }
 
 .lmm_sprite{
-    background-image: url($resources + "sprite.png");
+    background-image: url($resources + "sprite.png?v=2");
     display: inline-block;
 }
 
