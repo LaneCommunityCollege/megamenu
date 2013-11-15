@@ -191,7 +191,8 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
     float: right;
     line-height: normal;
     margin-top: 2px;
-    width: 212px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+    //is actually 212 + 22 px for the gift icon + 2 px margin
+    width: 236px; //needs to be here, otherwise the box seems to grow by 1px when clicked
     label{
         margin: 0;
     }
@@ -308,6 +309,15 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
     background-position: -104px 32px;
     height: 32px;
     width: 32px;
+}
+
+#lmm_gift{
+    background-image: url($resources + "sprite.png");
+    background-position: -159px 0px;
+    float: left;
+    height: 23px;
+    margin-right: 2px;
+    width: 22px;
 }
 
 .lmm_sprite{
