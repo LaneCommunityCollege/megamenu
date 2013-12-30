@@ -196,8 +196,8 @@ function loaded(){
         var dest = jQuery('#lmm_searchops input:checked').attr('id');
         if(dest == "lmm_search_web"){
         //remove existing temp form fields that may or may not be needed
-        jQuery('.lmm_temp').remove();
-        jQuery('#lmm_search_form').get(0).setAttribute('action', 'http://search.lanecc.edu/search');
+            jQuery('.lmm_temp').remove();
+            jQuery('#lmm_search_form').get(0).setAttribute('action', 'http://search.lanecc.edu/search');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
             jQuery('#lmm_search_form input[name="requestType"]').remove();
             jQuery('#lmm_q').attr('name','q');
@@ -209,6 +209,13 @@ function loaded(){
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'post');
             jQuery('#lmm_q').attr('name','question');
             jQuery('#lmm_search_label').attr('for','question');
+        }
+        else if(dest == "lmm_search_ce"){
+            jQuery('#lmm_search_form input[name="requestType"]').remove();
+            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
+            jQuery('#lmm_search_form').get(0).setAttribute('method', 'post');
+            jQuery('#lmm_q').attr('name','Keywords');
+            jQuery('#lmm_search_label').attr('for','Keywords');
         }
         jQuery('#lmm_q').focus();
         e.stopPropagation();
