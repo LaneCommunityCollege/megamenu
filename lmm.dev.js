@@ -217,6 +217,13 @@ function loaded(){
             jQuery('#lmm_q').attr('name','Keywords');
             jQuery('#lmm_search_label').attr('for','Keywords');
         }
+        else if(dest == "lmm_search_people"){
+            jQuery('#lmm_search_form input[name="requestType"]').remove();
+            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://directory.lanecc.edu/search');
+            jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
+            jQuery('#lmm_q').attr('name','search');
+            jQuery('#lmm_search_label').attr('for','search');
+        }
         jQuery('#lmm_q').focus();
         e.stopPropagation();
     });
