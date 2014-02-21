@@ -197,7 +197,7 @@ function loaded(){
         if(dest == "lmm_search_web"){
         //remove existing temp form fields that may or may not be needed
             jQuery('.lmm_temp').remove();
-            jQuery('#lmm_search_form').get(0).setAttribute('action', 'http://search.lanecc.edu/search');
+            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://search.lanecc.edu/search');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
             jQuery('#lmm_search_form input[name="requestType"]').remove();
             jQuery('#lmm_q').attr('name','q');
@@ -205,7 +205,7 @@ function loaded(){
         }
         else if(dest == "lmm_search_asklane"){
             jQuery('#lmm_search_form').append('<input type="hidden" name="requestType">');            
-            jQuery('#lmm_search_form').get(0).setAttribute('action', 'http://lanecc.intelliresponse.com/');
+            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://lanecc.intelliresponse.com/');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'post');
             jQuery('#lmm_q').attr('name','question');
             jQuery('#lmm_search_label').attr('for','question');
