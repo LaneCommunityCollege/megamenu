@@ -160,6 +160,10 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
                             margin-bottom: 0.8em;
                         }
                     }
+                    /* Needed to correct for default margins */
+                    ul{
+                        margin: 0;
+                    }
                 }
             }
         }
@@ -175,7 +179,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
         }
         &.lmm_toplevel{
             cursor: pointer;
-            margin-right: 5px;
+            margin: 0 5px 0 0;
         }
         &.lmm_active{
             background-color: $background-color;
@@ -238,7 +242,7 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
     margin-top: 32px;
     width: 170px;
     ul{
-        margin-bottom: 0;
+        margin: 0 5px;
         li{
             display: block;
             font-size: 14px;
