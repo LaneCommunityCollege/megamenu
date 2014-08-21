@@ -58,12 +58,12 @@ function loaded(){
     var current_url = window.location.pathname;
     var cHeight = 0;
     jQuery('body').append('<div id="lmm"></div>');
-    var menu = "<div id='lmm_logo' class='lmm_other'>{$HomeButton}</div><ul id='lmm_cats'>";
+    var menu = "<div id='lmm_logo'>{$HomeButton}</div><ul id='lmm_cats'>";
     for(var key in pages){
         menu += "<li id='lmm_" + key + "' class='lmm_toplevel'>"+ pages[key].__str__() + "</li>";
     }
     //TODO the gift box icon should NOT be part of this div. Instead, add a wrapper
-    menu += "</ul><div id='lmm_search' class='lmm_other'><a href='http://lanecc.edu/foundation/ways-give'><div id='lmm_gift'></div></a>{$SearchForm}</div>";
+    menu += "</ul><div id='lmm_search'><a href='http://lanecc.edu/foundation/ways-give'><div id='lmm_gift'></div></a>{$SearchForm}</div>";
     jQuery('#lmm').append(menu);
     jQuery('#lmm').after('<div id="lmm_pane_underlay"></div>');
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
