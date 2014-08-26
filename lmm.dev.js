@@ -73,11 +73,11 @@ function loaded(){
     function updateCats(){
         var wwidth = jQuery(window).width();
         if(wwidth <=740){
-            jQuery('#lmm').add(jQuery('#lmm_pane_underlay')).addClass('hideMobile');
+            jQuery('#lmm').add(jQuery('#lmm_pane_underlay')).addClass('hidemobile');
             jQuery('body').css('margin-top','0px');
         }
         else{
-            jQuery('#lmm').add(jQuery('#lmm_pane_underlay')).removeClass('hideMobile');
+            jQuery('#lmm').add(jQuery('#lmm_pane_underlay')).removeClass('hidemobile');
             jQuery('body').css('margin-top','28px');
         }
         if(wwidth > 740){

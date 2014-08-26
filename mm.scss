@@ -1,24 +1,26 @@
 @import url("//fonts.googleapis.com/css?family=Roboto:400,700");
 
 @media only print {
-    #lmm{
-        display: none;
-    }
-    #lmm_pane_underlay{
-        display: none;
-    }
-    #lmm_underlay{
-        display: none;
-    }
+  #lmm {
+    display: none;
+  }
+
+  #lmm_pane_underlay {
+    display: none;
+  }
+
+  #lmm_underlay {
+    display: none;
+  }
 }
 
 $background-color: #03396a;
-$underlay-color: rgb(3,3,10);
+$underlay-color: rgb(3, 3, 10);
 $gold: #f6bd16;
-$text-color: white;
+$text-color: #fff;
 $border-blue: #85a3c0;
 
-$resources: "//www.lanecc.edu/custom/mm/images/";
+$resources: '//www.lanecc.edu/custom/mm/images/';
 
 @mixin transparent($color, $alpha) {
   $rgba: rgba($color, $alpha);
@@ -29,331 +31,346 @@ $resources: "//www.lanecc.edu/custom/mm/images/";
   zoom: 1;
 }
 
-#lmm_underlay{
-    height: 0;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 4999;
+#lmm_underlay {
+  height: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4999;
 }
+
 //Borrow a bunch of reset code:
-@import "reset";
+@import 'reset';
 
-#lmm{
-    // These box sizings fix a fight between bootstrap and us
-    -moz-box-sizing: content-box;
-    background-color: $background-color;
-    border-bottom: $border-blue solid 1px;
-    box-sizing: content-box;
+#lmm {
+  background-color: $background-color;
+  border-bottom: $border-blue solid 1px;
+  color: $text-color;
+  font-family: Roboto, Futura, sans-serif;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 5000;
+
+  div {
     color: $text-color;
-    height: 28px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 5000;
-    div{
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
-        color: $text-color;
-    }
-    &.hideMobile{
-        display: none !important;
-    }
-    a,
-    a:visited,
-    a:active{
-        color: white;
-        cursor: pointer;
-        text-decoration: none;
-        &:hover{
-            text-decoration: underline;
-        }
-    }
-    .lmm_other_pane{
-        background-color: $background-color;
-        border: $text-color solid 1px;
-        border-radius: 15px;
-        cursor: default;
-        display: none;
-        line-height: 1.5em;
-        padding: 9px;
-        text-align: left;
-    }
-    .lmm_closer{
-        background-color: $background-color;
-        border-top: $background-color solid 1px;
-        bottom: 0;
-        clear: both;
-        cursor: pointer;
-        left: 0;
-        line-height: 19px;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-    }
-    .lmm_close_arrow{
-        border-bottom: $background-color solid 8px;
-        border-left: transparent solid 10px;
-        border-right: transparent solid 10px;
-        bottom: 0;
-        height: 10px;
-        margin: -19px auto 0;
-        width: 1px;
-    }
-}
-#lmm_cats{
-    float: left;
-    margin-bottom: 0;
-    margin-top: 0;
-    li{
-        display: inline-block;
-        font-family: "Roboto", Futura, sans-serif;
-        font-size: 14px;
-        height: 26px;
-        line-height: 27px;
-        padding: 0 5px;
-        text-align: center;
-        text-transform: uppercase;
-        vertical-align: top;
-        .lmm_pane_container{
-            background-color: transparent;
-            cursor: auto;
-            display: none;
-            height: 0;
-            left: 0;
-            position: absolute;
-            text-align: left;
-            top: 28px;
-            width: 100%;
-            .lmm_pane{
-                background-image: url($resources + "tarp.jpg");
-                border: $border-blue solid 1px;
-                border-bottom-style: none;
-                height: 254px;
-                margin: 0 auto;
-                padding: 10px;
-                position: relative;
-                width: 940px;
-                .lmm_col{
-                    float: left;
-                    h3{
-                        border-bottom: $border-blue solid 1px;
-                        color: white;
-                        display: inline-block;
-                        font-weight: bold;
-                        line-height: 17px;
-                        margin-bottom: 5px;
-                        margin-top: 0;
-                        width: 90%;
-                    }
-                    li{
-                        display: list-item;
-                        font-size: 1em;
-                        height: auto;
-                        line-height: 1.2em;
-                        margin-bottom: 1px;
-                        text-align: left;
-                        text-transform: none;
-                        &.lmm_space{
-                            margin-bottom: 0.8em;
-                        }
-                    }
-                    /* Needed to correct for default margins */
-                    ul{
-                        margin: 0;
-                    }
-                }
-            }
-        }
-        .lmm_pointer{
-            border-bottom: $border-blue solid 8px;
-            border-left: transparent solid 5px;
-            border-right: transparent solid 5px;
-            display: none;
-            left: 42%;
-            position: relative;
-            top: -7px;
-            width: 1px;
-        }
-        &.lmm_toplevel{
-            cursor: pointer;
-            margin: 0 5px 0 0;
-        }
-        &.lmm_active{
-            background-color: $background-color;
-            color: $gold;
-            .lmm_pointer{
-                display: block;
-            }
-        }
-    }
-}
+  }
 
-#lmm_search{
-    float: right;
-    line-height: normal;
-    margin-top: 2px;
-    //is actually 212 + 22 px for the gift icon + 2 px margin
-    width: 236px; //needs to be here, otherwise the box seems to grow by 1px when clicked
-    label{
-        margin: 0;
-    }
-    form{
-        input{
-            vertical-align: bottom;
-            &[type=text]{
-                -moz-box-sizing: border-box;
-                border: 1px solid;
-                border-color: #848484 #c1c1c1 #e1e1e1;
-                border-radius: 15px;
-                box-sizing: border-box;
-                font-family: sans-serif;
-                font-size: 13px;
-                height: 24px;
-                padding: 0px 6px;
-                width: 181px;
-                &:focus{
-                    outline: none;
-                }
-            }
-        }
-    }
-}
+  &.hidemobile {
+    display: none !important;
+  }
 
-#lmm_searchops{
-    margin-right: 2px;
-    margin-top: 7px;
-    label{
-        display: block;
-        font-size: 14px;
-        input{
-            cursor: pointer;
-            margin-bottom: 2px;//This is to "center" the inputs with the text
-            margin-right: 10px;
-        }
-    }
-}
-
-#lmm_homes_page{
-    float: left;
-    margin-left: 3px;
-    margin-top: 32px;
-    width: 170px;
-    ul{
-        margin: 0 5px;
-        li{
-            display: block;
-            font-size: 14px;
-            width: 96%;
-            a{
-                display: block;
-                width: 100%;
-            }
-        }
-    }
-}
-
-#lmm_search_submit{
-    background-image: url($resources + "sprite.png");
-    background-position: -136px 0px;
-    border-radius: 2px;
-    border-style: none;
+  a,
+  a:visited,
+  a:active {
+    color: #fff;
     cursor: pointer;
-    height: 23px;
-    margin-left: 2px;
-    width: 23px;
-}
+    text-decoration: none;
 
-#lmm_logo{
-    background-image: url($resources + "sprite.png");
-    background-position: -136px -23px;
-    background-repeat: no-repeat;
-    border-right: $border-blue solid 1px;
-    cursor: pointer;
-    float: left;
-    height: 28px;
-    min-width: 0;
-    text-align: center;
-    width: 34px;
-}
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-.lmm_moodle{
-    background-position: 0px 31px;
-    height: 31px;
-    width: 72px;
-}
-
-.lmm_mylane{
-    background-position: 0px 0px;
-    height: 31px;
-    width: 72px;
-}
-
-.lmm_facebook{
-    background-position: -72px 0px;
-    height: 32px;
-    width: 32px;
-}
-
-.lmm_twitter{
-    background-position: -72px 32px;
-    height: 32px;
-    width: 32px;
-}
-
-.lmm_youtube{
-    background-position: -104px 0px;
-    height: 32px;
-    width: 32px;
-}
-
-.lmm_instagram{
-    background-position: -104px 32px;
-    height: 32px;
-    width: 32px;
-}
-
-#lmm_gift{
-    background-image: url($resources + "sprite.png");
-    background-position: -159px 0px;
-    background-repeat: no-repeat;
-    float: left;
-    height: 23px;
-    margin-right: 2px;
-    width: 22px;
-}
-
-.lmm_sprite{
-    background-image: url($resources + "sprite.png");
-    display: inline-block;
-}
-
-#lmm_pane_underlay{
-    @include transparent($underlay-color, 0.90);
-    border-bottom: $border-blue solid 1px;
+  .lmm_other_pane {
+    background-color: $background-color;
+    border: $text-color solid 1px;
+    border-radius: 15px;
+    cursor: default;
     display: none;
-    height: 0;
+    line-height: 1.5em;
+    padding: 9px;
+    text-align: left;
+  }
+
+  .lmm_closer {
+    background-color: $background-color;
+    border-top: $background-color solid 1px;
+    bottom: 0;
+    clear: both;
+    cursor: pointer;
     left: 0;
+    line-height: 19px;
     position: absolute;
-    top: 28px;
+    text-align: center;
     width: 100%;
-    z-index: 4999;
-    &.hideMobile{
-        display: none !important;
+  }
+
+  .lmm_close_arrow {
+    border-bottom: $background-color solid 8px;
+    border-left: transparent solid 10px;
+    border-right: transparent solid 10px;
+    bottom: 0;
+    height: 10px;
+    margin: -19px auto 0;
+    width: 1px;
+  }
+}
+
+#lmm_cats {
+  float: left;
+
+  li {
+    display: inline-block;
+    font-size: 14px;
+    height: 26px;
+    line-height: 27px;
+    padding: 0 5px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: top;
+
+    .lmm_pane_container {
+      background-color: transparent;
+      cursor: auto;
+      display: none;
+      height: 0;
+      left: 0;
+      position: absolute;
+      text-align: left;
+      top: 28px;
+      width: 100%;
+
+      .lmm_pane {
+        background-image: url($resources + 'tarp.jpg');
+        border: $border-blue solid 1px;
+        border-bottom-style: none;
+        height: 254px;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+        width: 940px;
+
+        .lmm_col {
+          float: left;
+
+          h3 {
+            border-bottom: $border-blue solid 1px;
+            color: #fff;
+            display: inline-block;
+            font-weight: bold;
+            line-height: 17px;
+            margin-bottom: 5px;
+            margin-top: 0;
+            width: 90%;
+          }
+
+          li {
+            display: list-item;
+            font-size: 1em;
+            height: auto;
+            line-height: 1.2em;
+            margin-bottom: 1px;
+            text-align: left;
+            text-transform: none;
+
+            &.lmm_space {
+              margin-bottom: .8em;
+            }
+          }
+        }
+      }
     }
+
+    .lmm_pointer {
+      border-bottom: $border-blue solid 8px;
+      border-left: transparent solid 5px;
+      border-right: transparent solid 5px;
+      display: none;
+      left: 42%;
+      position: relative;
+      top: -7px;
+      width: 1px;
+    }
+
+    &.lmm_toplevel {
+      cursor: pointer;
+      margin: 0 5px 0 0;
+    }
+
+    &.lmm_active {
+      background-color: $background-color;
+      color: $gold;
+
+      .lmm_pointer {
+        display: block;
+      }
+    }
+  }
+}
+
+#lmm_search {
+  float: right;
+  line-height: normal;
+  margin-top: 2px;
+  //is actually 212 + 22 px for the gift icon + 2 px margin
+  width: 236px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+  form {
+    input {
+      vertical-align: bottom;
+
+      &[type=text] {
+        background-color: #fff;
+        border: 1px solid;
+        border-color: #848484 #c1c1c1 #e1e1e1;
+        border-radius: 15px;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 13px;
+        height: 24px;
+        padding: 0 6px;
+        width: 181px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+#lmm_searchops {
+  margin-right: 2px;
+  margin-top: 7px;
+
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 3px;
+
+    input {
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  }
+}
+
+#lmm_homes_page {
+  float: left;
+  margin-left: 3px;
+  margin-top: 32px;
+  width: 170px;
+
+  ul {
+    margin: 0 5px;
+
+    li {
+      display: block;
+      font-size: 14px;
+      width: 96%;
+
+      a {
+        display: block;
+        width: 100%;
+      }
+     }
+  }
+}
+
+#lmm_search_submit {
+  background-image: url($resources + 'sprite.png');
+  background-position: -136px 0;
+  border-radius: 2px;
+  border-style: none;
+  cursor: pointer;
+  height: 23px;
+  margin-left: 2px;
+  width: 23px;
+}
+
+#lmm_logo {
+  background-image: url($resources + 'sprite.png');
+  background-position: -136px -23px;
+  background-repeat: no-repeat;
+  border-right: $border-blue solid 1px;
+  cursor: pointer;
+  float: left;
+  height: 28px;
+  min-width: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.lmm_moodle {
+  background-position: 0 31px;
+  height: 31px;
+  width: 72px;
+}
+
+.lmm_mylane {
+  background-position: 0 0;
+  height: 31px;
+  width: 72px;
+}
+
+.lmm_facebook {
+  background-position: -72px 0;
+  height: 32px;
+  width: 32px;
+}
+
+.lmm_twitter {
+  background-position: -72px 32px;
+  height: 32px;
+  width: 32px;
+}
+
+.lmm_youtube {
+  background-position: -104px 0;
+  height: 32px;
+  width: 32px;
+}
+
+.lmm_instagram {
+  background-position: -104px 32px;
+  height: 32px;
+  width: 32px;
+}
+
+#lmm_gift {
+  background-image: url($resources + 'sprite.png');
+  background-position: -159px 0;
+  background-repeat: no-repeat;
+  float: left;
+  height: 23px;
+  margin-right: 2px;
+  width: 22px;
+}
+
+.lmm_sprite {
+  background-image: url($resources + 'sprite.png');
+  display: inline-block;
+}
+
+#lmm_pane_underlay {
+  @include transparent($underlay-color, .90);
+  border-bottom: $border-blue solid 1px;
+  display: none;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 28px;
+  width: 100%;
+  z-index: 4999;
+
+  &.hidemobile {
+    display: none !important;
+  }
 }
 
 // These mean that the global stylesheet (this one) applies to IE8
 // if your phone is fancy, it"ll get the "mobile" sheet. Then there"s two
 // other sheets for big screens.
 @media all and (max-width: 740px){
-    @import "mobile";
+  @import 'mobile';
 }
 @media all and (max-width: 980px){
-    @import "narrow";
+  @import 'narrow';
 }
 @media all and (min-width: 1441px){
-    @import "wide";
+  @import 'wide';
 }

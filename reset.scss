@@ -1,16 +1,18 @@
-#lmm{
-    line-height: 1;
-    div, span, strong,
-    h3, p, a, em, img,
-    form, label, ol, ul, li {
-	    font: inherit;
-	    font-size: 100%;
-	    //margin: 0;
-	    padding: 0;
-	    vertical-align: baseline;
-    }
-    ol,
-    ul {
-	    list-style: none;
-    }
+#lmm * {
+  background-color: transparent;
+  border: 0;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  font: inherit;
+  font-size: 100%;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+  }
 }
