@@ -20,7 +20,7 @@ $gold: #f6bd16;
 $text-color: #fff;
 $border-blue: #85a3c0;
 
-$resources: '//www.lanecc.edu/custom/mm/images/';
+$resources: '//static.lanecc.net/mm/images/';
 
 @mixin transparent($color, $alpha) {
   $rgba: rgba($color, $alpha);
