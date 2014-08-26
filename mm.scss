@@ -133,44 +133,44 @@ $resources: '//www.lanecc.edu/custom/mm/images/';
       text-align: left;
       top: 28px;
       width: 100%;
+    }
 
-      .lmm_pane {
-        background-image: url($resources + 'tarp.jpg');
-        border: $border-blue solid 1px;
-        border-bottom-style: none;
-        height: 254px;
-        margin: 0 auto;
-        padding: 10px;
-        position: relative;
-        width: 940px;
+    .lmm_pane {
+      background-image: url($resources + 'tarp.jpg');
+      border: $border-blue solid 1px;
+      border-bottom-style: none;
+      height: 254px;
+      margin: 0 auto;
+      padding: 10px;
+      position: relative;
+      width: 940px;
+    }
+      
+    .lmm_col {
+      float: left;
 
-        .lmm_col {
-          float: left;
+      h3 {
+        border-bottom: $border-blue solid 1px;
+        color: #fff;
+        display: inline-block;
+        font-weight: bold;
+        line-height: 17px;
+        margin-bottom: 5px;
+        margin-top: 0;
+        width: 90%;
+      }
 
-          h3 {
-            border-bottom: $border-blue solid 1px;
-            color: #fff;
-            display: inline-block;
-            font-weight: bold;
-            line-height: 17px;
-            margin-bottom: 5px;
-            margin-top: 0;
-            width: 90%;
-          }
+      li {
+        display: list-item;
+        font-size: 1em;
+        height: auto;
+        line-height: 1.2em;
+        margin-bottom: 1px;
+        text-align: left;
+        text-transform: none;
 
-          li {
-            display: list-item;
-            font-size: 1em;
-            height: auto;
-            line-height: 1.2em;
-            margin-bottom: 1px;
-            text-align: left;
-            text-transform: none;
-
-            &.lmm_space {
-              margin-bottom: .8em;
-            }
-          }
+        &.lmm_space {
+          margin-bottom: .8em;
         }
       }
     }
