@@ -257,17 +257,17 @@ $resources: '//static.lanecc.net/mm/images/';
 
   ul {
     margin: 0 5px;
+  }
+  
+  li {
+    display: block;
+    font-size: 14px;
+    width: 96%;
 
-    li {
+    a {
       display: block;
-      font-size: 14px;
-      width: 96%;
-
-      a {
-        display: block;
-        width: 100%;
-      }
-     }
+      width: 100%;
+    }
   }
 }
 
