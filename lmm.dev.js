@@ -233,6 +233,7 @@ function loaded(){
     if(jQuery('body').hasClass('admin-bar')){ //Wordpress
         cHeight = parseInt(jQuery('#wpadminbar').css('height'));
         jQuery('#lmm').css('top',cHeight);
+        jQuery('#lmm_pane_underlay').css('margin-top', parseInt(jQuery('#lmm_pane_underlay').css('margin-top')) + cHeight);
     }
     else if(jQuery('body').hasClass('admin-menu')){ //Authenticated Drupal
         jQuery('#lmm').css('display','none');
