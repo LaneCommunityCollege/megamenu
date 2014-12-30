@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Roboto:400,700");
+@import url("//static.lanecc.net/fonts/roboto/roboto.css");
 
 @media only print {
   #lmm {
@@ -24,10 +24,8 @@ $resources: '//static.lanecc.net/mm/images/';
 
 @mixin transparent($color, $alpha) {
   $rgba: rgba($color, $alpha);
-//  $ie-hex-str: ie-hex-str($rgba);
   background-color: transparent;
   background-color: $rgba;
-//  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
   zoom: 1;
 }
 
@@ -369,7 +367,7 @@ $resources: '//static.lanecc.net/mm/images/';
 }
 
 // These mean that the global stylesheet (this one) applies to IE8
-// if your phone is fancy, it"ll get the "mobile" sheet. Then there"s two
+// if your phone is fancy, it'll get the "mobile" sheet. Then there's two
 // other sheets for big screens.
 @media all and (max-width: 740px){
   @import 'mobile';
