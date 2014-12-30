@@ -197,7 +197,7 @@ function loaded(){
         if(dest == "lmm_search_web"){
         //remove existing temp form fields that may or may not be needed
             jQuery('.lmm_temp').remove();
-            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://search.lanecc.edu/search');
+            jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://www.lanecc.edu/custom/search');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
             jQuery('#lmm_search_form input[name="requestType"]').remove();
             jQuery('#lmm_q').attr('name','q');
