@@ -35,7 +35,7 @@ $resources: '//static.lanecc.net/mm/images/';
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 4999;
+  z-index: 14999;
 }
 
 //Borrow a bunch of reset code:
@@ -51,7 +51,7 @@ $resources: '//static.lanecc.net/mm/images/';
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 5000;
+  z-index: 15000;
 
   div {
     color: $text-color;
@@ -359,7 +359,7 @@ $resources: '//static.lanecc.net/mm/images/';
   position: absolute;
   top: 28px;
   width: 100%;
-  z-index: 4999;
+  z-index: 14999;
 
   &.hidemobile {
     display: none !important;
