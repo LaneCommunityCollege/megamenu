@@ -227,9 +227,15 @@ function loaded(){
         jQuery('#lmm_q').focus();
         e.stopPropagation();
     });
+    
+    /* On sites with a fixed width, if the document is wider than the viewport, it's posisible for the MegamMenu to
+       to be sized incorrectly. Make that adjustment here */
+    if(jQuery(window).width() < jQuery(document).width()){
+        jQuery('#lmm, #lmm_underlay, #lmm_pane_underlay').width(jQuery(document).width());
+    }
 
-    /* Site specific adjustments
-     */
+
+    /* Site specific adjustments */
     if(jQuery('body').hasClass('admin-bar')){ //Wordpress
         cHeight = parseInt(jQuery('#wpadminbar').css('height'));
         jQuery('#lmm').css('top',cHeight);
