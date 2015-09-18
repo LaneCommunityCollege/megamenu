@@ -68,7 +68,7 @@ function loaded(){
     jQuery('#lmm').after('<div id="lmm_pane_underlay"></div>');
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
 
-    // Figure out the left margin for lmm_cats. unfortunatley, this needs to be hardcoded, as it isn't possible to get an auto margin from Jquery
+    // Figure out the left margin for lmm_cats. unfortunately, this needs to be hardcoded, as it isn't possible to get an auto margin from JQuery
     //TODO mobile
     function updateCats(){
         var wwidth = jQuery(window).width();
@@ -189,7 +189,7 @@ function loaded(){
     jQuery('#lmm_logo').children().click(function(e){ e.stopPropagation();});
     
     /* Handle the radio buttons for the search box 
-     * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isnt' able to correctly set
+     * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isn't able to correctly set
      * form actions
      */
     jQuery('body').delegate('#lmm_searchops input', 'click',function(e){
@@ -228,7 +228,7 @@ function loaded(){
         e.stopPropagation();
     });
     
-    /* On sites with a fixed width, if the document is wider than the viewport, it's posisible for the MegamMenu to
+    /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
        to be sized incorrectly. Make that adjustment here */
     if(jQuery(window).width() < jQuery(document).width()){
         jQuery('#lmm, #lmm_underlay, #lmm_pane_underlay').width(jQuery(document).width());
@@ -247,7 +247,9 @@ function loaded(){
     else if(window.location.pathname.indexOf('/imce') == 0){ //Authenticated Drupal's file browser
         jQuery('#lmm').css('display','none');
     }
-    else if(jQuery('body').css('position') == 'relative'){
+    /* If we're ever relative positioned, we need to change where the top sits, otherwise we'll sit 28px
+       below where we want to be */
+    if(jQuery('body').css('position') == 'relative'){
         jQuery('#lmm').css('top', '-29px');
         jQuery('#lmm_pane_underlay').css('top', '0');
     }
