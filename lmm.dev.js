@@ -247,6 +247,10 @@ function loaded(){
     else if(window.location.pathname.indexOf('/imce') == 0){ //Authenticated Drupal's file browser
         jQuery('#lmm').css('display','none');
     }
+    else if(jQuery('body').css('position') == 'relative'){
+        jQuery('#lmm').css('top', '-29px');
+        jQuery('#lmm_pane_underlay').css('top', '0');
+    }
     if(jQuery('body').hasClass('jsenabled')){ //Moodle, when JavaScript is on
         jQuery('#lmm_logo').css('margin-left', '30px');
     }
