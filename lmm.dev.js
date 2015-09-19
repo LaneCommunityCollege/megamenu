@@ -1,7 +1,3 @@
-/* TODO Theme colors, by requesting from a php file that kicks back different css
- * TODO optional non-responsive menu, working same way as above
- */
-
 /* Takes care of making sure JQuery is only loaded once per page */
 var jQueryScriptOutputted = false;
 function initJQuery() {
@@ -49,7 +45,6 @@ pages['about'].contents = "{$About}";
 
 /* These are variables that might need to change at some point */
 var server = "//www.lanecc.edu/custom";
-//var server = "//drupalprojects.dev";
 var resources = server+"/mm/images/";
 
 // This is kinda like Document.ready()
@@ -69,7 +64,6 @@ function loaded(){
     jQuery('#lmm').after('<div id="lmm_underlay"></div>');
 
     // Figure out the left margin for lmm_cats. unfortunately, this needs to be hardcoded, as it isn't possible to get an auto margin from JQuery
-    //TODO mobile
     function updateCats(){
         var wwidth = jQuery(window).width();
         if(wwidth <=740){
