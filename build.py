@@ -1,21 +1,24 @@
 #!/usr/bin/env python
 """ This script builds our megamenu (lmm.js and mm.css) and our production
-megamenu (lmm.min.js and mm.min.css) """
+megamenu (lmm.min.js), which includes our CSS """
 
+from __future__ import absolute_import
+from __future__ import print_function
 from slimit import minify
 from cssmin import cssmin
 import subprocess
 import os
+import six
 
 try:
     subprocess.call(['sass', '--update', 'mm.scss', '--style', 'compressed'])
 except OSError as e:
     if e.errno == os.errno.ENOENT:
-        print "SASS Not found. Your stylesheets may not match"
+        print("SASS Not found. Your stylesheets may not match")
     else:
         raise
 
-#grab panehtml
+# grab panehtml
 htmlvars = {}
 with open('html.html') as phtml:
     lines = [x.strip() for x in phtml.readlines()]
@@ -30,26 +33,27 @@ with open('html.html') as phtml:
             except KeyError:
                 exit("html file format error, found %s" % line)
 
-#open the cssfile. We're won't write a prod css file,
-#because we already have it - the dev file is sass
+# minimize our css file
 cssf = open('mm.css').read()
 cm = cssmin(cssf)
-css_min = open('mm.min.css', 'w')
-css_min.write(cm) #mostly for debugging
+# if you find yourself needing to look at just the minimized
+# css, you could uncomment this two lines:
+# css_min = open('mm.min.css', 'w')
+# css_min.write(cm)
 
-#open our dev js file
+# open our dev js file
 devf = open('lmm.dev.js').read()
 
-#Find and replace variables in the JavaScript, of the form {$[A-Za-z]}
+# Find and replace variables in the JavaScript, of the form {$[A-Za-z]}
 devf = devf.replace('{$cssmin}', cm)
-#Find and replace our html variables
-for k, v in htmlvars.iteritems():
+# Find and replace our html variables
+for k, v in six.iteritems(htmlvars):
     devf = devf.replace('{$' + k + '}', v)
 
-#just write it to the full prod file
-#(so we can let other people use it to debug on their site)
+# just write it to the full prod file
+# (so we can let other people use it to debug on their site)
 prodf = open('lmm.js', 'w')
 prodf.write(devf)
-#write a compressed, minified version to min prod
+# write a compressed, minified version to min prod
 prodf_min = open('lmm.min.js', 'w')
 prodf_min.write(minify(devf, mangle=True, mangle_toplevel=True))
