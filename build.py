@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+""" This script builds our megamenu (lmm.js and mm.css) and our production
+megamenu (lmm.min.js and mm.min.css) """
+
 from slimit import minify
 from cssmin import cssmin
 import subprocess
@@ -40,7 +43,7 @@ devf = open('lmm.dev.js').read()
 #Find and replace variables in the JavaScript, of the form {$[A-Za-z]}
 devf = devf.replace('{$cssmin}', cm)
 #Find and replace our html variables
-for k,v in htmlvars.iteritems():
+for k, v in htmlvars.iteritems():
     devf = devf.replace('{$' + k + '}', v)
 
 #just write it to the full prod file
