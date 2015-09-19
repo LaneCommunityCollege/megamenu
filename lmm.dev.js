@@ -234,7 +234,6 @@ function loaded(){
         jQuery('#lmm, #lmm_underlay, #lmm_pane_underlay').width(jQuery(document).width());
     }
 
-
     /* Site specific adjustments */
     if(jQuery('body').hasClass('admin-bar')){ //Wordpress
         cHeight = parseInt(jQuery('#wpadminbar').css('height'));
