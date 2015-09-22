@@ -10,8 +10,3 @@ When you're ready to deploy your MegaMenu, run `python ./deploy.py`. This will g
 Then add it to your HTML:
 
     <script src='//example.com/lmm.min.js'></script>
-
-Yet to Do:
-----------
-- [ ] Mobile Version
-- [ ] Other Color Themes
