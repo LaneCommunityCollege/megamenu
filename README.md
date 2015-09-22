@@ -5,7 +5,7 @@ To modify your MegaMenu, update the `resources` variable in the mm.scss, and the
 
 To change the MegaMenu text, edit html.html. Variables names are expressed in HTML comments, like `<!-- ApplyEnroll -->`. These variables must be of this format, starting with `<!-- `, and ending with ` -->` - spaces are not optional. They should match the variables found in lmm.dev.js, where they are of the form `{$ApplyEnroll}`. The text that follows each variable name will be inserted into the appropriate pane on the MegaMenu. Additionally, at the bottom of html.html there are two variables that fill in the Home Button and Search Button areas of the MegaMenu.
 
-When you're ready to deploy your MegaMenu, run `python ./deploy.py`. This will generate the updated css sheets via SASS and the minified HTML from html.html, then replace both those variables to generate lmm.js. lmm.js is then minified and written as lmm.dev.js. 
+When you're ready to deploy your MegaMenu, run `python ./build.py`. This will generate the updated css sheets via SASS and the minified HTML from html.html, then replace both those variables to generate lmm.js. lmm.js is then minified and written as lmm.dev.js. 
 
 Then add it to your HTML:
 
