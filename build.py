@@ -11,7 +11,7 @@ import os
 import six
 
 try:
-    subprocess.call(['sass', '--update', 'mm.scss', '--style', 'compressed'])
+    subprocess.call(['sass', '--update', '--style', 'compressed', 'scss/mm.scss:css/mm.css'])
 except OSError as e:
     if e.errno == os.errno.ENOENT:
         print("SASS Not found. Your stylesheets may not match")
@@ -34,11 +34,11 @@ with open('html.html') as phtml:
                 exit("html file format error, found %s" % line)
 
 # minimize our css file
-cssf = open('mm.css').read()
+cssf = open('css/mm.css').read()
 cm = cssmin(cssf)
 # if you find yourself needing to look at just the minimized
 # css, you could uncomment this two lines:
-# css_min = open('mm.min.css', 'w')
+# css_min = open('css/mm.min.css', 'w')
 # css_min.write(cm)
 
 # open our dev js file
