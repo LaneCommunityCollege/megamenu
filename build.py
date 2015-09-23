@@ -26,7 +26,7 @@ with open('html.html') as phtml:
 devf = open('lmm.dev.js').read()
 
 # Find and replace variables in the JavaScript, of the form {$[A-Za-z]}
-devf = devf.replace('{$cssmin}', open('css/mm.min.css').read())
+devf = devf.replace('{$cssmin}', open('dist/css/mm.min.css').read())
 # Find and replace our html variables
 for k, v in six.iteritems(htmlvars):
     devf = devf.replace('{$' + k + '}', v)
