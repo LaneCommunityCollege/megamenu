@@ -23,7 +23,7 @@ with open('src/html/html.html') as phtml:
                 exit("html file format error, found %s" % line)
 
 # open our dev js file
-devf = open('lmm.dev.js').read()
+devf = open('src/js/lmm.dev.js').read()
 
 # Find and replace variables in the JavaScript, of the form {$[A-Za-z]}
 devf = devf.replace('{$cssmin}', open('dist/css/mm.min.css').read())
@@ -33,8 +33,8 @@ for k, v in six.iteritems(htmlvars):
 
 # just write it to the full prod file
 # (so we can let other people use it to debug on their site)
-prodf = open('lmm.js', 'w')
+prodf = open('dist/js/lmm.js', 'w')
 prodf.write(devf)
 # write a compressed, minified version to min prod
-prodf_min = open('lmm.min.js', 'w')
+prodf_min = open('dist/js/lmm.min.js', 'w')
 prodf_min.write(devf)#minify(devf, mangle=True, mangle_toplevel=True))
