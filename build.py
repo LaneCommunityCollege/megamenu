@@ -9,7 +9,7 @@ import six
 
 # grab panehtml
 htmlvars = {}
-with open('html.html') as phtml:
+with open('src/html/html.html') as phtml:
     lines = [x.strip() for x in phtml.readlines()]
     for line in lines:
         if line.startswith("<!--"):
