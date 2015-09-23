@@ -17,51 +17,14 @@ function initJQuery() {
 }
 initJQuery();
 
-/* Class for writing each of our pages */
-function Page(title){
-    this.title=title;
-
-    this.__str__ = function (){
-        return this.title + "<div class='lmm_pointer'></div><div class='lmm_pane_container'><div class='lmm_pane'>"+this.contents+"<div class='lmm_closer'><div class='lmm_close_arrow'></div>Click to Close</div></div></div>";
-    }
-}
-
-/* The actual tabs */
-pages = {}
-pages['app'] = new Page('Apply & Enroll');
-pages['app'].contents = "{$ApplyEnroll}";
-
-pages['programs'] = new Page("Programs");
-pages['programs'].contents = "{$Programs}";
-
-pages['life'] = new Page("Student Life");
-pages['life'].contents = "{$StudentLife}";
-
-pages['connections'] = new Page("Connections");
-pages['connections'].contents = "{$Connections}";
-
-pages['about'] = new Page("About");
-pages['about'].contents = "{$About}";
-
-/* These are variables that might need to change at some point */
-var server = "//www.lanecc.edu/custom";
-var resources = server+"/mm/images/";
-
 // This is kinda like Document.ready()
 function loaded(){
     jQuery('head').append('<style type="text/css" media="all">{$cssmin}</style>');
     var current_url = window.location.pathname;
     var cHeight = 0;
-    jQuery('body').append('<div id="lmm"></div>');
-    var menu = "<div id='lmm_logo'>{$HomeButton}</div><ul id='lmm_cats'>";
-    for(var key in pages){
-        menu += "<li id='lmm_" + key + "' class='lmm_toplevel'>"+ pages[key].__str__() + "</li>";
-    }
+    
+    jQuery('body').append('{$lmm}');
     //TODO the gift box icon should NOT be part of this div. Instead, add a wrapper
-    menu += "</ul><div id='lmm_search'><a href='http://lanecc.edu/foundation/ways-give'><div id='lmm_gift'></div></a>{$SearchForm}</div>";
-    jQuery('#lmm').append(menu);
-    jQuery('#lmm').after('<div id="lmm_pane_underlay"></div>');
-    jQuery('#lmm').after('<div id="lmm_underlay"></div>');
 
     // Figure out the left margin for lmm_cats. unfortunately, this needs to be hardcoded, as it isn't possible to get an auto margin from JQuery
     function updateCats(){

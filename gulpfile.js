@@ -1,18 +1,57 @@
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
-    minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
-    notify = require('gulp-notify');
+    gfi = require('gulp-file-insert'),
+    minifyHTML = require('gulp-minify-html'),
+    runSequence = require('run-sequence'),
+    replace = require('gulp-replace'),
+    del = require('del');
+
+gulp.task('minify-html', function(){
+    var opts = {
+        conditionals: true,
+        quotes: true
+    };
+
+    return gulp.src('src/html/menu.html')
+        .pipe(minifyHTML(opts))
+        .pipe(gulp.dest('tmp/'));
+});
 
 gulp.task('styles', function() {
-  return sass('src/scss/mm.scss', { style: 'expanded' })
+  return sass('src/scss/mm.scss', { style: 'compressed' })
     .pipe(gulp.dest('css'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
-    .pipe(gulp.dest('dist/css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(replace(/\n/, ''))
+    .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('default', function() {
-    gulp.start('styles');
+gulp.task('inject-html', function() {
+  return gulp.src('src/js/lmm.dev.js')
+  .pipe(gfi({
+    "{$lmm}": "tmp/menu.html"
+  }))
+  .pipe(gulp.dest('tmp'));
 });
+
+gulp.task('inject-css', function(){
+  return gulp.src('tmp/lmm.dev.js')
+  .pipe(gfi({
+    "{$cssmin}": "dist/css/mm.min.css"
+  }))
+  .pipe(rename({extname:".js", basename: "lmm"}))
+  .pipe(gulp.dest('dist/js/'));
+});
+
+gulp.task('clean', function(cb) {
+    del('tmp', cb)
+});
+
+gulp.task('build', function(cb){
+    runSequence(['minify-html', 'styles'],
+                 'inject-html', 
+                 'inject-css',
+                 'clean'); 
+});
+
+//maybe rewrite each of these to return??? seemed to have broken after adding callbacks
