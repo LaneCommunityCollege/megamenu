@@ -62,5 +62,3 @@ gulp.task('build', function(cb){
                  'compress',
                  'clean'); 
 });
-
-//maybe rewrite each of these to return??? seemed to have broken after adding callbacks
