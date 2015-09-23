@@ -1,14 +1,14 @@
 {
   "name": "megamenu",
-  "descripton": "Lane Community College's Megamenu",
-  "author": "Kyle Schmidt <ks@kyleschmidt.com>",
   "version": "2.0.0",
-  "license": "MIT",
+  "description": "Lane Community College's Megamenu",
+  "author": "Kyle Schmidt <ks@kyleschmidt.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/LaneCommunityCollege/megamenu"
   },
   "devDependencies": {
     "gulp": "^3.9.0"
-  }
+  },
+  "license": "MIT"
 }
