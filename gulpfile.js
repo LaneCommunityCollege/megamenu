@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     runSequence = require('run-sequence'),
     replace = require('gulp-replace'),
+    uglify = require('gulp-uglify'),
     del = require('del');
 
 gulp.task('minify-html', function(){
@@ -28,19 +29,26 @@ gulp.task('styles', function() {
 
 gulp.task('inject-html', function() {
   return gulp.src('src/js/lmm.dev.js')
-  .pipe(gfi({
-    "{$lmm}": "tmp/menu.html"
-  }))
-  .pipe(gulp.dest('tmp'));
+    .pipe(gfi({
+      "{$lmm}": "tmp/menu.html"
+    }))
+    .pipe(gulp.dest('tmp'));
 });
 
 gulp.task('inject-css', function(){
   return gulp.src('tmp/lmm.dev.js')
-  .pipe(gfi({
-    "{$cssmin}": "dist/css/mm.min.css"
-  }))
-  .pipe(rename({extname:".js", basename: "lmm"}))
-  .pipe(gulp.dest('dist/js/'));
+    .pipe(gfi({
+      "{$cssmin}": "dist/css/mm.min.css"
+    }))
+    .pipe(rename({extname:".js", basename: "lmm"}))
+    .pipe(gulp.dest('dist/js/'));
+});
+
+gulp.task('compress', function(){
+    return gulp.src('dist/js/lmm.js')
+      .pipe(uglify())
+      .pipe(rename({suffix:".min"}))
+      .pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('clean', function(cb) {
@@ -51,6 +59,7 @@ gulp.task('build', function(cb){
     runSequence(['minify-html', 'styles'],
                  'inject-html', 
                  'inject-css',
+                 'compress',
                  'clean'); 
 });
 
