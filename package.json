@@ -11,6 +11,7 @@
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-file-insert": "^1.0.2",
+    "gulp-jade": "^1.1.0",
     "gulp-minify-html": "^1.0.4",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",

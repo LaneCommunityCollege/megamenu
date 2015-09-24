@@ -6,15 +6,17 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     replace = require('gulp-replace'),
     uglify = require('gulp-uglify'),
-    del = require('del');
+    del = require('del'),
+    jade = require('gulp-jade');
 
 gulp.task('minify-html', function(){
     var opts = {
         conditionals: true,
-        quotes: true
+        quotes: true,
+        empty: true
     };
 
-    return gulp.src('src/html/menu.html')
+    return gulp.src('tmp/menu.html')
         .pipe(minifyHTML(opts))
         .pipe(gulp.dest('tmp/'));
 });
@@ -25,6 +27,16 @@ gulp.task('styles', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(replace(/\n/, ''))
     .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('build-html', function() {
+  var YOUR_LOCALS = {};
+ 
+  gulp.src('src/html/menu.jade')
+    .pipe(jade({
+      locals: YOUR_LOCALS
+    }))
+    .pipe(gulp.dest('tmp'))
 });
 
 gulp.task('inject-html', function() {
@@ -56,7 +68,8 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('build', function(cb){
-    runSequence(['minify-html', 'styles'],
+    runSequence(['build-html', 'styles'],
+                 'minify-html',
                  'inject-html', 
                  'inject-css',
                  'compress',
