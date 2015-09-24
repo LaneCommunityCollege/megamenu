@@ -24,7 +24,6 @@ function loaded(){
     var cHeight = 0;
     
     jQuery('body').append('{$lmm}');
-    //TODO the gift box icon should NOT be part of this div. Instead, add a wrapper
 
     // Figure out the left margin for lmm_cats. unfortunately, this needs to be hardcoded, as it isn't possible to get an auto margin from JQuery
     function updateCats(){
@@ -55,7 +54,7 @@ function loaded(){
         jQuery('.lmm_col').css('width', Math.floor(width / 3) - 18);
     }
     updateCats();
-    jQuery(window).resize(function(){updateCats();});
+    jQuery(window).resize(updateCats);
     var lastaction = "";
     // Handle opening and closing panes
     jQuery('body').delegate('#lmm li.lmm_toplevel', 'click', function(e){
@@ -74,10 +73,8 @@ function loaded(){
         else if(jQuery('.lmm_pane_container:visible').length > 0 && lastaction != 'close'){
             lastaction = 'swap'
             var oldPane = jQuery('.lmm_pane_container:visible').not(clickedPane);
-            clickedPane.height(254);
-            oldPane.stop().fadeOut(200)
-            clickedPane.fadeIn(200);
-            oldPane.height(0);
+            oldPane.stop().fadeOut(200).height(0);
+            clickedPane.height(254).fadeIn(200);
             oldPane.parent('.lmm_toplevel').removeClass('lmm_active');
         }
         //must just want to open us
@@ -99,9 +96,7 @@ function loaded(){
     });
 
     function commonClose(){
-        jQuery('#lmm .lmm_other .lmm_other_pane').each(function(){
-            jQuery(this).hide();
-        })
+        jQuery('#lmm .lmm_other .lmm_other_pane').hide();
         jQuery('.lmm_active').removeClass('lmm_active');
         jQuery('#lmm .lmm_pane_container:visible').add(jQuery('#lmm_pane_underlay')).animate({
             height:0
@@ -109,12 +104,8 @@ function loaded(){
         jQuery('#lmm_underlay').height(0);
     }
 
-    //allow us to click the background to close whatever's open
-    jQuery('body').delegate('#lmm_underlay', 'click', function(){
-        commonClose();
-    });
     //allow us to use the closer to close things
-    jQuery('body').delegate('#lmm .lmm_pane .lmm_closer', 'click', function(){
+    jQuery('body').delegate('#lmm .lmm_pane .lmm_closer, #lmm_underlay', 'click', function(){
         commonClose();
     });
 
@@ -152,7 +143,7 @@ function loaded(){
     jQuery('body').delegate('#lmm_searchops input', 'click',function(e){
         var dest = jQuery('#lmm_searchops input:checked').attr('id');
         if(dest == "lmm_search_web"){
-        //remove existing temp form fields that may or may not be needed
+            //remove existing temp form fields that may or may not be needed
             jQuery('.lmm_temp').remove();
             jQuery('#lmm_search_form').get(0).setAttribute('action', 'https://www.lanecc.edu/custom/search');
             jQuery('#lmm_search_form').get(0).setAttribute('method', 'get');
