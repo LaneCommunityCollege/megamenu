@@ -121,6 +121,33 @@ $resources: '//static.lanecc.net/mm/images/';
     text-transform: uppercase;
     vertical-align: top;
 
+    .link-button {
+       border: 1px solid #0a3c59;
+       background: #b38a10;
+       background: -webkit-gradient(linear, left top, left bottom, from(#edb817), to(#b38a10));
+       background: -webkit-linear-gradient(top, #edb817, #b38a10);
+       background: -moz-linear-gradient(top, #edb817, #b38a10);
+       background: -ms-linear-gradient(top, #edb817, #b38a10);
+       background: -o-linear-gradient(top, #edb817, #b38a10);
+       background-image: -ms-linear-gradient(top, #edb817 0%, #b38a10 100%);
+       display: inline-block;
+       padding: 7px 14px;
+       border-radius: 6px;
+       box-shadow: rgba(0,0,0,0.4) 0 1px 0, inset rgba(0,0,0,0.4) 0 1px 0;
+       color: #fff;
+       font-size: 110%;
+       text-decoration: none;
+       &:hover {
+         background: #bf9111;
+         background: -webkit-gradient(linear, left top, left bottom, from(#ffc619), to(#bf9111));
+         background: -webkit-linear-gradient(top, #ffc619, #bf9111);
+         background: -moz-linear-gradient(top, #ffc619, #bf9111);
+         background: -ms-linear-gradient(top, #ffc619, #bf9111);
+         background: -o-linear-gradient(top, #ffc619, #bf9111);
+         background-image: -ms-linear-gradient(top, #ffc619 0%, #bf9111 100%);
+       }
+    }
+
     .lmm_pane_container {
       background-color: transparent;
       cursor: auto;
