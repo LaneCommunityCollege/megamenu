@@ -32,9 +32,10 @@ gulp.task('styles', function() {
 gulp.task('build-html', function() {
   var YOUR_LOCALS = {};
  
-  gulp.src('src/html/menu.jade')
+  gulp.src('src/jade/menu.jade')
     .pipe(jade({
-      locals: YOUR_LOCALS
+      locals: YOUR_LOCALS,
+      doctype: "html"
     }))
     .pipe(gulp.dest('tmp'))
 });
