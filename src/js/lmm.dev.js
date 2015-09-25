@@ -59,7 +59,7 @@ function loaded(){
     // Handle opening and closing panes
     jQuery('body').delegate('#lmm li.lmm_toplevel', 'click', function(e){
         jQuery(this).addClass('lmm_active');
-        jQuery('.lmm_other_pane').hide();
+        jQuery('.lmm_side_pane').hide();
         var clickedPane = jQuery('.lmm_pane_container', this);
         //if its a differnet panel that's open, fade out that panel and fade this one in
         if(clickedPane.is(":visible") && jQuery('.lmm_pane_container:visible').length == 1){
@@ -96,7 +96,7 @@ function loaded(){
     });
 
     function commonClose(){
-        jQuery('#lmm .lmm_other .lmm_other_pane').hide();
+        jQuery('#lmm .lmm_other .lmm_side_pane').hide();
         jQuery('.lmm_active').removeClass('lmm_active');
         jQuery('#lmm .lmm_pane_container:visible').add(jQuery('#lmm_pane_underlay')).animate({
             height:0
