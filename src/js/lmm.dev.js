@@ -57,7 +57,7 @@ function loaded(){
     jQuery(window).resize(updateCats);
     var lastaction = "";
     // Handle opening and closing panes
-    jQuery('body').delegate('#lmm li.lmm_toplevel', 'click', function(e){
+    jQuery('body').delegate('li.lmm_toplevel', 'click', function(e){
         jQuery(this).addClass('lmm_active');
         jQuery('.lmm_side_pane').hide();
         var clickedPane = jQuery('.lmm_pane_container', this);
@@ -71,7 +71,7 @@ function loaded(){
         }
         //swap us with someone else
         else if(jQuery('.lmm_pane_container:visible').length > 0 && lastaction != 'close'){
-            lastaction = 'swap'
+            lastaction = 'swap';
             var oldPane = jQuery('.lmm_pane_container:visible').not(clickedPane);
             oldPane.stop().fadeOut(200).height(0);
             clickedPane.height(254).fadeIn(200);
@@ -79,7 +79,7 @@ function loaded(){
         }
         //must just want to open us
         else{
-            lastaction = 'open'
+            lastaction = 'open';
             jQuery('#lmm_underlay').height(window.innerHeight);
             clickedPane.add(jQuery('#lmm_pane_underlay')).show().stop().animate({
                 height: 275
@@ -95,27 +95,24 @@ function loaded(){
         }
     });
 
-    function commonClose(){
-        jQuery('#lmm .lmm_other .lmm_side_pane').hide();
-        jQuery('.lmm_active').removeClass('lmm_active');
-        jQuery('#lmm .lmm_pane_container:visible').add(jQuery('#lmm_pane_underlay')).animate({
-            height:0
-        }, function(){jQuery(this).hide();});        
-        jQuery('#lmm_underlay').height(0);
-    }
-
     //allow us to use the closer to close things
-    jQuery('body').delegate('#lmm .lmm_pane .lmm_closer, #lmm_underlay', 'click', function(){
-        commonClose();
+    jQuery('body').delegate('.lmm_closer, #lmm_underlay', 'click', function(){
+        jQuery('.lmm_side_pane').hide();
+        jQuery('.lmm_active').removeClass('lmm_active');
+        jQuery('.lmm_pane_container:visible, .lmm_side_pane:visible').add(jQuery('#lmm_pane_underlay')).animate({
+            height:0
+        }, function(){jQuery(this).hide();});
+        jQuery('#lmm_underlay').height(0);
     });
 
     /* Pop open a search options box */
     jQuery('body').delegate('#lmm_q', 'click', function(e){
         //shrink any existing panes
         jQuery('#lmm_pane_underlay').height(0);
+        jQuery('#lmm_underlay').height(window.innerHeight);
         jQuery('#lmm_homes_page').stop().fadeOut(200);
         jQuery('.lmm_pane_container:visible').stop().fadeOut(200).height(0);
-        jQuery('#lmm_underlay').height(window.innerHeight);
+        //jQuery('#lmm_underlay').height(window.innerHeight);
         jQuery('.lmm_active').removeClass('lmm_active');
         jQuery('#lmm_searchops').fadeIn(200);
     });
