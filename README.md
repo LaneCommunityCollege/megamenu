@@ -14,4 +14,3 @@ Yet to Do:
 - [ ] Mobile Version
 - [ ] Other Color Themes
 - [ ] provide a utility function that returns true if the current user is logged in via cas
-- [ ] this strips off the trailing ; on the font import and that's what's causing the mm not to load roboto
