@@ -54,6 +54,18 @@ function loaded(){
         jQuery('.lmm_col').css('width', Math.floor(width / 3) - 18);
     }
     updateCats();
+
+    //Stop random pane clicks from closing us, except on the closer
+    jQuery('#lmm li.lmm_toplevel, #lmm_logo').children().click(function(e){
+        if(!jQuery(e.target).is('div.lmm_closer')){
+            e.stopPropagation();
+        }
+    });
+
+    jQuery('#lmm a').each(function(){
+        jQuery(this).attr('href', jQuery(this).attr('href') + "?utm_source=megamenu&utm_medium=web&utm_campaign=megamenu");
+    });
+
     jQuery(window).resize(updateCats);
     var lastaction = "";
     // Handle opening and closing panes
@@ -88,12 +100,12 @@ function loaded(){
         e.stopPropagation();
         return false;
     });
-    //Stop random pane clicks from closing us, except on the closer
-    jQuery('#lmm li.lmm_toplevel').children().click(function(e){
-        if(!jQuery(e.target).is('div.lmm_closer')){
-            e.stopPropagation();
-        }
-    });
+
+    /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
+       to be sized incorrectly. Make that adjustment here */
+    if(jQuery(window).width() < jQuery(document).width()){
+        jQuery('#lmm, #lmm_underlay, #lmm_pane_underlay').width(jQuery(document).width());
+    }
 
     //allow us to use the closer to close things
     jQuery('body').delegate('.lmm_closer, #lmm_underlay', 'click', function(){
@@ -112,7 +124,6 @@ function loaded(){
         jQuery('#lmm_underlay').height(window.innerHeight);
         jQuery('#lmm_homes_page').stop().fadeOut(200);
         jQuery('.lmm_pane_container:visible').stop().fadeOut(200).height(0);
-        //jQuery('#lmm_underlay').height(window.innerHeight);
         jQuery('.lmm_active').removeClass('lmm_active');
         jQuery('#lmm_searchops').fadeIn(200);
     });
@@ -131,11 +142,6 @@ function loaded(){
             jQuery('#lmm_homes_page').fadeIn(200);
         }
     })
-    jQuery('#lmm_logo').children().click(function(e){ e.stopPropagation();});
-
-    jQuery('#lmm a').each(function(){
-        jQuery(this).attr('href', jQuery(this).attr('href') + "?utm_source=megamenu&utm_medium=web&utm_campaign=megamenu");
-    });
     
     /* Handle the radio buttons for the search box 
      * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isn't able to correctly set
@@ -176,12 +182,6 @@ function loaded(){
         jQuery('#lmm_q').focus();
         e.stopPropagation();
     });
-    
-    /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
-       to be sized incorrectly. Make that adjustment here */
-    if(jQuery(window).width() < jQuery(document).width()){
-        jQuery('#lmm, #lmm_underlay, #lmm_pane_underlay').width(jQuery(document).width());
-    }
 
     /* Site specific adjustments */
     if(jQuery('body').hasClass('admin-bar')){ //Wordpress
