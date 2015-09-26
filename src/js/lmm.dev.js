@@ -132,6 +132,10 @@ function loaded(){
         }
     })
     jQuery('#lmm_logo').children().click(function(e){ e.stopPropagation();});
+
+    jQuery('#lmm a').each(function(){
+        jQuery(this).attr('href', jQuery(this).attr('href') + "?utm_source=megamenu&utm_medium=web&utm_campaign=megamenu");
+    });
     
     /* Handle the radio buttons for the search box 
      * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isn't able to correctly set

@@ -17,4 +17,5 @@ Yet to Do:
 - [ ] Mobile Version
 - [ ] Other Color Themes
 - [ ] provide a utility function that returns true if the current user is logged in via cas
-- [ ] add a source parameter to each of the links 
+- [ ] reorder javascript - build the meagamenu, then set the events
+- [ ] these should be opened as issues, rather than in the readme

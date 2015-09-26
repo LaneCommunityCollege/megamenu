@@ -1,5 +1,8 @@
 # Change Log
 
+## Unreleased
+- Added Google Analytics Campaign tracking to each link
+
 ## 1.1.0 - 2015-09-25
 - Custom Python build system rewritten in Gulp
 - HTML Pseudo templating system rewritten to use Jade
