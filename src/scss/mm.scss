@@ -380,7 +380,7 @@ $resources: '//static.lanecc.net/mm/images/';
 // These mean that the global stylesheet (this one) applies to IE8
 // if your phone is fancy, it'll get the "mobile" sheet. Then there's two
 // other sheets for big screens.
-@media all and (max-width: 740px){
+@media all and (max-width: 720px){
   @import 'mobile';
 }
 @media all and (max-width: 980px){
