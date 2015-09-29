@@ -2,8 +2,8 @@
 
 @media only print {
   #lmm,
-  #lmm_pane_underlay,
-  #lmm_underlay {
+  #lmm-pane-underlay,
+  #lmm-underlay {
     display: none;
   }
 }
@@ -23,7 +23,7 @@ $resources: '//static.lanecc.net/mm/images/';
   zoom: 1;
 }
 
-#lmm_underlay {
+#lmm-underlay {
   height: 0;
   left: 0;
   position: fixed;
@@ -67,7 +67,7 @@ $resources: '//static.lanecc.net/mm/images/';
     text-decoration: underline;
   }
 
-  .lmm_side_pane {
+  .lmm-side-pane {
     background-color: $background-color;
     border: $text-color solid 1px;
     border-radius: 15px;
@@ -78,7 +78,7 @@ $resources: '//static.lanecc.net/mm/images/';
     text-align: left;
   }
 
-  .lmm_closer {
+  .lmm-closer {
     background-color: $background-color;
     border-top: $background-color solid 1px;
     bottom: 0;
@@ -91,7 +91,7 @@ $resources: '//static.lanecc.net/mm/images/';
     width: 100%;
   }
 
-  .lmm_close_arrow {
+  .lmm-close-arrow {
     border-bottom: $background-color solid 8px;
     border-left: transparent solid 10px;
     border-right: transparent solid 10px;
@@ -101,7 +101,7 @@ $resources: '//static.lanecc.net/mm/images/';
     width: 1px;
   }
 
-  .lmm_pane_container {
+  .lmm-pane-container {
     background-color: transparent;
     cursor: auto;
     display: none;
@@ -113,7 +113,7 @@ $resources: '//static.lanecc.net/mm/images/';
     width: 100%;
   }
 
-  .lmm_pane {
+  .lmm-pane {
     background-image: url($resources + 'tarp.jpg');
     border: $border-blue solid 1px;
     border-bottom-style: none;
@@ -124,7 +124,7 @@ $resources: '//static.lanecc.net/mm/images/';
     width: 940px;
   }
 
-  .lmm_col {
+  .lmm-col {
     float: left;
 
     h3 {
@@ -147,13 +147,13 @@ $resources: '//static.lanecc.net/mm/images/';
       text-align: left;
       text-transform: none;
 
-      &.lmm_space {
+      &.lmm-space {
         margin-bottom: .8em;
       }
     }
   }
 
-  .lmm_pointer {
+  .lmm-pointer {
     border-bottom: $border-blue solid 8px;
     border-left: transparent solid 5px;
     border-right: transparent solid 5px;
@@ -165,7 +165,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm_cats {
+#lmm-cats {
   float: left;
 
   li {
@@ -195,23 +195,23 @@ $resources: '//static.lanecc.net/mm/images/';
        }
     }
 
-    &.lmm_toplevel {
+    &.lmm-toplevel {
       cursor: pointer;
       margin: 0 5px 0 0;
     }
 
-    &.lmm_active {
+    &.lmm-active {
       background-color: $background-color;
       color: $gold;
 
-      .lmm_pointer {
+      .lmm-pointer {
         display: block;
       }
     }
   }
 }
 
-#lmm_search {
+#lmm-search {
   float: right;
   line-height: normal;
   margin-top: 2px;
@@ -242,7 +242,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm_searchops {
+#lmm-searchops {
   margin-right: 2px;
   margin-top: 7px;
 
@@ -258,7 +258,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm_homes_page {
+#lmm-homes-page {
   float: left;
   margin-left: 3px;
   margin-top: 32px;
@@ -280,7 +280,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm_search_submit {
+#lmm-search-submit {
   background-image: url($resources + 'sprite.png');
   background-position: -136px 0;
   border-radius: 2px;
@@ -291,7 +291,7 @@ $resources: '//static.lanecc.net/mm/images/';
   width: 23px;
 }
 
-#lmm_logo {
+#lmm-logo {
   background-image: url($resources + 'sprite.png');
   background-position: -136px -23px;
   background-repeat: no-repeat;
@@ -304,49 +304,49 @@ $resources: '//static.lanecc.net/mm/images/';
   width: 34px;
 }
 
-.lmm_moodle {
+.lmm-moodle {
   background-position: 0 31px;
   height: 31px;
   width: 72px;
 }
 
-.lmm_mylane {
+.lmm-mylane {
   background-position: 0 0;
   height: 31px;
   width: 72px;
 }
 
-.lmm_facebook {
+.lmm-facebook {
   background-position: -72px 0;
   height: 32px;
   width: 32px;
 }
 
-.lmm_twitter {
+.lmm-twitter {
   background-position: -72px 32px;
   height: 32px;
   width: 32px;
 }
 
-.lmm_youtube {
+.lmm-youtube {
   background-position: -104px 0;
   height: 32px;
   width: 32px;
 }
 
-.lmm_instagram {
+.lmm-instagram {
   background-position: -104px 32px;
   height: 32px;
   width: 32px;
 }
 
-.lmm_orgsync {
+.lmm-orgsync {
   background-position: -181px 0;
   height: 32px;
   width: 32px;
 }
 
-#lmm_gift {
+#lmm-gift {
   background-image: url($resources + 'sprite.png');
   background-position: -159px 0;
   background-repeat: no-repeat;
@@ -356,12 +356,12 @@ $resources: '//static.lanecc.net/mm/images/';
   width: 22px;
 }
 
-.lmm_sprite {
+.lmm-sprite {
   background-image: url($resources + 'sprite.png');
   display: inline-block;
 }
 
-#lmm_pane_underlay {
+#lmm-pane-underlay {
   @include transparent($underlay-color, .90);
   border-bottom: $border-blue solid 1px;
   display: none;
