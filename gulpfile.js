@@ -37,7 +37,7 @@ gulp.task('build-html', function() {
       locals: YOUR_LOCALS,
       doctype: "html"
     }))
-    .pipe(gulp.dest('tmp'))
+    .pipe(gulp.dest('tmp'));
 });
 
 gulp.task('inject-html', function() {
@@ -65,7 +65,7 @@ gulp.task('compress', function(){
 });
 
 gulp.task('clean', function(cb) {
-    del('tmp', cb)
+    del('tmp', cb);
 });
 
 gulp.task('build', function(cb){

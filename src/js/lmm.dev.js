@@ -141,7 +141,7 @@ function loaded(){
             jQuery('#lmm-searchops').stop().fadeOut(200);
             jQuery('#lmm-homes-page').fadeIn(200);
         }
-    })
+    });
     
     /* Handle the radio buttons for the search box 
      * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isn't able to correctly set
@@ -192,7 +192,7 @@ function loaded(){
     else if(jQuery('body').hasClass('admin-menu')){ //Authenticated Drupal
         jQuery('#lmm').css('display','none');
     }
-    else if(window.location.pathname.indexOf('/imce') == 0){ //Authenticated Drupal's file browser
+    else if(window.location.pathname.indexOf('/imce') === 0){ //Authenticated Drupal's file browser
         jQuery('#lmm').css('display','none');
     }
     /* If we're ever relative positioned, we need to change where the top sits, otherwise we'll sit 28px
