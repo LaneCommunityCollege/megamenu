@@ -5,7 +5,10 @@ function initJQuery() {
         if (! jQueryScriptOutputted) {
             //only output the script once..
             jQueryScriptOutputted = true;
-            document.write("<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>");
+            var jq = document.createElement('script');
+            jq.setAttribute("type", "text/javascript");
+            jq.setAttribute("src", "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
+            document.getElementsByTagName("head")[0].appendChild(jq)
         }
         setTimeout(initJQuery, 50);
     } 
