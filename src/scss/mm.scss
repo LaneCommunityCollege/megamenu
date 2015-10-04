@@ -58,7 +58,7 @@ $resources: '//static.lanecc.net/mm/images/';
   a,
   a:visited,
   a:active {
-    color: #fff;
+    color: $text-color;
     cursor: pointer;
     text-decoration: none;
   }
@@ -129,7 +129,7 @@ $resources: '//static.lanecc.net/mm/images/';
 
     h3 {
       border-bottom: $border-blue solid 1px;
-      color: #fff;
+      color: $text-color;
       display: inline-block;
       font-weight: bold;
       line-height: 17px;
@@ -184,7 +184,7 @@ $resources: '//static.lanecc.net/mm/images/';
       border: 1px solid #0a3c59;
       border-radius: 6px;
       box-shadow: rgba(0, 0, 0, .4) 0 1px 0, inset rgba(0, 0, 0, .4) 0 1px 0;
-      color: #fff;
+      color: $text-color;
       display: inline-block;
       font-size: 110%;
       padding: 7px 10px;
@@ -218,26 +218,25 @@ $resources: '//static.lanecc.net/mm/images/';
   margin-top: 2px;
   //is actually 212 + 22 px for the gift icon + 2 px margin
   width: 236px; //needs to be here, otherwise the box seems to grow by 1px when clicked
-  form {
-    input {
-      vertical-align: bottom;
+  
+  input {
+    vertical-align: bottom;
 
-      &[type=text] {
-        background-color: #fff;
-        border: 1px solid;
-        border-color: #848484 #c1c1c1 #e1e1e1;
-        border-radius: 15px;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        font-family: sans-serif;
-        font-size: 13px;
-        height: 24px;
-        padding: 0 6px;
-        width: 181px;
+    &[type=text] {
+      background-color: $text-color;
+      border: 1px solid;
+      border-color: #848484 #c1c1c1 #e1e1e1;
+      border-radius: 15px;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: sans-serif;
+      font-size: 13px;
+      height: 24px;
+      padding: 0 6px;
+      width: 181px;
 
-        &:focus {
-          outline: none;
-        }
+      &:focus {
+        outline: none;
       }
     }
   }
