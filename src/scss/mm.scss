@@ -78,29 +78,6 @@ $resources: '//static.lanecc.net/mm/images/';
     text-align: left;
   }
 
-  .lmm-closer {
-    background-color: $background-color;
-    border-top: $background-color solid 1px;
-    bottom: 0;
-    clear: both;
-    cursor: pointer;
-    left: 0;
-    line-height: 19px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-  }
-
-  .lmm-close-arrow {
-    border-bottom: $background-color solid 8px;
-    border-left: transparent solid 10px;
-    border-right: transparent solid 10px;
-    bottom: 0;
-    height: 10px;
-    margin: -19px auto 0;
-    width: 1px;
-  }
-
   .lmm-pane-container {
     background-color: transparent;
     cursor: auto;
@@ -152,6 +129,29 @@ $resources: '//static.lanecc.net/mm/images/';
       }
     }
   }
+}
+
+.lmm-closer {
+  background-color: $background-color;
+  border-top: $background-color solid 1px;
+  bottom: 0;
+  clear: both;
+  cursor: pointer;
+  left: 0;
+  line-height: 19px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.lmm-close-arrow {
+  border-bottom: $background-color solid 8px;
+  border-left: transparent solid 10px;
+  border-right: transparent solid 10px;
+  bottom: 0;
+  height: 10px;
+  margin: -19px auto 0;
+  width: 1px;
 }
 
 .lmm-pointer {
