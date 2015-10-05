@@ -177,22 +177,23 @@ $resources: '//static.lanecc.net/mm/images/';
     text-align: center;
     text-transform: uppercase;
     vertical-align: top;
-
-    &.lmm-toplevel {
-      cursor: pointer;
-      margin: 0 5px 0 0;
-    }
-
-    &.lmm-active {
-      background-color: $background-color;
-      color: $gold;
-
-      .lmm-pointer {
-        display: block;
-      }
-    }
   }
 }
+
+.lmm-toplevel {
+  cursor: pointer;
+  margin: 0 5px 0 0;
+}
+
+.lmm-active {
+  background-color: $background-color;
+  color: $gold;
+
+  .lmm-pointer {
+    display: block;
+  }
+}
+
 
 .lmm-link-button {
   background: #b38a10;
