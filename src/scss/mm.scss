@@ -155,15 +155,15 @@ $resources: '//static.lanecc.net/mm/images/';
 }
 
 .lmm-pointer {
-    border-bottom: $border-blue solid 8px;
-    border-left: transparent solid 5px;
-    border-right: transparent solid 5px;
-    display: none;
-    left: 42%;
-    position: relative;
-    top: -7px;
-    width: 1px;
-  }
+  border-bottom: $border-blue solid 8px;
+  border-left: transparent solid 5px;
+  border-right: transparent solid 5px;
+  display: none;
+  left: 42%;
+  position: relative;
+  top: -7px;
+  width: 1px;
+}
 
 .lmm-cats {
   float: left;
@@ -208,7 +208,7 @@ $resources: '//static.lanecc.net/mm/images/';
 
   &:hover {
     background: #bf9111;
-    background: linear-gradient(180deg, #ffc619, #bf9111);
+    background-image: linear-gradient(180deg, #ffc619, #bf9111);
     text-decoration: none !important;
   }
 }
