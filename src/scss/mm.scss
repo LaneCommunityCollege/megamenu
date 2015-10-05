@@ -17,9 +17,7 @@ $border-blue: #85a3c0;
 $resources: '//static.lanecc.net/mm/images/';
 
 @mixin transparent($color, $alpha) {
-  $rgba: rgba($color, $alpha);
-  background-color: transparent;
-  background-color: $rgba;
+  background-color: rgba($color, $alpha);
   zoom: 1;
 }
 
