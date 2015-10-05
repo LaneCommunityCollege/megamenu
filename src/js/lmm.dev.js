@@ -121,7 +121,7 @@ function loaded(){
     });
 
     /* Pop open a search options box */
-    jQuery('body').delegate('#lmm_q', 'click', function(e){
+    jQuery('body').delegate('#lmm-q', 'click', function(e){
         //shrink any existing panes
         jQuery('.lmm-pane-underlay').height(0);
         jQuery('.lmm-underlay').height(window.innerHeight);
@@ -152,37 +152,37 @@ function loaded(){
      */
     jQuery('body').delegate('.lmm-searchops input', 'click',function(e){
         var dest = jQuery('.lmm-searchops input:checked').attr('id');
-        if(dest == "lmm-search_web"){
+        if(dest == "lmm-search-web"){
             //remove existing temp form fields that may or may not be needed
-            jQuery('.lmm_temp').remove();
-            jQuery('.lmm-search_form').get(0).setAttribute('action', 'https://www.lanecc.edu/custom/search');
-            jQuery('.lmm-search_form').get(0).setAttribute('method', 'get');
-            jQuery('.lmm-search_form input[name="requestType"]').remove();
-            jQuery('#lmm_q').attr('name','q');
-            jQuery('.lmm-search_label').attr('for','q');
+            jQuery('.lmm-temp').remove();
+            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://www.lanecc.edu/custom/search');
+            jQuery('.lmm-search-form').get(0).setAttribute('method', 'get');
+            jQuery('.lmm-search-form input[name="requestType"]').remove();
+            jQuery('#lmm-q').attr('name','q');
+            jQuery('.lmm-search-label').attr('for','q');
         }
-        else if(dest == "lmm-search_asklane"){
-            jQuery('.lmm-search_form').append('<input type="hidden" name="requestType">');            
-            jQuery('.lmm-search_form').get(0).setAttribute('action', 'https://lanecc.intelliresponse.com/');
-            jQuery('.lmm-search_form').get(0).setAttribute('method', 'post');
-            jQuery('#lmm_q').attr('name','question');
-            jQuery('.lmm-search_label').attr('for','question');
+        else if(dest == "lmm-search-asklane"){
+            jQuery('.lmm-search-form').append('<input type="hidden" name="requestType">');            
+            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://lanecc.intelliresponse.com/');
+            jQuery('.lmm-search-form').get(0).setAttribute('method', 'post');
+            jQuery('#lmm-q').attr('name','question');
+            jQuery('.lmm-search-label').attr('for','question');
         }
-        else if(dest == "lmm-search_ce"){
-            jQuery('.lmm-search_form input[name="requestType"]').remove();
-            jQuery('.lmm-search_form').get(0).setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
-            jQuery('.lmm-search_form').get(0).setAttribute('method', 'post');
-            jQuery('#lmm_q').attr('name','Keywords');
-            jQuery('.lmm-search_label').attr('for','Keywords');
+        else if(dest == "lmm-search-ce"){
+            jQuery('.lmm-search-form input[name="requestType"]').remove();
+            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
+            jQuery('.lmm-search-form').get(0).setAttribute('method', 'post');
+            jQuery('#lmm-q').attr('name','Keywords');
+            jQuery('.lmm-search-label').attr('for','Keywords');
         }
-        else if(dest == "lmm-search_people"){
-            jQuery('.lmm-search_form input[name="requestType"]').remove();
-            jQuery('.lmm-search_form').get(0).setAttribute('action', 'https://directory.lanecc.edu/search');
-            jQuery('.lmm-search_form').get(0).setAttribute('method', 'get');
-            jQuery('#lmm_q').attr('name','search');
-            jQuery('.lmm-search_label').attr('for','search');
+        else if(dest == "lmm-search-people"){
+            jQuery('.lmm-search-form input[name="requestType"]').remove();
+            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://directory.lanecc.edu/search');
+            jQuery('.lmm-search-form').get(0).setAttribute('method', 'get');
+            jQuery('#lmm-q').attr('name','search');
+            jQuery('.lmm-search-label').attr('for','search');
         }
-        jQuery('#lmm_q').focus();
+        jQuery('#lmm-q').focus();
         e.stopPropagation();
     });
 
