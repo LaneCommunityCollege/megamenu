@@ -67,17 +67,6 @@ $resources: '//static.lanecc.net/mm/images/';
     text-decoration: underline;
   }
 
-  .lmm-side-pane {
-    background-color: $background-color;
-    border: $text-color solid 1px;
-    border-radius: 15px;
-    cursor: default;
-    display: none;
-    line-height: 1.5em;
-    padding: 9px;
-    text-align: left;
-  }
-
   .lmm-pane-container {
     background-color: transparent;
     cursor: auto;
@@ -129,6 +118,17 @@ $resources: '//static.lanecc.net/mm/images/';
       }
     }
   }
+}
+
+.lmm-side-pane {
+  background-color: $background-color;
+  border: $text-color solid 1px;
+  border-radius: 15px;
+  cursor: default;
+  display: none;
+  line-height: 1.5em;
+  padding: 9px;
+  text-align: left;
 }
 
 .lmm-closer {
