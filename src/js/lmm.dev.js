@@ -121,7 +121,7 @@ function loaded(){
     });
 
     /* Pop open a search options box */
-    jQuery('body').delegate('#lmm-q', 'click', function(e){
+    jQuery('body').delegate('.lmm-q', 'click', function(e){
         //shrink any existing panes
         jQuery('.lmm-pane-underlay').height(0);
         jQuery('.lmm-underlay').height(window.innerHeight);
@@ -158,31 +158,31 @@ function loaded(){
             jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://www.lanecc.edu/custom/search');
             jQuery('.lmm-search-form').get(0).setAttribute('method', 'get');
             jQuery('.lmm-search-form input[name="requestType"]').remove();
-            jQuery('#lmm-q').attr('name','q');
+            jQuery('.lmm-q').attr('name','q');
             jQuery('.lmm-search-label').attr('for','q');
         }
         else if(dest == "lmm-search-asklane"){
             jQuery('.lmm-search-form').append('<input type="hidden" name="requestType">');            
             jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://lanecc.intelliresponse.com/');
             jQuery('.lmm-search-form').get(0).setAttribute('method', 'post');
-            jQuery('#lmm-q').attr('name','question');
+            jQuery('.lmm-q').attr('name','question');
             jQuery('.lmm-search-label').attr('for','question');
         }
         else if(dest == "lmm-search-ce"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
             jQuery('.lmm-search-form').get(0).setAttribute('method', 'post');
-            jQuery('#lmm-q').attr('name','Keywords');
+            jQuery('.lmm-q').attr('name','Keywords');
             jQuery('.lmm-search-label').attr('for','Keywords');
         }
         else if(dest == "lmm-search-people"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://directory.lanecc.edu/search');
             jQuery('.lmm-search-form').get(0).setAttribute('method', 'get');
-            jQuery('#lmm-q').attr('name','search');
+            jQuery('.lmm-q').attr('name','search');
             jQuery('.lmm-search-label').attr('for','search');
         }
-        jQuery('#lmm-q').focus();
+        jQuery('.lmm-q').focus();
         e.stopPropagation();
     });
 
