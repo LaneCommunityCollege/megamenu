@@ -1,9 +1,9 @@
 @import url("//static.lanecc.net/fonts/roboto/roboto.css");
 
 @media only print {
-  #lmm,
-  #lmm-pane-underlay,
-  #lmm-underlay {
+  .lmm,
+  .lmm-pane-underlay,
+  .lmm-underlay {
     display: none;
   }
 }
@@ -23,7 +23,7 @@ $resources: '//static.lanecc.net/mm/images/';
   zoom: 1;
 }
 
-#lmm-underlay {
+.lmm-underlay {
   height: 0;
   left: 0;
   position: fixed;
@@ -35,7 +35,7 @@ $resources: '//static.lanecc.net/mm/images/';
 //Borrow a bunch of reset code:
 @import 'reset';
 
-#lmm {
+.lmm {
   background-color: $background-color;
   border-bottom: $border-blue solid 1px;
   color: $text-color;
@@ -165,7 +165,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm-cats {
+.lmm-cats {
   float: left;
 
   li {
@@ -212,7 +212,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm-search {
+.lmm-search {
   float: right;
   line-height: normal;
   margin-top: 2px;
@@ -242,7 +242,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm-searchops {
+.lmm-searchops {
   margin-right: 2px;
   margin-top: 7px;
 
@@ -258,7 +258,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm-homes-page {
+.lmm-homes-page {
   float: left;
   margin-left: 3px;
   margin-top: 32px;
@@ -280,7 +280,7 @@ $resources: '//static.lanecc.net/mm/images/';
   }
 }
 
-#lmm-search-submit {
+.lmm-search-submit {
   background-image: url($resources + 'sprite.png');
   background-position: -136px 0;
   border-radius: 2px;
@@ -291,7 +291,7 @@ $resources: '//static.lanecc.net/mm/images/';
   width: 23px;
 }
 
-#lmm-logo {
+.lmm-logo {
   background-image: url($resources + 'sprite.png');
   background-position: -136px -23px;
   background-repeat: no-repeat;
@@ -346,7 +346,7 @@ $resources: '//static.lanecc.net/mm/images/';
   width: 32px;
 }
 
-#lmm-gift {
+.lmm-gift {
   background-image: url($resources + 'sprite.png');
   background-position: -159px 0;
   background-repeat: no-repeat;
@@ -361,7 +361,7 @@ $resources: '//static.lanecc.net/mm/images/';
   display: inline-block;
 }
 
-#lmm-pane-underlay {
+.lmm-pane-underlay {
   @include transparent($underlay-color, .90);
   border-bottom: $border-blue solid 1px;
   display: none;

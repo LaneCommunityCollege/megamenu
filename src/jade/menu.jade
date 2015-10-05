@@ -1,6 +1,6 @@
-#lmm
-    #lmm-logo
-        #lmm-homes-page.lmm-side-pane
+.lmm
+    .lmm-logo
+        .lmm-homes-page.lmm-side-pane
             ul
                 li
                     a(href="http://lanecc.edu") Home
@@ -12,20 +12,20 @@
                     a(href="http://lanecc.edu/community") Community
                 li
                     a(href="http://lanecc.edu/employees") Employees
-    ul#lmm-cats
+    ul.lmm-cats
         include applyenroll
         include programs
         include studentlife
         include connections
         include about
-    #lmm-search
+    .lmm-search
         a(href="http://lanecc.edu/foundation/ways-give")
-            #lmm-gift
-        form(id="lmm-search_form", name="search_lane_new_home_page", method="get", action="https://www.lanecc.edu/custom/search")
+            .lmm-gift
+        form(class="lmm-search_form", name="search_lane_new_home_page", method="get", action="https://www.lanecc.edu/custom/search")
             label(id="lmm-search_label", for="q", style="position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;") Search Lane&#39;s Website
             input(type="text", name="q", id="lmm_q", placeholder="Search or AskLane")
-            input(type="submit", value="", id="lmm-search-submit", name="sa")
-        #lmm-searchops.lmm_min.lmm-side-pane
+            input(type="submit", value="", class="lmm-search-submit", name="sa")
+        .lmm-searchops.lmm_min.lmm-side-pane
             label(for="lmm-search_web")
                 input(name="dest", type="radio", id="lmm-search_web", checked="checked")
                 span Lane Website
@@ -38,5 +38,5 @@
             label(for="lmm-search_ce")
                 input(name="dest", type="radio", id="lmm-search_ce")
                 span Continuing Education Classes
-#lmm-pane-underlay
-#lmm-underlay
+.lmm-pane-underlay
+.lmm-underlay
