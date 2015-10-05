@@ -67,29 +67,6 @@ $resources: '//static.lanecc.net/mm/images/';
     text-decoration: underline;
   }
 
-  .lmm-pane-container {
-    background-color: transparent;
-    cursor: auto;
-    display: none;
-    height: 0;
-    left: 0;
-    position: absolute;
-    text-align: left;
-    top: 28px;
-    width: 100%;
-  }
-
-  .lmm-pane {
-    background-image: url($resources + 'tarp.jpg');
-    border: $border-blue solid 1px;
-    border-bottom-style: none;
-    height: 254px;
-    margin: 0 auto;
-    padding: 10px;
-    position: relative;
-    width: 940px;
-  }
-
   .lmm-col {
     float: left;
 
@@ -118,6 +95,29 @@ $resources: '//static.lanecc.net/mm/images/';
       }
     }
   }
+}
+
+.lmm-pane-container {
+  background-color: transparent;
+  cursor: auto;
+  display: none;
+  height: 0;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  top: 28px;
+  width: 100%;
+}
+
+.lmm-pane {
+  background-image: url($resources + 'tarp.jpg');
+  border: $border-blue solid 1px;
+  border-bottom-style: none;
+  height: 254px;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  width: 940px;
 }
 
 .lmm-side-pane {
@@ -178,24 +178,6 @@ $resources: '//static.lanecc.net/mm/images/';
     text-transform: uppercase;
     vertical-align: top;
 
-    .lmm-link-button {
-      background: #b38a10;
-      background-image: linear-gradient(to bottom, #72add3, #1b5990);
-      border: 1px solid #0a3c59;
-      border-radius: 6px;
-      box-shadow: rgba(0, 0, 0, .4) 0 1px 0, inset rgba(0, 0, 0, .4) 0 1px 0;
-      color: $text-color;
-      display: inline-block;
-      font-size: 110%;
-      padding: 7px 10px;
-      text-decoration: none;
-
-      &:hover {
-        background: #bf9111;
-        background: linear-gradient(180deg, #ffc619, #bf9111);
-      }
-    }
-
     &.lmm-toplevel {
       cursor: pointer;
       margin: 0 5px 0 0;
@@ -209,6 +191,25 @@ $resources: '//static.lanecc.net/mm/images/';
         display: block;
       }
     }
+  }
+}
+
+.lmm-link-button {
+  background: #b38a10;
+  background-image: linear-gradient(to bottom, #72add3, #1b5990);
+  border: 1px solid #0a3c59;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, .4) 0 1px 0, inset rgba(0, 0, 0, .4) 0 1px 0;
+  color: $text-color;
+  display: inline-block;
+  font-size: 110%;
+  padding: 7px 10px;
+  text-decoration: none;
+
+  &:hover {
+    background: #bf9111;
+    background: linear-gradient(180deg, #ffc619, #bf9111);
+    text-decoration: none !important;
   }
 }
 
