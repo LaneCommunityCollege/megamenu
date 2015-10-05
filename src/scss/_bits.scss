@@ -1,0 +1,12 @@
+$background-color: #03396a;
+$underlay-color: rgb(3, 3, 10);
+$gold: #f6bd16;
+$text-color: #fff;
+$border-blue: #85a3c0;
+
+$resources: '//static.lanecc.net/mm/images/';
+
+@mixin transparent($color, $alpha) {
+  background-color: rgba($color, $alpha);
+  zoom: 1;
+}

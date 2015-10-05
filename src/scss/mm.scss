@@ -8,18 +8,8 @@
   }
 }
 
-$background-color: #03396a;
-$underlay-color: rgb(3, 3, 10);
-$gold: #f6bd16;
-$text-color: #fff;
-$border-blue: #85a3c0;
-
-$resources: '//static.lanecc.net/mm/images/';
-
-@mixin transparent($color, $alpha) {
-  background-color: rgba($color, $alpha);
-  zoom: 1;
-}
+@import 'reset';
+@import 'bits';
 
 .lmm-underlay {
   height: 0;
@@ -29,9 +19,6 @@ $resources: '//static.lanecc.net/mm/images/';
   width: 100%;
   z-index: 14999;
 }
-
-//Borrow a bunch of reset code:
-@import 'reset';
 
 .lmm {
   background-color: $background-color;
