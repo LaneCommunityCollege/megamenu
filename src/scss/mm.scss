@@ -152,8 +152,9 @@ $resources: '//static.lanecc.net/mm/images/';
       }
     }
   }
+}
 
-  .lmm-pointer {
+.lmm-pointer {
     border-bottom: $border-blue solid 8px;
     border-left: transparent solid 5px;
     border-right: transparent solid 5px;
@@ -163,7 +164,6 @@ $resources: '//static.lanecc.net/mm/images/';
     top: -7px;
     width: 1px;
   }
-}
 
 .lmm-cats {
   float: left;
