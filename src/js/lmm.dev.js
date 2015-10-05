@@ -40,13 +40,13 @@ function loaded(){
             jQuery('body').css('margin-top','28px');
         }
         if(wwidth > 720){
-            var width = 720;
+            width = 720;
         }
         if(wwidth > 980){
-            var width = 980;
+            width = 980;
         }
         if(wwidth > 1440){
-            var width = 1180;
+            width = 1180;
         }
         leftmargin = Math.floor(wwidth - width) / 2 - 14;
         //keeps us from sliding under the logo
