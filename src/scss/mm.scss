@@ -10,6 +10,7 @@
 
 @import 'reset';
 @import 'bits';
+@import 'breakpoint';
 
 .lmm-underlay {
   height: 0;
@@ -103,7 +104,15 @@
   margin: 0 auto;
   padding: 10px;
   position: relative;
-  width: 940px;
+  width: 700px;
+
+  @include breakpoint($normal) {
+    width: 940px;
+  }
+
+  @include breakpoint($wide) {
+    width: 1180px;
+  }
 }
 
 .lmm-side-pane {
@@ -156,13 +165,17 @@
 
   li {
     display: inline-block;
-    font-size: 14px;
+    font-size: 11.5px;
     height: 26px;
     line-height: 27px;
     padding: 0 5px;
     text-align: center;
     text-transform: uppercase;
     vertical-align: top;
+
+    @include breakpoint($normal) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -207,6 +220,10 @@
   //is actually 212 + 22 px for the gift icon + 2 px margin
   width: 236px; //needs to be here, otherwise the box seems to grow by 1px when clicked
   
+  @include breakpoint($normal) {
+    font-size: 13px;
+  }
+
   input {
     vertical-align: bottom;
   }
@@ -362,17 +379,4 @@
   &.hidemobile {
     display: none !important;
   }
-}
-
-// These mean that the global stylesheet (this one) applies to IE8
-// if your phone is fancy, it'll get the "mobile" sheet. Then there's two
-// other sheets for big screens.
-@media all and (max-width: 720px){
-  @import 'mobile';
-}
-@media all and (max-width: 980px){
-  @import 'narrow';
-}
-@media all and (min-width: 1441px){
-  @import 'wide';
 }
