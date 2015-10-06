@@ -208,23 +208,23 @@
   
   input {
     vertical-align: bottom;
+  }
+}
 
-    &[type=text] {
-      background-color: $text-color;
-      border: 1px solid;
-      border-color: #848484 #c1c1c1 #e1e1e1;
-      border-radius: 15px;
-      box-sizing: border-box;
-      font-family: sans-serif;
-      font-size: 13px;
-      height: 24px;
-      padding: 0 6px;
-      width: 181px;
+.lmm-q {
+  background-color: $text-color;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 13px;
+  height: 24px;
+  padding: 0 6px;
+  width: 181px;
 
-      &:focus {
-        outline: none;
-      }
-    }
+  &:focus {
+    outline: none;
   }
 }
 
