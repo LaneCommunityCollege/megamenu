@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
     rename = require('gulp-rename'),
     gfi = require('gulp-file-insert'),
     minifyHTML = require('gulp-minify-html'),
@@ -7,6 +6,8 @@ var gulp = require('gulp'),
     replace = require('gulp-replace'),
     uglify = require('gulp-uglify'),
     del = require('del'),
+    compass = require('gulp-compass'),
+    minifyCSS = require('gulp-minify-css'),
     jade = require('gulp-jade');
 
 gulp.task('minify-html', function(){
@@ -21,11 +22,20 @@ gulp.task('minify-html', function(){
         .pipe(gulp.dest('tmp/'));
 });
 
-gulp.task('styles', function() {
-  return sass('src/scss/mm.scss', { style: 'compressed' })
+gulp.task('compass', function() {
+  return gulp.src('src/scss/mm.scss')
+    .pipe(compass({
+      css: 'dist/css',
+      sass: 'src/scss/',
+      require: ['breakpoint']
+    }))
+});
+
+gulp.task('minify-css', function(){
+  return gulp.src('dist/css/mm.css')
+    .pipe(minifyCSS({processImport: false}))
     .pipe(rename({suffix: '.min'}))
-    .pipe(replace(/\n/, ''))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css'))
 });
 
 gulp.task('build-html', function() {
@@ -33,7 +43,7 @@ gulp.task('build-html', function() {
  
   gulp.src('src/jade/menu.jade')
     .pipe(jade({
-      locals: YOUR_LOCALS,
+//      locals: YOUR_LOCALS,
       doctype: "html"
     }))
     .pipe(gulp.dest('tmp'));
@@ -68,8 +78,8 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('build', function(cb){
-    runSequence(['build-html', 'styles'],
-                 'minify-html',
+    runSequence(['build-html', 'compass'],
+                ['minify-css', 'minify-html'],
                  'inject-html', 
                  'inject-css',
                  'compress',
