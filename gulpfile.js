@@ -23,7 +23,6 @@ gulp.task('minify-html', function(){
 
 gulp.task('styles', function() {
   return sass('src/scss/mm.scss', { style: 'compressed' })
-    .pipe(gulp.dest('css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(replace(/\n/, ''))
     .pipe(gulp.dest('dist/css'));
