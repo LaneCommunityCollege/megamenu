@@ -28,14 +28,14 @@ gulp.task('compass', function() {
       css: 'dist/css',
       sass: 'src/scss/',
       require: ['breakpoint']
-    }))
+    }));
 });
 
 gulp.task('minify-css', function(){
   return gulp.src('dist/css/mm.css')
     .pipe(minifyCSS({processImport: false}))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('build-html', function() {
