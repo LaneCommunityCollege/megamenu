@@ -31,14 +31,7 @@ function loaded(){
     // Figure out the left margin for lmm-cats. unfortunately, this needs to be hardcoded, as it isn't possible to get an auto margin from JQuery
     function updateCats(){
         var wwidth = jQuery(window).width();
-        if(wwidth <=720){
-            jQuery('.lmm').add(jQuery('.lmm-pane-underlay')).addClass('hidemobile');
-            jQuery('body').css('margin-top','0px');
-        }
-        else{
-            jQuery('.lmm').add(jQuery('.lmm-pane-underlay')).removeClass('hidemobile');
-            jQuery('body').css('margin-top','28px');
-        }
+        var width = 0;
         if(wwidth > 720){
             width = 720;
         }

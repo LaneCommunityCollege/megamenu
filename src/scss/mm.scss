@@ -8,11 +8,22 @@
   }
 }
 
+.lmm,
+.lmm-pane-underlay,
+.lmm-underlay {
+  display: none;
+}
+
 @import 'reset';
 @import 'bits';
 @import 'breakpoint';
 
+
 .lmm-underlay {
+  @include breakpoint($narrow) {
+    display: block;
+  }
+
   height: 0;
   left: 0;
   position: fixed;
@@ -23,6 +34,10 @@
 
 
 .lmm {
+  @include breakpoint($narrow) {
+    display: block;
+  }
+
   background-color: $background-color;
   border-bottom: $border-blue solid 1px;
   color: $text-color;
