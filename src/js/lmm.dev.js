@@ -139,39 +139,32 @@ function loaded(){
         }
     });
     
-    /* Handle the radio buttons for the search box 
-     * NOT using .attr on the form due to a but in jQuery 1.4.2 where attr isn't able to correctly set
-     * form actions
-     */
+    /* Handle the radio buttons for the search box */
     jQuery('body').delegate('.lmm-searchops input', 'click',function(e){
         var dest = jQuery('.lmm-searchops input:checked').attr('id');
         if(dest == "lmm-search-web"){
             //remove existing temp form fields that may or may not be needed
             jQuery('.lmm-temp').remove();
-            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://www.lanecc.edu/custom/search');
-            jQuery('.lmm-search-form').get(0).setAttribute('method', 'get');
+            jQuery('.lmm-search-form').attr({'action': 'https://www.lanecc.edu/custom/search', 'method': 'get'});
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-q').attr('name','q');
             jQuery('.lmm-search-label').attr('for','q');
         }
         else if(dest == "lmm-search-asklane"){
             jQuery('.lmm-search-form').append('<input type="hidden" name="requestType">');            
-            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://lanecc.intelliresponse.com/');
-            jQuery('.lmm-search-form').get(0).setAttribute('method', 'post');
+            jQuery('.lmm-search-form').attr({'action': 'https://lanecc.intelliresponse.com/', 'method': 'post'});
             jQuery('.lmm-q').attr('name','question');
             jQuery('.lmm-search-label').attr('for','question');
         }
         else if(dest == "lmm-search-ce"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
-            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
-            jQuery('.lmm-search-form').get(0).setAttribute('method', 'post');
+            jQuery('.lmm-search-form').attr({'action': 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay', 'method': 'post'});
             jQuery('.lmm-q').attr('name','Keywords');
             jQuery('.lmm-search-label').attr('for','Keywords');
         }
         else if(dest == "lmm-search-people"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
-            jQuery('.lmm-search-form').get(0).setAttribute('action', 'https://directory.lanecc.edu/search');
-            jQuery('.lmm-search-form').get(0).setAttribute('method', 'get');
+            jQuery('.lmm-search-form').attr({'action': 'https://directory.lanecc.edu/search', 'method': 'get'});
             jQuery('.lmm-q').attr('name','search');
             jQuery('.lmm-search-label').attr('for','search');
         }

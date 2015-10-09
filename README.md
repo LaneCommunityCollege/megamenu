@@ -6,7 +6,7 @@ To use the MegaMenu on your site, simply add it to your HTML:
 
     <script src='//static.lanecc.net/mm/lmm.min.js'></script>
 
-This megamenu does not support IE8 or below.
+This megamenu does not support IE8 or below, and requires jQuery 1.8 or higher.
 
 Development
 -----------
