@@ -20,24 +20,20 @@
 
 
 .lmm-underlay {
-  @include breakpoint($narrow) {
-    display: block;
-  }
-
   height: 0;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 14999;
+
+  @include breakpoint($narrow) {
+    display: block;
+  }
 }
 
 
 .lmm {
-  @include breakpoint($narrow) {
-    display: block;
-  }
-
   background-color: $background-color;
   border-bottom: $border-blue solid 1px;
   color: $text-color;
@@ -48,6 +44,10 @@
   top: 0;
   width: 100%;
   z-index: 15000;
+
+  @include breakpoint($narrow) {
+    display: block;
+  }
 
   div {
     color: $text-color;
