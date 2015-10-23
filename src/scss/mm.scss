@@ -391,7 +391,7 @@
   width: 100%;
   z-index: 14999;
 
-  &.hidemobile {
+  @media (max-width: $narrow){
     display: none !important;
   }
 }

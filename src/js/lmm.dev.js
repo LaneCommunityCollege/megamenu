@@ -35,8 +35,8 @@ function loaded(){
         if(wwidth > 720){
             width = 720;
         }
-        if(wwidth > 980){
-            width = 980;
+        if(wwidth > 940){
+            width = 940;
         }
         if(wwidth > 1440){
             width = 1180;
