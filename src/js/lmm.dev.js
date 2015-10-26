@@ -34,6 +34,10 @@ function loaded(){
         var width = 0;
         if(wwidth > 720){
             width = 720;
+            jQuery('body').css('margin-top','28px');
+        }
+        else{
+            jQuery('body').css('margin-top','0px');
         }
         if(wwidth > 940){
             width = 940;
@@ -58,7 +62,7 @@ function loaded(){
         }
     });
 
-    jQuery('.lmm a').each(function(){
+    jQuery('.lmm a').not('.skip').each(function(){
         jQuery(this).attr('href', jQuery(this).attr('href') + "?utm_source=megamenu&utm_medium=web&utm_campaign=megamenu");
     });
 
