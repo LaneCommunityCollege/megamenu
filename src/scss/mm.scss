@@ -244,7 +244,7 @@
   }
 }
 
-.lmm-q {
+input[type='text'].lmm-q {
   background-color: $text-color;
   border: 1px solid;
   border-color: #848484 #c1c1c1 #e1e1e1;
@@ -299,7 +299,7 @@
   }
 }
 
-.lmm-search-submit {
+input[type='submit'].lmm-search-submit {
   background-image: url($resources + 'sprite.png');
   background-position: -136px 0;
   border-radius: 2px;
@@ -307,6 +307,7 @@
   cursor: pointer;
   height: 23px;
   margin-left: 2px;
+  padding: 0;
   width: 23px;
 }
 
