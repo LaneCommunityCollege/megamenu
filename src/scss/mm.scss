@@ -71,6 +71,16 @@
 
   .lmm-col {
     float: left;
+    padding: 0 10px;
+    width: 213px;
+
+    @include breakpoint($normal) {
+      width: 293px;
+    }
+
+    @include breakpoint($wide) {
+      width: 373px;
+    }
 
     h3 {
       border-bottom: $border-blue solid 1px;
@@ -80,7 +90,7 @@
       line-height: 17px;
       margin-bottom: 5px;
       margin-top: 0;
-      width: 90%;
+      width: 100%;
     }
 
     li {
@@ -117,7 +127,7 @@
   border-bottom-style: none;
   height: 254px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 0;
   position: relative;
   width: 700px;
 

@@ -51,7 +51,6 @@ function loaded(){
             leftmargin = 0;
         }
         jQuery('.lmm-cats').css('margin-left', leftmargin);
-        jQuery('.lmm-col').css('width', Math.floor(width / 3) - 8);
     }
     updateCats();
 
