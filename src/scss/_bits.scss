@@ -13,5 +13,4 @@ $wide: 1441px;
 
 @mixin transparent($color, $alpha) {
   background-color: rgba($color, $alpha);
-  zoom: 1;
 }
