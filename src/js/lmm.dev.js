@@ -114,6 +114,7 @@ function loaded(){
             height:0
         }, function(){jQuery(this).hide();});
         jQuery('.lmm-underlay').height(0);
+        jQuery('.lmm-q').attr('placeholder', 'Search or AskLane');
     });
 
     /* Pop open a search options box */
@@ -152,24 +153,28 @@ function loaded(){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-q').attr('name','q');
             jQuery('.lmm-search-label').attr('for','q');
+            jQuery('.lmm-q').attr('placeholder', 'search the Lane website');
         }
         else if(dest == "lmm-search-asklane"){
             jQuery('.lmm-search-form').append('<input type="hidden" name="requestType">');            
             jQuery('.lmm-search-form').attr({'action': 'https://lanecc.intelliresponse.com/', 'method': 'post'});
             jQuery('.lmm-q').attr('name','question');
             jQuery('.lmm-search-label').attr('for','question');
+            jQuery('.lmm-q').attr('placeholder', 'ask a question, like "When are finals?"');
         }
         else if(dest == "lmm-search-ce"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-search-form').attr({'action': 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay', 'method': 'post'});
             jQuery('.lmm-q').attr('name','Keywords');
             jQuery('.lmm-search-label').attr('for','Keywords');
+            jQuery('.lmm-q').attr('placeholder', 'search Continuing Education classes');
         }
         else if(dest == "lmm-search-people"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-search-form').attr({'action': 'https://directory.lanecc.edu/search', 'method': 'get'});
             jQuery('.lmm-q').attr('name','search');
             jQuery('.lmm-search-label').attr('for','search');
+            jQuery('.lmm-q').attr('placeholder', 'search the Employee Directory');
         }
         jQuery('.lmm-q').focus();
         e.stopPropagation();
