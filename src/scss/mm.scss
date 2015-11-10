@@ -201,6 +201,10 @@
     @include breakpoint($normal) {
       font-size: 14px;
     }
+
+    &:hover {
+      color: $gold;
+    }
   }
 }
 
