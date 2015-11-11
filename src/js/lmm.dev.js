@@ -51,6 +51,16 @@ function loaded(){
             leftmargin = 0;
         }
         jQuery('.lmm-cats').css('margin-left', leftmargin);
+
+        /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
+        to be sized incorrectly. Make that adjustment here. Need to fire this on resize, since some sites render
+        wider tahn they actually are, then shrink, so we may need to recalculate later. */
+        if(jQuery(window).width() < jQuery(document).width()){
+            jQuery('.lmm, .lmm-underlay, .lmm-pane-underlay').css('width', jQuery(document).width());
+        }
+        else {
+            jQuery('.lmm, .lmm-underlay, .lmm-pane-underlay').css('width', '100%');
+        }
     }
     updateCats();
 
@@ -99,12 +109,6 @@ function loaded(){
         e.stopPropagation();
         return false;
     });
-
-    /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
-       to be sized incorrectly. Make that adjustment here */
-    if(jQuery(window).width() < jQuery(document).width()){
-        jQuery('.lmm, .lmm-underlay, .lmm-pane-underlay').width(jQuery(document).width());
-    }
 
     //allow us to use the closer to close things
     jQuery('body').delegate('.lmm-closer, .lmm-underlay', 'click', function(){
