@@ -112,7 +112,6 @@
 
 .lmm-pane-container {
   background-color: transparent;
-  box-sizing: content-box; //needed for blogs
   cursor: auto;
   display: none;
   height: 0;
@@ -127,7 +126,6 @@
   background-image: url($resources + 'tarp.jpg');
   border: $border-blue solid 1px;
   border-bottom-style: none;
-  box-sizing: content-box; //needed for blogs
   height: 254px;
   margin: 0 auto;
   padding: 10px 0;
