@@ -32,17 +32,17 @@ function loaded(){
     function updateCats(){
         var wwidth = jQuery(window).width();
         var width = 0;
-        if(wwidth > 720){
+        if(wwidth >= 720){
             width = 720;
             jQuery('body').css('margin-top','28px');
         }
         else{
             jQuery('body').css('margin-top','0px');
         }
-        if(wwidth > 940){
+        if(wwidth >= 940){
             width = 940;
         }
-        if(wwidth > 1440){
+        if(wwidth >= 1440){
             width = 1180;
         }
         leftmargin = Math.floor(wwidth - width) / 2 - 14;
@@ -95,7 +95,7 @@ function loaded(){
             lastaction = 'swap';
             var oldPane = jQuery('.lmm-pane-container:visible').not(clickedPane);
             oldPane.stop().fadeOut(200).height(0);
-            clickedPane.height(254).fadeIn(200);
+            clickedPane.height(274).fadeIn(200);
             oldPane.parent('.lmm-toplevel').removeClass('lmm-active');
         }
         //must just want to open us

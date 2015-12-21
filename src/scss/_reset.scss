@@ -1,17 +1,25 @@
-.lmm * {
-  background-color: transparent;
-  border: 0;
-  box-sizing: content-box;
-  font: inherit;
-  font-size: 100%;
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
+.lmm {
+  box-sizing: border-box;
 
-  ol,
-  ul {
-    list-style: none;
+  *,
+  *:before,
+  *:after {
+    background-color: transparent;
+    border: 0;
+    box-sizing: inherit;
+    font: inherit;
+    font-size: 100%;
+    line-height: 1;
     margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+    }
   }
 }
+
+
