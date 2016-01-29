@@ -118,7 +118,7 @@ function loaded(){
             height:0
         }, function(){jQuery(this).hide();});
         jQuery('.lmm-underlay').height(0);
-        jQuery('.lmm-q').attr('placeholder', 'Search or AskTy');
+        jQuery('.lmm-q').attr('placeholder', 'Search or AskLane');
     });
 
     /* Pop open a search options box */
@@ -159,7 +159,7 @@ function loaded(){
             jQuery('.lmm-search-label').attr('for','q');
             jQuery('.lmm-q').attr('placeholder', 'search the Lane website');
         }
-        else if(dest == "lmm-search-askty"){
+        else if(dest == "lmm-search-asklane"){
             jQuery('.lmm-search-form').append('<input type="hidden" name="requestType">');            
             jQuery('.lmm-search-form').attr({'action': 'https://lanecc.intelliresponse.com/', 'method': 'post'});
             jQuery('.lmm-q').attr('name','question');
