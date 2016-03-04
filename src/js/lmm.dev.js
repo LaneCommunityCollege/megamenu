@@ -18,7 +18,16 @@ function initJQuery() {
         });
     } 
 }
-initJQuery();
+
+/* If someone includes the script twice (what has happened), the mega menu throws
+ * open and close events simultaneously, meaning it doesn't work at all. So here
+ * we'll make sure we don't accidentally draw it twice. */
+if(typeof mm !== 'undefined')
+    console.log("megamenu script already present");
+else {
+    mm = "loaded";
+    initJQuery();
+}
 
 // This is kinda like Document.ready()
 function loaded(){
