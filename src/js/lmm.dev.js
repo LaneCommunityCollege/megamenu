@@ -39,15 +39,10 @@ function loaded(){
 
     // Figure out the left margin for lmm-cats. unfortunately, this needs to be hardcoded, as it isn't possible to get an auto margin from JQuery
     function updateCats(){
+        jQuery('body').css('margin-top','28px');
+        
         var wwidth = jQuery(window).width();
-        var width = 0;
-        if(wwidth >= 720){
-            width = 720;
-            jQuery('body').css('margin-top','28px');
-        }
-        else{
-            jQuery('body').css('margin-top','0px');
-        }
+        var width = 720;
         if(wwidth >= 940){
             width = 940;
         }

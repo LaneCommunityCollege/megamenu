@@ -8,7 +8,7 @@
   }
 }
 
-.lmm,
+.lmm-cats,
 .lmm-pane-underlay,
 .lmm-underlay {
   display: none;
@@ -20,16 +20,13 @@
 
 
 .lmm-underlay {
+  display: block;
   height: 0;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 14999;
-
-  @include breakpoint($narrow) {
-    display: block;
-  }
 }
 
 
@@ -190,6 +187,10 @@
 
 .lmm-cats {
   float: left;
+
+  @include breakpoint($narrow){
+    display: block;
+  }
 
   li {
     display: inline-block;
@@ -410,8 +411,4 @@ input[type='submit'].lmm-search-submit {
   top: 28px;
   width: 100%;
   z-index: 14999;
-
-  @media (max-width: $narrow){
-    display: none !important;
-  }
 }
