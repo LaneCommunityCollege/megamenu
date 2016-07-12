@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     del = require('del'),
     compass = require('gulp-compass'),
-    minifyCSS = require('gulp-minify-css'),
+    cleanCSS = require('gulp-clean-css'),
     jade = require('gulp-jade');
 
 gulp.task('minify-html', function(){
@@ -25,15 +25,15 @@ gulp.task('minify-html', function(){
 gulp.task('compass', function() {
   return gulp.src('src/scss/mm.scss')
     .pipe(compass({
-      css: 'dist/css',
       sass: 'src/scss/',
-      require: ['breakpoint']
+      css: 'dist/css',
+      require: ['breakpoint'],
     }));
 });
 
 gulp.task('minify-css', function(){
   return gulp.src('dist/css/mm.css')
-    .pipe(minifyCSS({processImport: false}))
+    .pipe(cleanCSS({processImport: false}))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/css'));
 });
