@@ -43,6 +43,11 @@ function loaded(){
         
         var wwidth = jQuery(window).width();
         var width = 720;
+        if(wwidth < 720){
+            jQuery('.lmm-active').removeClass('lmm-active');
+            jQuery('.lmm-pane-underlay').height(0);
+            jQuery('.lmm-pane-container').height(0).hide();
+        }
         if(wwidth >= 940){
             width = 940;
         }
