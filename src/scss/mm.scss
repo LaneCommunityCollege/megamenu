@@ -18,10 +18,9 @@
 @import 'bits';
 @import 'breakpoint';
 
-
 .lmm-underlay {
-  display: block;
-  height: 0;
+  display: none;
+  height: 100%;
   left: 0;
   position: fixed;
   top: 0;
@@ -31,6 +30,8 @@
 
 
 .lmm {
+  @import 'animations';
+
   background-color: $background-color;
   border-bottom: $border-blue solid 1px;
   color: $text-color;
@@ -114,6 +115,7 @@
   display: none;
   height: 0;
   left: 0;
+  overflow: hidden;
   position: absolute;
   text-align: left;
   top: 28px;
@@ -145,8 +147,8 @@
   border: $text-color solid 1px;
   border-radius: 15px;
   cursor: default;
-  display: none;
   line-height: 1.5em;
+  opacity: 0;
   padding: 9px;
   text-align: left;
 }
@@ -269,6 +271,7 @@ input[type='text'].lmm-q {
   border-color: #848484 #c1c1c1 #e1e1e1;
   border-radius: 15px;
   box-sizing: border-box;
+  color: #000;
   font-family: sans-serif;
   font-size: 13px;
   height: 24px;

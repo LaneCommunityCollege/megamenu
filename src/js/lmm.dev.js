@@ -5,6 +5,7 @@ document.body.style.marginTop = '28px';
 var $lmm = document.getElementsByClassName('lmm')[0];
 var $pane_underlay = document.getElementsByClassName('lmm-pane-underlay')[0];
 var $underlay = document.getElementsByClassName('lmm-underlay')[0];
+var $homes_page = $lmm.getElementsByClassName('lmm-homes-page')[0];
 
 // convenience function to loop over a set of elements
 var foreach = function (array, callback, scope) {
@@ -57,7 +58,92 @@ foreach(combined, function(index, value){
     }
 });
 
-// Figure out the left margin for lmm-cats. unfortunately, this needs to be hardcoded, as it isn't possible to get an auto margin from JQuery
+function fadeOut(element) {
+    if(window.getComputedStyle(element, null).opacity == 0 || window.getComputedStyle(element, null).display == 'none')
+        return
+
+    element.classList.add('fadeOut');
+    if(element.classList.contains('fadeIn')){
+        element.classList.remove('fadeIn');
+    }
+}
+
+function fadeIn(element) {
+    if(window.getComputedStyle(element, null).opacity > 0 && window.getComputedStyle(element, null).display != 'none')
+        return
+
+    element.classList.add('fadeIn');
+    if(element.classList.contains('fadeOut')){
+        element.classList.remove('fadeOut');
+    }
+}
+
+function fadeToggle(element){
+    if(window.getComputedStyle(element, null).opacity > 0)
+        fadeOut(element);
+    else
+        fadeIn(element);
+}
+
+/* Pop open a search options box 
+   This has been deliberately not put on a visibility toggle, because
+   people tend to click on the search box after setting search options */
+$lmm.getElementsByClassName('lmm-q')[0].addEventListener('click', function(e){
+    $underlay.style.display = 'block';
+    fadeOut($homes_page);//this used to stop to prevent double animations
+
+    var active = $lmm.getElementsByClassName('lmm-active');
+    if(active.length){
+        $pane_underlay.style.height = 0;
+        $lmm.querySelector('.lmm-active .lmm-pane-container').style.height = 0;
+        active[0].classList.remove('lmm-active');
+    }
+
+    fadeIn($lmm.getElementsByClassName('lmm-searchops')[0]);
+});
+
+/* Similarly, pop open the homes button box */
+$lmm.getElementsByClassName('lmm-logo')[0].addEventListener('click', function(e){
+    var active = $lmm.getElementsByClassName('lmm-active');
+    if(active.length){
+        $pane_underlay.style.height = 0;
+        $lmm.querySelector('.lmm-active .lmm-pane-container').style.height = 0;
+        active[0].classList.remove('lmm-active');
+    }
+    fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);//had a stop
+
+    $pane_underlay.style.display = 'none';
+    if($homes_page.classList.contains('fadeIn')){
+        fadeOut($homes_page);
+        $underlay.style.display = 'none';
+    }
+    else{
+        $underlay.style.display = 'block';
+        fadeIn($homes_page);
+    }
+});
+
+// closes everything
+function closeAll(){
+    var sides = $lmm.getElementsByClassName('lmm-side-pane');
+    for(var i =0; i< sides.length; i++){
+        fadeOut(sides[i]);
+    }
+    var active = $lmm.getElementsByClassName('lmm-active');
+    if (active.length){
+        $pane_underlay.style.height = 0;
+        $lmm.querySelector('.lmm-active .lmm-pane-container').style.height = 0;
+        active[0].classList.remove('lmm-active');
+    }
+    $underlay.style.display = 'none';
+}
+$underlay.addEventListener('click', closeAll, false);
+var closers = $lmm.getElementsByClassName('lmm-closer');
+for(var i=0;i<closers.length;i++)
+    closers[i].addEventListener('click', closeAll, false);
+    
+
+// Figure out the left margin for lmm-cats.
 function updateCats(){
     var wwidth = window.innerWidth;
     var width = 720;
@@ -70,7 +156,6 @@ function updateCats(){
             $pane_underlay.style.display = 'none';
             $pane_underlay.style.height = 0;
             $underlay.style.display = 'none';
-            $underlay.style.height = 0;
         }
     }
     if(wwidth >= 940){
@@ -110,28 +195,7 @@ if(typeof mm !== 'undefined')
     console.log("megamenu script already present");
 else {
     mm = "loaded";
-    initJQuery();
-}
-
-/* Takes care of making sure JQuery is only loaded once per page */
-var jQueryScriptOutputted = false;
-function initJQuery() {
-    if (typeof(jQuery) == 'undefined') {
-        if (! jQueryScriptOutputted) {
-            //only output the script once..
-            jQueryScriptOutputted = true;
-            var jq = document.createElement('script');
-            jq.setAttribute("type", "text/javascript");
-            jq.setAttribute("src", "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
-            document.getElementsByTagName("head")[0].appendChild(jq);
-        }
-        setTimeout(initJQuery, 50);
-    } 
-    else {            
-        jQuery(function() {  
-            loaded();
-        });
-    } 
+    loaded();
 }
 
 // This is kinda like Document.ready()
@@ -139,8 +203,11 @@ function loaded(){
     var lastaction = "";
     // Handle opening and closing panes
     jQuery('body').delegate('li.lmm-toplevel', 'click', function(e){
-        jQuery(this).addClass('lmm-active');
-        jQuery('.lmm-side-pane').hide();
+        this.classList.add('lmm-active');
+        var sides = $lmm.getElementsByClassName('lmm-side-pane');
+        for(var i =0; i< sides.length; i++){
+            fadeOut(sides[i]);
+        }
         var clickedPane = jQuery('.lmm-pane-container', this);
         //if its a differnet panel that's open, fade out that panel and fade this one in
         if(clickedPane.is(":visible") && jQuery('.lmm-pane-container:visible').length == 1){
@@ -161,7 +228,7 @@ function loaded(){
         //must just want to open us
         else{
             lastaction = 'open';
-            $underlay.style.height = window.innerHeight + "px";
+            $underlay.style.display = 'block';
             clickedPane.add(jQuery('.lmm-pane-underlay')).show().stop().animate({
                 height: 275
             });
@@ -169,79 +236,49 @@ function loaded(){
         e.stopPropagation();
         return false;
     });
-
-    //handle closing things
-    jQuery('body').delegate('.lmm-closer, .lmm-underlay', 'click', function(){
-        jQuery('.lmm-side-pane').hide();
-        $lmm.getElementsByClassName('lmm-active')[0].classList.remove('lmm-active');
-        jQuery('.lmm-pane-container:visible, .lmm-side-pane:visible').add(jQuery('.lmm-pane-underlay')).animate({
-            height:0
-        }, function(){jQuery(this).hide();});
-        $underlay.style.height = 0;
-        jQuery('.lmm-q').attr('placeholder', 'Search or AskLane');
-    });
-
-    /* Pop open a search options box */
-    jQuery('body').delegate('.lmm-q', 'click', function(e){
-        //shrink any existing panes
-        $pane_underlay.style.height = 0;
-        $underlay.style.height = window.innerHeight + "px";
-        jQuery('.lmm-homes-page').stop().fadeOut(200);
-        jQuery('.lmm-pane-container:visible').stop().fadeOut(200).height(0);
-        $lmm.getElementsByClassName('lmm-active')[0].classList.remove('lmm-active');
-        jQuery('.lmm-searchops').fadeIn(200);
-    });
-
-    /* Similarly, pop open the homes button box */
-    jQuery('body').delegate('.lmm-logo', 'click', function(e){
-        $underlay.style.height = 0;
-        $lmm.getElementsByClassName('lmm-active')[0].classList.remove('lmm-active');
-        jQuery('.lmm-pane-container:visible').stop().fadeOut(200).height(0);
-        if(jQuery('.lmm-homes-page').is(':visible')){
-            jQuery('.lmm-homes-page').stop().fadeOut(200);
-            jQuery('.lmm-underlay').height(0);
-        }
-        else{
-            $underlay.style.height = window.innerHeight + "px";
-            jQuery('.lmm-searchops').stop().fadeOut(200);
-            jQuery('.lmm-homes-page').fadeIn(200);
-        }
-    });
     
     /* Handle the radio buttons for the search box */
     jQuery('body').delegate('.lmm-searchops input', 'click', function(e){
-        var dest = jQuery('.lmm-searchops input:checked').attr('id');
+        var radio = $lmm.querySelectorAll('.lmm-searchops input');
+        var dest = 'lmm-search-web';
+        foreach(radio, function(index, value){
+            if(radio[index].checked)
+                dest = radio[index].getAttribute('id');
+        });
+        
         if(dest == "lmm-search-web"){
             //remove existing temp form fields that may or may not be needed
-            jQuery('.lmm-temp').remove();
+            var temps = $lmm.getElementsByClassName('.lmm-temp');
+            if(temps.length > 0)
+                temps[0].parentNode.removeChild($lmm.getElementsByClassName('.lmm-temp')[0]);
             jQuery('.lmm-search-form').attr({'action': 'https://www.lanecc.edu/custom/search', 'method': 'get'});
             jQuery('.lmm-search-form input[name="requestType"]').remove();
-            jQuery('.lmm-q').attr('name','q');
-            jQuery('.lmm-search-label').attr('for','q');
-            jQuery('.lmm-q').attr('placeholder', 'search the Lane website');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','q');
+            $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','q');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search the Lane website');
         }
         else if(dest == "lmm-search-asklane"){
-            jQuery('.lmm-search-form').append('<input type="hidden" name="requestType">');            
+            $lmm.getElementsByClassName('lmm-search-form').insertAdjacentHTML('beforeend', '<input type="hidden" name="requestType">');
             jQuery('.lmm-search-form').attr({'action': 'https://lanecc.intelliresponse.com/', 'method': 'post'});
-            jQuery('.lmm-q').attr('name','question');
-            jQuery('.lmm-search-label').attr('for','question');
-            jQuery('.lmm-q').attr('placeholder', 'ask a question, like "When are finals?"');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','question');
+            $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','question');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'ask a question, like "When are finals?"');
         }
         else if(dest == "lmm-search-ce"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-search-form').attr({'action': 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay', 'method': 'post'});
-            jQuery('.lmm-q').attr('name','Keywords');
-            jQuery('.lmm-search-label').attr('for','Keywords');
-            jQuery('.lmm-q').attr('placeholder', 'search Continuing Education classes');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','Keywords');
+            $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','Keywords');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search Continuing Education classes');
         }
         else if(dest == "lmm-search-people"){
             jQuery('.lmm-search-form input[name="requestType"]').remove();
             jQuery('.lmm-search-form').attr({'action': 'https://directory.lanecc.edu/search', 'method': 'get'});
-            jQuery('.lmm-q').attr('name','search');
-            jQuery('.lmm-search-label').attr('for','search');
-            jQuery('.lmm-q').attr('placeholder', 'search the Employee Directory');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','search');
+            $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','search');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search the Employee Directory');
         }
-        jQuery('.lmm-q').focus();
+        $lmm.getElementsByClassName('lmm-q')[0].focus();
         e.stopPropagation();
     });
 }
