@@ -167,21 +167,12 @@
                 dest = radio[index].getAttribute('id');
         });
         
-        if(dest == "lmm-search-web"){
-            //remove existing temp form fields that may or may not be needed
-            var temps = $lmm.getElementsByClassName('.lmm-temp');
-            if(temps.length > 0)
-                temps[0].parentNode.removeChild(temps[0]);
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search'); 
-            var reqType = document.getElementsByName('requestType');
-            if(reqType.length > 0 )
-                reqType[0].parentNode.removeChild(reqType[0]);
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','q');
-            $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','q');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search the Lane website');
-        }
-        else if(dest == "lmm-search-asklane"){
+        // AskLane adds these, but no one else needs them.
+        var reqType = document.getElementsByName('requestType');
+        if(reqType.length > 0 )
+            reqType[0].parentNode.removeChild(reqType[0]);
+
+        if(dest == "lmm-search-asklane"){
             $lmm.getElementsByClassName('lmm-search-form')[0].insertAdjacentHTML('beforeend', '<input type="hidden" name="requestType">');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.intelliresponse.com/');
@@ -189,10 +180,14 @@
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','question');
             $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'ask a question, like "When are finals?"');
         }
+        else if(dest == "lmm-search-web"){
+            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
+            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search'); 
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','q');
+            $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','q');
+            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search the Lane website');
+        }
         else if(dest == "lmm-search-ce"){
-            var reqType = document.getElementsByName('requestType');
-            if(reqType.length > 0 )
-                reqType[0].parentNode.removeChild(reqType[0]);
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
             $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','Keywords');
@@ -200,9 +195,6 @@
             $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search Continuing Education classes');
         }
         else if(dest == "lmm-search-people"){
-            var reqType = document.getElementsByName('requestType');
-            if(reqType.length > 0 )
-                reqType[0].parentNode.removeChild(reqType[0]);
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://directory.lanecc.edu/search');
             $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','search');
