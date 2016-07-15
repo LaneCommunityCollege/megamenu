@@ -1,7 +1,9 @@
 # Change Log
 
-## Unreleased
+## 1.2.0 - 2016-06-15
 - Added Google Analytics Campaign tracking to each link
+- lightweight mobile support, providing just a search box on mobile
+- removed support for IE6-8
 
 ## 1.1.0 - 2015-09-25
 - Custom Python build system rewritten in Gulp
