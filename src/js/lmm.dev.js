@@ -90,13 +90,6 @@
         }
     }
 
-    function fadeToggle(element){
-        if(window.getComputedStyle(element, null).opacity > 0)
-            fadeOut(element);
-        else
-            fadeIn(element);
-    }
-
     function visible(element){
         return !(window.getComputedStyle(element, null).opacity == 0 || window.getComputedStyle(element, null).display == 'none');
     }
