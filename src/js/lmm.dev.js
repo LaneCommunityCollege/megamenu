@@ -97,6 +97,10 @@
             fadeIn(element);
     }
 
+    function visible(element){
+        return !(window.getComputedStyle(element, null).opacity == 0 || window.getComputedStyle(element, null).display == 'none');
+    }
+
     /* Pop open a search options box 
        This has been deliberately not put on a visibility toggle, because
        people tend to click on the search box after setting search options */
@@ -217,29 +221,41 @@
     // Handle opening and closing panes
     function paneClick(e){
         this.classList.add('lmm-active');
+        // close up the sides
         var sides = $lmm.getElementsByClassName('lmm-side-pane');
         for(var i =0; i< sides.length; i++){
             fadeOut(sides[i]);
         }
+        var containers = $lmm.getElementsByClassName('lmm-pane-container');
+        var otherContainer = null;
+        for(var i=0; i<containers.length; i++){
+            if(visible(containers[i])){
+                otherContainer = containers[i];
+            }
+        }
         var clickedPane = jQuery('.lmm-pane-container', this);
-        //if its a differnet panel that's open, fade out that panel and fade this one in
-        if(clickedPane.is(":visible") && jQuery('.lmm-pane-container:visible').length == 1){
-            lastaction = "close";
-            clickedPane.add(jQuery('.lmm-pane-underlay')).stop().animate({
-                height: 0
-            }, function(){ jQuery(this).hide(); });
-            clickedPane.parent('.lmm-toplevel').removeClass('lmm-active');
+        if (otherContainer != null){
+            // if we're open, close us
+            if(otherContainer == this.getElementsByClassName('lmm-pane-container')[0]){
+                console.log("Just close us");
+                lastaction = "close";
+                clickedPane.add(jQuery('.lmm-pane-underlay')).stop().animate({
+                    height: 0
+                }, function(){ jQuery(this).hide(); });
+                clickedPane.parent('.lmm-toplevel').removeClass('lmm-active');
+            }
+            // swap us with this other one
+            else {
+                console.log("swap us for this one");
+                lastaction = 'swap';
+                var oldPane = jQuery('.lmm-pane-container:visible').not(clickedPane);
+                oldPane.stop().fadeOut(200).height(0);
+                clickedPane.height(274).fadeIn(200);
+                oldPane.parent('.lmm-toplevel').removeClass('lmm-active');
+            }
         }
-        //swap us with someone else
-        else if(jQuery('.lmm-pane-container:visible').length > 0 && lastaction != 'close'){
-            lastaction = 'swap';
-            var oldPane = jQuery('.lmm-pane-container:visible').not(clickedPane);
-            oldPane.stop().fadeOut(200).height(0);
-            clickedPane.height(274).fadeIn(200);
-            oldPane.parent('.lmm-toplevel').removeClass('lmm-active');
-        }
-        //must just want to open us
         else{
+            console.log("just open us");
             lastaction = 'open';
             $underlay.style.display = 'block';
             clickedPane.add(jQuery('.lmm-pane-underlay')).show().stop().animate({
