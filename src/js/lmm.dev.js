@@ -110,7 +110,7 @@
 
         var active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
-            $pane_underlay.style.height = 0;
+            $pane_underlay.style.opacity = 0;
             $lmm.querySelector('.lmm-active .lmm-pane-container').style.height = 0;
             active[0].classList.remove('lmm-active');
         }
@@ -128,7 +128,7 @@
         }
         fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);//had a stop
 
-        $pane_underlay.style.display = 'none';
+        $pane_underlay.style.opacity = 0;
         if($homes_page.classList.contains('fadeIn')){
             fadeOut($homes_page);
             $underlay.style.display = 'none';
@@ -147,7 +147,7 @@
         }
         var active = $lmm.getElementsByClassName('lmm-active');
         if (active.length){
-            $pane_underlay.style.height = 0;
+            $pane_underlay.style.opacity = 0;
             $lmm.querySelector('.lmm-active .lmm-pane-container').style.height = 0;
             active[0].classList.remove('lmm-active');
         }
@@ -217,10 +217,9 @@
         radios[i].addEventListener('click', handleRadioClick, false);
     }
 
-    var lastaction = "";
     // Handle opening and closing panes
     function paneClick(e){
-        this.classList.add('lmm-active');
+        
         // close up the sides
         var sides = $lmm.getElementsByClassName('lmm-side-pane');
         for(var i =0; i< sides.length; i++){
@@ -233,34 +232,28 @@
                 otherContainer = containers[i];
             }
         }
-        var clickedPane = jQuery('.lmm-pane-container', this);
+        var clickedPane = this.getElementsByClassName('lmm-pane-container')[0];
         if (otherContainer != null){
             // if we're open, close us
-            if(otherContainer == this.getElementsByClassName('lmm-pane-container')[0]){
-                console.log("Just close us");
-                lastaction = "close";
-                clickedPane.add(jQuery('.lmm-pane-underlay')).stop().animate({
-                    height: 0
-                }, function(){ jQuery(this).hide(); });
-                clickedPane.parent('.lmm-toplevel').removeClass('lmm-active');
+            if(otherContainer == clickedPane){
+                $pane_underlay.style.opacity = 0;
+                fadeOut(clickedPane);
+                this.classList.remove('lmm-active');
             }
             // swap us with this other one
             else {
-                console.log("swap us for this one");
-                lastaction = 'swap';
-                var oldPane = jQuery('.lmm-pane-container:visible').not(clickedPane);
-                oldPane.stop().fadeOut(200).height(0);
-                clickedPane.height(274).fadeIn(200);
-                oldPane.parent('.lmm-toplevel').removeClass('lmm-active');
+                fadeOut(otherContainer);
+                fadeIn(clickedPane);
+                $lmm.getElementsByClassName('lmm-active')[0].classList.remove('lmm-active');
+                this.classList.add('lmm-active');
             }
         }
+        // open this pane
         else{
-            console.log("just open us");
-            lastaction = 'open';
+            this.classList.add('lmm-active');
+            fadeIn(clickedPane);
+            $pane_underlay.style.opacity = 1;
             $underlay.style.display = 'block';
-            clickedPane.add(jQuery('.lmm-pane-underlay')).show().stop().animate({
-                height: 275
-            });
         }
         e.stopPropagation();
     }
@@ -279,8 +272,7 @@
                 activeTab.classList.remove('lmm-active');
                 activeTab.getElementsByClassName('lmm-pane-container')[0].style.height = 0;
                 activeTab.getElementsByClassName('lmm-pane-container')[0].style.display = 'none';
-                $pane_underlay.style.display = 'none';
-                $pane_underlay.style.height = 0;
+                $pane_underlay.style.opacity = 0;
                 $underlay.style.display = 'none';
             }
         }

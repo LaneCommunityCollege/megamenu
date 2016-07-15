@@ -9,7 +9,6 @@
 }
 
 .lmm-cats,
-.lmm-pane-underlay,
 .lmm-underlay {
   display: none;
 }
@@ -112,10 +111,10 @@
 .lmm-pane-container {
   background-color: transparent;
   cursor: auto;
-  display: none;
-  height: 0;
+  height: 275px;
   left: 0;
   overflow: hidden;
+  opacity: 0;
   position: absolute;
   text-align: left;
   top: 28px;
@@ -408,9 +407,9 @@ input[type='submit'].lmm-search-submit {
 .lmm-pane-underlay {
   @include transparent($underlay-color, .90);
   border-bottom: $border-blue solid 1px;
-  display: none;
-  height: 0;
+  height: 275px;
   left: 0;
+  opacity: 0;
   position: absolute;
   top: 28px;
   width: 100%;
