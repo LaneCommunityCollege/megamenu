@@ -215,7 +215,7 @@
 
     var lastaction = "";
     // Handle opening and closing panes
-    jQuery('body').delegate('li.lmm-toplevel', 'click', function(e){
+    function paneClick(e){
         this.classList.add('lmm-active');
         var sides = $lmm.getElementsByClassName('lmm-side-pane');
         for(var i =0; i< sides.length; i++){
@@ -247,8 +247,11 @@
             });
         }
         e.stopPropagation();
-        return false;
-    });
+    }
+    var topLevels = $lmm.getElementsByClassName('lmm-toplevel');
+    for(var i=0;i<topLevels.length;i++){
+        topLevels[i].addEventListener('click', paneClick, false);
+    }
 
     // Figure out the left margin for lmm-cats.
     function updateCats(){
