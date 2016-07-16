@@ -10,19 +10,20 @@
         mm = "loaded";
     }
 
-    document.head.insertAdjacentHTML('beforeend', '<style type="text/css" media="all">{$cssmin}</style>');
+    document.head.insertAdjacentHTML('beforeend', '<style media="all">{$cssmin}</style>');
     document.body.insertAdjacentHTML('beforeend', '{$lmm}');
     document.body.style.marginTop = '28px';
 
     var $lmm = document.getElementsByClassName('lmm')[0];
     var $pane_underlay = document.getElementsByClassName('lmm-pane-underlay')[0];
     var $underlay = document.getElementsByClassName('lmm-underlay')[0];
-    var $homes_page = $lmm.getElementsByClassName('lmm-homes-page')[0];
+    var $homesPane = $lmm.getElementsByClassName('lmm-homes-pane')[0];
+    var $searchBox = $lmm.getElementsByClassName('lmm-q')[0];
 
     // convenience function to loop over a set of elements
     var foreach = function (array, callback, scope) {
       for (var i = 0; i < array.length; i++) {
-        callback.call(scope, i, array[i]); // passes back stuff we need
+        callback.call(scope, i, array[i]);
       }
     };
 
@@ -97,9 +98,9 @@
     /* Pop open a search options box 
        This has been deliberately not put on a visibility toggle, because
        people tend to click on the search box after setting search options */
-    $lmm.getElementsByClassName('lmm-q')[0].addEventListener('click', function(e){
+    $searchBox.addEventListener('click', function(e){
         $underlay.style.display = 'block';
-        fadeOut($homes_page);//this used to stop to prevent double animations
+        fadeOut($homesPane);
 
         var active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
@@ -109,7 +110,7 @@
         }
 
         fadeIn($lmm.getElementsByClassName('lmm-searchops')[0]);
-    });
+    }, false);
 
     /* Similarly, pop open the homes button box */
     $lmm.getElementsByClassName('lmm-logo')[0].addEventListener('click', function(e){
@@ -119,18 +120,18 @@
             $lmm.querySelector('.lmm-active .lmm-pane-container').style.height = 0;
             active[0].classList.remove('lmm-active');
         }
-        fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);//had a stop
+        fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);
 
         $pane_underlay.style.opacity = 0;
-        if($homes_page.classList.contains('fadeIn')){
-            fadeOut($homes_page);
+        if($homesPane.classList.contains('fadeIn')){
+            fadeOut($homesPane);
             $underlay.style.display = 'none';
         }
         else{
             $underlay.style.display = 'block';
-            fadeIn($homes_page);
+            fadeIn($homesPane);
         }
-    });
+    }, false);
 
     // closes everything
     function closeAll(){
@@ -169,32 +170,32 @@
             $lmm.getElementsByClassName('lmm-search-form')[0].insertAdjacentHTML('beforeend', '<input type="hidden" name="requestType">');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.intelliresponse.com/');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','question');
+            $searchBox.setAttribute('name','question');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','question');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'ask a question, like "When are finals?"');
+            $searchBox.setAttribute('placeholder', 'ask a question, like "When are finals?"');
         }
         else if(dest == "lmm-search-web"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search'); 
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','q');
+            $searchBox.setAttribute('name','q');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','q');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search the Lane website');
+            $searchBox.setAttribute('placeholder', 'search the Lane website');
         }
         else if(dest == "lmm-search-ce"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','Keywords');
+            $searchBox.setAttribute('name','Keywords');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','Keywords');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search Continuing Education classes');
+            $searchBox.setAttribute('placeholder', 'search Continuing Education classes');
         }
         else if(dest == "lmm-search-people"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://directory.lanecc.edu/search');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('name','search');
+            $searchBox.setAttribute('name','search');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','search');
-            $lmm.getElementsByClassName('lmm-q')[0].setAttribute('placeholder', 'search the Employee Directory');
+            $searchBox.setAttribute('placeholder', 'search the Employee Directory');
         }
-        $lmm.getElementsByClassName('lmm-q')[0].focus();
+        $searchBox.focus();
         e.stopPropagation();
     }
     var radios = $lmm.querySelectorAll('.lmm-searchops input');
@@ -210,24 +211,24 @@
         for(var i =0; i< sides.length; i++){
             fadeOut(sides[i]);
         }
-        var containers = $lmm.getElementsByClassName('lmm-pane-container');
-        var otherContainer = null;
-        for(var i=0; i<containers.length; i++){
-            if(visible(containers[i])){
-                otherContainer = containers[i];
+        var panes = $lmm.getElementsByClassName('lmm-pane-container');
+        var openPane = null;
+        for(var i=0; i<panes.length; i++){
+            if(visible(panes[i])){
+                openPane = panes[i];
             }
         }
         var clickedPane = this.getElementsByClassName('lmm-pane-container')[0];
-        if (otherContainer != null){
+        if (openPane != null){
             // if we're open, close us
-            if(otherContainer == clickedPane){
+            if(openPane == clickedPane){
                 $pane_underlay.style.opacity = 0;
                 fadeOut(clickedPane);
                 this.classList.remove('lmm-active');
             }
             // swap us with this other one
             else {
-                fadeOut(otherContainer);
+                fadeOut(openPane);
                 fadeIn(clickedPane);
                 $lmm.getElementsByClassName('lmm-active')[0].classList.remove('lmm-active');
                 this.classList.add('lmm-active');
@@ -248,7 +249,7 @@
     }
 
     // Figure out the left margin for lmm-cats.
-    function updateCats(){
+    function onResize(){
         var wwidth = window.innerWidth;
         var width = 720;
         if(wwidth < 720){
@@ -288,6 +289,6 @@
             $underlay.style.width = "100%";
         }
     }
-    updateCats();
-    window.addEventListener('resize', updateCats);
+    onResize();
+    window.addEventListener('resize', onResize, false);
 })();
