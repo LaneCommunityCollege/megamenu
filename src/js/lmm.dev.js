@@ -76,7 +76,8 @@
             return
 
         element.classList.add('fadeOut');
-        element.style.height = 0;
+        if(!element.classList.contains('lmm-side-pane'))
+            element.style.height = 0;
         if(element.classList.contains('fadeIn')){
             element.classList.remove('fadeIn');
         }
@@ -87,7 +88,8 @@
             return
 
         element.classList.add('fadeIn');
-        element.style.removeProperty('height');
+        if(!element.classList.contains('lmm-side-pane'))
+            element.style.removeProperty('height');
         if(element.classList.contains('fadeOut')){
             element.classList.remove('fadeOut');
         }
