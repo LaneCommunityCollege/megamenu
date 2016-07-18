@@ -146,7 +146,7 @@
         var active = $lmm.getElementsByClassName('lmm-active');
         if (active.length){
             $pane_underlay.style.opacity = 0;
-            $lmm.querySelector('.lmm-active .lmm-pane-container').style.height = 0;
+            fadeOut($lmm.querySelector('.lmm-active .lmm-pane-container'));
             active[0].classList.remove('lmm-active');
         }
         $underlay.style.display = 'none';
