@@ -147,10 +147,10 @@
         }
         $underlay.style.display = 'none';
     }
-    $underlay.addEventListener('click', closeAll, false);
+    $underlay.addEventListener('click', closeAll);
     var closers = $lmm.getElementsByClassName('lmm-closer');
     for(var i=0;i<closers.length;i++)
-        closers[i].addEventListener('click', closeAll, false);
+        closers[i].addEventListener('click', closeAll);
         
     /* Handle the radio buttons for the search box */
     function handleRadioClick(e){
@@ -200,7 +200,7 @@
     }
     var radios = $lmm.querySelectorAll('.lmm-searchops input');
     for(var i=0;i<radios.length;i++){
-        radios[i].addEventListener('click', handleRadioClick, false);
+        radios[i].addEventListener('click', handleRadioClick);
     }
 
     // Handle opening and closing panes
@@ -245,7 +245,7 @@
     }
     var topLevels = $lmm.getElementsByClassName('lmm-toplevel');
     for(var i=0;i<topLevels.length;i++){
-        topLevels[i].addEventListener('click', paneClick, false);
+        topLevels[i].addEventListener('click', paneClick);
     }
 
     // Figure out the left margin for lmm-cats.
@@ -290,5 +290,5 @@
         }
     }
     onResize();
-    window.addEventListener('resize', onResize, false);
+    window.addEventListener('resize', onResize);
 })();
