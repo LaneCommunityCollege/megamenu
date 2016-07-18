@@ -206,10 +206,6 @@
     @include breakpoint($normal) {
       font-size: 14px;
     }
-
-    &:hover {
-      color: $gold;
-    }
   }
 }
 
@@ -217,6 +213,10 @@
   cursor: pointer;
   margin: 0 5px 0 0;
   position: static; //needed for blogs
+
+  &:hover {
+    color: $gold;
+  }
 }
 
 .lmm-active {
