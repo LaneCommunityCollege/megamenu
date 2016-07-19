@@ -10,6 +10,9 @@
         mm = "loaded";
     }
 
+    if(!('classList' in document.body))
+        return
+
     document.head.insertAdjacentHTML('beforeend', '<style media="all">{$cssmin}</style>');
     document.body.insertAdjacentHTML('beforeend', '{$lmm}');
     // add to the existing margin
@@ -105,8 +108,8 @@
 
     function resizeSearch(){
         var searchContainer = $lmm.getElementsByClassName('lmm-search')[0];
-        if(visible(cats)){
-            var rightEdge = window.innerWidth - (cats.offsetWidth + cats.offsetLeft);
+        if(visible($cats)){
+            var rightEdge = window.innerWidth - ($cats.offsetWidth + $cats.offsetLeft);
         }
         else{
             var logo = $lmm.getElementsByClassName('lmm-logo')[0];
