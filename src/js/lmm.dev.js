@@ -110,8 +110,14 @@
         fadeOut($homesPane);
 
         var cats = $lmm.getElementsByClassName('lmm-cats')[0];
-        var rightEdge = window.innerWidth - (cats.offsetWidth + cats.offsetLeft);
         var searchContainer = $lmm.getElementsByClassName('lmm-search')[0];
+        if(visible(cats)){
+            var rightEdge = window.innerWidth - (cats.offsetWidth + cats.offsetLeft);
+        }
+        else{
+            var logo = $lmm.getElementsByClassName('lmm-logo')[0];
+            var rightEdge = window.innerWidth - (logo.offsetWidth + logo.offsetLeft);
+        }
         var maxSize = rightEdge - 3;
         searchContainer.style.width = maxSize + "px";
         searchContainer.classList.add("active-search");
@@ -301,6 +307,23 @@
             leftmargin = 0;
         }
         $lmm.getElementsByClassName('lmm-cats')[0].style.marginLeft = leftmargin + "px";
+
+        if(visible($lmm.getElementsByClassName('lmm-searchops')[0])){
+            var cats = $lmm.getElementsByClassName('lmm-cats')[0];
+            var searchContainer = $lmm.getElementsByClassName('lmm-search')[0];
+            if(visible(cats)){
+                var rightEdge = window.innerWidth - (cats.offsetWidth + cats.offsetLeft);
+            }
+            else{
+                var logo = $lmm.getElementsByClassName('lmm-logo')[0];
+                var rightEdge = window.innerWidth - (logo.offsetWidth + logo.offsetLeft);
+            }
+            var maxSize = rightEdge - 3;
+            searchContainer.style.width = maxSize + "px";
+            searchContainer.classList.add("active-search");
+            //55 to accomidate the extra buffer around the icons
+            $searchBox.style.width = (maxSize - 55) + "px";
+        }
 
         /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
         to be sized incorrectly. Make that adjustment here. Need to fire this on resize, since some sites render
