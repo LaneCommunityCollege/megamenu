@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased]
+- rewrite without jQuery support
+- increase use of CSS animations
+
 ## 1.2.0 - 2016-06-15
 - Added Google Analytics Campaign tracking to each link
 - lightweight mobile support, providing just a search box on mobile
