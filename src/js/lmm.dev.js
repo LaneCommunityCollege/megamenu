@@ -12,7 +12,8 @@
 
     document.head.insertAdjacentHTML('beforeend', '<style media="all">{$cssmin}</style>');
     document.body.insertAdjacentHTML('beforeend', '{$lmm}');
-    document.body.style.marginTop = '28px';
+    // add to the existing margin
+    document.body.style.marginTop = (parseInt(window.getComputedStyle(document.body).marginTop) + 28) + 'px';
 
     var $lmm = document.getElementsByClassName('lmm')[0];
     var $pane_underlay = document.getElementsByClassName('lmm-pane-underlay')[0];

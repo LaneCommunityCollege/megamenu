@@ -3,6 +3,7 @@
 ## [Unreleased]
 - rewrite without jQuery support
 - increase use of CSS animations
+- fix overwrites existing body margin https://github.com/LaneCommunityCollege/megamenu/issues/17
 
 ## 1.2.0 - 2016-06-15
 - Added Google Analytics Campaign tracking to each link
