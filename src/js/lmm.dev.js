@@ -109,6 +109,15 @@
         $underlay.style.display = 'block';
         fadeOut($homesPane);
 
+        var cats = $lmm.getElementsByClassName('lmm-cats')[0];
+        var rightEdge = window.innerWidth - (cats.offsetWidth + cats.offsetLeft);
+        var searchContainer = $lmm.getElementsByClassName('lmm-search')[0];
+        var maxSize = rightEdge - 3;
+        searchContainer.style.width = maxSize + "px";
+        searchContainer.classList.add("active-search");
+        //55 to accomidate the extra buffer around the icons
+        $searchBox.style.width = (maxSize - 55) + "px";
+
         var active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
             fadeOut($pane_underlay);
@@ -128,6 +137,10 @@
             active[0].classList.remove('lmm-active');
         }
         fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);
+        if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
+            $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
+            $searchBox.style.removeProperty('width');
+        }
 
         if($homesPane.classList.contains('fadeIn')){
             fadeOut($homesPane);
@@ -144,6 +157,10 @@
         var sides = $lmm.getElementsByClassName('lmm-side-pane');
         for(var i =0; i< sides.length; i++){
             fadeOut(sides[i]);
+        }
+        if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
+            $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
+            $searchBox.style.removeProperty('width');
         }
         var active = $lmm.getElementsByClassName('lmm-active');
         if (active.length){
@@ -216,6 +233,10 @@
         var sides = $lmm.getElementsByClassName('lmm-side-pane');
         for(var i =0; i< sides.length; i++){
             fadeOut(sides[i]);
+        }
+        if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
+            $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
+            $searchBox.style.removeProperty('width');
         }
         var panes = $lmm.getElementsByClassName('lmm-pane-container');
         var openPane = null;
