@@ -259,6 +259,7 @@
   float: right;
   line-height: normal;
   margin-top: 2px;
+  transition: all 0.5s ease;
   //is actually 212 + 22 px for the gift icon + 2 px margin
   width: 236px; //needs to be here, otherwise the box seems to grow by 1px when clicked
   
@@ -283,6 +284,7 @@ input[type='text'].lmm-q {
   height: 24px;
   margin: 0;
   padding: 0 6px;
+  transition: all 0.5s ease;
   width: 181px;
 
   &:focus {
