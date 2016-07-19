@@ -78,6 +78,7 @@
         element.classList.add('fadeOut');
         if(!element.classList.contains('lmm-side-pane'))
             element.style.height = 0;
+        element.style.display = "none";
         if(element.classList.contains('fadeIn')){
             element.classList.remove('fadeIn');
         }
@@ -90,6 +91,7 @@
         element.classList.add('fadeIn');
         if(!element.classList.contains('lmm-side-pane'))
             element.style.removeProperty('height');
+        element.style.removeProperty('display');
         if(element.classList.contains('fadeOut')){
             element.classList.remove('fadeOut');
         }
@@ -280,7 +282,7 @@
 
         /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
         to be sized incorrectly. Make that adjustment here. Need to fire this on resize, since some sites render
-        wider tahn they actually are, then shrink, so we may need to recalculate later. */
+        wider than they actually are, then shrink, so we may need to recalculate later. */
         if(window.innerWidth < document.width){
             $lmm.style.width = document.width;
             $pane_underlay.style.width = document.width;

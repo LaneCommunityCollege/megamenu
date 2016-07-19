@@ -1,7 +1,7 @@
 .lmm-container
     .lmm
         .lmm-logo
-            .lmm-homes-pane.lmm-side-pane
+            .lmm-homes-pane.lmm-side-pane(style="display:none")
                 ul
                     li
                         a(href="http://lanecc.edu") Home
@@ -26,7 +26,7 @@
                 label(class="lmm-search-label", for="q", style="position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;") Search Lane&#39;s Website
                 input(type="text", name="q", class="lmm-q", placeholder="Search or AskLane")
                 input(type="submit", value="", class="lmm-search-submit", name="sa")
-            .lmm-searchops.lmm_min.lmm-side-pane
+            .lmm-searchops.lmm_min.lmm-side-pane(style="display:none")
                 label(for="lmm-search-web")
                     input(name="dest", type="radio", id="lmm-search-web", checked="checked")
                     span Lane Websites
