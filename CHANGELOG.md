@@ -5,6 +5,7 @@
 - increase use of CSS animations
 - fix overwrites existing body margin https://github.com/LaneCommunityCollege/megamenu/issues/17
 - search box grows to use available space https://github.com/LaneCommunityCollege/megamenu/issues/14
+- narrow menu gets correct height https://github.com/LaneCommunityCollege/megamenu/issues/12
 
 ## 1.2.0 - 2016-06-15
 - Added Google Analytics Campaign tracking to each link

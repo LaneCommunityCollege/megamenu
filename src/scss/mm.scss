@@ -113,7 +113,7 @@
 .lmm-pane-container {
   background-color: transparent;
   cursor: auto;
-  height: 275px;
+  height: 260px;
   left: 0;
   overflow: hidden;
   opacity: 0;
@@ -121,6 +121,10 @@
   text-align: left;
   top: 28px;
   width: 100%;
+
+  @include breakpoint($normal){
+    height: 275px;
+  }
 }
 
 .lmm-pane {
@@ -128,13 +132,14 @@
   border-color: $border-blue;
   border-style: solid;
   border-width: 0 1px;
-  height: 274px;
+  height: 259px;
   margin: 0 auto;
   padding: 10px 0;
   position: relative;
   width: 700px;
 
   @include breakpoint($normal) {
+    height: 274px;
     width: 940px;
   }
 
@@ -409,11 +414,15 @@ input[type='submit'].lmm-search-submit {
 .lmm-pane-underlay {
   @include transparent($underlay-color, .90);
   border-bottom: $border-blue solid 1px;
-  height: 275px;
+  height: 260px;
   left: 0;
   opacity: 0;
   position: absolute;
   top: 28px;
   width: 100%;
   z-index: 14999;
+
+  @include breakpoint($normal){
+    height: 275px;
+  }
 }
