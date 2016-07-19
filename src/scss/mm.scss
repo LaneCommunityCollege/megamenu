@@ -3,25 +3,22 @@
 @media only print {
   .lmm,
   .lmm-pane-underlay,
-  .lmm-underlay {
+  .lmm-underlay,
+  .lmm-container {
     display: none;
   }
 }
 
 .lmm-cats,
-.lmm-pane-underlay,
 .lmm-underlay {
   display: none;
 }
 
-@import 'reset';
 @import 'bits';
 @import 'breakpoint';
 
-
 .lmm-underlay {
-  display: block;
-  height: 0;
+  height: 100%;
   left: 0;
   position: fixed;
   top: 0;
@@ -29,10 +26,15 @@
   z-index: 14999;
 }
 
+.lmm-container {
+  @import 'reset';
+  @import 'animations';
+}
 
 .lmm {
   background-color: $background-color;
   border-bottom: $border-blue solid 1px;
+  box-sizing: border-box;
   color: $text-color;
   font-family: Roboto, Futura, sans-serif;
   height: 28px;
@@ -111,9 +113,10 @@
 .lmm-pane-container {
   background-color: transparent;
   cursor: auto;
-  display: none;
-  height: 0;
+  height: 275px;
   left: 0;
+  overflow: hidden;
+  opacity: 0;
   position: absolute;
   text-align: left;
   top: 28px;
@@ -145,8 +148,8 @@
   border: $text-color solid 1px;
   border-radius: 15px;
   cursor: default;
-  display: none;
   line-height: 1.5em;
+  opacity: 0;
   padding: 9px;
   text-align: left;
 }
@@ -205,10 +208,6 @@
     @include breakpoint($normal) {
       font-size: 14px;
     }
-
-    &:hover {
-      color: $gold;
-    }
   }
 }
 
@@ -216,6 +215,10 @@
   cursor: pointer;
   margin: 0 5px 0 0;
   position: static; //needed for blogs
+
+  &:hover {
+    color: $gold;
+  }
 }
 
 .lmm-active {
@@ -269,6 +272,7 @@ input[type='text'].lmm-q {
   border-color: #848484 #c1c1c1 #e1e1e1;
   border-radius: 15px;
   box-sizing: border-box;
+  color: #000;
   font-family: sans-serif;
   font-size: 13px;
   height: 24px;
@@ -297,7 +301,7 @@ input[type='text'].lmm-q {
   }
 }
 
-.lmm-homes-page {
+.lmm-homes-pane {
   float: left;
   margin-left: 3px;
   margin-top: 32px;
@@ -405,9 +409,9 @@ input[type='submit'].lmm-search-submit {
 .lmm-pane-underlay {
   @include transparent($underlay-color, .90);
   border-bottom: $border-blue solid 1px;
-  display: none;
-  height: 0;
+  height: 275px;
   left: 0;
+  opacity: 0;
   position: absolute;
   top: 28px;
   width: 100%;
