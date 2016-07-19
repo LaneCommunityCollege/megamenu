@@ -1,42 +1,43 @@
-.lmm
-    .lmm-logo
-        .lmm-homes-pane.lmm-side-pane
-            ul
-                li
-                    a(href="http://lanecc.edu") Home
-                li
-                    a(href="http://lanecc.edu/students") Current Students
-                li
-                    a(href="http://lanecc.edu/future") Future Students
-                li
-                    a(href="http://lanecc.edu/community") Community
-                li
-                    a(href="http://lanecc.edu/employees") Employees
-    ul.lmm-cats
-        include applyenroll
-        include programs
-        include studentlife
-        include connections
-        include about
-    .lmm-search
-        a(href="http://lanecc.edu/foundation/ways-give")
-            .lmm-gift
-        form(class="lmm-search-form", name="search-lane-new-home-page", method="get", action="https://www.lanecc.edu/custom/search")
-            label(class="lmm-search-label", for="q", style="position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;") Search Lane&#39;s Website
-            input(type="text", name="q", class="lmm-q", placeholder="Search or AskLane")
-            input(type="submit", value="", class="lmm-search-submit", name="sa")
-        .lmm-searchops.lmm_min.lmm-side-pane
-            label(for="lmm-search-web")
-                input(name="dest", type="radio", id="lmm-search-web", checked="checked")
-                span Lane Websites
-            label(for="lmm-search-asklane")
-                input(name="dest", type="radio", id="lmm-search-asklane")
-                span AskLane
-            label(for="lmm-search-people")
-                input(name="dest", type="radio", id="lmm-search-people")
-                span Campus Directory
-            label(for="lmm-search-ce")
-                input(name="dest", type="radio", id="lmm-search-ce")
-                span Continuing Education Classes
-.lmm-pane-underlay
-.lmm-underlay
+.lmm-container
+    .lmm
+        .lmm-logo
+            .lmm-homes-pane.lmm-side-pane
+                ul
+                    li
+                        a(href="http://lanecc.edu") Home
+                    li
+                        a(href="http://lanecc.edu/students") Current Students
+                    li
+                        a(href="http://lanecc.edu/future") Future Students
+                    li
+                        a(href="http://lanecc.edu/community") Community
+                    li
+                        a(href="http://lanecc.edu/employees") Employees
+        ul.lmm-cats
+            include applyenroll
+            include programs
+            include studentlife
+            include connections
+            include about
+        .lmm-search
+            a(href="http://lanecc.edu/foundation/ways-give")
+                .lmm-gift
+            form(class="lmm-search-form", name="search-lane-new-home-page", method="get", action="https://www.lanecc.edu/custom/search")
+                label(class="lmm-search-label", for="q", style="position:absolute;display:block;top:-9000px;left:-9000px;width:1px;height:1px;") Search Lane&#39;s Website
+                input(type="text", name="q", class="lmm-q", placeholder="Search or AskLane")
+                input(type="submit", value="", class="lmm-search-submit", name="sa")
+            .lmm-searchops.lmm_min.lmm-side-pane
+                label(for="lmm-search-web")
+                    input(name="dest", type="radio", id="lmm-search-web", checked="checked")
+                    span Lane Websites
+                label(for="lmm-search-asklane")
+                    input(name="dest", type="radio", id="lmm-search-asklane")
+                    span AskLane
+                label(for="lmm-search-people")
+                    input(name="dest", type="radio", id="lmm-search-people")
+                    span Campus Directory
+                label(for="lmm-search-ce")
+                    input(name="dest", type="radio", id="lmm-search-ce")
+                    span Continuing Education Classes
+    .lmm-pane-underlay(style="height:0px")
+    .lmm-underlay

@@ -108,7 +108,7 @@
 
         var active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
-            $pane_underlay.style.opacity = 0;
+            fadeOut($pane_underlay);
             fadeOut($lmm.querySelector('.lmm-active .lmm-pane-container'));
             active[0].classList.remove('lmm-active');
         }
@@ -120,13 +120,12 @@
     $lmm.getElementsByClassName('lmm-logo')[0].addEventListener('click', function(e){
         var active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
-            $pane_underlay.style.height = 0;
+            fadeOut($pane_underlay);
             fadeOut($lmm.querySelector('.lmm-active .lmm-pane-container'));
             active[0].classList.remove('lmm-active');
         }
         fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);
 
-        $pane_underlay.style.opacity = 0;
         if($homesPane.classList.contains('fadeIn')){
             fadeOut($homesPane);
             $underlay.style.display = 'none';
@@ -145,7 +144,7 @@
         }
         var active = $lmm.getElementsByClassName('lmm-active');
         if (active.length){
-            $pane_underlay.style.opacity = 0;
+            fadeOut($pane_underlay);
             fadeOut($lmm.querySelector('.lmm-active .lmm-pane-container'));
             active[0].classList.remove('lmm-active');
         }
@@ -226,7 +225,7 @@
         if (openPane != null){
             // if we're open, close us
             if(openPane == clickedPane){
-                $pane_underlay.style.opacity = 0;
+                fadeOut($pane_underlay);
                 fadeOut(clickedPane);
                 this.classList.remove('lmm-active');
             }
@@ -242,7 +241,7 @@
         else{
             this.classList.add('lmm-active');
             fadeIn(clickedPane);
-            $pane_underlay.style.opacity = 1;
+            fadeIn($pane_underlay);
             $underlay.style.display = 'block';
         }
         e.stopPropagation();
@@ -262,7 +261,7 @@
                 activeTab.classList.remove('lmm-active');
                 activeTab.getElementsByClassName('lmm-pane-container')[0].style.height = 0;
                 activeTab.getElementsByClassName('lmm-pane-container')[0].style.display = 'none';
-                $pane_underlay.style.opacity = 0;
+                fadeOut($pane_underlay);
                 $underlay.style.display = 'none';
             }
         }

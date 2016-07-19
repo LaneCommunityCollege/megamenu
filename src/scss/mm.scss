@@ -3,7 +3,8 @@
 @media only print {
   .lmm,
   .lmm-pane-underlay,
-  .lmm-underlay {
+  .lmm-underlay,
+  .lmm-container {
     display: none;
   }
 }
@@ -13,12 +14,10 @@
   display: none;
 }
 
-@import 'reset';
 @import 'bits';
 @import 'breakpoint';
 
 .lmm-underlay {
-  display: none;
   height: 100%;
   left: 0;
   position: fixed;
@@ -27,12 +26,15 @@
   z-index: 14999;
 }
 
+.lmm-container {
+  @import 'reset';
+  @import 'animations';
+}
 
 .lmm {
-  @import 'animations';
-
   background-color: $background-color;
   border-bottom: $border-blue solid 1px;
+  box-sizing: border-box;
   color: $text-color;
   font-family: Roboto, Futura, sans-serif;
   height: 28px;
