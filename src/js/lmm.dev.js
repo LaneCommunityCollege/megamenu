@@ -41,6 +41,20 @@
     else if(document.body.classList.contains('admin-menu')){ 
         $lmm.style.display = 'none';
     }
+    // Moodle
+    else if(window.location.hostname.indexOf('mrooms') >= 0 ||
+            window.location.hostname.indexOf('classes.lanecc') >= 0){
+        // some classes have an extra top menubar
+        if(!! document.getElementById('yui_3_17_2_1_1469040182301_520')){
+            document.getElementById('yui_3_17_2_1_1469040182301_520').style.marginTop = '28px';
+        }
+        
+        // administering classes under some themes shows this
+        if(!! document.querySelector('#page-content .block_settings')){
+            document.querySelector('#page-content .block_settings').style.paddingTop = '3em';
+        }
+        
+    }
     // Wordpress
     else if(document.body.classList.contains('admin-bar')){ 
         var adminBar = document.getElementById('#wpadminbar');
