@@ -78,8 +78,9 @@
 
     //Stop random pane clicks from closing us, except on the closer
     var topLevelKids = $lmm.getElementsByClassName('lmm-toplevel');
+    combined = [];
     for(var i=0; i<topLevelKids.length; i++){
-        combined = [].concat(Array.prototype.slice.call(topLevelKids.item(i).children));
+        combined = combined.concat(Array.prototype.slice.call(topLevelKids.item(i).children));
     }
     combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-logo')[0].children));
     foreach(combined, function(index, value){
@@ -180,9 +181,9 @@
     }, false);
 
     // closes everything
-    function closeAll(){
+    function closeAll(e){
         var sides = $lmm.getElementsByClassName('lmm-side-pane');
-        for(var i =0; i< sides.length; i++){
+        for(var i=0; i< sides.length; i++){
             fadeOut(sides[i]);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
