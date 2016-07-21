@@ -157,6 +157,14 @@
   opacity: 0;
   padding: 9px;
   text-align: left;
+
+  li {
+    margin-bottom: 6px;
+
+    @include breakpoint($narrow){
+      margin-bottom: 3px;
+    }
+  }
 }
 
 .lmm-closer {
@@ -323,7 +331,6 @@ input[type='text'].lmm-q {
   li {
     display: block;
     font-size: 14px;
-    margin-bottom: 2px;
     width: 96%;
 
     a {
