@@ -1,4 +1,4 @@
-(function() {
+window.onload = function() {
     /* If someone includes the script twice (which has happened), the mega menu throws
      * open and close events simultaneously, meaning it doesn't work at all. So here
      * we'll make sure we don't accidentally draw it twice. */
@@ -350,4 +350,4 @@
     }
     onResize();
     window.addEventListener('resize', onResize);
-})();
+};
