@@ -1,12 +1,12 @@
 # Change Log
 
-## [Unreleased]
+## 2.0.0 - 2016-06-25
 - rewrite without jQuery support
 - increase use of CSS animations
 - fix overwrites existing body margin https://github.com/LaneCommunityCollege/megamenu/issues/17
 - search box grows to use available space https://github.com/LaneCommunityCollege/megamenu/issues/14
 - narrow menu gets correct height https://github.com/LaneCommunityCollege/megamenu/issues/12
-- Use Tahoma if Roboto not present
+- Use Tahoma if Roboto not present (remove font HTTP call)
 
 ## 1.2.0 - 2016-06-15
 - Added Google Analytics Campaign tracking to each link
