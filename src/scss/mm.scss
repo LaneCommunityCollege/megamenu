@@ -310,7 +310,10 @@ input[type='text'].lmm-q {
     color: #fff;
     display: block;
     font-size: 14px;
+    float: none; //needed for library
+    height: auto; //needed for library
     margin-bottom: 3px;
+    width: auto; //needed for library
 
     input {
       cursor: pointer;
