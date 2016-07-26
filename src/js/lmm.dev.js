@@ -221,28 +221,28 @@ window.onload = function() {
             $lmm.getElementsByClassName('lmm-search-form')[0].insertAdjacentHTML('beforeend', '<input type="hidden" name="requestType">');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.intelliresponse.com/');
-            $searchBox.setAttribute('name','question');
+            $searchBox.setAttribute('id','question');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','question');
             $searchBox.setAttribute('placeholder', 'ask a question, like "When are finals?"');
         }
         else if(dest == "lmm-search-web"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search'); 
-            $searchBox.setAttribute('name','q');
+            $searchBox.setAttribute('id','q');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','q');
             $searchBox.setAttribute('placeholder', 'search the Lane website');
         }
         else if(dest == "lmm-search-ce"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
-            $searchBox.setAttribute('name','Keywords');
+            $searchBox.setAttribute('id','Keywords');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','Keywords');
             $searchBox.setAttribute('placeholder', 'search Continuing Education classes');
         }
         else if(dest == "lmm-search-people"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://directory.lanecc.edu/search');
-            $searchBox.setAttribute('name','search');
+            $searchBox.setAttribute('id','search');
             $lmm.getElementsByClassName('lmm-search-label')[0].setAttribute('for','search');
             $searchBox.setAttribute('placeholder', 'search the Employee Directory');
         }

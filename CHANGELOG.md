@@ -1,5 +1,8 @@
 # Change Log
 
+## Unreleased
+- various accessbility improvements
+
 ## 2.0.0 - 2016-06-25
 - rewrite without jQuery support
 - increase use of CSS animations
