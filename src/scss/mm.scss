@@ -21,7 +21,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 14999;
+  z-index: 2147483646;
 }
 
 .lmm-container {
@@ -40,7 +40,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 15000;
+  z-index: 2147483647;
 
   @include breakpoint($narrow) {
     display: block;
@@ -436,7 +436,7 @@ input[type='submit'].lmm-search-submit {
   position: absolute;
   top: 28px;
   width: 100%;
-  z-index: 14999;
+  z-index: 2147483646;
 
   @include breakpoint($normal){
     height: 275px;
