@@ -57,7 +57,7 @@ window.onload = function() {
     }
     // Wordpress
     else if(document.body.classList.contains('admin-bar')){ 
-        var adminBar = document.getElementById('#wpadminbar');
+        var adminBar = document.getElementById('wpadminbar');
         cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
         $lmm.style.top = cHeight + "px";
         underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
