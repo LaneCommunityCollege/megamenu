@@ -37,8 +37,8 @@ window.onload = function() {
     if(window.location.pathname.indexOf('/imce') === 0){
         $lmm.style.display = 'none';
     }
-    // Authenticated Drupal
-    else if(document.body.classList.contains('admin-menu')){ 
+    // Authenticated Drupal, 7 then 8
+    else if(document.body.classList.contains('admin-menu') || document.getElementById('toolbar-administration').length){ 
         $lmm.style.display = 'none';
     }
     // Moodle
