@@ -9,16 +9,16 @@
   },
   "devDependencies": {
     "breakpoint-sass": "^2.7.0",
-    "del": "^2.2.1",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.11",
+    "gulp-clean-css": "^2.0.13",
     "gulp-compass": "^2.1.0",
     "gulp-file-insert": "^1.0.2",
     "gulp-jade": "^1.1.0",
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-uglify": "^1.5.4",
+    "gulp-uglify": "^2.0.0",
     "run-sequence": "^1.2.2"
   },
   "license": "MIT"
