@@ -1,3 +1,4 @@
+"use strict";
 window.onload = function() {
     /* If someone includes the script twice (which has happened), the mega menu throws
      * open and close events simultaneously, meaning it doesn't work at all. So here
@@ -7,7 +8,7 @@ window.onload = function() {
         return;
     }
     else {
-        mm = "loaded";
+        const mm = "loaded";
     }
 
     if(!('classList' in document.body))
@@ -78,7 +79,7 @@ window.onload = function() {
 
     //Stop random pane clicks from closing us, except on the closer
     var topLevelKids = $lmm.getElementsByClassName('lmm-toplevel');
-    combined = [];
+    var combined = [];
     for(var i=0; i<topLevelKids.length; i++){
         combined = combined.concat(Array.prototype.slice.call(topLevelKids.item(i).children));
     }
@@ -323,7 +324,7 @@ window.onload = function() {
         if(wwidth >= 1440){
             width = 1180;
         }
-        leftmargin = Math.floor(wwidth - width) / 2 - 14;
+        var leftmargin = Math.floor(wwidth - width) / 2 - 14;
         //keeps us from sliding under the logo
         if(leftmargin < 0){
             leftmargin = 0;
