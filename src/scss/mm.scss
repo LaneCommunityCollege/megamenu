@@ -322,6 +322,15 @@ input[type='text'].lmm-q {
   }
 }
 
+.lmm-hidden-label {
+  position:absolute;
+  display:block;
+  top:-9000px;
+  left:-9000px;
+  width:1px;
+  height:1px;
+}
+
 .lmm-homes-pane {
   float: left;
   margin-left: 3px;
