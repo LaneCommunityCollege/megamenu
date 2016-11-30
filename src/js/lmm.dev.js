@@ -181,9 +181,8 @@ window.onload = function() {
 
     // closes everything
     function closeAll(e){
-        let sides = $lmm.getElementsByClassName('lmm-side-pane');
-        for(let i=0; i< sides.length; i++){
-            fadeOut(sides[i]);
+        for(let i of $lmm.getElementsByClassName('lmm-side-pane')){
+            fadeOut(i);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
             $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
@@ -198,18 +197,16 @@ window.onload = function() {
         $underlay.style.display = 'none';
     }
     $underlay.addEventListener('click', closeAll);
-    let closers = $lmm.getElementsByClassName('lmm-closer');
-    for(let i=0;i<closers.length;i++)
-        closers[i].addEventListener('click', closeAll);
+    for(let i of $lmm.getElementsByClassName('lmm-closer'))
+        i.addEventListener('click', closeAll);
         
     /* Handle the radio buttons for the search box */
     function handleRadioClick(e){
-        let radio = $lmm.querySelectorAll('.lmm-searchops input');
         let dest = 'lmm-search-web';
-        foreach(radio, function(index, value){
-            if(radio[index].checked)
-                dest = radio[index].getAttribute('id');
-        });
+        for(let i of $lmm.querySelectorAll('.lmm-searchops input')){
+            if(i.checked)
+                dest = i.getAttribute('id');
+        }
         
         // AskLane adds these, but no one else needs them.
         let reqType = document.getElementsByName('requestType');
@@ -248,28 +245,27 @@ window.onload = function() {
         $searchBox.focus();
         e.stopPropagation();
     }
-    let radios = $lmm.querySelectorAll('.lmm-searchops input');
-    for(let i=0;i<radios.length;i++){
-        radios[i].addEventListener('click', handleRadioClick);
+
+    for(let i of $lmm.querySelectorAll('.lmm-searchops input')){
+        i.addEventListener('click', handleRadioClick);
     }
 
     // Handle opening and closing panes
     function paneClick(e){
         
         // close up the sides
-        let sides = $lmm.getElementsByClassName('lmm-side-pane');
-        for(let i =0; i< sides.length; i++){
-            fadeOut(sides[i]);
+        for(let i of $lmm.getElementsByClassName('lmm-side-pane')){
+            fadeOut(i);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
             $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
             $searchBox.style.removeProperty('width');
         }
-        let panes = $lmm.getElementsByClassName('lmm-pane-container');
+        
         let openPane = null;
-        for(let i=0; i<panes.length; i++){
-            if(visible(panes[i])){
-                openPane = panes[i];
+        for(let i of $lmm.getElementsByClassName('lmm-pane-container')){
+            if(visible(i)){
+                openPane = i;
             }
         }
         let clickedPane = this.getElementsByClassName('lmm-pane-container')[0];
@@ -297,16 +293,15 @@ window.onload = function() {
         }
         e.stopPropagation();
     }
-    let topLevels = $lmm.getElementsByClassName('lmm-toplevel');
-    for(let i=0;i<topLevels.length;i++){
-        topLevels[i].addEventListener('click', paneClick);
+    
+    for(let i of $lmm.getElementsByClassName('lmm-toplevel')){
+        i.addEventListener('click', paneClick);
     }
 
     // Figure out the left margin for lmm-cats.
     function onResize(){
-        let wwidth = window.innerWidth;
         let width = 720;
-        if(wwidth < 720){
+        if(window.innerWidth < 720){
             let activeTab = $lmm.getElementsByClassName('lmm-active')[0];
             if (activeTab != null){
                 activeTab.classList.remove('lmm-active');
@@ -316,13 +311,13 @@ window.onload = function() {
                 $underlay.style.display = 'none';
             }
         }
-        if(wwidth >= 940){
+        if(window.innerWidth >= 940){
             width = 940;
         }
-        if(wwidth >= 1440){
+        if(window.innerWidth >= 1440){
             width = 1180;
         }
-        let leftmargin = Math.floor(wwidth - width) / 2 - 14;
+        let leftmargin = Math.floor(window.innerWidth - width) / 2 - 14;
         //keeps us from sliding under the logo
         if(leftmargin < 0){
             leftmargin = 0;
