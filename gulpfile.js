@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     del = require('del'),
     compass = require('gulp-compass'),
     cleanCSS = require('gulp-clean-css'),
-    jade = require('gulp-jade');
+    jade = require('gulp-jade'),
+    babel = require('gulp-babel');
 
 gulp.task('minify-html', function(){
   var opts = {
@@ -74,11 +75,20 @@ gulp.task('clean', function(cb) {
   del('tmp', cb); 
 });
 
+gulp.task('babel', function(){
+  return gulp.src('dist/js/lmm.js')
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task('build', function(cb){
   runSequence(['build-html', 'compass'],
               ['minify-css', 'minify-html'],
                'inject-html', 
                'inject-css',
+               'babel',
                'compress',
                'clean'); 
 });
