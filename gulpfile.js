@@ -39,11 +39,8 @@ gulp.task('minify-css', function(){
 });
 
 gulp.task('build-html', function() {
-  var YOUR_LOCALS = {};
- 
   gulp.src('src/jade/menu.jade')
     .pipe(jade({
-//      locals: YOUR_LOCALS,
       doctype: "html"
     }))
     .pipe(gulp.dest('tmp'));
@@ -66,9 +63,16 @@ gulp.task('inject-css', function(){
     .pipe(gulp.dest('dist/js/'));
 });
 
+options = {
+  dead_code     : false,  // discard unreachable code
+  conditionals  : false,  // optimize if-s and conditional expressions
+  unused        : false,  // drop unused variables/functions
+  warnings      : true,  // warn about potentially dangerous optimizations/code
+}
+
 gulp.task('compress', function(){
   return gulp.src('dist/js/lmm.js')
-    .pipe(uglify())
+    .pipe(uglify({compress:options}))
     .pipe(rename({suffix:".min"}))
     .pipe(gulp.dest('dist/js/'));
 });
