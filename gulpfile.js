@@ -63,16 +63,9 @@ gulp.task('inject-css', function(){
     .pipe(gulp.dest('dist/js/'));
 });
 
-options = {
-  dead_code     : false,  // discard unreachable code
-  conditionals  : false,  // optimize if-s and conditional expressions
-  unused        : false,  // drop unused variables/functions
-  warnings      : true,  // warn about potentially dangerous optimizations/code
-}
-
 gulp.task('compress', function(){
   return gulp.src('dist/js/lmm.js')
-    .pipe(uglify({compress:options}))
+    .pipe(uglify({compress:false}))
     .pipe(rename({suffix:".min"}))
     .pipe(gulp.dest('dist/js/'));
 });
