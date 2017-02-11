@@ -19,16 +19,16 @@ window.onload = function() {
     // add to the existing margin
     document.body.style.marginTop = (parseInt(window.getComputedStyle(document.body).marginTop) + 28) + 'px';
 
-    var $lmm = document.getElementsByClassName('lmm')[0];
-    var $pane_underlay = document.getElementsByClassName('lmm-pane-underlay')[0];
-    var $underlay = document.getElementsByClassName('lmm-underlay')[0];
-    var $cats = $lmm.getElementsByClassName('lmm-cats')[0]
-    var $homesPane = $lmm.getElementsByClassName('lmm-homes-pane')[0];
-    var $searchBox = $lmm.getElementsByClassName('lmm-q')[0];
+    let $lmm = document.getElementsByClassName('lmm')[0];
+    let $pane_underlay = document.getElementsByClassName('lmm-pane-underlay')[0];
+    let $underlay = document.getElementsByClassName('lmm-underlay')[0];
+    let $cats = $lmm.getElementsByClassName('lmm-cats')[0]
+    let $homesPane = $lmm.getElementsByClassName('lmm-homes-pane')[0];
+    let $searchBox = $lmm.getElementsByClassName('lmm-q')[0];
 
     // convenience function to loop over a set of elements
-    var foreach = function (array, callback, scope) {
-      for (var i = 0; i < array.length; i++) {
+    let foreach = function (array, callback, scope) {
+      for (let i = 0; i < array.length; i++) {
         callback.call(scope, i, array[i]);
       }
     };
@@ -58,7 +58,7 @@ window.onload = function() {
     }
     // Wordpress
     else if(document.body.classList.contains('admin-bar')){ 
-        var adminBar = document.getElementById('wpadminbar');
+        let adminBar = document.getElementById('wpadminbar');
         cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
         $lmm.style.top = cHeight + "px";
         underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
@@ -72,15 +72,15 @@ window.onload = function() {
     }
 
     // add GA tracking to each link
-    var links = $lmm.querySelectorAll('a:not(.skip)');
+    let links = $lmm.querySelectorAll('a:not(.skip)');
     foreach(links, function(index, value){
         links[index].setAttribute('href', links[index].getAttribute('href') + "?utm_source=megamenu&utm_medium=web&utm_campaign=megamenu");
     });
 
     //Stop random pane clicks from closing us, except on the closer
-    var topLevelKids = $lmm.getElementsByClassName('lmm-toplevel');
-    var combined = [];
-    for(var i=0; i<topLevelKids.length; i++){
+    let topLevelKids = $lmm.getElementsByClassName('lmm-toplevel');
+    let combined = [];
+    for(let i=0; i<topLevelKids.length; i++){
         combined = combined.concat(Array.prototype.slice.call(topLevelKids.item(i).children));
     }
     combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-logo')[0].children));
@@ -123,15 +123,13 @@ window.onload = function() {
     }
 
     function resizeSearch(){
-        var searchContainer = $lmm.getElementsByClassName('lmm-search')[0];
-        if(visible($cats)){
-            var rightEdge = window.innerWidth - ($cats.offsetWidth + $cats.offsetLeft);
+        let searchContainer = $lmm.getElementsByClassName('lmm-search')[0];
+        let rightEdge = window.innerWidth - ($cats.offsetWidth + $cats.offsetLeft);
+        if(!visible($cats)){
+            let logo = $lmm.getElementsByClassName('lmm-logo')[0];
+            rightEdge = window.innerWidth - (logo.offsetWidth + logo.offsetLeft);
         }
-        else{
-            var logo = $lmm.getElementsByClassName('lmm-logo')[0];
-            var rightEdge = window.innerWidth - (logo.offsetWidth + logo.offsetLeft);
-        }
-        var maxSize = rightEdge - 3;
+        let maxSize = rightEdge - 3;
         searchContainer.style.width = maxSize + "px";
         searchContainer.classList.add("active-search");
         //55 to accomidate the extra buffer around the icons
@@ -147,7 +145,7 @@ window.onload = function() {
 
         resizeSearch();
 
-        var active = $lmm.getElementsByClassName('lmm-active');
+        let active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
             fadeOut($pane_underlay);
             fadeOut($lmm.querySelector('.lmm-active .lmm-pane-container'));
@@ -159,7 +157,7 @@ window.onload = function() {
 
     /* Similarly, pop open the homes button box */
     $lmm.getElementsByClassName('lmm-logo')[0].addEventListener('click', function(e){
-        var active = $lmm.getElementsByClassName('lmm-active');
+        let active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
             fadeOut($pane_underlay);
             fadeOut($lmm.querySelector('.lmm-active .lmm-pane-container'));
@@ -183,15 +181,14 @@ window.onload = function() {
 
     // closes everything
     function closeAll(e){
-        var sides = $lmm.getElementsByClassName('lmm-side-pane');
-        for(var i=0; i< sides.length; i++){
-            fadeOut(sides[i]);
+        for(let i of $lmm.getElementsByClassName('lmm-side-pane')){
+            fadeOut(i);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
             $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
             $searchBox.style.removeProperty('width');
         }
-        var active = $lmm.getElementsByClassName('lmm-active');
+        let active = $lmm.getElementsByClassName('lmm-active');
         if (active.length){
             fadeOut($pane_underlay);
             fadeOut($lmm.querySelector('.lmm-active .lmm-pane-container'));
@@ -200,21 +197,19 @@ window.onload = function() {
         $underlay.style.display = 'none';
     }
     $underlay.addEventListener('click', closeAll);
-    var closers = $lmm.getElementsByClassName('lmm-closer');
-    for(var i=0;i<closers.length;i++)
-        closers[i].addEventListener('click', closeAll);
+    for(let i of $lmm.getElementsByClassName('lmm-closer'))
+        i.addEventListener('click', closeAll);
         
     /* Handle the radio buttons for the search box */
     function handleRadioClick(e){
-        var radio = $lmm.querySelectorAll('.lmm-searchops input');
-        var dest = 'lmm-search-web';
-        foreach(radio, function(index, value){
-            if(radio[index].checked)
-                dest = radio[index].getAttribute('id');
-        });
+        let dest = 'lmm-search-web';
+        for(let i of $lmm.querySelectorAll('.lmm-searchops input')){
+            if(i.checked)
+                dest = i.getAttribute('id');
+        }
         
         // AskLane adds these, but no one else needs them.
-        var reqType = document.getElementsByName('requestType');
+        let reqType = document.getElementsByName('requestType');
         if(reqType.length > 0 )
             reqType[0].parentNode.removeChild(reqType[0]);
 
@@ -250,31 +245,30 @@ window.onload = function() {
         $searchBox.focus();
         e.stopPropagation();
     }
-    var radios = $lmm.querySelectorAll('.lmm-searchops input');
-    for(var i=0;i<radios.length;i++){
-        radios[i].addEventListener('click', handleRadioClick);
+
+    for(let i of $lmm.querySelectorAll('.lmm-searchops input')){
+        i.addEventListener('click', handleRadioClick);
     }
 
     // Handle opening and closing panes
     function paneClick(e){
         
         // close up the sides
-        var sides = $lmm.getElementsByClassName('lmm-side-pane');
-        for(var i =0; i< sides.length; i++){
-            fadeOut(sides[i]);
+        for(let i of $lmm.getElementsByClassName('lmm-side-pane')){
+            fadeOut(i);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
             $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
             $searchBox.style.removeProperty('width');
         }
-        var panes = $lmm.getElementsByClassName('lmm-pane-container');
-        var openPane = null;
-        for(var i=0; i<panes.length; i++){
-            if(visible(panes[i])){
-                openPane = panes[i];
+        
+        let openPane = null;
+        for(let i of $lmm.getElementsByClassName('lmm-pane-container')){
+            if(visible(i)){
+                openPane = i;
             }
         }
-        var clickedPane = this.getElementsByClassName('lmm-pane-container')[0];
+        let clickedPane = this.getElementsByClassName('lmm-pane-container')[0];
         if (openPane != null){
             // if we're open, close us
             if(openPane == clickedPane){
@@ -299,17 +293,16 @@ window.onload = function() {
         }
         e.stopPropagation();
     }
-    var topLevels = $lmm.getElementsByClassName('lmm-toplevel');
-    for(var i=0;i<topLevels.length;i++){
-        topLevels[i].addEventListener('click', paneClick);
+    
+    for(let i of $lmm.getElementsByClassName('lmm-toplevel')){
+        i.addEventListener('click', paneClick);
     }
 
     // Figure out the left margin for lmm-cats.
     function onResize(){
-        var wwidth = window.innerWidth;
-        var width = 720;
-        if(wwidth < 720){
-            var activeTab = $lmm.getElementsByClassName('lmm-active')[0];
+        let width = 720;
+        if(window.innerWidth < 720){
+            let activeTab = $lmm.getElementsByClassName('lmm-active')[0];
             if (activeTab != null){
                 activeTab.classList.remove('lmm-active');
                 activeTab.getElementsByClassName('lmm-pane-container')[0].style.height = 0;
@@ -318,13 +311,13 @@ window.onload = function() {
                 $underlay.style.display = 'none';
             }
         }
-        if(wwidth >= 940){
+        if(window.innerWidth >= 940){
             width = 940;
         }
-        if(wwidth >= 1440){
+        if(window.innerWidth >= 1440){
             width = 1180;
         }
-        var leftmargin = Math.floor(wwidth - width) / 2 - 14;
+        let leftmargin = Math.floor(window.innerWidth - width) / 2 - 14;
         //keeps us from sliding under the logo
         if(leftmargin < 0){
             leftmargin = 0;
