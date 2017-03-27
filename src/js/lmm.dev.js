@@ -8,7 +8,7 @@ window.onload = function() {
         return;
     }
     else {
-        const mm = "loaded";
+        var mm = "loaded";
     }
 
     if(!('classList' in document.body))
