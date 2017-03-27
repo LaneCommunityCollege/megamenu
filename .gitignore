@@ -7,3 +7,4 @@ lmm.js
 node_modules
 tmp
 old
+deploy.sh
