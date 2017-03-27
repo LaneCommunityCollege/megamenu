@@ -59,9 +59,9 @@ window.onload = function() {
     // Wordpress
     else if(document.body.classList.contains('admin-bar')){ 
         let adminBar = document.getElementById('wpadminbar');
-        cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
+        let cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
         $lmm.style.top = cHeight + "px";
-        underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
+        let underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
         $pane_underlay.style.marginTop = (underlayMargin + cHeight) + "px";
     }
     /* If we're ever relative positioned, we need to change where the top sits, otherwise we'll sit 28px
