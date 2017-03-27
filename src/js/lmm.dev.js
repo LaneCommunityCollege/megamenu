@@ -181,7 +181,7 @@ window.onload = function() {
 
     // closes everything
     function closeAll(e){
-        for(let i of $lmm.getElementsByClassName('lmm-side-pane')){
+        for(let i of Array.from($lmm.getElementsByClassName('lmm-side-pane'))){
             fadeOut(i);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
@@ -197,13 +197,13 @@ window.onload = function() {
         $underlay.style.display = 'none';
     }
     $underlay.addEventListener('click', closeAll);
-    for(let i of $lmm.getElementsByClassName('lmm-closer'))
+    for(let i of Array.from($lmm.getElementsByClassName('lmm-closer')))
         i.addEventListener('click', closeAll);
         
     /* Handle the radio buttons for the search box */
     function handleRadioClick(e){
         let dest = 'lmm-search-web';
-        for(let i of $lmm.querySelectorAll('.lmm-searchops input')){
+        for(let i of Array.from($lmm.querySelectorAll('.lmm-searchops input'))){
             if(i.checked)
                 dest = i.getAttribute('id');
         }
@@ -246,7 +246,7 @@ window.onload = function() {
         e.stopPropagation();
     }
 
-    for(let i of $lmm.querySelectorAll('.lmm-searchops input')){
+    for(let i of Array.from($lmm.querySelectorAll('.lmm-searchops input'))){
         i.addEventListener('click', handleRadioClick);
     }
 
@@ -254,7 +254,7 @@ window.onload = function() {
     function paneClick(e){
         
         // close up the sides
-        for(let i of $lmm.getElementsByClassName('lmm-side-pane')){
+        for(let i of Array.from($lmm.getElementsByClassName('lmm-side-pane'))){
             fadeOut(i);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
@@ -263,7 +263,7 @@ window.onload = function() {
         }
         
         let openPane = null;
-        for(let i of $lmm.getElementsByClassName('lmm-pane-container')){
+        for(let i of Array.from($lmm.getElementsByClassName('lmm-pane-container'))){
             if(visible(i)){
                 openPane = i;
             }
@@ -294,7 +294,7 @@ window.onload = function() {
         e.stopPropagation();
     }
     
-    for(let i of $lmm.getElementsByClassName('lmm-toplevel')){
+    for(let i of Array.from($lmm.getElementsByClassName('lmm-toplevel'))){
         i.addEventListener('click', paneClick);
     }
 
