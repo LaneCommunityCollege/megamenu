@@ -1,4 +1,5 @@
 "use strict";
+
 window.onload = function() {
     /* If someone includes the script twice (which has happened), the mega menu throws
      * open and close events simultaneously, meaning it doesn't work at all. So here
@@ -181,8 +182,9 @@ window.onload = function() {
 
     // closes everything
     function closeAll(e){
-        for(let i of Array.from($lmm.getElementsByClassName('lmm-side-pane'))){
-            fadeOut(i);
+        var panes = $lmm.getElementsByClassName('lmm-side-pane');
+        for(let i=0; i<panes.length; i++){
+          fadeOut(panes[i]);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
             $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
@@ -197,15 +199,18 @@ window.onload = function() {
         $underlay.style.display = 'none';
     }
     $underlay.addEventListener('click', closeAll);
-    for(let i of Array.from($lmm.getElementsByClassName('lmm-closer')))
-        i.addEventListener('click', closeAll);
+    let closers = $lmm.getElementsByClassName('lmm-closer');
+    for(let i=0; i<closers.length; i++){
+      closers[i].addEventListener('click', closeAll);
+    }
         
     /* Handle the radio buttons for the search box */
     function handleRadioClick(e){
         let dest = 'lmm-search-web';
-        for(let i of Array.from($lmm.querySelectorAll('.lmm-searchops input'))){
-            if(i.checked)
-                dest = i.getAttribute('id');
+        let opts = $lmm.querySelectorAll('.lmm-searchops input');
+        for(let i=0;i<opts.length; i++){
+          if(opts[i].checked)
+              dest = opts[i].getAttribute('id');
         }
         
         // AskLane adds these, but no one else needs them.
@@ -246,16 +251,18 @@ window.onload = function() {
         e.stopPropagation();
     }
 
-    for(let i of Array.from($lmm.querySelectorAll('.lmm-searchops input'))){
-        i.addEventListener('click', handleRadioClick);
+    let radios = $lmm.querySelectorAll('.lmm-searchops input');
+    for(let i=0;i<radios.length; i++){
+        radios[i].addEventListener('click', handleRadioClick);
     }
 
     // Handle opening and closing panes
     function paneClick(e){
         
         // close up the sides
-        for(let i of Array.from($lmm.getElementsByClassName('lmm-side-pane'))){
-            fadeOut(i);
+        let panes = $lmm.getElementsByClassName('lmm-side-pane');
+        for(let i =0; i<panes.length; i++){
+            fadeOut(panes[i]);
         }
         if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
             $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
@@ -263,9 +270,10 @@ window.onload = function() {
         }
         
         let openPane = null;
-        for(let i of Array.from($lmm.getElementsByClassName('lmm-pane-container'))){
-            if(visible(i)){
-                openPane = i;
+        let containers = $lmm.getElementsByClassName('lmm-pane-container');
+        for(let i=0;i<containers.length;i++){
+            if(visible(containers[i])){
+                openPane = containers[i];
             }
         }
         let clickedPane = this.getElementsByClassName('lmm-pane-container')[0];
@@ -294,8 +302,9 @@ window.onload = function() {
         e.stopPropagation();
     }
     
-    for(let i of Array.from($lmm.getElementsByClassName('lmm-toplevel'))){
-        i.addEventListener('click', paneClick);
+    let top = $lmm.getElementsByClassName('lmm-toplevel')
+    for(let i=0;i<top.length;i++){
+        top[i].addEventListener('click', paneClick);
     }
 
     // Figure out the left margin for lmm-cats.
