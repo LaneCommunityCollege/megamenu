@@ -1,15 +1,15 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function() {
+window.onload = function() {
     /* If someone includes the script twice (which has happened), the mega menu throws
      * open and close events simultaneously, meaning it doesn't work at all. So here
      * we'll make sure we don't accidentally draw it twice. */
-    if(typeof window.mm !== 'undefined'){
+    if(typeof mm !== 'undefined'){
         console.log("megamenu script already present");
         return;
     }
     else {
-        window.mm = "loaded";
+        var mm = "loaded";
     }
 
     if(!('classList' in document.body))
@@ -326,13 +326,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if(window.innerWidth >= 1440){
             width = 1180;
         }
-
         let leftmargin = Math.floor(window.innerWidth - width) / 2 - 14;
         //keeps us from sliding under the logo
         if(leftmargin < 0){
             leftmargin = 0;
         }
-
         $cats.style.marginLeft = leftmargin + "px";
 
         if(visible($lmm.getElementsByClassName('lmm-searchops')[0])){
@@ -355,4 +353,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     onResize();
     window.addEventListener('resize', onResize);
-});
+};
