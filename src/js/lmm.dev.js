@@ -62,6 +62,7 @@ window.onload = function() {
         let adminBar = document.getElementById('wpadminbar');
         let cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
         $lmm.style.top = cHeight + "px";
+        $lmm.style.zIndex = 800;
         let underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
         $pane_underlay.style.marginTop = (underlayMargin + cHeight) + "px";
     }
