@@ -55,7 +55,20 @@ window.onload = function() {
         if(!! document.querySelector('#page-content .block_settings')){
             document.querySelector('#page-content .block_settings').style.paddingTop = '3em';
         }
-        
+
+        //boost theme - push big page elements down some
+        let cssFiles = document.getElementsByTagName('link');
+        let boost=false;
+        for(var i=0;i<cssFiles.length;i++){
+            if(cssFiles[i].href.indexOf('boost')>0){
+               boost=true;
+            }
+        }
+        if(boost){
+          document.querySelector('header').style.top = '28px';
+          document.getElementById('page').style.marginTop = '78px';
+          document.getElementById('nav-drawer').style.top = '78px';
+        }
     }
     // Wordpress
     else if(document.body.classList.contains('admin-bar')){ 
