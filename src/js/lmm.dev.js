@@ -89,7 +89,7 @@ window.onload = function() {
     // add GA tracking to each link
     let links = $lmm.querySelectorAll('a:not(.skip)');
     foreach(links, function(index, value){
-        links[index].setAttribute('href', links[index].getAttribute('href') + "?utm_source=megamenu&utm_medium=web&utm_campaign=megamenu");
+        links[index].setAttribute('href', links[index].getAttribute('href') + "?itm_source=" + window.location.hostname + "&itm_campaign=megamenu");
     });
 
     //Stop random pane clicks from closing us, except on the closer
