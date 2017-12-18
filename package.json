@@ -19,9 +19,9 @@
     "gulp-jade": "^1.1.0",
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "gulp-uglify": "^2.0.0",
-    "run-sequence": "^1.2.2",
+    "gulp-replace": ">0.5.4",
+    "gulp-uglify": "^3.0.0",
+    "run-sequence": ">1.2.2",
     "uglify-js": "^2.7.5"
   },
   "license": "MIT",
