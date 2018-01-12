@@ -148,7 +148,7 @@ window.onload = function() {
         searchContainer.style.width = maxSize + "px";
         searchContainer.classList.add("active-search");
         //55 to accomidate the extra buffer around the icons
-        $searchBox.style.width = (maxSize - 55) + "px";
+        $searchBox.style.width = (maxSize - 60) + "px";
     }
 
     /* Pop open a search options box 
