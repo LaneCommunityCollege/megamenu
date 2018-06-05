@@ -79,12 +79,14 @@ window.onload = function() {
         let underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
         $pane_underlay.style.marginTop = (underlayMargin + cHeight) + "px";
     }
-    /* If we're ever relative positioned, we need to change where the top sits, otherwise we'll sit 28px
-       below where we want to be */
-    if(window.getComputedStyle(document.body).position == 'relative'){
-        $lmm.style.top = '-29px';
-        $pane_underlay.style.top = 0;
-    }
+
+    /* It used to be that we'd check and see if the body was relative position, then slide up. But IE11 didn't like that,
+     * so we'll just set all bodies to relative always - a trick google translate does - and then move ourselves up a little
+     * more 
+     */
+    document.body.style.position = 'relative';
+    $lmm.style.top = '-29px';
+    $pane_underlay.style.top = 0;
 
     // add GA tracking to each link
     let links = $lmm.querySelectorAll('a:not(.skip)');
