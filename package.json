@@ -13,20 +13,21 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
-    "gulp-clean-css": "^2.0.13",
+    "gulp-clean-css": "^2.3.2",
     "gulp-compass": "^2.1.0",
     "gulp-file-insert": "^1.0.2",
     "gulp-jade": "^1.1.0",
     "gulp-minify-html": "^1.0.6",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": ">0.5.4",
+    "gulp-rename": "^1.2.3",
+    "gulp-replace": "^1.0.0",
     "gulp-uglify": "^3.0.0",
     "run-sequence": "^2.2.1",
     "uglify-js": "^2.7.5"
   },
   "license": "MIT",
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "npm": "^6.1.0"
   }
 }
