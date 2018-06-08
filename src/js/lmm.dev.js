@@ -146,7 +146,7 @@ window.onload = function() {
             let logo = $lmm.getElementsByClassName('lmm-logo')[0];
             rightEdge = window.innerWidth - (logo.offsetWidth + logo.offsetLeft);
         }
-        let maxSize = rightEdge - 3;
+        let maxSize = rightEdge - 19;
         searchContainer.style.width = maxSize + "px";
         searchContainer.classList.add("active-search");
         //55 to accomidate the extra buffer around the icons
