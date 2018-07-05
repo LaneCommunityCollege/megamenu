@@ -229,22 +229,9 @@ window.onload = function() {
               dest = opts[i].getAttribute('id');
         }
         
-        // AskLane adds these, but no one else needs them.
-        let reqType = document.getElementsByName('requestType');
-        if(reqType.length > 0 )
-            reqType[0].parentNode.removeChild(reqType[0]);
-
-        if(dest == "lmm-search-asklane"){
-            $lmm.getElementsByClassName('lmm-search-form')[0].insertAdjacentHTML('beforeend', '<input type="hidden" name="requestType">');
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.intelliresponse.com/');
-            $searchBox.setAttribute('name','question');
-            $lmm.getElementsByClassName('lmm-search-label')[0].textContent = 'Ask a question, like "When are finals?"';
-            $searchBox.setAttribute('placeholder', 'ask a question, like "When are finals?"');
-        }
-        else if(dest == "lmm-search-web"){
+        if(dest == "lmm-search-web"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search'); 
+            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search/'); 
             $searchBox.setAttribute('name','q');
             $lmm.getElementsByClassName('lmm-search-label')[0].textContent = 'Search the Lane website';
             $searchBox.setAttribute('placeholder', 'search the Lane website');
