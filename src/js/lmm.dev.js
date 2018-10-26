@@ -36,6 +36,7 @@ window.onload = function() {
 
     // make a couple site specific adjustments
     // Authenticated Drupal's file browser
+    let makeRelative = true;
     if(window.location.pathname.indexOf('/imce') === 0){
         $lmm.style.display = 'none';
     }
@@ -79,12 +80,19 @@ window.onload = function() {
         let underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
         $pane_underlay.style.marginTop = (underlayMargin + cHeight) + "px";
     }
+    else if(document.body.classList.contains('masthead-fixed') && document.body.classList.contains('blog')){
+      document.getElementById('masthead').style.position = 'relative';
+    }
+    else if(!!document.getElementById('twentytwelve-fonts-css')){
+      makeRelative = false;
+    }
 
     /* It used to be that we'd check and see if the body was relative position, then slide up. But IE11 didn't like that,
      * so we'll just set all bodies to relative always - a trick google translate does - and then move ourselves up a little
      * more 
      */
-    document.body.style.position = 'relative';
+    if(makeRelative)
+      document.body.style.position = 'relative';
     $lmm.style.top = '-29px';
     $pane_underlay.style.top = 0;
 
@@ -234,7 +242,7 @@ window.onload = function() {
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search/'); 
             $searchBox.setAttribute('name','q');
             $lmm.getElementsByClassName('lmm-search-label')[0].textContent = 'Search the Lane website';
-            $searchBox.setAttribute('placeholder', 'search the Lane website');
+            $searchBox.setAttribute('placeholder', 'search all Lane websites');
         }
         else if(dest == "lmm-search-ce"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
