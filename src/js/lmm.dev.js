@@ -72,6 +72,7 @@ window.onload = function() {
         }
     }
     // Wordpress
+    // I'm fairly confident this if blck can be removed, but that's pending additional testing
     else if(document.body.classList.contains('admin-bar')){ 
         let adminBar = document.getElementById('wpadminbar');
         let cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
@@ -85,6 +86,9 @@ window.onload = function() {
     }
     else if(!!document.getElementById('twentytwelve-fonts-css')){
       makeRelative = false;
+    }
+    else if(!!document.getElementById('wpadminbar')){
+      $lmm.style.display = 'none';
     }
 
     /* It used to be that we'd check and see if the body was relative position, then slide up. But IE11 didn't like that,
