@@ -72,7 +72,7 @@ window.onload = function() {
         }
     }
     // Wordpress
-    // I'm fairly confident this if blck can be removed, but that's pending additional testing
+    // I'm fairly confident this if block can be removed, but that's pending additional testing
     else if(document.body.classList.contains('admin-bar')){ 
         let adminBar = document.getElementById('wpadminbar');
         let cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
@@ -95,9 +95,10 @@ window.onload = function() {
      * so we'll just set all bodies to relative always - a trick google translate does - and then move ourselves up a little
      * more 
      */
-    if(makeRelative)
+    if(makeRelative){
       document.body.style.position = 'relative';
-    $lmm.style.top = '-29px';
+      $lmm.style.top = '-29px';
+    }
     $pane_underlay.style.top = 0;
 
     // add GA tracking to each link
