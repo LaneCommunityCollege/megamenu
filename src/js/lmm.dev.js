@@ -98,8 +98,8 @@ window.onload = function() {
     if(makeRelative){
       document.body.style.position = 'relative';
       $lmm.style.top = '-29px';
+      $pane_underlay.style.top = 0;
     }
-    $pane_underlay.style.top = 0;
 
     // add GA tracking to each link
     let links = $lmm.querySelectorAll('a:not(.skip)');
