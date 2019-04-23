@@ -15,7 +15,7 @@
     "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^2.3.2",
     "gulp-compass": "^2.1.0",
-    "gulp-file-insert": "^1.0.2",
+    "gulp-file-insert": "^2.0.0",
     "gulp-jade": "^1.1.0",
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.4.0",
