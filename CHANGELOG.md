@@ -2,6 +2,7 @@
 
 ## Unreleased
 - various accessbility improvements
+- update gulp to version 4, fixing a variety of npm issues
 
 ## 2.0.0 - 2016-06-25
 - rewrite without jQuery support
