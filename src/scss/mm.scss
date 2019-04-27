@@ -256,6 +256,7 @@
   color: $text-color;
   display: inline-block;
   font-size: 110%;
+  margin-right: 3px;
   padding: 7px 10px;
   text-decoration: none;
 
@@ -377,15 +378,9 @@ input[type='text'].lmm-q {
 }
 
 .lmm-icon {
-  height: 34px;
+  height: 36px;
   fill: $white;
   margin-right: 2px;
-}
-
-.lmm-orgsync {
-  background-position: -181px 0;
-  height: 32px;
-  width: 32px;
 }
 
 .lmm-gift {
