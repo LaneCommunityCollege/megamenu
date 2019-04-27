@@ -355,17 +355,12 @@ input[type='text'].lmm-q {
   }
 }
 
-input[type='submit'].lmm-search-submit {
-  background-image: url($resources + 'sprite.png');
-  background-position: -136px 0;
-  border-radius: 2px;
-  border-style: none;
-  cursor: pointer;
-  height: 23px;
-  //needs the important or moodle breaks
-  margin: 0 0 0 2px !important;
-  padding: 0;
+.lmm-search-button {
+  fill: $white;
   width: 23px;
+  margin-right: 2px;
+  cursor: pointer;
+  float: right;
 }
 
 .lmm-logo {
