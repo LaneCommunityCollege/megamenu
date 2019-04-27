@@ -34,6 +34,7 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-register": "^6.26.0",
+    "gulp-svgmin": "^2.2.0",
     "natives": "^1.1.6"
   }
 }

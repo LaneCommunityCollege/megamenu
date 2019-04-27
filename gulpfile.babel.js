@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import jade from 'gulp-jade';
 import compass from 'gulp-compass';
 import minifyHTML from 'gulp-minify-html';
+import svgmin from 'gulp-svgmin';
 import cleanCSS from 'gulp-clean-css';
 import rename from 'gulp-rename';
 import gfi from 'gulp-file-insert';
@@ -45,10 +46,17 @@ const minifyCSS = () => {
     .pipe(gulp.dest('dist/css'));
 };
 
+const minifySVG = () => {
+  return gulp.src('images/icons.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('tmp/'));
+}
+
 const injectHTML = () => {
   return gulp.src('src/js/lmm.dev.js')
     .pipe(gfi({
-      "{$lmm}": "tmp/menu.html"
+      "{$lmm}": "tmp/menu.html",
+      "{$svg}": "tmp/icons.svg"
     }))
     .pipe(gulp.dest('tmp'));
 };
@@ -56,7 +64,7 @@ const injectHTML = () => {
 const injectCSS = () =>{
   return gulp.src('tmp/lmm.dev.js')
     .pipe(gfi({
-      "{$cssmin}": "dist/css/mm.min.css"
+      "{$cssmin}": "dist/css/mm.min.css",
     }))
     .pipe(rename({extname:".js", basename: "lmm"}))
     .pipe(gulp.dest('dist/js/'));
@@ -78,7 +86,7 @@ const clean = () => {
 }
 
 const build = gulp.series(gulp.parallel(compileMarkup, compileSCSS),
-                          gulp.parallel(minifyMarkup, minifyCSS),
+                          gulp.parallel(minifyMarkup, minifyCSS, minifySVG),
                           injectHTML,
                           injectCSS,
                           minifyJS,
@@ -90,6 +98,7 @@ export {
   compileSCSS,
   minifyMarkup,
   minifyCSS,
+  minifySVG,
   injectHTML,
   injectCSS,
   minifyJS,

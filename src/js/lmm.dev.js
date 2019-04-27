@@ -16,6 +16,8 @@ window.onload = function() {
         return
 
     document.head.insertAdjacentHTML('beforeend', '<style media="all">{$cssmin}</style>');
+    document.body.insertAdjacentHTML('beforeend', '{$svg}');
+    document.body.insertAdjacentHTML('beforeend', '<!-- Thanks https://github.com/FortAwesome/Font-Awesome for MegaMenu Icons -->');
     document.body.insertAdjacentHTML('beforeend', '{$lmm}');
     // add to the existing margin
     document.body.style.marginTop = (parseInt(window.getComputedStyle(document.body).marginTop) + 28) + 'px';
