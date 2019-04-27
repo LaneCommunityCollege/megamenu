@@ -8,12 +8,13 @@
     "url": "https://github.com/LaneCommunityCollege/megamenu"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
     "babel-preset-es2015": "^6.18.0",
     "breakpoint-sass": "^2.7.0",
     "del": "^4.1.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-clean-css": "^2.3.2",
+    "gulp": "^4.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
     "gulp-compass": "^2.1.0",
     "gulp-file-insert": "^2.0.0",
     "gulp-jade": "^1.1.0",
@@ -24,9 +25,15 @@
     "run-sequence": "^2.2.1",
     "uglify-js": "^3.5.6"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.3",
+    "babel-register": "^6.26.0",
     "natives": "^1.1.6"
   }
 }
