@@ -16,14 +16,14 @@ import replace from 'gulp-replace';
 
 var menuHeight = '28';
 
-const setConfig = () => {
+export const setConfig = () => {
   return gulp.src('src/scss/_bits.scss')
     .pipe(scan({ term: /menuBarHeight:.*\n/, fn: function (match, file) {
       menuHeight = /(\d+)/.exec(match)[0];
     }}));
 }
 
-const compileMarkup = () => { 
+export const compileMarkup = () => { 
   return gulp.src('src/jade/menu.jade')
     .pipe(jade({
       doctype: "html"
@@ -31,7 +31,7 @@ const compileMarkup = () => {
     .pipe(gulp.dest('tmp'));
 }
 
-const compileSCSS = () => {
+export const compileSCSS = () => {
   return gulp.src('src/scss/mm.scss')
     .pipe(compass({
       sass: 'src/scss/',
@@ -40,7 +40,7 @@ const compileSCSS = () => {
     }));  
 }
 
-const minifyMarkup = () => {
+export const minifyMarkup = () => {
   var opts = {
       conditionals: true,
       quotes: true,
@@ -52,14 +52,14 @@ const minifyMarkup = () => {
       .pipe(gulp.dest('tmp/'));
 };
 
-const minifyCSS = () => {
+export const minifyCSS = () => {
   return gulp.src('dist/css/mm.css')
     .pipe(cleanCSS({processImport: false}))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/css'));
 };
 
-const minifySVG = () => {
+export const minifySVG = () => {
     return gulp
         .src('images/*.svg')
         .pipe(svgmin(function(file) {
@@ -77,7 +77,7 @@ const minifySVG = () => {
         .pipe(gulp.dest('tmp/'));
 };
 
-const injectHTML = () => {
+export const injectHTML = () => {
   return gulp.src('src/js/lmm.dev.js')
     .pipe(replace('MENUBARHEIGHT', menuHeight))
     .pipe(gfi({
@@ -87,7 +87,7 @@ const injectHTML = () => {
     .pipe(gulp.dest('tmp'));
 };
 
-const injectCSS = () =>{
+export const injectCSS = () =>{
   return gulp.src('tmp/lmm.dev.js')
     .pipe(gfi({
       "{$cssmin}": "dist/css/mm.min.css",
@@ -96,7 +96,7 @@ const injectCSS = () =>{
     .pipe(gulp.dest('dist/js/'));
 };
 
-const minifyJS = (cb) => {
+export const minifyJS = (cb) => {
   gulp.src('dist/js/lmm.js')
     .pipe(babel({
       presets: ['es2015']
@@ -107,11 +107,11 @@ const minifyJS = (cb) => {
    cb();
 };
 
-const clean = () => {
+export const clean = () => {
     return del('tmp'); 
 }
 
-const build = gulp.series(setConfig,
+export const build = gulp.series(setConfig,
                           gulp.parallel(compileMarkup, compileSCSS),
                           gulp.parallel(minifyMarkup, minifyCSS, minifySVG),
                           injectHTML,
@@ -119,19 +119,5 @@ const build = gulp.series(setConfig,
                           minifyJS,
                           clean);
 build.description = "Compile and build the megamenu";
-
-export { 
-  setConfig,
-  compileMarkup,
-  compileSCSS,
-  minifyMarkup,
-  minifyCSS,
-  minifySVG,
-  injectHTML,
-  injectCSS,
-  minifyJS,
-  clean,
-  build
-}
 
 export default build;
