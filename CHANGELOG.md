@@ -1,5 +1,8 @@
 # Change Log
 
+## Unreleased
+- namespaced SVG ids, to prevent other ids on the page from providing styles
+
 ## 2.1.0 2019-04-28
 - various accessibility improvements
 - update gulp to version 4, fixing a variety of NPM issues

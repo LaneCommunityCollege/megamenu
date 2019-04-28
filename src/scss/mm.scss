@@ -283,6 +283,10 @@
   }
 }
 
+.lmm-grouping-label {
+  float: right;
+}
+
 input[type='text'].lmm-q {
   background-color: $text-color;
   border: 1px solid;
@@ -360,7 +364,6 @@ input[type='text'].lmm-q {
   height: $menuBarHeight - 6px;
   margin: 0 2px;
   cursor: pointer;
-  float: right;
 }
 
 .lmm-logo {
