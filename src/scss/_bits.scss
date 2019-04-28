@@ -12,6 +12,9 @@ $narrow: 720px;
 $normal: 940px;
 $wide: 1441px;
 
+//General Menu Config
+$menuBarHeight: 28px;
+
 @mixin transparent($color, $alpha) {
   background-color: rgba($color, $alpha);
 }

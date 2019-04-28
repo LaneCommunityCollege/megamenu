@@ -4,6 +4,7 @@
 - various accessbility improvements
 - update gulp to version 4, fixing a variety of npm issues
 - moved included images to inline svgs https://github.com/LaneCommunityCollege/megamenu/issues/23
+- properly noted that all node dependencies are development dependencies
 
 ## 2.0.0 - 2016-06-25
 - rewrite without jQuery support
