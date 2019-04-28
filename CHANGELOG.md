@@ -6,6 +6,7 @@
 - moved included images to inline SVGs https://github.com/LaneCommunityCollege/megamenu/issues/23
 - properly noted that all node dependencies are development dependencies
 - moved the height of the megamenu to a variable in the SCSS https://github.com/LaneCommunityCollege/megamenu/issues/41
+- increase always visible menu bar height by 7%
 
 ## 2.0.0 - 2016-06-25
 - rewrite without jQuery support
