@@ -2,6 +2,7 @@ a(class="lmm-hidden-label", href="#skip-lmm") Skip the Lane Megamenu
 .lmm-container
     .lmm
         .lmm-logo
+            <svg viewbox="0 0 70 70"><use xlink:href="#logo" /></svg>
             .lmm-homes-pane.lmm-side-pane(style="display:none")
                 ul
                     li
@@ -22,13 +23,13 @@ a(class="lmm-hidden-label", href="#skip-lmm") Skip the Lane Megamenu
             include about
         .lmm-search
             a(href="http://lanecc.edu/foundation/ways-give", class="lmm-gift" aria-label="Make a gift to Lane")
-                <svg viewBox="0 0 1792 1792"><use xlink:href="#gift"></use></svg>
+                <svg><use xlink:href="#gift" /></svg>
             form(class="lmm-search-form", name="search-lane-new-home-page", method="get", action="https://www.lanecc.edu/custom/search/", autocomplete="off")
                 label(class="lmm-hidden-label lmm-search-label", for="q", style="") Search Lane&#39;s Website
                 input(type="text", id="q", name="q", class="lmm-q", placeholder="Search all Lane Websites")
-                label(class="lmm-search-button")
+                label
                     input(type="submit", value="", class="lmm-hidden-label", name="sa")
-                    <svg viewBox="0 0 1792 1792"><use xlink:href="#search"></use></svg>
+                    <svg class="lmm-search-button"><use xlink:href="#search" /></svg>
             .lmm-searchops.lmm_min.lmm-side-pane(style="display:none")
                 label(for="lmm-search-web")
                     input(name="dest", type="radio", id="lmm-search-web", checked="checked")

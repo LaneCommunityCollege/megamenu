@@ -335,9 +335,8 @@ input[type='text'].lmm-q {
 }
 
 .lmm-homes-pane {
-  float: left;
+  position:top;
   margin-left: 3px;
-  margin-top: 32px;
   width: 170px;
 
   ul {
@@ -359,41 +358,43 @@ input[type='text'].lmm-q {
 .lmm-search-button {
   fill: $white;
   width: 23px;
+  height: 23px;
   margin-right: 2px;
   cursor: pointer;
   float: right;
 }
 
 .lmm-logo {
-  background-image: url($resources + 'sprite.png');
-  background-position: -136px -23px;
-  background-repeat: no-repeat;
   border-right: $border-blue solid 1px;
   cursor: pointer;
   float: left;
-  height: 28px;
   min-width: 0;
   text-align: center;
   width: 34px;
+  // need width on both, because svg doesn't pick up the parent width
+
+  svg {
+    height: 26px;
+    width: 34px;
+    pointer-events: none;
+  }
 }
 
 .lmm-icon {
   height: 36px;
+  width: 36px;
   fill: $white;
-  margin-right: 2px;
 }
 
 .lmm-gift {
   float: left;
   margin-right: 2px;
-  height: 25px;
-  width: 25px;
   fill: $white;
-}
 
-.lmm-sprite {
-  background-image: url($resources + 'sprite.png');
-  display: inline-block;
+  svg {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .lmm-pane-underlay {

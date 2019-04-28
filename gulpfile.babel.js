@@ -9,6 +9,8 @@ import gfi from 'gulp-file-insert';
 import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
 import del from 'del';
+import svgstore from 'gulp-svgstore';
+import path from 'path';
 
 const compileMarkup = () => { 
   return gulp.src('src/jade/menu.jade')
@@ -46,17 +48,35 @@ const minifyCSS = () => {
     .pipe(gulp.dest('dist/css'));
 };
 
-const minifySVG = () => {
+/*const minifySVG = () => {
   return gulp.src('images/icons.svg')
     .pipe(svgmin())
     .pipe(gulp.dest('tmp/'));
-}
+}*/
+
+const minifySVG = () => {
+    return gulp
+        .src('images/*.svg')
+        .pipe(svgmin(function(file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore())
+        .pipe(gulp.dest('tmp/'));
+};
 
 const injectHTML = () => {
   return gulp.src('src/js/lmm.dev.js')
     .pipe(gfi({
       "{$lmm}": "tmp/menu.html",
-      "{$svg}": "tmp/icons.svg"
+      "{$svg}": "tmp/images.svg"
     }))
     .pipe(gulp.dest('tmp'));
 };

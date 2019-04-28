@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64"
+   height="64"
+   id="svg3131"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   inkscape:export-filename="/home/schmidtk/Dropbox/Lane/Design/Favicon/16.png"
+   inkscape:export-xdpi="22.5"
+   inkscape:export-ydpi="22.5"
+   sodipodi:docname="New document 2">
+  <defs
+     id="defs3133" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="42.436554"
+     inkscape:cy="37.656003"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1023"
+     inkscape:window-x="1920"
+     inkscape:window-y="39"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3136">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-988.36218)">
+    <g
+       id="g3164"
+       transform="matrix(1.0666666,0,0,1.0666666,-2.1333332,-70.157479)">
+      <g
+         transform="matrix(1.0666667,0,0,1.0666667,-2.1333333,-70.157517)"
+         id="g3160">
+        <path
+           style="fill:#fdb913"
+           inkscape:connector-curvature="0"
+           id="path53"
+           d="m 56.832954,1019.1153 -13.098093,8.8508 c -4.023518,2.0935 -7.914685,4.3194 -11.726439,6.7137 -3.816568,-2.3968 -7.71736,-4.6276 -11.750504,-6.7233 l -13.0619983,-8.8244 0.1925132,-0.3273 14.4144001,7.0196 -11.120024,-11.5316 0.252673,-0.2815 12.628844,9.8542 -8.472972,-13.5841 0.310427,-0.2239 10.297032,12.2583 -5.464959,-15.0473 0.348929,-0.154 7.529659,14.1304 -2.21871,-15.8509 0.370587,-0.079 4.422983,15.3842 1.128607,-15.9618 h 0.206952 0.17326 l 1.128607,15.9618 4.422984,-15.389 0.3754,0.08 -2.218711,15.8582 7.529659,-14.1424 0.348929,0.1539 -5.469771,15.0593 10.311469,-12.2727 0.305615,0.2214 -8.482598,13.5986 12.643283,-9.8686 0.252673,0.2792 -11.134463,11.5459 14.438465,-7.0315 0.185292,0.3249 z" />
+        <path
+           style="fill:#ffffff"
+           inkscape:connector-curvature="0"
+           id="path55"
+           d="m 30.6488,1037.659 1.366841,0.8783 1.362029,-0.8783 c 10.167085,-6.5383 13.562604,-9.578 26.747329,-14.5353 l 0,29.2385 -56.2499992,0 0,-29.2481 c 13.2015702,4.9596 16.6043082,8.0018 26.7738002,14.5449 z"
+           sodipodi:nodetypes="cccccccc" />
+      </g>
+    </g>
+  </g>
+</svg>
