@@ -48,12 +48,6 @@ const minifyCSS = () => {
     .pipe(gulp.dest('dist/css'));
 };
 
-/*const minifySVG = () => {
-  return gulp.src('images/icons.svg')
-    .pipe(svgmin())
-    .pipe(gulp.dest('tmp/'));
-}*/
-
 const minifySVG = () => {
     return gulp
         .src('images/*.svg')
