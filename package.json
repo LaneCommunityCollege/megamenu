@@ -24,19 +24,16 @@
     "gulp-uglify": "^3.0.2",
     "path": "^0.12.7",
     "run-sequence": "^2.2.1",
-    "uglify-js": "^3.5.9"
+    "uglify-js": "^3.5.9",
+    "babel-register": "^6.26.0",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-svgstore": "^7.0.1",
+    "natives": "^1.1.6"
   },
   "babel": {
     "presets": [
       "es2015"
     ]
   },
-  "license": "MIT",
-  "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-register": "^6.26.0",
-    "gulp-svgmin": "^2.2.0",
-    "gulp-svgstore": "^7.0.1",
-    "natives": "^1.1.6"
-  }
+  "license": "MIT"
 }
