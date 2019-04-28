@@ -1,6 +1,6 @@
 # Change Log
 
-## Unreleased
+## 2.1.0 2019-04-28
 - various accessibility improvements
 - update gulp to version 4, fixing a variety of NPM issues
 - moved included images to inline SVGs https://github.com/LaneCommunityCollege/megamenu/issues/23
