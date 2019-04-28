@@ -5,6 +5,7 @@
 - update gulp to version 4, fixing a variety of npm issues
 - moved included images to inline svgs https://github.com/LaneCommunityCollege/megamenu/issues/23
 - properly noted that all node dependencies are development dependencies
+- moved the height of the megamenu to a variable in the scss https://github.com/LaneCommunityCollege/megamenu/issues/41
 
 ## 2.0.0 - 2016-06-25
 - rewrite without jQuery support

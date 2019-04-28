@@ -135,6 +135,7 @@
   border-color: $border-blue;
   border-style: solid;
   border-width: 0 1px;
+  font-size: 12px;
   height: 259px;
   margin: 0 auto;
   padding: 10px 0;
@@ -143,6 +144,7 @@
 
   @include breakpoint($normal) {
     height: 274px;
+    font-size: 14px;
     width: 940px;
   }
 
@@ -220,10 +222,6 @@
     text-align: center;
     text-transform: uppercase;
     vertical-align: top;
-
-    @include breakpoint($normal) {
-      font-size: 14px;
-    }
   }
 }
 
@@ -371,12 +369,11 @@ input[type='text'].lmm-q {
   float: left;
   min-width: 0;
   text-align: center;
-  width: 34px;
-  // need width on both, because svg doesn't pick up the parent width
+  width: $menuBarHeight + 6px;
 
   svg {
-    height: 26px;
-    width: 34px;
+    height: $menuBarHeight - 2px;
+    width: $menuBarHeight + 6px;
     pointer-events: none;
   }
 }

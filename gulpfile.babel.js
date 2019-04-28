@@ -11,6 +11,18 @@ import uglify from 'gulp-uglify';
 import del from 'del';
 import svgstore from 'gulp-svgstore';
 import path from 'path';
+import scan from 'gulp-scan';
+import replace from 'gulp-replace';
+
+var menuHeight = '28';
+
+const setConfig = () => {
+  return gulp.src('src/scss/_bits.scss')
+    .pipe(scan({ term: /menuBarHeight:.*\n/, fn: function (match, file) {
+      let x = /(\d+)/.exec(match);
+      menuHeight = x[0];
+    }}));
+}
 
 const compileMarkup = () => { 
   return gulp.src('src/jade/menu.jade')
@@ -68,6 +80,7 @@ const minifySVG = () => {
 
 const injectHTML = () => {
   return gulp.src('src/js/lmm.dev.js')
+    .pipe(replace('MENUBARHEIGHT', menuHeight))
     .pipe(gfi({
       "{$lmm}": "tmp/menu.html",
       "{$svg}": "tmp/images.svg"
@@ -99,7 +112,8 @@ const clean = () => {
     return del('tmp'); 
 }
 
-const build = gulp.series(gulp.parallel(compileMarkup, compileSCSS),
+const build = gulp.series(setConfig,
+                          gulp.parallel(compileMarkup, compileSCSS),
                           gulp.parallel(minifyMarkup, minifyCSS, minifySVG),
                           injectHTML,
                           injectCSS,
@@ -108,6 +122,7 @@ const build = gulp.series(gulp.parallel(compileMarkup, compileSCSS),
 build.description = "Compile and build the megamenu";
 
 export { 
+  setConfig,
   compileMarkup,
   compileSCSS,
   minifyMarkup,

@@ -12,7 +12,9 @@ $narrow: 720px;
 $normal: 940px;
 $wide: 1441px;
 
-//General Menu Config
+/* General Menu Config
+ * These are also variables for the JS, so they MUST be px
+ */
 $menuBarHeight: 28px;
 
 @mixin transparent($color, $alpha) {

@@ -15,12 +15,15 @@ window.onload = function() {
     if(!('classList' in document.body))
         return
 
+    // This gets replaced by a gulp file.
+    const menuBarHeight = MENUBARHEIGHT;
+
     document.head.insertAdjacentHTML('beforeend', '<style media="all">{$cssmin}</style>');
     document.body.insertAdjacentHTML('beforeend', '{$svg}');
     document.body.insertAdjacentHTML('beforeend', '<!-- Thanks https://github.com/FortAwesome/Font-Awesome for MegaMenu Icons -->');
     document.body.insertAdjacentHTML('beforeend', '{$lmm}');
     // add to the existing margin
-    document.body.style.marginTop = (parseInt(window.getComputedStyle(document.body).marginTop) + 28) + 'px';
+    document.body.style.marginTop = (parseInt(window.getComputedStyle(document.body).marginTop) + menuBarHeight) + 'px';
 
     let $lmm = document.getElementsByClassName('lmm')[0];
     let $pane_underlay = document.getElementsByClassName('lmm-pane-underlay')[0];
@@ -51,7 +54,7 @@ window.onload = function() {
             window.location.hostname.indexOf('classes.lanecc') >= 0){
         // some classes have an extra top menubar
         if(!! document.getElementById('yui_3_17_2_1_1469040182301_520')){
-            document.getElementById('yui_3_17_2_1_1469040182301_520').style.marginTop = '28px';
+            document.getElementById('yui_3_17_2_1_1469040182301_520').style.marginTop = menuBarHeight + 'px';
         }
         
         // administering classes under some themes shows this
@@ -68,9 +71,9 @@ window.onload = function() {
             }
         }
         if(boost){
-          document.querySelector('header').style.top = '28px';
-          document.getElementById('page').style.marginTop = '78px';
-          document.getElementById('nav-drawer').style.top = '78px';
+          document.querySelector('header').style.top = menuBarHeight + 'px';
+          document.getElementById('page').style.marginTop = 50 + menuBarHeight + 'px';
+          document.getElementById('nav-drawer').style.top = 50 + menuBarHeight + 'px';
         }
     }
     // Wordpress
@@ -99,8 +102,8 @@ window.onload = function() {
      */
     if(makeRelative){
       document.body.style.position = 'relative';
-      $lmm.style.top = '-29px';
-      $pane_underlay.style.top = 0;
+      $lmm.style.top = '-' + (menuBarHeight + 1) + 'px';
+      $pane_underlay.style.top = -1 + 'px';
     }
 
     // add GA tracking to each link
