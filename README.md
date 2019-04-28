@@ -10,7 +10,7 @@ This megamenu does not support IE9 or below.
 
 Development
 -----------
-To start development, you'll first need to have npm, sass, and jade installed. After cloning this repository run `npm install` to install needed dependencies for the build process. When you're ready to build, run `gulp`. This will generate the generate both css and js files in /dist/ for development, as well as a minified version for production.
+To start development, you'll first need to have NPM, SASS, and jade installed. After cloning this repository run `npm install` to install needed dependencies for the build process. When you're ready to build, run `gulp`. This will generate the generate both CSS and JS files in /dist/ for development, as well as a minified version for production.
 
 By default, links have Google Analytics style tracking parameters added to them. To skip tracking on a link, add the class `skip` to the link.
 

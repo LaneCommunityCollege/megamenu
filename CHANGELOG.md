@@ -1,11 +1,11 @@
 # Change Log
 
 ## Unreleased
-- various accessbility improvements
-- update gulp to version 4, fixing a variety of npm issues
-- moved included images to inline svgs https://github.com/LaneCommunityCollege/megamenu/issues/23
+- various accessibility improvements
+- update gulp to version 4, fixing a variety of NPM issues
+- moved included images to inline SVGs https://github.com/LaneCommunityCollege/megamenu/issues/23
 - properly noted that all node dependencies are development dependencies
-- moved the height of the megamenu to a variable in the scss https://github.com/LaneCommunityCollege/megamenu/issues/41
+- moved the height of the megamenu to a variable in the SCSS https://github.com/LaneCommunityCollege/megamenu/issues/41
 
 ## 2.0.0 - 2016-06-25
 - rewrite without jQuery support
@@ -22,7 +22,7 @@
 
 ## 1.1.0 - 2015-09-25
 - Custom Python build system rewritten in Gulp
-- HTML Pseudo templating system rewritten to use Jade
+- HTML pseudo templating system rewritten to use Jade
 - Fixed bug where homepages pane and search pane wouldn't close by clicking on the underlay
 - Changed Apply & Enroll tab to use buttons for emphasized actions
 
