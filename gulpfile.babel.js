@@ -96,16 +96,18 @@ export const injectCSS = () =>{
     .pipe(gulp.dest('dist/js/'));
 };
 
-export const minifyJS = (cb) => {
-  gulp.src('dist/js/lmm.js')
-    .pipe(babel({
-      presets: ['es2015']
-    }))
+export const minifyJS = () => {
+  return gulp.src('dist/js/lmm.js')
     .pipe(uglify({compress:false}))
     .pipe(rename({suffix:".min"}))
-    .pipe(gulp.dest('dist/js'));
-   cb();
+    .pipe(gulp.dest('dist/js/'));
 };
+
+export const compile = () => {
+  return gulp.src('dist/js/lmm.js')
+      .pipe(babel())
+      .pipe(gulp.dest('dist/js/'));
+}
 
 export const clean = () => {
     return del('tmp'); 
@@ -116,6 +118,7 @@ export const build = gulp.series(setConfig,
                           gulp.parallel(minifyMarkup, minifyCSS, minifySVG),
                           injectHTML,
                           injectCSS,
+                          compile,
                           minifyJS,
                           clean);
 build.description = "Compile and build the megamenu";

@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-register": "^6.26.0",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
     "breakpoint-sass": "^2.7.0",
     "del": "^4.1.1",
     "gulp": "^4.0.1",
@@ -31,10 +31,6 @@
     "run-sequence": "^2.2.1",
     "uglify-js": "^3.5.9"
   },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
