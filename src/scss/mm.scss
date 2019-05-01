@@ -88,6 +88,8 @@
       border-bottom: $border-blue solid 1px;
       color: $text-color;
       display: inline-block;
+      //this rule is related to a library overide
+      font-size: 100% !important; 
       font-weight: bold;
       line-height: 17px;
       margin-bottom: 4px;
