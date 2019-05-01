@@ -6,6 +6,7 @@
 - fixed issue where babel wasn't correctly traslating for ie11
 - fixed issue where preventing events on SVGs was breaking in IE
 - reduce the number of files generated for dist https://github.com/LaneCommunityCollege/megamenu/issues/45
+- increase click target size on side panes https://github.com/LaneCommunityCollege/megamenu/issues/47
 
 ## 2.1.0 2019-04-28
 - various accessibility improvements

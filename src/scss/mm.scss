@@ -167,10 +167,6 @@
 
   li {
     margin-bottom: 6px;
-
-    @include breakpoint($narrow) {
-      margin-bottom: 3px;
-    }
   }
 }
 
@@ -318,9 +314,9 @@ input[type='text'].lmm-q {
     color: #fff;
     display: block;
     float: none; //needed for library
-    font-size: 14px;
+    font-size: 15px;
     height: auto; //needed for library
-    margin-bottom: 3px;
+    margin-bottom: 6px;
     width: auto; //needed for library
 
     input {
@@ -350,7 +346,7 @@ input[type='text'].lmm-q {
   
   li {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     width: 96%;
 
     a {
