@@ -18,7 +18,7 @@ import replace from 'gulp-replace';
 var menuHeight = '28';
 export const setConfig = () => {
   return gulp.src('src/scss/_bits.scss')
-    .pipe(scan({ term: /menuBarHeight:.*\n/, fn: function (match, file) {
+    .pipe(scan({ term: /menu-bar-height:.*\n/, fn: function (match, file) {
       menuHeight = /(\d+)/.exec(match)[0];
     }}));
 }

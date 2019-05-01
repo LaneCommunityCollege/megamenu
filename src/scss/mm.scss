@@ -37,7 +37,7 @@
   box-sizing: border-box;
   color: $text-color;
   font-family: Roboto, Tahoma, sans-serif;
-  height: $menuBarHeight;
+  height: $menu-bar-height;
   left: 0;
   position: absolute;
   top: 0;
@@ -120,14 +120,14 @@
   cursor: auto;
   height: 260px;
   left: 0;
-  overflow: hidden;
   opacity: 0;
+  overflow: hidden;
   position: absolute;
   text-align: left;
-  top: $menuBarHeight;
+  top: $menu-bar-height;
   width: 100%;
 
-  @include breakpoint($normal){
+  @include breakpoint($normal) {
     height: 275px;
   }
 }
@@ -145,8 +145,8 @@
   width: 700px;
 
   @include breakpoint($normal) {
-    height: 274px;
     font-size: 14px;
+    height: 274px;
     width: 940px;
   }
 
@@ -168,7 +168,7 @@
   li {
     margin-bottom: 6px;
 
-    @include breakpoint($narrow){
+    @include breakpoint($narrow) {
       margin-bottom: 3px;
     }
   }
@@ -211,7 +211,7 @@
 .lmm-cats {
   float: left;
 
-  @include breakpoint($narrow){
+  @include breakpoint($narrow) {
     display: block;
   }
 
@@ -229,10 +229,10 @@
 
 .lmm-toplevel {
   cursor: pointer;
+  font-size: $menu-bar-height /2 !important;
+  line-height: $menu-bar-height - 1 !important;
   margin: 0 5px 0 0;
   position: static; //needed for blogs
-  font-size: $menuBarHeight /2 !important;
-  line-height: $menuBarHeight - 1 !important;
 
   &:hover {
     color: $gold;
@@ -272,9 +272,9 @@
   float: right;
   line-height: normal;
   margin-top: 2px;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
   //menubarheight is the width of the search icon
-  width: $menuBarHeight + 216px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+  width: $menu-bar-height + 216px; //needs to be here, otherwise the box seems to grow by 1px when clicked
   
   @include breakpoint($normal) {
     font-size: 13px;
@@ -298,10 +298,10 @@ input[type='text'].lmm-q {
   color: #000;
   font-family: sans-serif;
   font-size: 13px;
-  height: $menuBarHeight - 4px;
+  height: $menu-bar-height - 4px;
   margin: 0;
   padding: 0 6px;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
   width: 181px;
 
   &:focus {
@@ -317,8 +317,8 @@ input[type='text'].lmm-q {
     // moodle requires a color for labels
     color: #fff;
     display: block;
-    font-size: 14px;
     float: none; //needed for library
+    font-size: 14px;
     height: auto; //needed for library
     margin-bottom: 3px;
     width: auto; //needed for library
@@ -331,17 +331,17 @@ input[type='text'].lmm-q {
 }
 
 .lmm-hidden-label {
-  position:absolute;
-  display:block;
-  top:-9000px;
-  left:-9000px;
-  width:1px;
-  height:1px;
+  display: block;
+  height: 1px;
+  left: -9000px;
+  position: absolute;
+  top: -9000px;
+  width: 1px;
 }
 
 .lmm-homes-pane {
-  position:top;
   margin-left: 3px;
+  position: top;
   width: 170px;
 
   ul {
@@ -361,11 +361,11 @@ input[type='text'].lmm-q {
 }
 
 .lmm-search-button {
-  fill: $white;
-  width: $menuBarHeight - 6px;
-  height: $menuBarHeight - 6px;
-  margin: 0 2px;
   cursor: pointer;
+  fill: $white;
+  height: $menu-bar-height - 6px;
+  margin: 0 2px;
+  width: $menu-bar-height - 6px;
 }
 
 .lmm-logo {
@@ -374,29 +374,29 @@ input[type='text'].lmm-q {
   float: left;
   min-width: 0;
   text-align: center;
-  width: $menuBarHeight + 6px;
+  width: $menu-bar-height + 6px;
 
   svg {
-    height: $menuBarHeight - 2px;
-    width: $menuBarHeight + 6px;
+    height: $menu-bar-height - 2px;
     pointer-events: none;
+    width: $menu-bar-height + 6px;
   }
 }
 
 .lmm-icon {
+  fill: $white;
   height: 38px;
   width: 38px;
-  fill: $white;
 }
 
 .lmm-gift {
+  fill: $white;
   float: left;
   margin-right: 2px;
-  fill: $white;
 
   svg {
-    height: $menuBarHeight - 3px;
-    width: $menuBarHeight - 3px;
+    height: $menu-bar-height - 3px;
+    width: $menu-bar-height - 3px;
   }
 }
 
@@ -407,11 +407,11 @@ input[type='text'].lmm-q {
   left: 0;
   opacity: 0;
   position: absolute;
-  top: $menuBarHeight;
+  top: $menu-bar-height;
   width: 100%;
   z-index: 2147483646;
 
-  @include breakpoint($normal){
+  @include breakpoint($normal) {
     height: 275px;
   }
 }
