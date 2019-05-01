@@ -131,12 +131,12 @@ window.onload = function() {
         if(window.getComputedStyle(element, null).opacity == 0 || window.getComputedStyle(element, null).display == 'none')
             return
 
-        element.classList.add('fadeOut');
+        element.classList.add('fade-out');
         if(!element.classList.contains('lmm-side-pane'))
             element.style.height = 0;
         element.style.display = "none";
-        if(element.classList.contains('fadeIn')){
-            element.classList.remove('fadeIn');
+        if(element.classList.contains('fade-in')){
+            element.classList.remove('fade-in');
         }
     }
 
@@ -144,12 +144,12 @@ window.onload = function() {
         if(window.getComputedStyle(element, null).opacity > 0 && window.getComputedStyle(element, null).display != 'none')
             return
 
-        element.classList.add('fadeIn');
+        element.classList.add('fade-in');
         if(!element.classList.contains('lmm-side-pane'))
             element.style.removeProperty('height');
         element.style.removeProperty('display');
-        if(element.classList.contains('fadeOut')){
-            element.classList.remove('fadeOut');
+        if(element.classList.contains('fade-out')){
+            element.classList.remove('fade-out');
         }
     }
 
@@ -204,7 +204,7 @@ window.onload = function() {
             $searchBox.style.removeProperty('width');
         }
 
-        if($homesPane.classList.contains('fadeIn')){
+        if($homesPane.classList.contains('fade-in')){
             fadeOut($homesPane);
             $underlay.style.display = 'none';
         }

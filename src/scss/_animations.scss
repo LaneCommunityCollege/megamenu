@@ -3,7 +3,7 @@
   100% {opacity: 0;}
 }
 
-.fadeOut {
+.fade-out {
   animation: fadeout .25s linear;
   opacity: 0;
 }
@@ -13,7 +13,7 @@
   100% {opacity: 1;}
 }
 
-.fadeIn {
+.fade-in {
   animation: fadein .25s linear;
   opacity: 1;
 }
