@@ -118,7 +118,7 @@ window.onload = function() {
     for(let i=0; i<topLevelKids.length; i++){
         combined = combined.concat(Array.prototype.slice.call(topLevelKids.item(i).children));
     }
-    combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-logo')[0].children));
+    combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-homes-pane')[0].children));
     foreach(combined, function(index, value){
         if(!combined[index].classList.contains('lmm-closer')){
             combined[index].addEventListener('click', function(e){

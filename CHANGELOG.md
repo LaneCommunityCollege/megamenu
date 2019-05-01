@@ -3,6 +3,7 @@
 ## Unreleased
 - namespaced SVG ids, to prevent other ids on the page from providing styles
 - fixed issue where babel wasn't correctly traslating for ie11
+- fixed issue where preventing events on SVGs was breaking in IE
 
 ## 2.1.0 2019-04-28
 - various accessibility improvements
