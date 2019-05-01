@@ -14,8 +14,8 @@ import path from 'path';
 import scan from 'gulp-scan';
 import replace from 'gulp-replace';
 
+//Provide some default values, then look them up
 var menuHeight = '28';
-
 export const setConfig = () => {
   return gulp.src('src/scss/_bits.scss')
     .pipe(scan({ term: /menuBarHeight:.*\n/, fn: function (match, file) {
@@ -35,7 +35,7 @@ export const compileSCSS = () => {
   return gulp.src('src/scss/mm.scss')
     .pipe(compass({
       sass: 'src/scss/',
-      css: 'dist/css',
+      css: 'dist/',
       require: ['breakpoint'],
     }));  
 }
@@ -53,10 +53,10 @@ export const minifyMarkup = () => {
 };
 
 export const minifyCSS = () => {
-  return gulp.src('dist/css/mm.css')
+  return gulp.src('dist/mm.css')
     .pipe(cleanCSS({processImport: false}))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('tmp'));
 };
 
 export const minifySVG = () => {
@@ -90,23 +90,23 @@ export const injectHTML = () => {
 export const injectCSS = () =>{
   return gulp.src('tmp/lmm.dev.js')
     .pipe(gfi({
-      "{$cssmin}": "dist/css/mm.min.css",
+      "{$cssmin}": "tmp/mm.min.css",
     }))
     .pipe(rename({extname:".js", basename: "lmm"}))
-    .pipe(gulp.dest('dist/js/'));
+    .pipe(gulp.dest('dist/'));
 };
 
 export const minifyJS = () => {
-  return gulp.src('dist/js/lmm.js')
+  return gulp.src('dist/lmm.js')
     .pipe(uglify({compress:false}))
     .pipe(rename({suffix:".min"}))
-    .pipe(gulp.dest('dist/js/'));
+    .pipe(gulp.dest('dist/'));
 };
 
 export const compile = () => {
-  return gulp.src('dist/js/lmm.js')
+  return gulp.src('dist/lmm.js')
       .pipe(babel())
-      .pipe(gulp.dest('dist/js/'));
+      .pipe(gulp.dest('dist/'));
 }
 
 export const clean = () => {
