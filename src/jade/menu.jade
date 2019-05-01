@@ -2,7 +2,7 @@ a(class="lmm-hidden-label", href="#skip-lmm") Skip the Lane Megamenu
 .lmm-container
     .lmm
         .lmm-logo
-            <svg viewbox="0 0 70 70"><use xlink:href="#lmm-logo" /></svg>
+            <svg viewbox="0 0 70 70" aria-label="Return to a Lane homepage"><use xlink:href="#lmm-logo" /></svg>
             .lmm-homes-pane.lmm-side-pane(style="display:none")
                 ul
                     li
@@ -41,5 +41,5 @@ a(class="lmm-hidden-label", href="#skip-lmm") Skip the Lane Megamenu
                     input(name="dest", type="radio", id="lmm-search-ce")
                     span Continuing Education Classes
     .lmm-pane-underlay(style="height:0px")
-    .lmm-underlay
+    .lmm-underlay(aria-label="Close the Lane Megamenu")
 a(class="lmm-hidden-label", id="skip-lmm")
