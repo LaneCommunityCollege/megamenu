@@ -1,9 +1,12 @@
 # Change Log
 
+## unreleased
+- [point giving link at donation page](https://github.com/LaneCommunityCollege/megamenu/issues/36)
+
 ## 2.1.1 - 2019-04-30
 - various accessibility improvements
 - namespaced SVG ids, to prevent other ids on the page from providing styles
-- fixed issue where babel wasn't correctly traslating for ie11
+- fixed issue where babel wasn't correctly translating for ie11
 - fixed issue where preventing events on SVGs was breaking in IE
 - [reduce the number of files generated for dist](https://github.com/LaneCommunityCollege/megamenu/issues/45)
 - [increase click target size on side panes](https://github.com/LaneCommunityCollege/megamenu/issues/47)
