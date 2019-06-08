@@ -8,8 +8,8 @@
     "url": "https://github.com/LaneCommunityCollege/megamenu"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
     "breakpoint-sass": "^2.7.0",
     "del": "^4.1.1",
