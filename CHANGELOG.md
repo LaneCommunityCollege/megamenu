@@ -2,6 +2,7 @@
 
 ## unreleased
 - [point giving link at donation page](https://github.com/LaneCommunityCollege/megamenu/issues/36)
+- [hid parent SVG in sprite](https://github.com/LaneCommunityCollege/megamenu/issues/49), since that seems to make the page taller despite being empty
 
 ## 2.1.1 - 2019-04-30
 - various accessibility improvements

@@ -13,6 +13,7 @@ import svgstore from 'gulp-svgstore';
 import path from 'path';
 import scan from 'gulp-scan';
 import replace from 'gulp-replace';
+import cheerio from 'gulp-cheerio';
 
 //Provide some default values, then look them up
 var menuHeight = '28';
@@ -69,11 +70,17 @@ export const minifySVG = () => {
                     cleanupIDs: {
                         prefix: prefix + '-',
                         minify: true
-                    }
+                     }
                 }]
             }
         }))
-        .pipe(svgstore())
+        .pipe(svgstore({inlineSvg: true}))
+        .pipe(cheerio({
+            run: function ($) {
+                $('svg').attr('class',  'lmm-svg');
+            },
+            parserOptions: { xmlMode: true }
+        }))
         .pipe(gulp.dest('tmp/'));
 };
 

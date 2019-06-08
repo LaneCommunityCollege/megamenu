@@ -396,6 +396,11 @@ input[type='text'].lmm-q {
   }
 }
 
+// Without this, the SVG itself adds some surprise extra height to the page
+.lmm-svg {
+  display: none;
+}
+
 .lmm-pane-underlay {
   @include transparent($underlay-color, .90);
   border-bottom: $border-blue solid 1px;
