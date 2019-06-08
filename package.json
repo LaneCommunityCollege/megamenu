@@ -30,7 +30,7 @@
     "natives": "^1.1.6",
     "path": "^0.12.7",
     "run-sequence": "^2.2.1",
-    "uglify-js": "^3.5.9"
+    "uglify-js": "^3.6.0"
   },
   "license": "MIT",
   "dependencies": {}
