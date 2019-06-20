@@ -157,20 +157,6 @@ window.onload = function() {
         return !(window.getComputedStyle(element, null).opacity == 0 || window.getComputedStyle(element, null).display == 'none');
     }
 
-    function resizeSearch(){
-        let searchContainer = $lmm.getElementsByClassName('lmm-search')[0];
-        let rightEdge = window.innerWidth - ($cats.offsetWidth + $cats.offsetLeft);
-        if(!visible($cats)){
-            let logo = $lmm.getElementsByClassName('lmm-logo')[0];
-            rightEdge = window.innerWidth - (logo.offsetWidth + logo.offsetLeft);
-        }
-        let maxSize = rightEdge - 19;
-        searchContainer.style.width = maxSize + "px";
-        searchContainer.classList.add("active-search");
-        //55 to accomidate the extra buffer around the icons
-        $searchBox.style.width = (maxSize - 60) + "px";
-    }
-
     /* Pop open a search options box 
        This has been deliberately not put on a visibility toggle, because
        people tend to click on the search box after setting search options */
@@ -178,7 +164,7 @@ window.onload = function() {
         $underlay.style.display = 'block';
         fadeOut($homesPane);
 
-        resizeSearch();
+        $lmm.getElementsByClassName('lmm-search')[0].style.flex = "1 0 auto";
 
         let active = $lmm.getElementsByClassName('lmm-active');
         if(active.length){
@@ -220,10 +206,10 @@ window.onload = function() {
         for(let i=0; i<panes.length; i++){
           fadeOut(panes[i]);
         }
-        if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
-            $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
-            $searchBox.style.removeProperty('width');
-        }
+
+        $lmm.getElementsByClassName('lmm-search')[0].style.flex = "0 0 240px";
+        $searchBox.style.flex = "1 1 auto";
+
         let active = $lmm.getElementsByClassName('lmm-active');
         if (active.length){
             fadeOut($pane_underlay);
@@ -353,10 +339,6 @@ window.onload = function() {
             leftmargin = 0;
         }
         $cats.style.marginLeft = leftmargin + "px";
-
-        if(visible($lmm.getElementsByClassName('lmm-searchops')[0])){
-            resizeSearch();
-        }
 
         /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
         to be sized incorrectly. Make that adjustment here. Need to fire this on resize, since some sites render

@@ -36,6 +36,7 @@
   border-bottom: $border-blue solid 1px;
   box-sizing: border-box;
   color: $text-color;
+  display: flex;
   font-family: Roboto, Tahoma, sans-serif;
   height: $menu-bar-height;
   left: 0;
@@ -43,10 +44,6 @@
   top: 0;
   width: 100%;
   z-index: 2147483647;
-
-  @include breakpoint($narrow) {
-    display: block;
-  }
 
   div {
     color: $text-color;
@@ -205,7 +202,7 @@
 }
 
 .lmm-cats {
-  float: left;
+  flex: 1 1 520px;
 
   @include breakpoint($narrow) {
     display: block;
@@ -265,12 +262,15 @@
 }
 
 .lmm-search {
-  float: right;
+  //menubarheight is the width of the search icon
   line-height: normal;
   margin-top: 2px;
   transition: all .5s ease;
-  //menubarheight is the width of the search icon
-  width: $menu-bar-height + 216px; //needs to be here, otherwise the box seems to grow by 1px when clicked
+  flex: 1;
+
+  @include breakpoint($narrow) {
+    flex: 0 0 $menu-bar-height + 180px;
+  }
   
   @include breakpoint($normal) {
     font-size: 13px;
@@ -282,7 +282,7 @@
 }
 
 .lmm-grouping-label {
-  float: right;
+  flex: 0 0 $menu-bar-height;
 }
 
 input[type='text'].lmm-q {
@@ -292,13 +292,13 @@ input[type='text'].lmm-q {
   border-radius: 15px;
   box-sizing: border-box;
   color: #000;
+  flex: 1 1 auto;
   font-family: sans-serif;
   font-size: 13px;
   height: $menu-bar-height - 4px;
   margin: 0;
   padding: 0 6px;
   transition: all .5s ease;
-  width: 181px;
 
   &:focus {
     outline: none;
@@ -356,6 +356,10 @@ input[type='text'].lmm-q {
   }
 }
 
+.lmm-search-form {
+  display: flex;
+}
+
 .lmm-search-button {
   cursor: pointer;
   fill: $white;
@@ -365,12 +369,10 @@ input[type='text'].lmm-q {
 }
 
 .lmm-logo {
-  border-right: $border-blue solid 1px;
   cursor: pointer;
-  float: left;
   min-width: 0;
   text-align: center;
-  width: $menu-bar-height + 6px;
+  flex: 0 0 $menu-bar-height + 6px;
 
   svg {
     height: $menu-bar-height - 2px;
@@ -386,9 +388,14 @@ input[type='text'].lmm-q {
 }
 
 .lmm-gift {
+  display: none;
   fill: $white;
-  float: left;
+  flex: 0 0 $menu-bar-height - 3px;
   margin-right: 2px;
+
+  @include breakpoint($narrow){
+    display: inline-block;
+  }
 
   svg {
     height: $menu-bar-height - 3px;
