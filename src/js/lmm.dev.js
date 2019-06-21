@@ -185,7 +185,7 @@ window.onload = function() {
             active[0].classList.remove('lmm-active');
         }
         fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);
-        $lmm.getElementsByClassName('lmm-search')[0].style.flex = "0 0 240px";
+        $lmm.getElementsByClassName('lmm-search')[0].removeAttribute('style');
         $searchBox.style.flex = "1 1 auto";
 
         if($homesPane.classList.contains('fade-in')){
@@ -205,7 +205,7 @@ window.onload = function() {
           fadeOut(panes[i]);
         }
 
-        $lmm.getElementsByClassName('lmm-search')[0].style.flex = "0 0 240px";
+        $lmm.getElementsByClassName('lmm-search')[0].removeAttribute('style');
         $searchBox.style.flex = "1 1 auto";
 
         let active = $lmm.getElementsByClassName('lmm-active');
@@ -269,7 +269,7 @@ window.onload = function() {
         for(let i =0; i<panes.length; i++){
             fadeOut(panes[i]);
         }
-        $lmm.getElementsByClassName('lmm-search')[0].style.flex = "0 0 240px";
+        $lmm.getElementsByClassName('lmm-search')[0].removeAttribute('style');
         $searchBox.style.flex = "1 1 auto";
         
         let openPane = null;
