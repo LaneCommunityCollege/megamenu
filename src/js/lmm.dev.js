@@ -185,10 +185,8 @@ window.onload = function() {
             active[0].classList.remove('lmm-active');
         }
         fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);
-        if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
-            $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
-            $searchBox.style.removeProperty('width');
-        }
+        $lmm.getElementsByClassName('lmm-search')[0].style.flex = "0 0 240px";
+        $searchBox.style.flex = "1 1 auto";
 
         if($homesPane.classList.contains('fade-in')){
             fadeOut($homesPane);
@@ -271,10 +269,8 @@ window.onload = function() {
         for(let i =0; i<panes.length; i++){
             fadeOut(panes[i]);
         }
-        if($lmm.getElementsByClassName('lmm-search')[0].classList.contains('active-search')){
-            $lmm.getElementsByClassName('lmm-search')[0].style.removeProperty('width');
-            $searchBox.style.removeProperty('width');
-        }
+        $lmm.getElementsByClassName('lmm-search')[0].style.flex = "0 0 240px";
+        $searchBox.style.flex = "1 1 auto";
         
         let openPane = null;
         let containers = $lmm.getElementsByClassName('lmm-pane-container');
