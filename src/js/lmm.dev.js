@@ -186,7 +186,6 @@ window.onload = function() {
         }
         fadeOut($lmm.getElementsByClassName('lmm-searchops')[0]);
         $lmm.getElementsByClassName('lmm-search')[0].removeAttribute('style');
-        $searchBox.style.flex = "1 1 auto";
 
         if($homesPane.classList.contains('fade-in')){
             fadeOut($homesPane);
@@ -206,7 +205,6 @@ window.onload = function() {
         }
 
         $lmm.getElementsByClassName('lmm-search')[0].removeAttribute('style');
-        $searchBox.style.flex = "1 1 auto";
 
         let active = $lmm.getElementsByClassName('lmm-active');
         if (active.length){
