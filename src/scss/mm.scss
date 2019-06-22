@@ -106,7 +106,11 @@
       text-transform: none;
 
       &.lmm-space {
-        margin-bottom: .8em;
+        margin-bottom: .6em;
+
+        @include breakpoint($normal){
+          margin-bottom: .8em;
+        }
       }
     }
   }
