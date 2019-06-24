@@ -5,6 +5,7 @@
 - [hid parent SVG in sprite](https://github.com/LaneCommunityCollege/megamenu/issues/49), since that seems to make the page taller despite being empty
 - [use flexbox for layout](https://github.com/LaneCommunityCollege/megamenu/issues/51)
 - [add an email icon in student life section](https://github.com/LaneCommunityCollege/megamenu/issues/52)
+- [switch from a tarp to an svg pattern](https://github.com/LaneCommunityCollege/megamenu/issues/18)
 
 ## 2.1.1 - 2019-04-30
 - various accessibility improvements

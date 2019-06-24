@@ -2,8 +2,9 @@ li.lmm-toplevel
     block title
     .lmm-pointer
     .lmm-pane-container(style="height:0;display:none")
-        .lmm-pane
+        <svg class="lmm-pane-background"><use xlink:href="#lmm-trianglify" /></svg>
+        .lmm-pane  
             block content
-            .lmm-closer
-                .lmm-close-arrow 
-                | Click to Close
+        .lmm-closer
+            .lmm-close-arrow 
+            | Click to Close

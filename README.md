@@ -21,4 +21,6 @@ License
 -------
 This project is licensed under the [MIT license](LICENSE)
 
-SVG Icons are a part of [Font Awesome](https://github.com/FortAwesome/Font-Awesome), and used under CC BY 4.0. 
+SVG Icons are a part of [Font Awesome](https://github.com/FortAwesome/Font-Awesome), and used under CC BY 4.0.
+
+The background pattern was generated via [Trianglify](https://trianglify.io/), using the colors #043c6d, #0c457c, #135087, #195996, and #2166a7.

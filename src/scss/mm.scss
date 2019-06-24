@@ -116,6 +116,14 @@
   }
 }
 
+.lmm-pane-background {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
 .lmm-pane-container {
   background-color: transparent;
   cursor: auto;
@@ -134,10 +142,6 @@
 }
 
 .lmm-pane {
-  background-image: url($resources + 'tarp.jpg');
-  border-color: $border-blue;
-  border-style: solid;
-  border-width: 0 1px;
   font-size: 12px;
   height: 259px;
   margin: 0 auto;
@@ -421,7 +425,6 @@ input[type='text'].lmm-q {
   position: absolute;
   top: $menu-bar-height;
   width: 100%;
-  z-index: 2147483646;
 
   @include breakpoint($normal) {
     height: 275px;
