@@ -1,6 +1,7 @@
 # Change Log
 
 ## unreleased
+- removed the black pane underlay, to make the menu full width, and prep for better responsive support
 - [point giving link at donation page](https://github.com/LaneCommunityCollege/megamenu/issues/36)
 - [hid parent SVG in sprite](https://github.com/LaneCommunityCollege/megamenu/issues/49), since that seems to make the page taller despite being empty
 - [use flexbox for layout](https://github.com/LaneCommunityCollege/megamenu/issues/51)
