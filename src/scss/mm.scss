@@ -23,7 +23,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2147483646;
+  z-index: 2147483645;
 }
 
 .lmm-container {
@@ -127,7 +127,7 @@
 .lmm-pane-container {
   background-color: transparent;
   cursor: auto;
-  height: 260px;
+  height: 243px;
   left: 0;
   opacity: 0;
   overflow: hidden;
@@ -137,13 +137,13 @@
   width: 100%;
 
   @include breakpoint($normal) {
-    height: 275px;
+    height: 257px;
   }
 }
 
 .lmm-pane {
   font-size: 12px;
-  height: 259px;
+  height: 242px;
   margin: 0 auto;
   padding: 10px 0;
   position: relative;
@@ -151,7 +151,7 @@
 
   @include breakpoint($normal) {
     font-size: 14px;
-    height: 274px;
+    height: 257px;
     width: 940px;
   }
 
@@ -179,6 +179,7 @@
   background-color: $background-color;
   border-top: $background-color solid 1px;
   bottom: 0;
+  color: $white;
   clear: both;
   cursor: pointer;
   height: 18px;
@@ -186,7 +187,9 @@
   line-height: 17px;
   position: absolute;
   text-align: center;
+  text-transform: uppercase;
   width: 100%;
+  z-index: 2147483646;
 }
 
 .lmm-close-arrow {

@@ -215,10 +215,7 @@ window.onload = function() {
         $underlay.style.display = 'none';
     }
     $underlay.addEventListener('click', closeAll);
-    let closers = $lmm.getElementsByClassName('lmm-closer');
-    for(let i=0; i<closers.length; i++){
-      closers[i].addEventListener('click', closeAll);
-    }
+    $pane_underlay.getElementsByClassName('lmm-closer')[0].addEventListener('click', closeAll);
         
     /* Handle the radio buttons for the search box */
     function handleRadioClick(e){

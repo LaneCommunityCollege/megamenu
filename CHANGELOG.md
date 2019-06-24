@@ -6,6 +6,7 @@
 - [use flexbox for layout](https://github.com/LaneCommunityCollege/megamenu/issues/51)
 - [add an email icon in student life section](https://github.com/LaneCommunityCollege/megamenu/issues/52)
 - [switch from a tarp to an svg pattern](https://github.com/LaneCommunityCollege/megamenu/issues/18)
+- [use a single closer element](https://github.com/LaneCommunityCollege/megamenu/issues/56)
 
 ## 2.1.1 - 2019-04-30
 - various accessibility improvements
