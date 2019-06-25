@@ -1,4 +1,6 @@
 // This file is strictly for styles which support only the programs pane
+$icon-size: 30px;
+
 .lmm-cc-col {
   @include breakpoint($wide){
     &.lmm-col {
@@ -8,16 +10,16 @@
 
   .lmm-cc-icon {
     display: none;
-    fill: $white;
-    flex: 0 0 30px;
-    width: 30px;
-    height: 30px;
 
     @include breakpoint($wide){
       display: inline-block;
+      fill: $white;
+      flex: 0 0 $icon-size;
+      height: $icon-size;
       margin-right: 1em;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       vertical-align: middle;
+      width:  $icon-size;
     }
   }
 
