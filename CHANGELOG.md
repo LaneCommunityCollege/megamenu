@@ -10,6 +10,8 @@
 - [switch from a tarp to an svg pattern](https://github.com/LaneCommunityCollege/megamenu/issues/18), allowing the megamenu to be just one HTTP call.
 - [use a single closer element](https://github.com/LaneCommunityCollege/megamenu/issues/56)
 - [use a button for the closer element](https://github.com/LaneCommunityCollege/megamenu/issues/58)
+- [jade changed its name to pug](https://github.com/LaneCommunityCollege/megamenu/issues/59)
+- various code cleanup
 
 ## 2.1.1 - 2019-04-30
 - various accessibility improvements
