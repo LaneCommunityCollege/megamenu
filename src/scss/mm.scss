@@ -69,17 +69,8 @@
   }
 
   .lmm-col {
-    float: left;
+    flex: 1 0;
     padding: 0 10px;
-    width: 230px;
-
-    @include breakpoint($normal) {
-      width: 309px;
-    }
-
-    @include breakpoint($wide) {
-      width: 390px;
-    }
 
     h3 {
       border-bottom: $border-blue solid 1px;
@@ -142,12 +133,13 @@
 }
 
 .lmm-pane {
+  display: flex;
   font-size: 12px;
   height: 242px;
   margin: 0 auto;
   padding: 10px 0;
   position: relative;
-  width: 700px;
+  width: 100%;
 
   @include breakpoint($normal) {
     font-size: 14px;
