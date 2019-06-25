@@ -113,11 +113,9 @@ window.onload = function() {
     }
     combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-homes-pane')[0].children));
     for(let i=0; i<combined.length; i++){
-        if(!combined[i].classList.contains('lmm-closer')){
-            combined[i].addEventListener('click', function(e){
-                e.stopPropagation();
-            });
-        }        
+        combined[i].addEventListener('click', function(e){
+            e.stopPropagation();
+        });
     }
 
     function fadeOut(element) {
