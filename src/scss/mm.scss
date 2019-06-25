@@ -45,6 +45,8 @@
   width: 100%;
   z-index: 2147483647;
 
+  @import 'programs';
+
   div {
     color: $text-color;
   }
