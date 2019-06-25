@@ -4,13 +4,13 @@
 - removed the black pane underlay, to allow for optionally wider columns. Include supplemental content on wide views for some panes.
 - increase the size of the megamenu by another 6%. While this makes it easier to click the megamenu on mobile, it does not remove the overall spacing issues that are present.
 - [point giving link at donation page](https://github.com/LaneCommunityCollege/megamenu/issues/36)
-- [hid parent SVG in sprite](https://github.com/LaneCommunityCollege/megamenu/issues/49), since that seems to make the page taller despite being empty
+- [hide parent SVG in sprite](https://github.com/LaneCommunityCollege/megamenu/issues/49), since that seems to make the page taller despite being empty
 - [use flexbox for layout](https://github.com/LaneCommunityCollege/megamenu/issues/51)
 - [add an email icon in student life section](https://github.com/LaneCommunityCollege/megamenu/issues/52)
-- [switch from a tarp to an svg pattern](https://github.com/LaneCommunityCollege/megamenu/issues/18), allowing the megamenu to be just one HTTP call.
+- [switch from a tarp to an SVG pattern](https://github.com/LaneCommunityCollege/megamenu/issues/18), allowing the megamenu to be just one HTTP call.
 - [use a single closer element](https://github.com/LaneCommunityCollege/megamenu/issues/56)
 - [use a button for the closer element](https://github.com/LaneCommunityCollege/megamenu/issues/58)
-- [jade changed its name to pug](https://github.com/LaneCommunityCollege/megamenu/issues/59)
+- [Jade changed its name to Pug](https://github.com/LaneCommunityCollege/megamenu/issues/59)
 - various code cleanup
 
 ## 2.1.1 - 2019-04-30
