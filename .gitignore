@@ -1,10 +1,10 @@
 .sass*
 *min.js
 *.css
-lmm.js
 *swp
 *map
 node_modules
 tmp
-old
+dist
 deploy.sh
+*DS_Store
