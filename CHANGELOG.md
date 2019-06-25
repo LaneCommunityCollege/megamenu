@@ -1,12 +1,12 @@
 # Change Log
 
 ## unreleased
-- removed the black pane underlay, to make the menu full width, and prep for better responsive support
+- removed the black pane underlay, to allow for optionally wider columns. Include supplemental content on wide views for some panes.
 - [point giving link at donation page](https://github.com/LaneCommunityCollege/megamenu/issues/36)
 - [hid parent SVG in sprite](https://github.com/LaneCommunityCollege/megamenu/issues/49), since that seems to make the page taller despite being empty
 - [use flexbox for layout](https://github.com/LaneCommunityCollege/megamenu/issues/51)
 - [add an email icon in student life section](https://github.com/LaneCommunityCollege/megamenu/issues/52)
-- [switch from a tarp to an svg pattern](https://github.com/LaneCommunityCollege/megamenu/issues/18)
+- [switch from a tarp to an svg pattern](https://github.com/LaneCommunityCollege/megamenu/issues/18), allowing the megamenu to be just one HTTP call.
 - [use a single closer element](https://github.com/LaneCommunityCollege/megamenu/issues/56)
 - [use a button for the closer element](https://github.com/LaneCommunityCollege/megamenu/issues/58)
 
