@@ -32,13 +32,6 @@ window.onload = function() {
     let $homesPane = $lmm.getElementsByClassName('lmm-homes-pane')[0];
     let $searchBox = $lmm.getElementsByClassName('lmm-q')[0];
 
-    // convenience function to loop over a set of elements
-    let foreach = function (array, callback, scope) {
-      for (let i = 0; i < array.length; i++) {
-        callback.call(scope, i, array[i]);
-      }
-    };
-
     // make a couple site specific adjustments
     // Authenticated Drupal's file browser
     let makeRelative = true;
@@ -108,9 +101,9 @@ window.onload = function() {
 
     // add GA tracking to each link
     let links = $lmm.querySelectorAll('a:not(.skip)');
-    foreach(links, function(index, value){
-        links[index].setAttribute('href', links[index].getAttribute('href') + "?itm_source=" + window.location.hostname + "&itm_campaign=megamenu");
-    });
+    for(let i=0; i<links.length; i++){
+        links[i].setAttribute('href', links[i].getAttribute('href') + "?itm_source=" + window.location.hostname + "&itm_campaign=megamenu");
+    }
 
     //Stop random pane clicks from closing us, except on the closer
     let topLevelKids = $lmm.getElementsByClassName('lmm-toplevel');
@@ -119,13 +112,13 @@ window.onload = function() {
         combined = combined.concat(Array.prototype.slice.call(topLevelKids.item(i).children));
     }
     combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-homes-pane')[0].children));
-    foreach(combined, function(index, value){
-        if(!combined[index].classList.contains('lmm-closer')){
-            combined[index].addEventListener('click', function(e){
+    for(let i=0; i<combined.length; i++){
+        if(!combined[i].classList.contains('lmm-closer')){
+            combined[i].addEventListener('click', function(e){
                 e.stopPropagation();
             });
-        }
-    });
+        }        
+    }
 
     function fadeOut(element) {
         if(window.getComputedStyle(element, null).opacity == 0 || window.getComputedStyle(element, null).display == 'none')
