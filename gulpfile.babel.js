@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import jade from 'gulp-jade';
+import pug from 'gulp-pug';
 import compass from 'gulp-compass';
 import minifyHTML from 'gulp-minify-html';
 import svgmin from 'gulp-svgmin';
@@ -25,8 +25,8 @@ export const setConfig = () => {
 }
 
 export const compileMarkup = () => { 
-  return gulp.src('src/jade/menu.jade')
-    .pipe(jade({
+  return gulp.src('src/pug/menu.pug')
+    .pipe(pug({
       doctype: "html"
     }))
     .pipe(gulp.dest('tmp'));
