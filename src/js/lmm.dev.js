@@ -321,7 +321,7 @@ window.onload = function() {
         if(window.innerWidth >= 940){
             width = 940;
         }
-        if(window.innerWidth >= 1440){
+        if(window.innerWidth >= 1300){
             width = 1180;
         }
         let leftmargin = Math.floor(window.innerWidth - width) / 2 - 14;
