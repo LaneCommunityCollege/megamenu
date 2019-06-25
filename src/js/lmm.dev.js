@@ -315,7 +315,7 @@ window.onload = function() {
         if(window.innerWidth >= 1200){
             width = 1180;
         }
-        let leftmargin = Math.floor(window.innerWidth - width) / 2 - 14;
+        let leftmargin = Math.floor(window.innerWidth - width) / 2;
         //keeps us from sliding under the logo
         if(leftmargin < 0){
             leftmargin = 0;
