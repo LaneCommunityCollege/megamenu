@@ -73,7 +73,11 @@
 
   .lmm-col {
     flex: 1;
-    padding: 0 10px;
+    padding: 0 6px;
+
+    @include breakpoint($normal){
+      padding: 0 10px;
+    }
 
     h3 {
       border-bottom: $border-blue solid 1px;
@@ -137,7 +141,7 @@
 
 .lmm-pane {
   display: flex;
-  font-size: 12px;
+  font-size: 13px;
   height: 242px;
   margin: 0 auto;
   padding: 10px 0;
@@ -257,8 +261,12 @@
   display: inline-block;
   font-size: 110%;
   margin-right: 3px;
-  padding: 7px 10px;
+  padding: 5px;
   text-decoration: none;
+
+  @include breakpoint($normal){
+    padding: 7px 10px;
+  }
 
   &:hover {
     background: #bf9111;
@@ -417,7 +425,7 @@ input[type='text'].lmm-q {
 .lmm-pane-underlay {
   @include transparent($underlay-color, .90);
   border-bottom: $border-blue solid 1px;
-  height: 260px;
+  height: 265px;
   left: 0;
   opacity: 0;
   position: absolute;
@@ -425,6 +433,6 @@ input[type='text'].lmm-q {
   width: 100%;
 
   @include breakpoint($normal) {
-    height: 275px;
+    height: 280px;
   }
 }
