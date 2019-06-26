@@ -17,10 +17,14 @@ import cheerio from 'gulp-cheerio';
 
 //Provide some default values, then look them up
 var menuHeight = '28';
+var mobileBreak = '800';
 export const setConfig = () => {
   return gulp.src('src/scss/_bits.scss')
     .pipe(scan({ term: /menu-bar-height:.*\n/, fn: function (match, file) {
       menuHeight = /(\d+)/.exec(match)[0];
+    }}))
+    .pipe(scan({ term: /narrow:.*\n/, fn: function (match, file) {
+      mobileBreak = /(\d+)/.exec(match)[0];
     }}));
 }
 
@@ -87,6 +91,7 @@ export const minifySVG = () => {
 export const injectHTML = () => {
   return gulp.src('src/js/lmm.dev.js')
     .pipe(replace('MENUBARHEIGHT', menuHeight))
+    .pipe(replace('MOBILEBREAK', mobileBreak))
     .pipe(gfi({
       "{$lmm}": "tmp/menu.html",
       "{$svg}": "tmp/images.svg"

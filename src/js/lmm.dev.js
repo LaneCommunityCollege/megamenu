@@ -17,6 +17,7 @@ window.onload = function() {
 
     // This gets replaced by a gulp file.
     const menuBarHeight = MENUBARHEIGHT;
+    const mobileBreak = MOBILEBREAK;
 
     document.head.insertAdjacentHTML('beforeend', '<style media="all">{$cssmin}</style>');
     document.body.insertAdjacentHTML('beforeend', '{$svg}');
@@ -298,7 +299,7 @@ window.onload = function() {
 
     // Figure out the left margin for lmm-cats.
     function onResize(){
-        if(window.innerWidth < 840){
+        if(window.innerWidth < mobileBreak){
             let activeTab = $lmm.getElementsByClassName('lmm-active')[0];
             if (activeTab != null){
                 activeTab.classList.remove('lmm-active');

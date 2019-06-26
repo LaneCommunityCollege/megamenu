@@ -11,6 +11,7 @@
 - [use a single closer element](https://github.com/LaneCommunityCollege/megamenu/issues/56)
 - [use a button for the closer element](https://github.com/LaneCommunityCollege/megamenu/issues/58)
 - [Jade changed its name to Pug](https://github.com/LaneCommunityCollege/megamenu/issues/59)
+- [store JS config variables in SCSS only](https://github.com/LaneCommunityCollege/megamenu/issues/43)
 - various code cleanup
 
 ## 2.1.1 - 2019-04-30
