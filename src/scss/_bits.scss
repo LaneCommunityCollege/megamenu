@@ -12,7 +12,7 @@ $wide: 1200px;
 
 // General Menu Config
 // These are also variables for the JS, so they MUST be px
-$menu-bar-height: 32px;
+$menu-bar-height: 34px;
 
 @mixin transparent($color, $alpha) {
   background-color: rgba($color, $alpha);
