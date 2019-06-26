@@ -298,8 +298,8 @@ window.onload = function() {
 
     // Figure out the left margin for lmm-cats.
     function onResize(){
-        let width = 820;
-        if(window.innerWidth < 820){
+        let width = 840;
+        if(window.innerWidth < 840){
             let activeTab = $lmm.getElementsByClassName('lmm-active')[0];
             if (activeTab != null){
                 activeTab.classList.remove('lmm-active');
