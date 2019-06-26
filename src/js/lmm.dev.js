@@ -31,6 +31,8 @@ window.onload = function() {
     let $cats = $lmm.getElementsByClassName('lmm-cats')[0]
     let $homesPane = $lmm.getElementsByClassName('lmm-homes-pane')[0];
     let $searchBox = $lmm.getElementsByClassName('lmm-q')[0];
+    let $topLevelKids = $lmm.getElementsByClassName('lmm-toplevel');
+
 
     // make a couple site specific adjustments
     // Authenticated Drupal's file browser
@@ -106,10 +108,9 @@ window.onload = function() {
     }
 
     //Stop random pane clicks from closing us, except on the closer
-    let topLevelKids = $lmm.getElementsByClassName('lmm-toplevel');
     let combined = [];
-    for(let i=0; i<topLevelKids.length; i++){
-        combined = combined.concat(Array.prototype.slice.call(topLevelKids.item(i).children));
+    for(let i=0; i<$topLevelKids.length; i++){
+        combined = combined.concat(Array.prototype.slice.call($topLevelKids.item(i).children));
     }
     combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-homes-pane')[0].children));
     for(let i=0; i<combined.length; i++){
@@ -291,14 +292,12 @@ window.onload = function() {
         e.stopPropagation();
     }
     
-    let top = $lmm.getElementsByClassName('lmm-toplevel')
-    for(let i=0;i<top.length;i++){
-        top[i].addEventListener('click', paneClick);
+    for(let i=0;i<$topLevelKids.length;i++){
+        $topLevelKids[i].addEventListener('click', paneClick);
     }
 
     // Figure out the left margin for lmm-cats.
     function onResize(){
-        let width = 840;
         if(window.innerWidth < 840){
             let activeTab = $lmm.getElementsByClassName('lmm-active')[0];
             if (activeTab != null){
@@ -309,18 +308,14 @@ window.onload = function() {
                 $underlay.style.display = 'none';
             }
         }
-        if(window.innerWidth >= 940){
-            width = 940;
+        else {
+            let topLevelliWidth = 0;           
+            for(let i=0;i<$topLevelKids.length;i++){
+                topLevelliWidth += $topLevelKids[i].clientWidth;
+            }
+            // The 20 is because we always want to cheat left for the search a bit
+            $cats.style.marginLeft = ((((parseInt(window.getComputedStyle($cats).marginLeft, 10) + $cats.clientWidth) - topLevelliWidth) / 2) - 20) + "px";
         }
-        if(window.innerWidth >= 1200){
-            width = 1180;
-        }
-        let leftmargin = Math.floor(window.innerWidth - width) / 2;
-        //keeps us from sliding under the logo
-        if(leftmargin < 0){
-            leftmargin = 0;
-        }
-        $cats.style.marginLeft = leftmargin + "px";
 
         /* On sites with a fixed width, if the document is wider than the viewport, it's possible for the MegaMenu to
         to be sized incorrectly. Make that adjustment here. Need to fire this on resize, since some sites render
