@@ -108,18 +108,6 @@ window.onload = function() {
         links[i].setAttribute('href', links[i].getAttribute('href') + "?itm_source=" + window.location.hostname + "&itm_campaign=megamenu");
     }
 
-    //Stop random pane clicks from closing us, except on the closer
-    let combined = [];
-    for(let i=0; i<$topLevelKids.length; i++){
-        combined = combined.concat(Array.prototype.slice.call($topLevelKids.item(i).children));
-    }
-    combined = combined.concat(Array.prototype.slice.call($lmm.getElementsByClassName('lmm-homes-pane')[0].children));
-    for(let i=0; i<combined.length; i++){
-        combined[i].addEventListener('click', function(e){
-            e.stopPropagation();
-        });
-    }
-
     function fadeOut(element) {
         if(window.getComputedStyle(element, null).opacity == 0 || window.getComputedStyle(element, null).display == 'none')
             return
@@ -267,25 +255,25 @@ window.onload = function() {
                 openPane = containers[i];
             }
         }
-        let clickedPane = this.getElementsByClassName('lmm-pane-container')[0];
+        let clickedPane = this.parentElement.getElementsByClassName('lmm-pane-container')[0];
         if (openPane != null){
             // if we're open, close us
             if(openPane == clickedPane){
                 fadeOut($pane_underlay);
                 fadeOut(clickedPane);
-                this.classList.remove('lmm-active');
+                this.parentElement.classList.remove('lmm-active');
             }
             // swap us with this other one
             else {
                 fadeOut(openPane);
                 fadeIn(clickedPane);
                 $lmm.getElementsByClassName('lmm-active')[0].classList.remove('lmm-active');
-                this.classList.add('lmm-active');
+                this.parentElement.classList.add('lmm-active');
             }
         }
         // open this pane
         else{
-            this.classList.add('lmm-active');
+            this.parentElement.classList.add('lmm-active');
             fadeIn(clickedPane);
             fadeIn($pane_underlay);
             $underlay.style.display = 'block';
@@ -294,7 +282,7 @@ window.onload = function() {
     }
     
     for(let i=0;i<$topLevelKids.length;i++){
-        $topLevelKids[i].addEventListener('click', paneClick);
+        $topLevelKids[i].getElementsByClassName('lmm-toplevel-name')[0].addEventListener('click', paneClick);
     }
 
     // Figure out the left margin for lmm-cats.
