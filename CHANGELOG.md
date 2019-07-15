@@ -1,6 +1,8 @@
 # Change Log
 
 ## unreleased
+
+## 2.2.0 - 2019-07-15
 - removed the black pane underlay, to allow for optionally wider columns. Include supplemental content on wide views for some panes.
 - increase the size of the megamenu by another 13%. While this makes the megamenu itself a sufficient click target, it does not fix overall click size issues.
 - [point giving link at donation page](https://github.com/LaneCommunityCollege/megamenu/issues/36)
@@ -14,6 +16,7 @@
 - [store JS config variables in SCSS only](https://github.com/LaneCommunityCollege/megamenu/issues/43)
 - set the close event only on the pane title, rather than the entire pane, to avoid having to stop event propegaation on all elements
 - various code cleanup
+- various dependency updates
 
 ## 2.1.1 - 2019-04-30
 - various accessibility improvements
