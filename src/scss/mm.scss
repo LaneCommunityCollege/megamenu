@@ -232,14 +232,18 @@
 }
 
 .lmm-toplevel {
-  cursor: pointer;
-  font-size: $menu-bar-height /2 !important;
-  line-height: $menu-bar-height - 1 !important;
-  margin: 0 5px 0 0;
   position: static; //needed for blogs
 
-  &:hover {
-    color: $gold;
+  .lmm-toplevel-name {
+    cursor: pointer;
+    font-size: $menu-bar-height /2 !important;
+    line-height: $menu-bar-height - 1 !important;
+    margin: 0 5px 0 0;
+
+
+    &:hover {
+      color: $gold;
+    }
   }
 }
 
