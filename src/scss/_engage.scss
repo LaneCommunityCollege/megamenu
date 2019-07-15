@@ -1,0 +1,27 @@
+// This file is strictly for styles which support only the engage pane
+$icon-size: 50px;
+
+.lmm-stulife-column {
+  @include breakpoint($wide){
+    &.lmm-col {
+      display: flex;
+      flex: 2;
+    }
+
+    .lmm-icon {
+      height: $icon-size;
+      width: $icon-size;
+    }
+
+    .lmm-link-button {
+      font-size: 130%;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+      margin-right: 7px;
+    }
+
+    & > div {
+      flex: 1;
+    }
+  }
+}
