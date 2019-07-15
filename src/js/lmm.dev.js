@@ -229,12 +229,11 @@ window.onload = function() {
             $searchBox.setAttribute('placeholder', 'search the Employee Directory');
         }
         $searchBox.focus();
-        e.stopPropagation();
     }
 
     let radios = $lmm.querySelectorAll('.lmm-searchops input');
     for(let i=0;i<radios.length; i++){
-        radios[i].addEventListener('click', handleRadioClick);
+        radios[i].addEventListener('click', handleRadioClick, false);
     }
 
     // Handle opening and closing panes
