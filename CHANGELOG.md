@@ -1,6 +1,7 @@
 # Change Log
 
 ## unreleased
+- misc styling fixes not caught in 2.2.0 testing
 
 ## 2.2.0 - 2019-07-15
 - removed the black pane underlay, to allow for optionally wider columns. Include supplemental content on wide views for some panes.

@@ -175,8 +175,12 @@
   }
 }
 
-.lmm-closer {
-  background-color: $background-color;
+.lmm-closer,
+.lmm-closer:hover,
+.lmm-closer:active {
+  background: $background-color;
+  background-image: none;
+  border-radius: 0;
   border-top: $background-color solid 1px;
   bottom: 0;
   color: $white;
@@ -184,9 +188,9 @@
   cursor: pointer;
   height: 18px;
   left: 0;
-  line-height: 17px;
   position: absolute;
   text-align: center;
+  text-shadow: none;
   text-transform: uppercase;
   width: 100%;
   z-index: 2147483646;
@@ -196,7 +200,7 @@
   border-bottom: $background-color solid 8px;
   border-left: transparent solid 10px;
   border-right: transparent solid 10px;
-  height: 10px;
+  height: 1px;
   margin: -11px auto 0;
   width: 1px;
 }
@@ -436,6 +440,7 @@ input[type='text'].lmm-q {
   position: absolute;
   top: $menu-bar-height;
   width: 100%;
+  z-index: 2147483646;
 
   @include breakpoint($normal) {
     height: 280px;
