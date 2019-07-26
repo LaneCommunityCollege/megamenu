@@ -437,6 +437,7 @@ input[type='text'].lmm-q {
   height: 265px;
   left: 0;
   opacity: 0;
+  overflow: hidden; //This keeps the closer button from being visible if we hide the actual mm
   position: absolute;
   top: $menu-bar-height;
   width: 100%;
