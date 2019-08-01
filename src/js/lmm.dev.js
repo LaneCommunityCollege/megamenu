@@ -23,8 +23,9 @@ window.onload = function() {
     document.body.insertAdjacentHTML('beforeend', '{$svg}');
     document.body.insertAdjacentHTML('beforeend', '<!-- Thanks https://github.com/FortAwesome/Font-Awesome for MegaMenu Icons -->');
     document.body.insertAdjacentHTML('beforeend', '{$lmm}');
+    let currentBodyTopMargin = parseInt(window.getComputedStyle(document.body).marginTop);
     // add to the existing margin
-    document.body.style.marginTop = (parseInt(window.getComputedStyle(document.body).marginTop) + menuBarHeight) + 'px';
+    document.body.style.marginTop = (currentBodyTopMargin + menuBarHeight) + 'px';
 
     let $lmm = document.getElementsByClassName('lmm')[0];
     let $pane_underlay = document.getElementsByClassName('lmm-pane-underlay')[0];
@@ -98,8 +99,8 @@ window.onload = function() {
      */
     if(makeRelative){
       document.body.style.position = 'relative';
-      $lmm.style.top = '-' + (menuBarHeight + 1) + 'px';
-      $pane_underlay.style.top = -1 + 'px';
+      $lmm.style.top = '-' + (menuBarHeight + currentBodyTopMargin) + 'px';
+      $pane_underlay.style.top = '-' + currentBodyTopMargin + 'px';
     }
 
     // add GA tracking to each link

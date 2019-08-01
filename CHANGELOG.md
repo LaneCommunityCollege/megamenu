@@ -1,5 +1,8 @@
 # Change Log
 
+## Unreleased
+- Fixed top position bug
+
 ## 2.2.1 - 2019-07-31
 - misc styling fixes not caught in 2.2.0 testing
 - fixed bug where if the megamenu was hidden, other components weren't, cuasing them to fight with over top navs.
