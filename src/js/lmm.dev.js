@@ -106,7 +106,10 @@ window.onload = function() {
     // add GA tracking to each link
     let links = $lmm.querySelectorAll('a:not(.skip)');
     for(let i=0; i<links.length; i++){
-        links[i].setAttribute('href', links[i].getAttribute('href') + "?itm_source=" + window.location.hostname + "&itm_campaign=megamenu");
+        if(links[i].href.indexOf('?') >= 0)
+            links[i].setAttribute('href', links[i].getAttribute('href') + "&itm_source=" + window.location.hostname + "&itm_campaign=megamenu");
+        else
+            links[i].setAttribute('href', links[i].getAttribute('href') + "?itm_source=" + window.location.hostname + "&itm_campaign=megamenu");
     }
 
     function fadeOut(element) {

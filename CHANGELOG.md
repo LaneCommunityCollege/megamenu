@@ -2,6 +2,7 @@
 
 ## Unreleased
 - Fixed top position bug
+- [more flexibly append tracking parameters](https://github.com/LaneCommunityCollege/megamenu/issues/61)
 
 ## 2.2.1 - 2019-07-31
 - misc styling fixes not caught in 2.2.0 testing
