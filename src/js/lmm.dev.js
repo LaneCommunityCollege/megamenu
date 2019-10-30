@@ -74,15 +74,6 @@ window.onload = function() {
         }
     }
     // Wordpress
-    // I'm fairly confident this if block can be removed, but that's pending additional testing
-    else if(document.body.classList.contains('admin-bar')){ 
-        let adminBar = document.getElementById('wpadminbar');
-        let cHeight = parseInt(window.getComputedStyle(adminBar, null).height);
-        $lmm.style.top = cHeight + "px";
-        $lmm.style.zIndex = 800;
-        let underlayMargin = parseInt(window.getComputedStyle($pane_underlay, null).height);
-        $pane_underlay.style.marginTop = (underlayMargin + cHeight) + "px";
-    }
     else if(document.body.classList.contains('masthead-fixed') && document.body.classList.contains('blog')){
       document.getElementById('masthead').style.position = 'relative';
     }
