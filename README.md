@@ -10,7 +10,9 @@ This megamenu does not support IE9 or below.
 
 Development
 -----------
-To start development, you'll first need to have NPM, SASS, and jade installed. After cloning this repository run `npm install` to install needed dependencies for the build process. When you're ready to build, run `gulp`. This will generate the generate both a distributable `lmm.min.js` file for production, as well as compile `lmm.js` and `lmm.css` files which are useful for troubleshooting.
+To start development, you'll first need to have NPM, SASS, and jade installed. After cloning this repository run `npm install` to install needed dependencies for the build process. Then `gem install sass compass`.
+
+When you're ready to build, run `gulp`. This will generate the generate both a distributable `lmm.min.js` file for production, as well as compile `lmm.js` and `lmm.css` files which are useful for troubleshooting.
 
 By default, links have Google Analytics style tracking parameters added to them. To skip tracking on a link, add the class `skip` to the link.
 
