@@ -16,7 +16,7 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cheerio": "^1.0.0",
-    "gulp-clean-css": "^4.2.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-compass": "^2.1.0",
     "gulp-file-insert": "^2.0.0",
     "gulp-minify-html": "^1.0.6",
