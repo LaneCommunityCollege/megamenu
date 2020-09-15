@@ -39,12 +39,19 @@ window.onload = function() {
     // make a couple site specific adjustments
     // Authenticated Drupal's file browser
     let makeRelative = true;
-    if(window.location.pathname.indexOf('/imce') === 0){
+    // This is a generic no mm case.
+    if(!!document.getElementById('hide-mm')){
+        $lmm.style.display - 'none';
+        return;
+    }
+    else if(window.location.pathname.indexOf('/imce') === 0){
         $lmm.style.display = 'none';
+        return;
     }
     // Authenticated Drupal, 7 then 8
     else if(document.body.classList.contains('admin-menu') || document.getElementById('toolbar-administration')){ 
         $lmm.style.display = 'none';
+        return;
     }
     // Moodle
     else if(window.location.hostname.indexOf('mrooms') >= 0 ||
@@ -82,6 +89,7 @@ window.onload = function() {
     }
     else if(!!document.getElementById('wpadminbar')){
       $lmm.style.display = 'none';
+      return;
     }
 
     /* It used to be that we'd check and see if the body was relative position, then slide up. But IE11 didn't like that,
