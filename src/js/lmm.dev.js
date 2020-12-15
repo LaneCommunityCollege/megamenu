@@ -41,7 +41,7 @@ window.onload = function() {
     let makeRelative = true;
     // This is a generic no mm case.
     if(!!document.getElementById('hide-mm')){
-        $lmm.style.display - 'none';
+        $lmm.style.display = 'none';
         return;
     }
     else if(window.location.pathname.indexOf('/imce') === 0){
