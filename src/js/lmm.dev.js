@@ -226,13 +226,6 @@ window.onload = function() {
             $lmm.getElementsByClassName('lmm-search-label')[0].textContent = 'Search Lane\'s websites';
             $searchBox.setAttribute('placeholder', 'search all Lane websites');
         }
-        else if(dest == "lmm-search-ce"){
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'post');
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://lanecc.augusoft.net/index.cfm?method=ClassListing.ClassListingDisplay');
-            $searchBox.setAttribute('name','Keywords');
-            $lmm.getElementsByClassName('lmm-search-label')[0].textContent = 'Search Continuing Education classes';
-            $searchBox.setAttribute('placeholder', 'search Continuing Education classes');
-        }
         else if(dest == "lmm-search-people"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://directory.lanecc.edu/search/employees/');
