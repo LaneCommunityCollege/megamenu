@@ -160,6 +160,15 @@ window.onload = function() {
         fadeIn($lmm.getElementsByClassName('lmm-searchops')[0]);
     }, false);
 
+    /* The employee directory doesn't actually let us search directly, so instead
+     * we need to set up a redirect to the right place and disable the form function */
+    $lmm.getElementsByClassName('lmm-search-form')[0].addEventListener('submit', function(e){
+        if($lmm.getElementsByClassName('lmm-search-form')[0].action.startsWith("https://directory.lanecc.edu/search/employees/")){
+            event.preventDefault();
+            window.location.href = "https://directory.lanecc.edu/search/employees/" + $searchBox.value;
+        }
+    })
+
     /* Similarly, pop open the homes button box */
     $lmm.getElementsByClassName('lmm-logo')[0].addEventListener('click', function(e){
         let active = $lmm.getElementsByClassName('lmm-active');
@@ -226,8 +235,8 @@ window.onload = function() {
         }
         else if(dest == "lmm-search-people"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://directory.lanecc.edu/search');
-            $searchBox.setAttribute('name','search');
+            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://directory.lanecc.edu/search/employees/');
+            $searchBox.setAttribute('name', 'q');
             $lmm.getElementsByClassName('lmm-search-label')[0].textContent = 'Search people at Lane';
             $searchBox.setAttribute('placeholder', 'search the Employee Directory');
         }
