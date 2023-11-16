@@ -221,7 +221,7 @@ window.onload = function() {
         
         if(dest == "lmm-search-web"){
             $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('method', 'get');
-            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/custom/search/'); 
+            $lmm.getElementsByClassName('lmm-search-form')[0].setAttribute('action', 'https://www.lanecc.edu/search'); 
             $searchBox.setAttribute('name','q');
             $lmm.getElementsByClassName('lmm-search-label')[0].textContent = 'Search Lane\'s websites';
             $searchBox.setAttribute('placeholder', 'search all Lane websites');
