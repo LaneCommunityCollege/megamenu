@@ -8,8 +8,8 @@
     "url": "https://github.com/LaneCommunityCollege/megamenu"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8",
     "@babel/register": "^7.24.6",
     "breakpoint-sass": "^3.0.0",
     "del": "^5.1.0",
@@ -21,7 +21,7 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-scan": "^0.1.4",
     "gulp-svgmin": "^4.1.0",
     "gulp-svgstore": "^9.0.0",
@@ -29,7 +29,7 @@
     "natives": "^1.1.6",
     "path": "^0.12.7",
     "run-sequence": "^2.2.1",
-    "uglify-js": "^3.18.0"
+    "uglify-js": "^3.19.0"
   },
   "license": "MIT",
   "dependencies": {
